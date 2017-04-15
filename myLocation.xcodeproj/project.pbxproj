@@ -14,6 +14,8 @@
 		893B147A1EA125FA002E8F72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 893B14781EA125FA002E8F72 /* LaunchScreen.storyboard */; };
 		893B14851EA125FA002E8F72 /* myLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B14841EA125FA002E8F72 /* myLocationTests.swift */; };
 		893B14901EA125FA002E8F72 /* myLocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B148F1EA125FA002E8F72 /* myLocationUITests.swift */; };
+		893B149F1EA12658002E8F72 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893B149E1EA12658002E8F72 /* CoreLocation.framework */; };
+		89F298B81EA27CB500AC1968 /* importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F298B71EA27CB500AC1968 /* importer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		89F298BC1EA27E4300AC1968 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89F298BD1EA27E8A00AC1968 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		893B146C1EA125FA002E8F72 /* myLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		893B146F1EA125FA002E8F72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +72,8 @@
 		893B148B1EA125FA002E8F72 /* myLocationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myLocationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		893B148F1EA125FA002E8F72 /* myLocationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myLocationUITests.swift; sourceTree = "<group>"; };
 		893B14911EA125FA002E8F72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		893B149E1EA12658002E8F72 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		89F298B71EA27CB500AC1968 /* importer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = importer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				893B149F1EA12658002E8F72 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +109,7 @@
 				893B14831EA125FA002E8F72 /* myLocationTests */,
 				893B148E1EA125FA002E8F72 /* myLocationUITests */,
 				893B146D1EA125FA002E8F72 /* Products */,
+				893B149D1EA12658002E8F72 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				893B146F1EA125FA002E8F72 /* AppDelegate.swift */,
+				89F298B71EA27CB500AC1968 /* importer.swift */,
 				893B14711EA125FA002E8F72 /* ViewController.swift */,
 				893B14731EA125FA002E8F72 /* Main.storyboard */,
 				893B14761EA125FA002E8F72 /* Assets.xcassets */,
@@ -125,6 +155,14 @@
 			path = myLocationUITests;
 			sourceTree = "<group>";
 		};
+		893B149D1EA12658002E8F72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				893B149E1EA12658002E8F72 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +173,9 @@
 				893B14681EA125FA002E8F72 /* Sources */,
 				893B14691EA125FA002E8F72 /* Frameworks */,
 				893B146A1EA125FA002E8F72 /* Resources */,
+				89F298BC1EA27E4300AC1968 /* Embed Frameworks */,
+				89F298BD1EA27E8A00AC1968 /* Copy Files */,
+				89F298C31EA27F3200AC1968 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -193,6 +234,7 @@
 				TargetAttributes = {
 					893B146B1EA125FA002E8F72 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = F9SQL5NE4J;
 						ProvisioningStyle = Automatic;
 					};
 					893B147F1EA125FA002E8F72 = {
@@ -254,12 +296,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		89F298C31EA27F3200AC1968 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		893B14681EA125FA002E8F72 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				893B14721EA125FA002E8F72 /* ViewController.swift in Sources */,
+				89F298B81EA27CB500AC1968 /* importer.swift in Sources */,
 				893B14701EA125FA002E8F72 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +473,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F9SQL5NE4J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = myLocation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.myLocation";
@@ -426,6 +491,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F9SQL5NE4J;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = myLocation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.myLocation";
@@ -507,6 +578,7 @@
 				893B14961EA125FA002E8F72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		893B14971EA125FA002E8F72 /* Build configuration list for PBXNativeTarget "myLocationTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +587,7 @@
 				893B14991EA125FA002E8F72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		893B149A1EA125FA002E8F72 /* Build configuration list for PBXNativeTarget "myLocationUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +596,7 @@
 				893B149C1EA125FA002E8F72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
