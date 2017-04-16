@@ -63,7 +63,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 nearestZastavka = jmeno_zastavky
             }
         }
-    print(nearestZastavka)
     return nearestZastavka
     }
 
@@ -74,11 +73,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         manager.desiredAccuracy = kCLLocationAccuracyBest //nejlepší možná přesnost
         manager.requestWhenInUseAuthorization() //hodí request na užívání
         manager.startUpdatingLocation() //updatuje polohu
+        parseCSV()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func parseCSV(){
+        let path = Bundle.main.path(forResource: "example", ofType: "csv")
+        do {
+            let csv = try CSV(contentsOfURL: path!)
+            let rows = csv.rows
+            print(rows)
+        }catch{
+            
+        }
+        
     }
 
 
