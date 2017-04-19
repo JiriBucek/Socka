@@ -25,7 +25,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     //první proměnná nutná pro práci s polohovým službama
     
     
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     //vrátí aktuální polohu a vykreslí ji do mapy
         let location = locations[0]//všechny lokace budou v tomto array, dostanu tu nejnovější
@@ -37,14 +36,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         //let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(50.076286, 14.446349)
         
-        let region: MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span) //zkombnuje předchozí dvě vars a vytvoří region
+        let region: MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span) //zkombinuje předchozí dvě vars a vytvoří region
         map.setRegion(region, animated: true) //vykreslí mapu
         
         self.map.showsUserLocation = true //vykreslí modrou tečku na místo, kde jsem
-        
-        let slezska = CLLocation(latitude: 50.076286, longitude: 14.446349)
-        
-        let _: CLLocationDistance = location.distance(from: slezska)
         
         nearestZastavkaLabel.text = nearestMetro()
         
