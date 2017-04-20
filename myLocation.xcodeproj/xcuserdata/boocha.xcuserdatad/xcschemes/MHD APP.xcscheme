@@ -17,7 +17,7 @@
                BlueprintIdentifier = "893B146B1EA125FA002E8F72"
                BuildableName = "MHD APP.app"
                BlueprintName = "MHD APP"
-               ReferencedContainer = "container:MHD APP.xcodeproj">
+               ReferencedContainer = "container:myLocation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "893B147F1EA125FA002E8F72"
                BuildableName = "MHD APPTests.xctest"
                BlueprintName = "MHD APPTests"
-               ReferencedContainer = "container:MHD APP.xcodeproj">
+               ReferencedContainer = "container:myLocation.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "893B148A1EA125FA002E8F72"
                BuildableName = "MHD APPUITests.xctest"
                BlueprintName = "MHD APPUITests"
-               ReferencedContainer = "container:MHD APP.xcodeproj">
+               ReferencedContainer = "container:myLocation.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "893B146B1EA125FA002E8F72"
             BuildableName = "MHD APP.app"
             BlueprintName = "MHD APP"
-            ReferencedContainer = "container:MHD APP.xcodeproj">
+            ReferencedContainer = "container:myLocation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "893B146B1EA125FA002E8F72"
             BuildableName = "MHD APP.app"
             BlueprintName = "MHD APP"
-            ReferencedContainer = "container:MHD APP.xcodeproj">
+            ReferencedContainer = "container:myLocation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,7 +97,7 @@
             BlueprintIdentifier = "893B146B1EA125FA002E8F72"
             BuildableName = "MHD APP.app"
             BlueprintName = "MHD APP"
-            ReferencedContainer = "container:MHD APP.xcodeproj">
+            ReferencedContainer = "container:myLocation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
