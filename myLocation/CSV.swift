@@ -21,6 +21,7 @@ open class CSV {
     }
     
     public convenience init(contentsOfURL url: String) throws {
+        //na tento init se odkazuju externe jako csv((contentsOfURL: path!), path musim vytvorit a zadat tam cestu k csv souboru
         let comma = CharacterSet(charactersIn: ",")
         let csvString: String?
         do {
@@ -46,6 +47,7 @@ open class CSV {
             
             var row = Dictionary<String, String>()
             let values = line.components(separatedBy: self.delimiter)
+            //tady rozpojí metodou components každou lajnu delimeterem = čárka
             for (index, header) in self.headers.enumerated() {
                 if index < values.count {
                     row[header] = values[index]
