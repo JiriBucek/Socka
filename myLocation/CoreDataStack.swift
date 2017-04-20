@@ -1,4 +1,5 @@
 import CoreData
+
 class CoreDataStack {
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Supercars")
