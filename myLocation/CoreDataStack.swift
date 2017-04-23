@@ -2,7 +2,7 @@ import CoreData
 
 class CoreDataStack {
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Supercars")
+        let container = NSPersistentContainer(name: "PolozkaJR")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error {
                 fatalError("Unresolved error \(error), \(error)")
@@ -22,3 +22,4 @@ class CoreDataStack {
         }
     } 
 }
+

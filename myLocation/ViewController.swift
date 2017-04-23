@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
 
 class ViewController: UIViewController, CLLocationManagerDelegate{
     
@@ -68,7 +69,30 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         manager.desiredAccuracy = kCLLocationAccuracyBest //nejlepší možná přesnost
         manager.requestWhenInUseAuthorization() //hodí request na užívání
         manager.startUpdatingLocation() //updatuje polohu
-        parseCSV()
+        parseCSV() //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
+        
+        // CORE DATA by Swift Guy
+        let coreDataStackDelegate = UIApplication.shared.delegate as! CoreDataStack
+        let context = coreDataStackDelegate.persistentContainer.viewContext
+        
+        let novaPolozka = NSEntityDescription.insertNewObject(forEntityName: "PolozkaJR", into: context)
+        novaPolozka.setValue("stop idecko", forKey: "stop_id")
+        novaPolozka.setValue("15:45", forKey: "time")
+        novaPolozka.setValue(34, forKey: "trip_id")
+        
+        do{
+            try context.save()
+            print("SAVED")
+        }catch{
+            print("ANI PRD")
+        }
+        
+        
+        
+        /*
+        polozkaJR?.stop_id = "2"
+        polozkaJR?.time = "15:30"
+        polozkaJR?.trip_id = */
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,11 +101,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     func parseCSV(){
-        let path = Bundle.main.path(forResource: "example", ofType: "csv")
+        let path = Bundle.main.path(forResource: "stop_times_male", ofType: "csv")
         do {
             let csv = try CSV(contentsOfURL: path!)
             let rows = csv.rows
-            print(rows)
+            //print(rows)
         }catch{
             
         }

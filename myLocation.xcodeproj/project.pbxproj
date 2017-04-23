@@ -17,6 +17,7 @@
 		893B149F1EA12658002E8F72 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893B149E1EA12658002E8F72 /* CoreLocation.framework */; };
 		89B61E841EA907460032F3AC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B61E831EA907460032F3AC /* CoreDataStack.swift */; };
 		89B61E871EA90AA90032F3AC /* MHDDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89B61E851EA90AA90032F3AC /* MHDDataModel.xcdatamodeld */; };
+		89B61E8D1EAB54BA0032F3AC /* stop_times_male.csv in Resources */ = {isa = PBXBuildFile; fileRef = 89B61E8C1EAB54BA0032F3AC /* stop_times_male.csv */; };
 		89F298C61EA28B9900AC1968 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F298C51EA28B9900AC1968 /* CSV.swift */; };
 		89F298C81EA28DC800AC1968 /* example.csv in Resources */ = {isa = PBXBuildFile; fileRef = 89F298C71EA28DC800AC1968 /* example.csv */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		893B149E1EA12658002E8F72 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		89B61E831EA907460032F3AC /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		89B61E861EA90AA90032F3AC /* MHDDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MHDDataModel.xcdatamodel; sourceTree = "<group>"; };
+		89B61E8C1EAB54BA0032F3AC /* stop_times_male.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stop_times_male.csv; sourceTree = "<group>"; };
 		89F298C51EA28B9900AC1968 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 		89F298C71EA28DC800AC1968 /* example.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = example.csv; path = ../../../../../../example.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +142,7 @@
 				893B14781EA125FA002E8F72 /* LaunchScreen.storyboard */,
 				89B61E831EA907460032F3AC /* CoreDataStack.swift */,
 				89B61E851EA90AA90032F3AC /* MHDDataModel.xcdatamodeld */,
+				89B61E8C1EAB54BA0032F3AC /* stop_times_male.csv */,
 				89F298C71EA28DC800AC1968 /* example.csv */,
 				893B147B1EA125FA002E8F72 /* Info.plist */,
 			);
@@ -289,6 +292,7 @@
 				893B147A1EA125FA002E8F72 /* LaunchScreen.storyboard in Resources */,
 				89F298C81EA28DC800AC1968 /* example.csv in Resources */,
 				893B14771EA125FA002E8F72 /* Assets.xcassets in Resources */,
+				89B61E8D1EAB54BA0032F3AC /* stop_times_male.csv in Resources */,
 				893B14751EA125FA002E8F72 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
