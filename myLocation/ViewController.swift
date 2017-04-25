@@ -71,20 +71,47 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         manager.startUpdatingLocation() //updatuje polohu
         parseCSV() //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
         
-        // CORE DATA by Swift Guy
-        let coreDataStackDelegate = UIApplication.shared.delegate as! CoreDataStack
-        let context = coreDataStackDelegate.persistentContainer.viewContext
+//////////// CORE DATA by Swift Guy ///////////
+        //let coreDataStackDelegate = UIApplication.shared.delegate as! CoreDataStack
         
-        let novaPolozka = NSEntityDescription.insertNewObject(forEntityName: "PolozkaJR", into: context)
-        novaPolozka.setValue("stop idecko", forKey: "stop_id")
-        novaPolozka.setValue("15:45", forKey: "time")
-        novaPolozka.setValue(34, forKey: "trip_id")
+        let coreDataStack = CoreDataStack()
+        //object ze souboru coredatastack
+        let context = coreDataStack.persistentContainer.viewContext
+        //objekt contex, na kterej se odvolavam
+        
+        /*let novaPolozka = NSEntityDescription.insertNewObject(forEntityName: "PolozkaJR", into: context)
+        novaPolozka.setValue("stop idecko2", forKey: "stop_id")
+        novaPolozka.setValue("15:452", forKey: "time")
+        novaPolozka.setValue(324, forKey: "trip_id")
         
         do{
             try context.save()
             print("SAVED")
         }catch{
             print("ANI PRD")
+        }*/
+        
+        // FETCHING RESULTS FROM CORE DATA - Swift Guy
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PolozkaJR")
+        //vytvoření kominikacniho objectu a zadání názvu entity
+        
+        request.returnsObjectsAsFaults = false
+        //tohle upraví formát výstupu na něco použitelného
+        
+        do{
+            let results = try context.fetch(request)
+            //
+            if results.count > 0{
+                for result in results as! [NSManagedObject]
+                {
+                    if let stop_id = result.value(forKey: "stop_id") as? String{
+                        print(stop_id)
+                    }
+                }
+            }
+            
+        }catch{
+            print("Nepodařil se fetch")
         }
         
         
@@ -93,6 +120,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         polozkaJR?.stop_id = "2"
         polozkaJR?.time = "15:30"
         polozkaJR?.trip_id = */
+    }
+    
+    func deleteDB(entityName: String) {
+        //Vymaže všechna data v dané položce
+        let coreDataStack = CoreDataStack()
+        let context = coreDataStack.persistentContainer.viewContext
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let request = NSBatchDeleteRequest(fetchRequest: fetch)
+        do{
+        try context.execute(request)
+        }catch{
+            print(error)
+        }
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

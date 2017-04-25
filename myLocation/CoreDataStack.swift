@@ -1,8 +1,9 @@
 import CoreData
+import UIKit
 
-class CoreDataStack {
+class CoreDataStack: UIResponder, UIApplicationDelegate {
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "PolozkaJR")
+        let container = NSPersistentContainer(name: "MHDDataModel")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error {
                 fatalError("Unresolved error \(error), \(error)")

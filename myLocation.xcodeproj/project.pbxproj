@@ -63,7 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		893B146C1EA125FA002E8F72 /* MHD APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MHD APP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		893B146C1EA125FA002E8F72 /* myLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		893B146F1EA125FA002E8F72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		893B14711EA125FA002E8F72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		893B14741EA125FA002E8F72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		893B146D1EA125FA002E8F72 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				893B146C1EA125FA002E8F72 /* MHD APP.app */,
+				893B146C1EA125FA002E8F72 /* myLocation.app */,
 				893B14801EA125FA002E8F72 /* MHD APPTests.xctest */,
 				893B148B1EA125FA002E8F72 /* MHD APPUITests.xctest */,
 			);
@@ -195,7 +195,7 @@
 			);
 			name = "MHD APP";
 			productName = myLocation;
-			productReference = 893B146C1EA125FA002E8F72 /* MHD APP.app */;
+			productReference = 893B146C1EA125FA002E8F72 /* myLocation.app */;
 			productType = "com.apple.product-type.application";
 		};
 		893B147F1EA125FA002E8F72 /* MHD APPTests */ = {
@@ -501,7 +501,7 @@
 				INFOPLIST_FILE = myLocation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.myLocation";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = myLocation;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -519,7 +519,7 @@
 				INFOPLIST_FILE = myLocation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.myLocation";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = myLocation;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

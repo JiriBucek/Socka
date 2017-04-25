@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    lazy var coreDataStack = CoreDataStack()
+    //lazy var coreDataStack = CoreDataStack()
     //vytvožení objektu tak, abych se na něj dole mohl odkázat při ukládání dat po ukončení appky
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        coreDataStack.saveContext()
+        //coreDataStack.saveContext()
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
