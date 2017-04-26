@@ -25,6 +25,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     let manager = CLLocationManager()
     //první proměnná nutná pro práci s polohovým službama
     
+    override func viewDidLoad() {
+    //co se stane po loadnutí
+        super.viewDidLoad()
+        
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest //nejlepší možná přesnost
+        manager.requestWhenInUseAuthorization() //hodí request na užívání
+        manager.startUpdatingLocation() //updatuje polohu
+        
+        /// Funkce pro plneni DB///
+        
+        //parseCSV(fileName: "stop_times_male") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
+        fillData(csvFileName: "stop_times_male", entityName: "PolozkaJR")
+        //deleteDB(entityName: "PolozkaJR")
+    }
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     //vrátí aktuální polohu a vykreslí ji do mapy
@@ -62,35 +78,48 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     return nearestZastavka
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyBest //nejlepší možná přesnost
-        manager.requestWhenInUseAuthorization() //hodí request na užívání
-        manager.startUpdatingLocation() //updatuje polohu
-        parseCSV() //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
-        
+
+    
 //////////// CORE DATA by Swift Guy ///////////
-        //let coreDataStackDelegate = UIApplication.shared.delegate as! CoreDataStack
+    
+    ////změnil sem typy a názvy v PolozkaJR, způsobuje to errory
+        
+    func fillData(csvFileName: String, entityName: String){
+    //naplní data z csv do DB
         
         let coreDataStack = CoreDataStack()
         //object ze souboru coredatastack
         let context = coreDataStack.persistentContainer.viewContext
         //objekt contex, na kterej se odvolavam
         
-        /*let novaPolozka = NSEntityDescription.insertNewObject(forEntityName: "PolozkaJR", into: context)
+        let hodnoty = parseCSV(fileName: csvFileName)
+        
+        for hodnota in hodnoty{
+            let novaPolozka = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
+            for (key, value) in hodnota{
+                novaPolozka.setValue(value, forKey: key)
+                do{
+                    try context.save()
+                    print("SAVED")
+                }catch{
+                    print("ANI PRD")
+                }
+            }
+        }
+        
+        /*
         novaPolozka.setValue("stop idecko2", forKey: "stop_id")
         novaPolozka.setValue("15:452", forKey: "time")
         novaPolozka.setValue(324, forKey: "trip_id")
+        */
         
         do{
             try context.save()
             print("SAVED")
         }catch{
             print("ANI PRD")
-        }*/
-        
+        }
+        /*
         // FETCHING RESULTS FROM CORE DATA - Swift Guy
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PolozkaJR")
         //vytvoření kominikacniho objectu a zadání názvu entity
@@ -113,7 +142,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }catch{
             print("Nepodařil se fetch")
         }
-        
+        */
         
         
         /*
@@ -143,16 +172,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    func parseCSV(){
-        let path = Bundle.main.path(forResource: "stop_times_male", ofType: "csv")
+    func parseCSV(fileName: String) -> [Dictionary<String, Any>]{
+    //rozparsuje SCVecko a vrátí array plnej dictionaries, kde key je název sloupce a value je hodnota
+        let path = Bundle.main.path(forResource: fileName, ofType: "csv")
+        var rows = [Dictionary<String, Any>]()
         do {
             let csv = try CSV(contentsOfURL: path!)
-            let rows = csv.rows
+            rows = csv.rows
             //print(rows)
         }catch{
-            
+        print(error)
         }
-        
+        return rows
     }
 
 

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "893B146B1EA125FA002E8F72"
-               BuildableName = "MHD APP.app"
+               BuildableName = "myLocation.app"
                BlueprintName = "MHD APP"
                ReferencedContainer = "container:myLocation.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "893B146B1EA125FA002E8F72"
-            BuildableName = "MHD APP.app"
+            BuildableName = "myLocation.app"
             BlueprintName = "MHD APP"
             ReferencedContainer = "container:myLocation.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "893B146B1EA125FA002E8F72"
-            BuildableName = "MHD APP.app"
+            BuildableName = "myLocation.app"
             BlueprintName = "MHD APP"
             ReferencedContainer = "container:myLocation.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "893B146B1EA125FA002E8F72"
-            BuildableName = "MHD APP.app"
+            BuildableName = "myLocation.app"
             BlueprintName = "MHD APP"
             ReferencedContainer = "container:myLocation.xcodeproj">
          </BuildableReference>
