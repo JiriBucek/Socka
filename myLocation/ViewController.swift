@@ -36,9 +36,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         /// Funkce pro plneni DB///
         
-        //parseCSV(fileName: "stop_times_male") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
-        fillData(csvFileName: "stop_times_male", entityName: "PolozkaJR")
-        //deleteDB(entityName: "PolozkaJR")
+        //parseCSV(fileName: "mhd_final_data_utf8") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
+        //fillData(csvFileName: "mhd_final_data_utf8", entityName: "FullEntity")
+        //deleteDB(entityName: "FullEntity")
+        //fetchData()
     }
     
     
@@ -82,8 +83,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
 //////////// CORE DATA by Swift Guy ///////////
     
-    ////změnil sem typy a názvy v PolozkaJR, způsobuje to errory
-        
     func fillData(csvFileName: String, entityName: String){
     //naplní data z csv do DB
         
@@ -96,13 +95,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         for hodnota in hodnoty{
             let novaPolozka = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
+            
             for (key, value) in hodnota{
-                novaPolozka.setValue(value, forKey: key)
-                do{
-                    try context.save()
-                    print("SAVED")
-                }catch{
-                    print("ANI PRD")
+                
+                if let cislo = Int(value){
+                    novaPolozka.setValue(cislo, forKey: key)
+                }else{
+                    novaPolozka.setValue(value, forKey: key)
                 }
             }
         }
@@ -119,17 +118,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }catch{
             print("ANI PRD")
         }
-        /*
+    }
+    
         // FETCHING RESULTS FROM CORE DATA - Swift Guy
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PolozkaJR")
+         
+    func fetchData(){
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FullEntity")
         //vytvoření kominikacniho objectu a zadání názvu entity
+        
+        let coreDataStack = CoreDataStack()
         
         request.returnsObjectsAsFaults = false
         //tohle upraví formát výstupu na něco použitelného
         
+        let context = coreDataStack.persistentContainer.viewContext
+        
         do{
             let results = try context.fetch(request)
-            //
+            
             if results.count > 0{
                 for result in results as! [NSManagedObject]
                 {
@@ -142,14 +148,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }catch{
             print("Nepodařil se fetch")
         }
-        */
-        
+        }
         
         /*
         polozkaJR?.stop_id = "2"
         polozkaJR?.time = "15:30"
         polozkaJR?.trip_id = */
-    }
     
     func deleteDB(entityName: String) {
         //Vymaže všechna data v dané položce
@@ -159,6 +163,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         let request = NSBatchDeleteRequest(fetchRequest: fetch)
         do{
         try context.execute(request)
+            print("Databáze vymazána")
         }catch{
             print(error)
         }
@@ -172,13 +177,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    func parseCSV(fileName: String) -> [Dictionary<String, Any>]{
+    func parseCSV(fileName: String) -> [Dictionary<String, String>]{
     //rozparsuje SCVecko a vrátí array plnej dictionaries, kde key je název sloupce a value je hodnota
         let path = Bundle.main.path(forResource: fileName, ofType: "csv")
-        var rows = [Dictionary<String, Any>]()
+        var rows = [Dictionary<String, String>]()
         do {
             let csv = try CSV(contentsOfURL: path!)
             rows = csv.rows
+            print(rows)
             //print(rows)
         }catch{
         print(error)

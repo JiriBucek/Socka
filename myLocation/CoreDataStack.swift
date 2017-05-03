@@ -5,7 +5,7 @@ import UIKit
 class CoreDataStack {
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "DataModel")
+        let container = NSPersistentContainer(name: "DataFinal280417")
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error {
