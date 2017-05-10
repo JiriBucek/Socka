@@ -14,10 +14,18 @@ import CoreData
 class ViewController: UIViewController, CLLocationManagerDelegate{
     
     //MAP
-    @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var nearestZastavkaLabel: UILabel!
+    @IBOutlet weak var konecna1: UILabel!
+    @IBOutlet weak var konecna2: UILabel!
+    @IBOutlet weak var cas11: UILabel!
+    @IBOutlet weak var cas12: UILabel!
+    @IBOutlet weak var cas13: UILabel!
+    @IBOutlet weak var cas21: UILabel!
+    @IBOutlet weak var cas22: UILabel!
+    @IBOutlet weak var cas23: UILabel!
+    @IBOutlet weak var kontrolniMetroLabl: UILabel!
     
-    var zastavky = ["Depo Hostivař": [50.075541, 14.51532], "Skalka": [50.068435, 14.507169], "Strašnická": [50.073336, 14.490091], "Želivského": [50.07854, 14.474891], "Flora": [50.078288, 14.461886], "Jiřího z Poděbrad": [50.077642, 14.45004], "Náměstí Míru": [50.075398, 14.439078], "Muzeum - A": [50.079847, 14.430577], "Můstek - A": [50.083943, 14.424149], "Staroměstská": [50.088454, 14.417066], "Malostranská": [50.092176, 14.409101], "Hradčanská": [50.097671, 14.402535], "Dejvická": [50.100481, 14.392462], "Bořislavka": [50.098319, 14.36212], "Nádraží Veleslavín": [50.09551, 14.348419], "Petřiny": [50.086608, 14.345018], "Nemocnice Motol": [50.074985, 14.340497], "Zličín": [50.052798, 14.291152], "Stodůlky": [50.046716, 14.307241], "Luka": [50.045365, 14.321854], "Lužiny": [50.044515, 14.331143], "Hůrka": [50.050026, 14.343495], "Nové Butovice": [50.050856, 14.35285], "Radlická": [50.057942, 14.388403], "Smíchovské nádraží": [50.061797, 14.409112], "Anděl": [50.07049, 14.404878], "Karlovo náměstí": [50.074808, 14.417579], "Národní třída": [50.080209, 14.420439], "Můstek - B": [50.083609, 14.423983], "Náměstí Republiky": [50.088974, 14.43128], "Florenc - B": [50.090437, 14.438362], "Křižíkova": [50.092627, 14.452043], "Invalidovna": [50.096976, 14.463824], "Palmovka": [50.10417, 14.475436], "Českomoravská": [50.106302, 14.492291], "Vysočanská": [50.110167, 14.501728], "Kolbenova": [50.110331, 14.517115], "Hloubětín": [50.106531, 14.537062], "Rajská zahrada": [50.106935, 14.561205], "Černý Most": [50.109058, 14.577538], "Letňany": [50.126314, 14.515926], "Prosek": [50.119166, 14.498572], "Střížkov": [50.12713, 14.488199], "Ládví": [50.126655, 14.468806], "Kobylisy": [50.124005, 14.453577], "Nádraží Holešovice": [50.108534, 14.440372], "Vltavská": [50.099847, 14.438426], "Florenc - C": [50.089619, 14.438892], "Hlavní nádraží": [50.083115, 14.433785], "Muzeum - C": [50.079861, 14.431276], "I. P. Pavlova": [50.073871, 14.430295], "Vyšehrad": [50.062681, 14.430482], "Pražského povstání": [50.056508, 14.433761], "Pankrác": [50.050601, 14.439927], "Budějovická": [50.044052, 14.449283], "Kačerov": [50.041696, 14.459939], "Roztyly": [50.037425, 14.477329], "Chodov": [50.031392, 14.491431], "Opatov": [50.027915, 14.509895], "Háje": [50.03081, 14.527675],]
+    
     
     var currentLocation = CLLocation()
     //globalni promenna, kam si vlozim soucasnou pozici ve fci location manager
@@ -39,28 +47,41 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         //parseCSV(fileName: "mhd_final_data_utf8") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
         //fillData(csvFileName: "mhd_final_data_utf8", entityName: "FullEntity")
         //deleteDB(entityName: "FullEntity")
-        //fetchData()
+        //print(fetchData(station_id: "U953Z102", service_id: 1, results_count: 3, current_time: current_time()))
     }
+    
+
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    //vrátí aktuální polohu a vykreslí ji do mapy
+    //vrátí aktuální polohu a vykreslí ji do mapy, všechny vykomentarovany veci se vztahuji k mape, kterou jsem odstranil
         let location = locations[0]//všechny lokace budou v tomto array, dostanu tu nejnovější
         
         currentLocation = location
         
-        let span: MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01) //určuje, jak moc chci, aby byla mapa zoomnuta
-        let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude) //moje poloha
+        //let span: MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01) //určuje, jak moc chci, aby byla mapa zoomnuta
+        //let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude) //moje poloha
         
         //let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(50.076286, 14.446349)
         
-        let region: MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span) //zkombinuje předchozí dvě vars a vytvoří region
-        map.setRegion(region, animated: true) //vykreslí mapu
+        //let region: MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span) //zkombinuje předchozí dvě vars a vytvoří region
+        //map.setRegion(region, animated: true) //vykreslí mapu
         
-        self.map.showsUserLocation = true //vykreslí modrou tečku na místo, kde jsem
+        //self.map.showsUserLocation = true //vykreslí modrou tečku na místo, kde jsem
         
         nearestZastavkaLabel.text = nearestMetro()
+        let metro_data = get_metro_times()
         
+        konecna1.text = String(describing: metro_data[0][2])
+        konecna2.text = String(describing: metro_data[3][2])
+        cas11.text = formatTime(time: metro_data[0][1] as! Int)
+        cas21.text = formatTime(time: metro_data[3][1] as! Int)
+        
+        cas12.text = formatTime(time: metro_data[1][1] as! Int)
+        cas22.text = formatTime(time: metro_data[4][1] as! Int)
+        
+        cas13.text = formatTime(time: metro_data[2][1] as! Int)
+        cas23.text = formatTime(time: metro_data[5][1] as! Int)
     }
     
     func nearestMetro() -> String{
@@ -76,6 +97,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 nearestZastavka = jmeno_zastavky
             }
         }
+    print(nearestZastavka)
     return nearestZastavka
     }
 
@@ -106,12 +128,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             }
         }
         
-        /*
-        novaPolozka.setValue("stop idecko2", forKey: "stop_id")
-        novaPolozka.setValue("15:452", forKey: "time")
-        novaPolozka.setValue(324, forKey: "trip_id")
-        */
-        
         do{
             try context.save()
             print("SAVED")
@@ -122,25 +138,61 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
         // FETCHING RESULTS FROM CORE DATA - Swift Guy
          
-    func fetchData(){
+    func fetchData(station_id: String, service_id: Int, results_count: Int, current_time: Int) -> [[Any]]{
+        
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FullEntity")
         //vytvoření kominikacniho objectu a zadání názvu entity
+        
+        var final_data = [[Any]]()
+        //tohle to nakonec vrátí
         
         let coreDataStack = CoreDataStack()
         
         request.returnsObjectsAsFaults = false
-        //tohle upraví formát výstupu na něco použitelného
+        //pokud je to false, nereturnuju to fetchnuty data jako faults .. faults znamena, ze to napise misto konkretnich dat jen data = faults. Setri to pamet.
         
         let context = coreDataStack.persistentContainer.viewContext
+
+        
+        //PREDICATES a SORTDESCRIPTORS
+        let current_time = current_time
+        let station_id = station_id
+        let schedule_id = service_id
+        
+        
+        let myPredicate = NSPredicate(format: "stop_id == %@ AND service_id == %i AND arrival_time > %i", station_id, schedule_id, current_time)
+        // pro string pouziju %@, integer %i, key %K
+        
+        let mySortDescriptor = NSSortDescriptor(key: "arrival_time", ascending: true)
+        //seradi fetch data podle casu smerem nahoru
+        request.predicate = myPredicate
+        request.sortDescriptors = [mySortDescriptor]
+        //přiřadí predicate a sortdescriptor do requestu, descriptoru muze byt vice, proto je to array
         
         do{
             let results = try context.fetch(request)
+            print("resulty: \(results)")
             
             if results.count > 0{
+                
                 for result in results as! [NSManagedObject]
                 {
-                    if let stop_id = result.value(forKey: "stop_id") as? String{
-                        print(stop_id)
+                    print(result)
+                    var single_array = [Any]()
+
+                    if let stop_id = result.value(forKey: "stop_id") as? String, let arrival_time = result.value(forKey: "arrival_time") as? Int, let trip_headsign = result.value(forKey: "trip_headsign") as? String{
+                        //print("\(stop_id) \(arrival_time) \(trip_headsign)")
+                        single_array.append(stop_id)
+                        single_array.append(arrival_time)
+                        single_array.append(trip_headsign)
+                        //přiřadí values do array
+                    }
+                    final_data.append(single_array)
+                    //přiřadí single array do konečného arraye
+                    
+                    if final_data.count > results_count - 1{
+                        break
+                        //díky tomuto to vrátí jen požadovaný počet výsledků
                     }
                 }
             }
@@ -148,12 +200,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }catch{
             print("Nepodařil se fetch")
         }
+        return final_data
         }
-        
-        /*
-        polozkaJR?.stop_id = "2"
-        polozkaJR?.time = "15:30"
-        polozkaJR?.trip_id = */
+    
     
     func deleteDB(entityName: String) {
         //Vymaže všechna data v dané položce
@@ -167,7 +216,45 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }catch{
             print(error)
         }
+    }
+    
+    func current_time() -> Int{
+    //vrátísoučasný čas jako Int
+        let date = NSDate()
+        let calendar = NSCalendar.current
+        let hour = calendar.component(.hour, from: date as Date)
+        var minutes = String(calendar.component(.minute, from: date as Date))
+        if minutes.characters.count == 1{
+            minutes = "0" + minutes
+        }
+        var seconds = String(calendar.component(.second, from: date as Date))
+        if seconds.characters.count == 1{
+            seconds = "0" + seconds
+        }
+        let final = Int("\(hour)\(minutes)\(seconds)")
+        return final!
+    }
+    
+    func get_metro_times() -> [[Any]]{
+        let nearest_station = nearestMetro()
+        let station_ids = stations_ids[nearest_station]!
+        print("Station ids \(station_ids)")
+        print("Station ID1: \(station_ids[0])")
+        let time = current_time()
+        print("Current time: \(time)")
         
+        let zkouska = fetchData(station_id: "U163Z101" , service_id: 1, results_count: 3, current_time: time)
+        print("Zkouska: \(zkouska)")
+        
+        let times1 = fetchData(station_id: station_ids[0], service_id: 1, results_count: 3, current_time: current_time())
+        print(times1)
+        let times2 = fetchData(station_id: station_ids[1], service_id: 1, results_count: 3, current_time: current_time())
+        
+        
+        let times = times1 + times2
+        
+        print(times)
+        return times
         
         
     }
@@ -175,6 +262,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func formatTime(time: Int) -> String{
+    //vezme cas v INT a preklopi ho do stringu s dvojteckama
+        var time = String(describing: time)
+        
+        let index = time.index(time.endIndex, offsetBy: -2)
+        time.insert(":", at: index)
+        let index2 = time.index(time.endIndex, offsetBy: -5)
+        time.insert(":", at: index2)
+        
+        return time
+
     }
     
     func parseCSV(fileName: String) -> [Dictionary<String, String>]{
@@ -191,7 +291,40 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }
         return rows
     }
-
-
-}
+    
+    func copyBundledSQLiteDB(fileName: String, fileExtension: String) {
+        //najde to soubor datafinal280417 v bundlu = tady v xcodu a prekopiruje ho to do slozky documents pro dany simulator
+        
+        let sourcePath = Bundle.main.path(forResource: fileName, ofType: fileExtension)
+        
+        let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first as String!
+        let destinationPath = (documentDirectoryPath! as NSString).appendingPathComponent("DataFinal280417.sqlite")
+                
+        // If file does not exist in the Documents directory already,
+        // then copy it from the bundle.
+        if !FileManager().fileExists(atPath: destinationPath) {
+            do {
+                //try FileManager().copyItem(atPath: sourcePath!, toPath: destinationPath)
+                let sourceSqliteURLs = [Bundle.main.path(forResource: "DataFinal280417", ofType: "sqlite")!, Bundle.main.path(forResource: "DataFinal280417", ofType: "sqlite-wal")!, Bundle.main.path(forResource: "DataFinal280417", ofType: "sqlite-shm")!]
+                
+                let destSqliteURLs = [(documentDirectoryPath! as NSString).appendingPathComponent("DataFinal280417.sqlite"), (documentDirectoryPath! as NSString).appendingPathComponent("DataFinal280417.sqlite-wal"), (documentDirectoryPath! as NSString).appendingPathComponent("DataFinal280417.sqlite-shm")]
+                
+                for index in 0 ..< sourceSqliteURLs.count {
+                    try FileManager().copyItem(atPath: sourceSqliteURLs[index], toPath: destSqliteURLs[index])                }
+                
+            } catch _ {
+            }
+        }
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        //Vypíše cestu do dokumentu
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        print("Tohle je cesta: \(documentsDirectory)")
+        return documentsDirectory
+    }
+    
+    
+    }
 

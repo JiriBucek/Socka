@@ -17,8 +17,11 @@
 		893B14901EA125FA002E8F72 /* myLocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B148F1EA125FA002E8F72 /* myLocationUITests.swift */; };
 		893B149F1EA12658002E8F72 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893B149E1EA12658002E8F72 /* CoreLocation.framework */; };
 		8948320C1EB9C9A30013E01A /* mhd_final_data_utf8.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8948320B1EB9C9A30013E01A /* mhd_final_data_utf8.csv */; };
+		897BFE4E1EBA0D9C009C59F0 /* Data_pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */; };
 		89B61E841EA907460032F3AC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B61E831EA907460032F3AC /* CoreDataStack.swift */; };
-		89E5E7071EB0B9AF005036FE /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89E5E7051EB0B9AF005036FE /* DataModel.xcdatamodeld */; };
+		89CCCE341EC30E610071BF75 /* DataFinal280417.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 89CCCE311EC30E610071BF75 /* DataFinal280417.sqlite */; };
+		89CCCE351EC30E610071BF75 /* DataFinal280417.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 89CCCE321EC30E610071BF75 /* DataFinal280417.sqlite-shm */; };
+		89CCCE361EC30E610071BF75 /* DataFinal280417.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 89CCCE331EC30E610071BF75 /* DataFinal280417.sqlite-wal */; };
 		89F298C61EA28B9900AC1968 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F298C51EA28B9900AC1968 /* CSV.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +57,7 @@
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 16;
+			dstSubfolderSpec = 7;
 			files = (
 			);
 			name = "Copy Files";
@@ -78,10 +81,13 @@
 		893B148F1EA125FA002E8F72 /* myLocationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myLocationUITests.swift; sourceTree = "<group>"; };
 		893B14911EA125FA002E8F72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		893B149E1EA12658002E8F72 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		8948320A1EB4820E0013E01A /* MujPlaground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MujPlaground.playground; sourceTree = "<group>"; };
 		8948320B1EB9C9A30013E01A /* mhd_final_data_utf8.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mhd_final_data_utf8.csv; sourceTree = "<group>"; };
+		8948320E1EBA03550013E01A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data_pool.swift; path = ../Data_pool.swift; sourceTree = "<group>"; };
 		89B61E831EA907460032F3AC /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		89E5E7061EB0B9AF005036FE /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		89CCCE311EC30E610071BF75 /* DataFinal280417.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataFinal280417.sqlite; sourceTree = "<group>"; };
+		89CCCE321EC30E610071BF75 /* DataFinal280417.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DataFinal280417.sqlite-shm"; sourceTree = "<group>"; };
+		89CCCE331EC30E610071BF75 /* DataFinal280417.sqlite-wal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "DataFinal280417.sqlite-wal"; sourceTree = "<group>"; };
 		89F298C51EA28B9900AC1968 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +120,7 @@
 		893B14631EA125FA002E8F72 = {
 			isa = PBXGroup;
 			children = (
+				8948320E1EBA03550013E01A /* MyPlayground.playground */,
 				893B146E1EA125FA002E8F72 /* myLocation */,
 				893B14831EA125FA002E8F72 /* myLocationTests */,
 				893B148E1EA125FA002E8F72 /* myLocationUITests */,
@@ -135,17 +142,20 @@
 		893B146E1EA125FA002E8F72 /* myLocation */ = {
 			isa = PBXGroup;
 			children = (
+				897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */,
 				893B146F1EA125FA002E8F72 /* AppDelegate.swift */,
 				893B14711EA125FA002E8F72 /* ViewController.swift */,
-				8948320A1EB4820E0013E01A /* MujPlaground.playground */,
 				891DC1481EB358980098A983 /* DataFinal280417.xcdatamodeld */,
-				893B14731EA125FA002E8F72 /* Main.storyboard */,
+				89CCCE311EC30E610071BF75 /* DataFinal280417.sqlite */,
+				89CCCE321EC30E610071BF75 /* DataFinal280417.sqlite-shm */,
+				89CCCE331EC30E610071BF75 /* DataFinal280417.sqlite-wal */,
 				89F298C51EA28B9900AC1968 /* CSV.swift */,
-				893B14761EA125FA002E8F72 /* Assets.xcassets */,
-				893B14781EA125FA002E8F72 /* LaunchScreen.storyboard */,
 				89B61E831EA907460032F3AC /* CoreDataStack.swift */,
 				8948320B1EB9C9A30013E01A /* mhd_final_data_utf8.csv */,
-				89E5E7051EB0B9AF005036FE /* DataModel.xcdatamodeld */,
+				8948320D1EB9D0ED0013E01A /* DTBZ */,
+				893B14731EA125FA002E8F72 /* Main.storyboard */,
+				893B14761EA125FA002E8F72 /* Assets.xcassets */,
+				893B14781EA125FA002E8F72 /* LaunchScreen.storyboard */,
 				893B147B1EA125FA002E8F72 /* Info.plist */,
 			);
 			path = myLocation;
@@ -175,6 +185,13 @@
 				893B149E1EA12658002E8F72 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8948320D1EB9D0ED0013E01A /* DTBZ */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DTBZ;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,8 +309,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				893B147A1EA125FA002E8F72 /* LaunchScreen.storyboard in Resources */,
+				89CCCE351EC30E610071BF75 /* DataFinal280417.sqlite-shm in Resources */,
+				89CCCE361EC30E610071BF75 /* DataFinal280417.sqlite-wal in Resources */,
 				8948320C1EB9C9A30013E01A /* mhd_final_data_utf8.csv in Resources */,
 				893B14771EA125FA002E8F72 /* Assets.xcassets in Resources */,
+				89CCCE341EC30E610071BF75 /* DataFinal280417.sqlite in Resources */,
 				893B14751EA125FA002E8F72 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,10 +357,10 @@
 			files = (
 				893B14721EA125FA002E8F72 /* ViewController.swift in Sources */,
 				893B14701EA125FA002E8F72 /* AppDelegate.swift in Sources */,
-				89E5E7071EB0B9AF005036FE /* DataModel.xcdatamodeld in Sources */,
 				89F298C61EA28B9900AC1968 /* CSV.swift in Sources */,
 				891DC14A1EB358980098A983 /* DataFinal280417.xcdatamodeld in Sources */,
 				89B61E841EA907460032F3AC /* CoreDataStack.swift in Sources */,
+				897BFE4E1EBA0D9C009C59F0 /* Data_pool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,16 +649,6 @@
 			);
 			currentVersion = 891DC1491EB358980098A983 /* DataFinal280417.xcdatamodel */;
 			path = DataFinal280417.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		89E5E7051EB0B9AF005036FE /* DataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				89E5E7061EB0B9AF005036FE /* DataModel.xcdatamodel */,
-			);
-			currentVersion = 89E5E7061EB0B9AF005036FE /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

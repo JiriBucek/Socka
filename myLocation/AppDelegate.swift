@@ -9,7 +9,9 @@
 import UIKit
 import CoreData
 
+
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -18,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //vytvožení objektu tak, abych se na něj dole mohl odkázat při ukládání dat po ukončení appky
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
+        // Override point for customization after application launch.
         
         //let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         //print("Cesta k dokumentum: \(paths[0])")
