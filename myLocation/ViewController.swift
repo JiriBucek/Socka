@@ -37,20 +37,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     //co se stane po loadnutí
         super.viewDidLoad()
         
+        ////   LOKACE   ////
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest //nejlepší možná přesnost
         manager.requestWhenInUseAuthorization() //hodí request na užívání
         manager.startUpdatingLocation() //updatuje polohu
         
-        /// Funkce pro plneni DB///
         
+        /// Funkce pro plneni DB///
         //parseCSV(fileName: "mhd_final_data_utf8") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
         //fillData(csvFileName: "mhd_final_data_utf8", entityName: "FullEntity")
         //deleteDB(entityName: "FullEntity")
-        //print(fetchData(station_id: "U953Z102", service_id: 1, results_count: 3, current_time: current_time()))
     }
-    
-
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -58,6 +56,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         let location = locations[0]//všechny lokace budou v tomto array, dostanu tu nejnovější
         
         currentLocation = location
+        
+        
+        //// V PŘÍPADĚ, ŽE CHCI VYKRESLIT MAPU /////
         
         //let span: MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01) //určuje, jak moc chci, aby byla mapa zoomnuta
         //let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude) //moje poloha
@@ -97,7 +98,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 nearestZastavka = jmeno_zastavky
             }
         }
-    print(nearestZastavka)
     return nearestZastavka
     }
 
@@ -171,17 +171,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         do{
             let results = try context.fetch(request)
-            print("resulty: \(results)")
             
             if results.count > 0{
                 
                 for result in results as! [NSManagedObject]
                 {
-                    print(result)
                     var single_array = [Any]()
 
                     if let stop_id = result.value(forKey: "stop_id") as? String, let arrival_time = result.value(forKey: "arrival_time") as? Int, let trip_headsign = result.value(forKey: "trip_headsign") as? String{
-                        //print("\(stop_id) \(arrival_time) \(trip_headsign)")
                         single_array.append(stop_id)
                         single_array.append(arrival_time)
                         single_array.append(trip_headsign)
@@ -236,24 +233,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     func get_metro_times() -> [[Any]]{
+        //vrátí array s dvěma konecnyma a sesti casama
         let nearest_station = nearestMetro()
+        //název zastávky metra
         let station_ids = stations_ids[nearest_station]!
-        print("Station ids \(station_ids)")
-        print("Station ID1: \(station_ids[0])")
+        //dva ID kody pro danou zastavku a dvě konecne
         let time = current_time()
-        print("Current time: \(time)")
-        
-        let zkouska = fetchData(station_id: "U163Z101" , service_id: 1, results_count: 3, current_time: time)
-        print("Zkouska: \(zkouska)")
-        
-        let times1 = fetchData(station_id: station_ids[0], service_id: 1, results_count: 3, current_time: current_time())
-        print(times1)
-        let times2 = fetchData(station_id: station_ids[1], service_id: 1, results_count: 3, current_time: current_time())
-        
+        //soucasny cas jako INT
+    
+        let times1 = fetchData(station_id: station_ids[0], service_id: 1, results_count: 3, current_time: time)
+        let times2 = fetchData(station_id: station_ids[1], service_id: 1, results_count: 3, current_time: time)
         
         let times = times1 + times2
         
-        print(times)
+        //print(times)
         return times
         
         
@@ -292,36 +285,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         return rows
     }
     
-    func copyBundledSQLiteDB(fileName: String, fileExtension: String) {
-        //najde to soubor datafinal280417 v bundlu = tady v xcodu a prekopiruje ho to do slozky documents pro dany simulator
-        
-        let sourcePath = Bundle.main.path(forResource: fileName, ofType: fileExtension)
-        
-        let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first as String!
-        let destinationPath = (documentDirectoryPath! as NSString).appendingPathComponent("DataFinal280417.sqlite")
-                
-        // If file does not exist in the Documents directory already,
-        // then copy it from the bundle.
-        if !FileManager().fileExists(atPath: destinationPath) {
-            do {
-                //try FileManager().copyItem(atPath: sourcePath!, toPath: destinationPath)
-                let sourceSqliteURLs = [Bundle.main.path(forResource: "DataFinal280417", ofType: "sqlite")!, Bundle.main.path(forResource: "DataFinal280417", ofType: "sqlite-wal")!, Bundle.main.path(forResource: "DataFinal280417", ofType: "sqlite-shm")!]
-                
-                let destSqliteURLs = [(documentDirectoryPath! as NSString).appendingPathComponent("DataFinal280417.sqlite"), (documentDirectoryPath! as NSString).appendingPathComponent("DataFinal280417.sqlite-wal"), (documentDirectoryPath! as NSString).appendingPathComponent("DataFinal280417.sqlite-shm")]
-                
-                for index in 0 ..< sourceSqliteURLs.count {
-                    try FileManager().copyItem(atPath: sourceSqliteURLs[index], toPath: destSqliteURLs[index])                }
-                
-            } catch _ {
-            }
-        }
-    }
-    
+
     func getDocumentsDirectory() -> URL {
         //Vypíše cestu do dokumentu
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
-        print("Tohle je cesta: \(documentsDirectory)")
+        print("Tohle je cesta dle funkce ve VC:  \(documentsDirectory)")
         return documentsDirectory
     }
     

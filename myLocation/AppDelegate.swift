@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        //print("Cesta k dokumentum: \(paths[0])")
+        //print("Cesta k dokumentum dle funkce v delegatu: \(paths[0])")
         
         return true
     }

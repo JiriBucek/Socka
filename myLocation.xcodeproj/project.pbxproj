@@ -20,8 +20,6 @@
 		897BFE4E1EBA0D9C009C59F0 /* Data_pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */; };
 		89B61E841EA907460032F3AC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B61E831EA907460032F3AC /* CoreDataStack.swift */; };
 		89CCCE341EC30E610071BF75 /* DataFinal280417.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 89CCCE311EC30E610071BF75 /* DataFinal280417.sqlite */; };
-		89CCCE351EC30E610071BF75 /* DataFinal280417.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 89CCCE321EC30E610071BF75 /* DataFinal280417.sqlite-shm */; };
-		89CCCE361EC30E610071BF75 /* DataFinal280417.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 89CCCE331EC30E610071BF75 /* DataFinal280417.sqlite-wal */; };
 		89F298C61EA28B9900AC1968 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F298C51EA28B9900AC1968 /* CSV.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,8 +84,6 @@
 		897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data_pool.swift; path = ../Data_pool.swift; sourceTree = "<group>"; };
 		89B61E831EA907460032F3AC /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		89CCCE311EC30E610071BF75 /* DataFinal280417.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataFinal280417.sqlite; sourceTree = "<group>"; };
-		89CCCE321EC30E610071BF75 /* DataFinal280417.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DataFinal280417.sqlite-shm"; sourceTree = "<group>"; };
-		89CCCE331EC30E610071BF75 /* DataFinal280417.sqlite-wal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "DataFinal280417.sqlite-wal"; sourceTree = "<group>"; };
 		89F298C51EA28B9900AC1968 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,8 +143,6 @@
 				893B14711EA125FA002E8F72 /* ViewController.swift */,
 				891DC1481EB358980098A983 /* DataFinal280417.xcdatamodeld */,
 				89CCCE311EC30E610071BF75 /* DataFinal280417.sqlite */,
-				89CCCE321EC30E610071BF75 /* DataFinal280417.sqlite-shm */,
-				89CCCE331EC30E610071BF75 /* DataFinal280417.sqlite-wal */,
 				89F298C51EA28B9900AC1968 /* CSV.swift */,
 				89B61E831EA907460032F3AC /* CoreDataStack.swift */,
 				8948320B1EB9C9A30013E01A /* mhd_final_data_utf8.csv */,
@@ -309,8 +303,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				893B147A1EA125FA002E8F72 /* LaunchScreen.storyboard in Resources */,
-				89CCCE351EC30E610071BF75 /* DataFinal280417.sqlite-shm in Resources */,
-				89CCCE361EC30E610071BF75 /* DataFinal280417.sqlite-wal in Resources */,
 				8948320C1EB9C9A30013E01A /* mhd_final_data_utf8.csv in Resources */,
 				893B14771EA125FA002E8F72 /* Assets.xcassets in Resources */,
 				89CCCE341EC30E610071BF75 /* DataFinal280417.sqlite in Resources */,

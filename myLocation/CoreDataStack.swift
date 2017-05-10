@@ -5,6 +5,7 @@ import UIKit
 
 class CoreDataStack {
     
+    //puvodni persistentContainer bez kodu tykajiciho se kopirovani databaze sql
     /*lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "DataFinal280417")
         
@@ -18,26 +19,29 @@ class CoreDataStack {
     }()*/
     
     lazy var persistentContainer: NSPersistentContainer = {
+        //vytvoří container, který má pod sebou více vrstev core dat
         
         let container = NSPersistentContainer(name: "DataFinal280417")
-        
         let seededData: String = "DataFinal280417"
         var persistentStoreDescriptions: NSPersistentStoreDescription
         
         let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
         let storeUrl = URL(fileURLWithPath: documentDirectoryPath!).appendingPathComponent("DataFinal280417")
-        
-        //let storeUrl = self.applicationDocumentsDirectory.appendingPathComponent("app_name.sqlite")
+        //URL odkazujici na umisteni souboru sql s ulozenymi predpripravenymi daty
         
         if !FileManager.default.fileExists(atPath: (storeUrl.path)) {
-            let seededDataUrl = Bundle.main.url(forResource: seededData, withExtension: "sqlite")
-            try! FileManager.default.copyItem(at: seededDataUrl!, to: storeUrl)
+            //existuje uz na tom umisteni soubor DataFinal280417.sqlite?. Kdyz ne, tak:
             
+            let seededDataUrl = Bundle.main.url(forResource: seededData, withExtension: "sqlite")
+            //najde soubor sql v bundlu appky
+            
+            try! FileManager.default.copyItem(at: seededDataUrl!, to: storeUrl)
+            //zkopiruje tento soubor do slozky dokumentu do founu
         }
         
-        print(storeUrl)
+        //print(storeUrl)
         
-        
+        //logne se na persistaent store = sql file
         container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: storeUrl)]
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error {
@@ -52,6 +56,7 @@ class CoreDataStack {
     }()
     
     func saveContext() {
+        //funkce k ulozeni zmen
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
