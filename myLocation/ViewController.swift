@@ -72,17 +72,41 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         nearestZastavkaLabel.text = nearestMetro()
         let metro_data = get_metro_times()
+        if (metro_data?.count)! > 0 {
+            
+            if ((metro_data?[0][2]) != nil){
+                konecna1.text = String(describing: metro_data?[0][2] as! String)
+            }
         
-        konecna1.text = String(describing: metro_data[0][2])
-        konecna2.text = String(describing: metro_data[3][2])
-        cas11.text = formatTime(time: metro_data[0][1] as! Int)
-        cas21.text = formatTime(time: metro_data[3][1] as! Int)
+            if ((metro_data?[3][2]) != nil){
+                konecna2.text = String(describing: metro_data?[3][2] as! String)
+            }
         
-        cas12.text = formatTime(time: metro_data[1][1] as! Int)
-        cas22.text = formatTime(time: metro_data[4][1] as! Int)
+            if ((metro_data?[0][1]) != nil){
+                cas11.text = formatTime(time: metro_data?[0][1] as! Int)
+            }
         
-        cas13.text = formatTime(time: metro_data[2][1] as! Int)
-        cas23.text = formatTime(time: metro_data[5][1] as! Int)
+            if ((metro_data?[3][1]) != nil){
+                cas21.text = formatTime(time: metro_data?[3][1] as! Int)
+            }
+        
+            if ((metro_data?[1][1]) != nil){
+                cas12.text = formatTime(time: metro_data?[1][1] as! Int)
+            }
+        
+            if ((metro_data?[4][1]) != nil){
+                cas22.text = formatTime(time: metro_data?[4][1] as! Int)
+            }
+        
+            if ((metro_data?[2][1]) != nil){
+                cas13.text = formatTime(time: metro_data?[2][1] as! Int)
+            }
+        
+            if ((metro_data?[5][1]) != nil){
+                cas23.text = formatTime(time: metro_data?[5][1] as! Int)
+            }
+        }
+        
     }
     
     func nearestMetro() -> String{
@@ -232,7 +256,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         return final!
     }
     
-    func get_metro_times() -> [[Any]]{
+    func get_metro_times() -> [[Any]]!{
         //vrátí array s dvěma konecnyma a sesti casama
         let nearest_station = nearestMetro()
         //název zastávky metra
