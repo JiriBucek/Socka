@@ -74,35 +74,35 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         let metro_data = get_metro_times()
         if (metro_data?.count)! > 0 {
             
-            if ((metro_data?[0][2]) != nil){
+            if (metro_data?.indices.contains(0))!{
                 konecna1.text = String(describing: metro_data?[0][2] as! String)
             }
         
-            if ((metro_data?[3][2]) != nil){
+            if (metro_data?.indices.contains(3))!{
                 konecna2.text = String(describing: metro_data?[3][2] as! String)
             }
         
-            if ((metro_data?[0][1]) != nil){
+            if (metro_data?.indices.contains(0))!{
                 cas11.text = formatTime(time: metro_data?[0][1] as! Int)
             }
         
-            if ((metro_data?[3][1]) != nil){
+            if (metro_data?.indices.contains(3))!{
                 cas21.text = formatTime(time: metro_data?[3][1] as! Int)
             }
         
-            if ((metro_data?[1][1]) != nil){
+           if (metro_data?.indices.contains(1))!{
                 cas12.text = formatTime(time: metro_data?[1][1] as! Int)
             }
         
-            if ((metro_data?[4][1]) != nil){
+            if (metro_data?.indices.contains(4))!{
                 cas22.text = formatTime(time: metro_data?[4][1] as! Int)
             }
         
-            if ((metro_data?[2][1]) != nil){
+            if (metro_data?.indices.contains(2))!{
                 cas13.text = formatTime(time: metro_data?[2][1] as! Int)
             }
         
-            if ((metro_data?[5][1]) != nil){
+           if (metro_data?.indices.contains(5))!{
                 cas23.text = formatTime(time: metro_data?[5][1] as! Int)
             }
         }
@@ -316,6 +316,40 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         let documentsDirectory = paths[0]
         print("Tohle je cesta dle funkce ve VC:  \(documentsDirectory)")
         return documentsDirectory
+    }
+    
+    func getDayOfWeek() -> Int{
+    //vrátí den v týdnu jako Int od 1 do 7. Musím od toho odečíst jedničku, protože začínají nedělí jako jedna
+        let date = Date()
+        let calendar = Calendar.current
+        var day = calendar.component(.weekday, from: date) - 1
+        if day == 0{
+            day = 7
+        }
+        return day
+    }
+    
+    func getServiceId(day: Int) -> [Int]{
+    //vrátí service IDs pro daný den 
+        var service_ids = [Int]()
+        
+        switch day {
+        case 1: 
+            service_ids = [1,6,7]
+        case 2:
+            service_ids = [1,2,7,8]
+        case 3:
+            service_ids = [1,2,7,8]
+        case 4:
+            service_ids = [1,2,7,8]
+        case 6:
+            service_ids = [2,3,10]
+        case 7:
+            service_ids = [4,5]
+        default:
+            print("Nepodařilo se získat service IDs")
+        }
+    return service_ids
     }
     
     
