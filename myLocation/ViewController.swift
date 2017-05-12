@@ -71,7 +71,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         //self.map.showsUserLocation = true //vykreslí modrou tečku na místo, kde jsem
         
         nearestZastavkaLabel.text = nearestMetro()
-        let metro_data = get_metro_times()
+        let metro_data = get_metro_times(dayOfWeek: getDayOfWeek())
         if (metro_data?.count)! > 0 {
             
             if (metro_data?.indices.contains(0))!{
@@ -162,8 +162,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
         // FETCHING RESULTS FROM CORE DATA - Swift Guy
          
-    func fetchData(station_id: String, service_id: Int, results_count: Int, current_time: Int) -> [[Any]]{
-        
+    func fetchData(station_id: String, service_id: [Int], results_count: Int, current_time: Int) -> [[Any]]{
+    //fetchne data z databíze
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FullEntity")
         //vytvoření kominikacniho objectu a zadání názvu entity
         
@@ -183,17 +183,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         let station_id = station_id
         let schedule_id = service_id
         
+        var subPredicates = [NSPredicate]()
+        //array s predikátama
+        for i in 0..<schedule_id.count{
+            let oneSubpredicate = NSPredicate(format: "stop_id == %@ AND service_id == %i AND arrival_time > %i", station_id, schedule_id[i], current_time)
+                // pro string pouziju %@, integer %i, key %K
+            subPredicates.append(oneSubpredicate)
+        }//vytvoří tolik subpredicates, kolik je pro daný den potřeba service ids
         
-        let myPredicate = NSPredicate(format: "stop_id == %@ AND service_id == %i AND arrival_time > %i", station_id, schedule_id, current_time)
-        // pro string pouziju %@, integer %i, key %K
+        let myPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: subPredicates)
+        //souhrnný predicate typu OR
         
         let mySortDescriptor = NSSortDescriptor(key: "arrival_time", ascending: true)
         //seradi fetch data podle casu smerem nahoru
+        
         request.predicate = myPredicate
         request.sortDescriptors = [mySortDescriptor]
         //přiřadí predicate a sortdescriptor do requestu, descriptoru muze byt vice, proto je to array
         
         do{
+        //fetchne si data podle predicatu a sortdescriptoru a přiřadí je do arraye, který obsahuje jen tolik záznamů, kolik jsem zadal v parametru results_count
             let results = try context.fetch(request)
             
             if results.count > 0{
@@ -256,7 +265,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         return final!
     }
     
-    func get_metro_times() -> [[Any]]!{
+    func get_metro_times(dayOfWeek: Int) -> [[Any]]!{
         //vrátí array s dvěma konecnyma a sesti casama
         let nearest_station = nearestMetro()
         //název zastávky metra
@@ -264,9 +273,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         //dva ID kody pro danou zastavku a dvě konecne
         let time = current_time()
         //soucasny cas jako INT
-    
-        let times1 = fetchData(station_id: station_ids[0], service_id: 1, results_count: 3, current_time: time)
-        let times2 = fetchData(station_id: station_ids[1], service_id: 1, results_count: 3, current_time: time)
+        
+        let service_ids = getServiceId(day: dayOfWeek)
+        
+        let times1 = fetchData(station_id: station_ids[0], service_id: service_ids, results_count: 3, current_time: time)
+        let times2 = fetchData(station_id: station_ids[1], service_id: service_ids, results_count: 3, current_time: time)
         
         let times = times1 + times2
         
@@ -301,7 +312,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         do {
             let csv = try CSV(contentsOfURL: path!)
             rows = csv.rows
-            print(rows)
             //print(rows)
         }catch{
         print(error)
@@ -334,7 +344,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         var service_ids = [Int]()
         
         switch day {
-        case 1: 
+        case 1:
             service_ids = [1,6,7]
         case 2:
             service_ids = [1,2,7,8]
@@ -342,6 +352,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             service_ids = [1,2,7,8]
         case 4:
             service_ids = [1,2,7,8]
+        case 5:
+            service_ids = [1,2,8,9]
         case 6:
             service_ids = [2,3,10]
         case 7:
