@@ -69,7 +69,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         //map.setRegion(region, animated: true) //vykreslí mapu
         
         //self.map.showsUserLocation = true //vykreslí modrou tečku na místo, kde jsem
-        
+        displayAllValues()
+    }
+    
+    func displayAllValues(){
+    //přiřadí hodnoty jednotlivým labelum
         nearestZastavkaLabel.text = nearestMetro()
         let metro_data = get_metro_times(dayOfWeek: getDayOfWeek())
         if (metro_data?.count)! > 0 {
@@ -77,36 +81,35 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             if (metro_data?.indices.contains(0))!{
                 konecna1.text = String(describing: metro_data?[0][2] as! String)
             }
-        
+            
             if (metro_data?.indices.contains(3))!{
                 konecna2.text = String(describing: metro_data?[3][2] as! String)
             }
-        
+            
             if (metro_data?.indices.contains(0))!{
                 cas11.text = formatTime(time: metro_data?[0][1] as! Int)
             }
-        
+            
             if (metro_data?.indices.contains(3))!{
                 cas21.text = formatTime(time: metro_data?[3][1] as! Int)
             }
-        
-           if (metro_data?.indices.contains(1))!{
+            
+            if (metro_data?.indices.contains(1))!{
                 cas12.text = formatTime(time: metro_data?[1][1] as! Int)
             }
-        
+            
             if (metro_data?.indices.contains(4))!{
                 cas22.text = formatTime(time: metro_data?[4][1] as! Int)
             }
-        
+            
             if (metro_data?.indices.contains(2))!{
                 cas13.text = formatTime(time: metro_data?[2][1] as! Int)
             }
-        
-           if (metro_data?.indices.contains(5))!{
+            
+            if (metro_data?.indices.contains(5))!{
                 cas23.text = formatTime(time: metro_data?[5][1] as! Int)
             }
         }
-        
     }
     
     func nearestMetro() -> String{
@@ -262,7 +265,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             seconds = "0" + seconds
         }
         let final = Int("\(hour)\(minutes)\(seconds)")
-        return final!
+        //return final!
+        return 235000
     }
     
     func get_metro_times(dayOfWeek: Int) -> [[Any]]!{
@@ -273,11 +277,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         //dva ID kody pro danou zastavku a dvě konecne
         let time = current_time()
         //soucasny cas jako INT
+        let today = dayOfWeek
         
-        let service_ids = getServiceId(day: dayOfWeek)
+        var service_ids = getServiceId(day: today)
         
-        let times1 = fetchData(station_id: station_ids[0], service_id: service_ids, results_count: 3, current_time: time)
-        let times2 = fetchData(station_id: station_ids[1], service_id: service_ids, results_count: 3, current_time: time)
+        var times1 = fetchData(station_id: station_ids[0], service_id: service_ids, results_count: 3, current_time: time)
+        var times2 = fetchData(station_id: station_ids[1], service_id: service_ids, results_count: 3, current_time: time)
+        
+        //přiřazení časů po půlnoci
+        if times1.count < 3{
+            let resultCount = times1.count
+            
+            var tomorrow = today + 1
+            if tomorrow == 8{
+                tomorrow = 1
+            }
+            service_ids = getServiceId(day: tomorrow)
+            let times11 = fetchData(station_id: station_ids[0], service_id: service_ids, results_count: 3 - resultCount, current_time: 0)
+            times1 = times1 + times11
+        }
+        
+        if times2.count < 3{
+            let resultCount = times2.count
+            
+            var tomorrow = today + 1
+            if tomorrow == 8{
+                tomorrow = 1
+            }
+            service_ids = getServiceId(day: tomorrow)
+            let times21 = fetchData(station_id: station_ids[0], service_id: service_ids, results_count: 3 - resultCount, current_time: 0)
+            times2 = times2 + times21
+        }
+        
         
         let times = times1 + times2
         
@@ -296,11 +327,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     //vezme cas v INT a preklopi ho do stringu s dvojteckama
         var time = String(describing: time)
         
+        while time.characters.count < 5{
+            let index = time.startIndex
+            time.insert("0", at: index)
+        }
+        
         let index = time.index(time.endIndex, offsetBy: -2)
         time.insert(":", at: index)
         let index2 = time.index(time.endIndex, offsetBy: -5)
         time.insert(":", at: index2)
-        
+
         return time
 
     }
@@ -345,17 +381,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         switch day {
         case 1:
-            service_ids = [1,6,7]
+            service_ids = [1,6]
         case 2:
-            service_ids = [1,2,7,8]
+            service_ids = [1,2]
         case 3:
-            service_ids = [1,2,7,8]
+            service_ids = [1,2]
         case 4:
-            service_ids = [1,2,7,8]
+            service_ids = [1,2]
         case 5:
-            service_ids = [1,2,8,9]
+            service_ids = [1,2]
         case 6:
-            service_ids = [2,3,10]
+            service_ids = [2,3]
         case 7:
             service_ids = [4,5]
         default:
