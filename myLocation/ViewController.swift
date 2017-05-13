@@ -19,12 +19,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var konecna2: UILabel!
     @IBOutlet weak var cas11: UILabel!
     @IBOutlet weak var cas12: UILabel!
-    @IBOutlet weak var cas13: UILabel!
     @IBOutlet weak var cas21: UILabel!
     @IBOutlet weak var cas22: UILabel!
-    @IBOutlet weak var cas23: UILabel!
-    @IBOutlet weak var kontrolniMetroLabl: UILabel!
-    
+    @IBOutlet weak var countdown1: UILabel!
     
     
     var currentLocation = CLLocation()
@@ -35,14 +32,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     override func viewDidLoad() {
     //co se stane po loadnutí
+        
         super.viewDidLoad()
+        
+        var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
+        //každou sekundu updatuje funkci displayAllValues
+
+
         
         ////   LOKACE   ////
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest //nejlepší možná přesnost
         manager.requestWhenInUseAuthorization() //hodí request na užívání
         manager.startUpdatingLocation() //updatuje polohu
-        
+
         
         /// Funkce pro plneni DB///
         //parseCSV(fileName: "mhd_final_data_utf8") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
@@ -69,13 +72,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         //map.setRegion(region, animated: true) //vykreslí mapu
         
         //self.map.showsUserLocation = true //vykreslí modrou tečku na místo, kde jsem
-        displayAllValues()
+        
+        //displayAllValues()
     }
     
     func displayAllValues(){
     //přiřadí hodnoty jednotlivým labelum
         nearestZastavkaLabel.text = nearestMetro()
         let metro_data = get_metro_times(dayOfWeek: getDayOfWeek())
+        
         if (metro_data?.count)! > 0 {
             
             if (metro_data?.indices.contains(0))!{
@@ -87,7 +92,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             }
             
             if (metro_data?.indices.contains(0))!{
-                cas11.text = formatTime(time: metro_data?[0][1] as! Int)
+                let time1 = (metro_data?[0][1] as! Int)
+                cas11.text = formatTime(time: time1)
+                countdown1.text = timeDifference(to: time1)
             }
             
             if (metro_data?.indices.contains(3))!{
@@ -102,13 +109,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 cas22.text = formatTime(time: metro_data?[4][1] as! Int)
             }
             
-            if (metro_data?.indices.contains(2))!{
-                cas13.text = formatTime(time: metro_data?[2][1] as! Int)
-            }
-            
-            if (metro_data?.indices.contains(5))!{
-                cas23.text = formatTime(time: metro_data?[5][1] as! Int)
-            }
         }
     }
     
@@ -265,8 +265,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             seconds = "0" + seconds
         }
         let final = Int("\(hour)\(minutes)\(seconds)")
-        //return final!
-        return 235000
+        return final!
     }
     
     func get_metro_times(dayOfWeek: Int) -> [[Any]]!{
@@ -400,6 +399,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     return service_ids
     }
     
+    func timeDifference(to targetTime: Int) -> String{
+    //spočitá rozdíl mezi časem metra a současným časem
+        let time = targetTime - current_time()
+        let minuty = time / 100
+        var sekundy = time % 100
+        let intervalKOdectu = targetTime % 100
+        if sekundy > (59 - intervalKOdectu){
+            sekundy = sekundy - 40
+        }
+        
+        
+        let formattedTime = "\(current_time())     \(minuty):\(sekundy)"
+        return formattedTime
+    }
     
     }
 
