@@ -22,6 +22,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var cas21: UILabel!
     @IBOutlet weak var cas22: UILabel!
     @IBOutlet weak var countdown1: UILabel!
+    @IBOutlet weak var countdown2: UILabel!
     
     
     var currentLocation = CLLocation()
@@ -94,11 +95,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             if (metro_data?.indices.contains(0))!{
                 let time1 = (metro_data?[0][1] as! Int)
                 cas11.text = formatTime(time: time1)
-                countdown1.text = timeDifference(to: time1)
+                countdown1.text = timeDifference(arrivalTime: time1)
             }
             
             if (metro_data?.indices.contains(3))!{
-                cas21.text = formatTime(time: metro_data?[3][1] as! Int)
+                let time2 = (metro_data?[3][1] as! Int)
+                cas21.text = formatTime(time: time2)
+                countdown2.text = timeDifference(arrivalTime: time2)
             }
             
             if (metro_data?.indices.contains(1))!{
@@ -399,7 +402,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     return service_ids
     }
     
-    func timeDifference(to targetTime: Int) -> String{
+    func myTimeDifference(to targetTime: Int) -> String{
     //spočitá rozdíl mezi časem metra a současným časem
         let time = targetTime - current_time()
         let minuty = time / 100
@@ -414,5 +417,43 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         return formattedTime
     }
     
+    func timeDifference(arrivalTime: Int) -> String {
+    //odpočítávadlo času ... vezme si Int ve formátu 153421 a dopočítává, kolik zbývá minut a sekund do toho času
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm:ss"
+        
+        let time = formatTime(time: arrivalTime)
+        var stopTime = timeFormatter.date(from: time)
+    
+        let date = Date()
+        let calendar = Calendar.current
+    
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        let hour = calendar.component(.hour, from: stopTime!)
+        let minute = calendar.component(.minute, from: stopTime!)
+        let second = calendar.component(.second, from: stopTime!)
+    
+        stopTime = calendar.date(bySetting: .year, value: year, of: stopTime!)
+        stopTime = calendar.date(bySetting: .month, value: month, of: stopTime!)
+        stopTime = calendar.date(bySetting: .day, value: day, of: stopTime!)
+        stopTime = calendar.date(bySetting: .hour, value: hour, of: stopTime!)
+        stopTime = calendar.date(bySetting: .minute, value: minute, of: stopTime!)
+        stopTime = calendar.date(bySetting: .second, value: second, of: stopTime!)
+    
+        let timeDifference = calendar.dateComponents([.minute, .second], from: date, to: stopTime!)
+        
+        let minuty = String(describing: timeDifference.minute!)
+        var sekundy = String(describing: timeDifference.second!)
+        
+        if sekundy.characters.count == 1{
+            let index = sekundy.startIndex
+            sekundy.insert("0", at: index)
+        }
+        
+        
+        return "\(minuty):\(sekundy)"
+    }
     }
 
