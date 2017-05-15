@@ -1,25 +1,5 @@
 import UIKit
 
-let timeFormatter = DateFormatter()
-timeFormatter.dateFormat = "HH:mm:ss"
-let time = "13:00:00"
-var stopTime = timeFormatter.date(from: time)
+let tuple = [(key: "Karlovo náměstí", value: 0.0), (key: "Národní třída", value: 634.67733605868455), (key: "I. P. Pavlova", value: 916.12905576356241), (key: "Anděl", value: 1028.1822473968414), (key: "Můstek - B", value: 1080.943841560714), (key: "Muzeum - A", value: 1086.154397078948), (key: "Můstek - A", value: 1119.6388489300432), (key: "Muzeum - C", value: 1130.0797767359677), (key: "Hlavní nádraží", value: 1483.014728587739), (key: "Staroměstská", value: 1518.2973147868536), (key: "Náměstí Míru", value: 1540.2464491377696), (key: "Smíchovské nádraží", value: 1568.9943930831412), (key: "Vyšehrad", value: 1634.7746540725529), (key: "Náměstí Republiky", value: 1855.950091801247), (key: "Malostranská", value: 2024.920944880244), (key: "Florenc - C", value: 2245.2842365123247), (key: "Florenc - B", value: 2288.0259103059393), (key: "Pražského povstání", value: 2341.9925544731182), (key: "Jiřího z Poděbrad", value: 2344.7678518047346), (key: "Hradčanská", value: 2761.6495782637849), (key: "Radlická", value: 2807.2470077291769), (key: "Pankrác", value: 3131.8762540321313), (key: "Vltavská", value: 3159.6512892410547), (key: "Křižíkova", value: 3164.4514950166263), (key: "Flora", value: 3194.9258477796247), (key: "Dejvická", value: 3374.4220177092557), (key: "Nádraží Holešovice", value: 4090.6129819487401), (key: "Budějovická", value: 4105.2415422226914), (key: "Želivského", value: 4123.2072257682121), (key: "Invalidovna", value: 4127.5642711447363), (key: "Bořislavka", value: 4753.6184764987702), (key: "Kačerov", value: 4770.5539497218306), (key: "Strašnická", value: 5192.8198994119793), (key: "Palmovka", value: 5274.1392401856592), (key: "Nové Butovice", value: 5344.5306203756754), (key: "Petřiny", value: 5357.0235858697333), (key: "Nádraží Veleslavín", value: 5459.6679638499563), (key: "Nemocnice Motol", value: 5517.3829547239384), (key: "Roztyly", value: 5964.9630148939941), (key: "Hůrka", value: 5976.4225580188777), (key: "Kobylisy", value: 6048.4902370023137), (key: "Českomoravská", value: 6392.9393350542632), (key: "Skalka", value: 6451.7024612807409), (key: "Ládví", value: 6833.9387944812197), (key: "Depo Hostivař", value: 6996.5454117938589), (key: "Lužiny", value: 7044.9367505715554), (key: "Chodov", value: 7159.9200285342449), (key: "Vysočanská", value: 7193.5589977163272), (key: "Luka", value: 7594.216752079099), (key: "Prosek", value: 7612.6588694246175), (key: "Střížkov", value: 7708.5206313150757), (key: "Kolbenova", value: 8146.8752461419326), (key: "Opatov", value: 8418.3433305343005), (key: "Stodůlky", value: 8493.4025773609064), (key: "Letňany", value: 9076.1081202649711), (key: "Hloubětín", value: 9249.7842124994986), (key: "Háje", value: 9276.3885094760444), (key: "Zličín", value: 9374.661875716245), (key: "Rajská zahrada", value: 10883.785151171101), (key: "Černý Most", value: 12066.656296519959)]
 
-let date = Date()
-let calendar = Calendar.current
-
-let year = calendar.component(.year, from: date)
-let month = calendar.component(.month, from: date)
-let day = calendar.component(.day, from: date)
-let hour = calendar.component(.hour, from: stopTime!)
-let minute = calendar.component(.minute, from: stopTime!)
-let second = calendar.component(.second, from: stopTime!)
-
-stopTime = calendar.date(bySetting: .year, value: year, of: stopTime!)
-stopTime = calendar.date(bySetting: .month, value: month, of: stopTime!)
-stopTime = calendar.date(bySetting: .day, value: day, of: stopTime!)
-stopTime = calendar.date(bySetting: .hour, value: hour, of: stopTime!)
-stopTime = calendar.date(bySetting: .minute, value: minute, of: stopTime!)
-stopTime = calendar.date(bySetting: .second, value: second, of: stopTime!)
-
-let timeDifference = calendar.dateComponents([.minute, .second], from: stopTime!, to: date)
+print(tuple[1].key)

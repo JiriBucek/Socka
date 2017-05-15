@@ -115,20 +115,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }
     }
     
-    func nearestMetro() -> String{
+    func nearestMetro() -> [String]{
     //vrátí název zastávky nejbližšího metra
-        var lowest_distance: Double = 999999999999.99999
+        var lowest_distance: Double = 999999999999.9999
         var nearestZastavka = String()
+        var zastavkyArray = [String:Double]()
+
         
         for (jmeno_zastavky, lokace_zastavky) in zastavky{
             let poloha_zastavky = CLLocation(latitude: lokace_zastavky[0], longitude: lokace_zastavky[1])
             let temporary_distance = currentLocation.distance(from: poloha_zastavky)
+            
+            zastavkyArray[jmeno_zastavky] = temporary_distance
+            
             if temporary_distance < lowest_distance{
                 lowest_distance = temporary_distance
                 nearestZastavka = jmeno_zastavky
             }
         }
-    return nearestZastavka
+    let zastavkyTuple = zastavkyArray.sorted(by: { (a, b) in (a.value ) < (b.value ) })
+    
+    var triNejblizsiZastavky = [String]()
+    
+        for i in 0...2{
+    triNejblizsiZastavky.append(zastavkyTuple[i].key)
+        }
+        
+    print(triNejblizsiZastavky)
+
+    
+    return triNejblizsiZastavky
     }
 
 
@@ -421,6 +437,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     //odpočítávadlo času ... vezme si Int ve formátu 153421 a dopočítává, kolik zbývá minut a sekund do toho času
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "HH:mm:ss"
+        //velke hacka znamenaji, ze misto 4pm budu mit 16:00
         
         let time = formatTime(time: arrivalTime)
         var stopTime = timeFormatter.date(from: time)
@@ -443,11 +460,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         stopTime = calendar.date(bySetting: .second, value: second, of: stopTime!)
     
         let timeDifference = calendar.dateComponents([.minute, .second], from: date, to: stopTime!)
-        
+        //spočítá časový rozdíl mezi from a to
         let minuty = String(describing: timeDifference.minute!)
         var sekundy = String(describing: timeDifference.second!)
         
         if sekundy.characters.count == 1{
+        //přihodí nulu, pokud sekundy mají jen jeden znak
             let index = sekundy.startIndex
             sekundy.insert("0", at: index)
         }
