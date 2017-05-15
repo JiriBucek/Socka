@@ -11,6 +11,8 @@ import MapKit
 import CoreLocation
 import CoreData
 
+var nearestZastavkaIndex: Int = 0
+
 class ViewController: UIViewController, CLLocationManagerDelegate{
     
     //MAP
@@ -23,6 +25,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var cas22: UILabel!
     @IBOutlet weak var countdown1: UILabel!
     @IBOutlet weak var countdown2: UILabel!
+    @IBAction func metro1button(_ sender: Any) {
+        nearestZastavkaIndex = 1
+    }
+    @IBAction func metro2button(_ sender: Any) {
+        nearestZastavkaIndex = 2
+    }
+    @IBAction func refreshButton(_ sender: Any) {
+        nearestZastavkaIndex = 0
+    }
+    @IBOutlet weak var metro1outlet: UIButton!
+    @IBOutlet weak var metro2outlet: UIButton!
+    
+    
     
     
     var currentLocation = CLLocation()
@@ -79,8 +94,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     func displayAllValues(){
     //přiřadí hodnoty jednotlivým labelum
-        nearestZastavkaLabel.text = nearestMetro()
-        let metro_data = get_metro_times(dayOfWeek: getDayOfWeek())
+        nearestZastavkaLabel.text = nearestMetro()[nearestZastavkaIndex]
+        let metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
         
         if (metro_data?.count)! > 0 {
             
@@ -112,39 +127,33 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 cas22.text = formatTime(time: metro_data?[4][1] as! Int)
             }
             
+            metro1outlet.setTitle(nearestMetro()[1], for: .normal)
+            metro2outlet.setTitle(nearestMetro()[2], for: .normal)
+            
         }
     }
     
     func nearestMetro() -> [String]{
-    //vrátí název zastávky nejbližšího metra
-        var lowest_distance: Double = 999999999999.9999
-        var nearestZastavka = String()
+    //vrátí název tří nejbližších zastávek metra
         var zastavkyArray = [String:Double]()
 
-        
         for (jmeno_zastavky, lokace_zastavky) in zastavky{
             let poloha_zastavky = CLLocation(latitude: lokace_zastavky[0], longitude: lokace_zastavky[1])
             let temporary_distance = currentLocation.distance(from: poloha_zastavky)
             
             zastavkyArray[jmeno_zastavky] = temporary_distance
             
-            if temporary_distance < lowest_distance{
-                lowest_distance = temporary_distance
-                nearestZastavka = jmeno_zastavky
-            }
         }
-    let zastavkyTuple = zastavkyArray.sorted(by: { (a, b) in (a.value ) < (b.value ) })
+        let zastavkyTuple = zastavkyArray.sorted(by: { (a, b) in (a.value ) < (b.value ) })
     
-    var triNejblizsiZastavky = [String]()
+        var triNejblizsiZastavky = [String]()
     
         for i in 0...2{
-    triNejblizsiZastavky.append(zastavkyTuple[i].key)
+            triNejblizsiZastavky.append(zastavkyTuple[i].key)
         }
         
-    print(triNejblizsiZastavky)
-
     
-    return triNejblizsiZastavky
+        return triNejblizsiZastavky
     }
 
 
@@ -287,9 +296,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         return final!
     }
     
-    func get_metro_times(dayOfWeek: Int) -> [[Any]]!{
+    func get_metro_times(dayOfWeek: Int, metroStanice: Int) -> [[Any]]!{
+        //parametr metroStanice odkazuje na to, která zastávka se má načítat > 0 je nejbližší, 1 je druhá nejbližší, 2 je třetí nejbližší
         //vrátí array s dvěma konecnyma a sesti casama
-        let nearest_station = nearestMetro()
+        let nearest_station = nearestMetro()[metroStanice]
         //název zastávky metra
         let station_ids = stations_ids[nearest_station]!
         //dva ID kody pro danou zastavku a dvě konecne

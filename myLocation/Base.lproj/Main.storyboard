@@ -91,6 +91,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1l-3c-xqu">
+                                <rect key="frame" x="24" y="434" width="139" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Metro1"/>
+                                <connections>
+                                    <action selector="metro1button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vTt-E2-5yY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsx-W9-cJQ">
+                                <rect key="frame" x="176" y="434" width="131" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Metro2"/>
+                                <connections>
+                                    <action selector="metro2button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oga-7T-Cm3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7g-Aa-j73">
+                                <rect key="frame" x="126" y="124" width="65" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="refresh"/>
+                                <connections>
+                                    <action selector="refreshButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YDL-gb-t4Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -103,6 +127,8 @@
                         <outlet property="countdown2" destination="CfC-dl-azd" id="2ll-zy-WBm"/>
                         <outlet property="konecna1" destination="hHi-eZ-Mb1" id="MuA-Ev-tHG"/>
                         <outlet property="konecna2" destination="jqY-Rs-xGc" id="nw4-PM-awr"/>
+                        <outlet property="metro1outlet" destination="y1l-3c-xqu" id="9LC-qy-atd"/>
+                        <outlet property="metro2outlet" destination="Hsx-W9-cJQ" id="nSQ-oR-ghv"/>
                         <outlet property="nearestZastavkaLabel" destination="z4R-o5-JSK" id="eJc-6n-ihP"/>
                     </connections>
                 </viewController>
