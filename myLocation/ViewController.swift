@@ -11,7 +11,34 @@ import MapKit
 import CoreLocation
 import CoreData
 
+extension UIColor{
+// rozšíření klasické UIColot, abych mohl zadávat rovnou HEX kod barvy
+    func HexToColor(hexString: String, alpha:CGFloat? = 1.0) -> UIColor {
+        // Convert hex string to an integer
+        let hexint = Int(self.intFromHexString(hexStr: hexString))
+        let red = CGFloat((hexint & 0xff0000) >> 16) / 255.0
+        let green = CGFloat((hexint & 0xff00) >> 8) / 255.0
+        let blue = CGFloat((hexint & 0xff) >> 0) / 255.0
+        let alpha = alpha!
+        // Create color object, specifying alpha as well
+        let color = UIColor(red: red, green: green, blue: blue, alpha: alpha)
+        return color
+    }
+    
+    func intFromHexString(hexStr: String) -> UInt32 {
+        var hexInt: UInt32 = 0
+        // Create scanner
+        let scanner: Scanner = Scanner(string: hexStr)
+        // Tell scanner to skip the # character
+        scanner.charactersToBeSkipped = NSCharacterSet(charactersIn: "#") as CharacterSet
+        // Scan hex value
+        scanner.scanHexInt32(&hexInt)
+        return hexInt
+    }
+}
+
 var nearestZastavkaIndex: Int = 0
+// var pro prehazovani zastavky, pro kterou maji byt zobrazeny casove udaje
 
 class ViewController: UIViewController, CLLocationManagerDelegate{
     
@@ -36,6 +63,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     @IBOutlet weak var metro1outlet: UIButton!
     @IBOutlet weak var metro2outlet: UIButton!
+    @IBOutlet weak var refreshBtnOutlet: UIButton!
     
     
     
@@ -94,17 +122,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     func displayAllValues(){
     //přiřadí hodnoty jednotlivým labelum
-        nearestZastavkaLabel.text = nearestMetro()[nearestZastavkaIndex]
+        let hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
+        //zastavka, pro kterou se zrovna zobrazuji casy
+        
+        nearestZastavkaLabel.text = hlavniZastavka
+        nearestZastavkaLabel.textColor = getColor(jmenoZastavky: hlavniZastavka)
         let metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
+        
         
         if (metro_data?.count)! > 0 {
             
             if (metro_data?.indices.contains(0))!{
                 konecna1.text = String(describing: metro_data?[0][2] as! String)
+                konecna1.textColor = getColor(jmenoZastavky: hlavniZastavka)
             }
             
             if (metro_data?.indices.contains(3))!{
                 konecna2.text = String(describing: metro_data?[3][2] as! String)
+                konecna2.textColor = getColor(jmenoZastavky: hlavniZastavka)
             }
             
             if (metro_data?.indices.contains(0))!{
@@ -130,6 +165,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             metro1outlet.setTitle(nearestMetro()[1], for: .normal)
             metro2outlet.setTitle(nearestMetro()[2], for: .normal)
             
+            metro2outlet.setTitleColor(getColor(jmenoZastavky: hlavniZastavka), for: .normal)
+            metro1outlet.setTitleColor(getColor(jmenoZastavky: hlavniZastavka), for: .normal)
+            refreshBtnOutlet.setTitleColor(getColor(jmenoZastavky: hlavniZastavka), for: .normal)
+
         }
     }
     
@@ -483,5 +522,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         return "\(minuty):\(sekundy)"
     }
+    
+    func getColor(jmenoZastavky: String) -> UIColor{
+        let cervena = UIColor().HexToColor(hexString: "F30503", alpha: 1.0)
+        let zluta = UIColor().HexToColor(hexString: "FFA100", alpha: 1.0)
+        let zelena = UIColor().HexToColor(hexString: "008900", alpha: 1.0)
+        var barva = UIColor()
+
+        
+        if let metroLinka = stations_ids[jmenoZastavky]?[2]{
+            switch metroLinka {
+            case "A":
+                barva = zelena
+            case "B":
+                barva = zluta
+            case "C":
+                barva = cervena
+            default:
+                print("Nepodařilo se určit barvu")
+            }
+        }
+        return barva
+    }
+    
+    
     }
 
