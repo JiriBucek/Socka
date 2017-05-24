@@ -162,18 +162,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 cas22.text = formatTime(time: metro_data?[4][1] as! Int)
             }
             
-            metro1outlet.setTitle(nearestMetro()[1], for: .normal)
-            metro2outlet.setTitle(nearestMetro()[2], for: .normal)
+            let nahradniZastavka1 = nearestMetro()[1]
+            let nahradniZastavka2 = nearestMetro()[2]
             
-            metro2outlet.setTitleColor(getColor(jmenoZastavky: hlavniZastavka), for: .normal)
-            metro1outlet.setTitleColor(getColor(jmenoZastavky: hlavniZastavka), for: .normal)
+            metro1outlet.setTitle(nahradniZastavka1, for: .normal)
+            metro2outlet.setTitle(nahradniZastavka2, for: .normal)
+            refreshBtnOutlet.setTitle(hlavniZastavka, for: .normal)
+            
+            
+            metro2outlet.setTitleColor(getColor(jmenoZastavky: nahradniZastavka2), for: .normal)
+            metro1outlet.setTitleColor(getColor(jmenoZastavky: nahradniZastavka1), for: .normal)
             refreshBtnOutlet.setTitleColor(getColor(jmenoZastavky: hlavniZastavka), for: .normal)
 
         }
     }
     
     func nearestMetro() -> [String]{
-    //vrátí název tří nejbližších zastávek metra
+    //vrátí název tří nejbližších zastávek metra a vzdálenosti od usera
         var zastavkyArray = [String:Double]()
 
         for (jmeno_zastavky, lokace_zastavky) in zastavky{
@@ -188,7 +193,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         var triNejblizsiZastavky = [String]()
     
         for i in 0...2{
+        //první tři pozice jsou jména zastávek
             triNejblizsiZastavky.append(zastavkyTuple[i].key)
+        }
+        
+        for i in 0...2{
+            //další tři pozice jsou vzdálenosti
+            triNejblizsiZastavky.append(String(format: "%.f",zastavkyTuple[i].value))
         }
         
     
