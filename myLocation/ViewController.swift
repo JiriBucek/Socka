@@ -123,6 +123,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     func displayAllValues(){
     //přiřadí hodnoty jednotlivým labelum
         let hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
+        let nahradniZastavka1 = nearestMetro()[1]
+        let nahradniZastavka2 = nearestMetro()[2]
         //zastavka, pro kterou se zrovna zobrazuji casy
         
         nearestZastavkaLabel.text = hlavniZastavka
@@ -162,12 +164,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 cas22.text = formatTime(time: metro_data?[4][1] as! Int)
             }
             
-            let nahradniZastavka1 = nearestMetro()[1]
-            let nahradniZastavka2 = nearestMetro()[2]
+
+            let nahradniZastavka1Label = "2. \(nearestMetro()[1]) - \(nearestMetro()[4])m"
+            let nahradniZastavka2Label = "3. \(nearestMetro()[2]) - \(nearestMetro()[5])m"
+            let hlavniZastavkaLabel = "1. \(nearestMetro()[0]) - \(nearestMetro()[3])m"
+
             
-            metro1outlet.setTitle(nahradniZastavka1, for: .normal)
-            metro2outlet.setTitle(nahradniZastavka2, for: .normal)
-            refreshBtnOutlet.setTitle(hlavniZastavka, for: .normal)
+            metro1outlet.setTitle(nahradniZastavka1Label, for: .normal)
+            metro2outlet.setTitle(nahradniZastavka2Label, for: .normal)
+            refreshBtnOutlet.setTitle(hlavniZastavkaLabel, for: .normal)
             
             
             metro2outlet.setTitleColor(getColor(jmenoZastavky: nahradniZastavka2), for: .normal)
