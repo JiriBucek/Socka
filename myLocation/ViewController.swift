@@ -66,8 +66,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var refreshBtnOutlet: UIButton!
     
     
-    
-    
     var currentLocation = CLLocation()
     //globalni promenna, kam si vlozim soucasnou pozici ve fci location manager
     
