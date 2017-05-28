@@ -38,7 +38,7 @@ extension UIColor{
 }
 
 var nearestZastavkaIndex: Int = 0
-// var pro prehazovani zastavky, pro kterou maji byt zobrazeny casove udaje
+// globalni var pro prehazovani zastavky, pro kterou maji byt zobrazeny casove udaje
 
 class ViewController: UIViewController, CLLocationManagerDelegate{
     
@@ -72,6 +72,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     let manager = CLLocationManager()
     //první proměnná nutná pro práci s polohovým službama
     
+    
     override func viewDidLoad() {
     //co se stane po loadnutí
         
@@ -95,6 +96,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         //deleteDB(entityName: "FullEntity")
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+    //vybarví status bar nahoře na bílo
+        return .lightContent
+    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     //vrátí aktuální polohu a vykreslí ji do mapy, všechny vykomentarovany veci se vztahuji k mape, kterou jsem odstranil
@@ -162,7 +167,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 cas22.text = formatTime(time: metro_data?[4][1] as! Int)
             }
             
-
+            let hlavniZastavkaNemenna = nearestMetro()[0]
+            //jen kvůli tomu, ze var hlavniZastavka se meni a nelze ji pouzit na urceni labelu a barvy
             let nahradniZastavka1Label = "2. \(nearestMetro()[1]) - \(nearestMetro()[4])m"
             let nahradniZastavka2Label = "3. \(nearestMetro()[2]) - \(nearestMetro()[5])m"
             let hlavniZastavkaLabel = "1. \(nearestMetro()[0]) - \(nearestMetro()[3])m"
@@ -175,7 +181,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             
             metro2outlet.setTitleColor(getColor(jmenoZastavky: nahradniZastavka2), for: .normal)
             metro1outlet.setTitleColor(getColor(jmenoZastavky: nahradniZastavka1), for: .normal)
-            refreshBtnOutlet.setTitleColor(getColor(jmenoZastavky: hlavniZastavka), for: .normal)
+            refreshBtnOutlet.setTitleColor(getColor(jmenoZastavky: hlavniZastavkaNemenna), for: .normal)
 
         }
     }
