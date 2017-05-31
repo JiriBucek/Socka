@@ -39,13 +39,15 @@ extension UIColor{
 
 var nearestZastavkaIndex: Int = 0
 // globalni var pro prehazovani zastavky, pro kterou maji byt zobrazeny casove udaje
+var hlavniStanice: String = ""
+var konecnaStanice: String = ""
+//globalni vars urcene pro predavani info vedlejsimu VC, ktery zobrazuje stanice pro projeti
 
 class ViewController: UIViewController, CLLocationManagerDelegate{
     
     //MAP
     @IBOutlet weak var nearestZastavkaLabel: UILabel!
-    @IBOutlet weak var konecna1: UILabel!
-    @IBOutlet weak var konecna2: UILabel!
+
     @IBOutlet weak var cas11: UILabel!
     @IBOutlet weak var cas12: UILabel!
     @IBOutlet weak var cas21: UILabel!
@@ -65,6 +67,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var metro2outlet: UIButton!
     @IBOutlet weak var refreshBtnOutlet: UIButton!
     
+    @IBAction func konena1Btn(_ sender: Any) {
+        konecnaStanice = konecna1outlet.title(for: .normal)!
+        //priradi po stisknutí tlacitka s konecnou stanici jeji hodnotu do globalni var
+    }
+
+    @IBAction func konecna2Btn(_ sender: Any) {
+        konecnaStanice = konecna2outlet.title(for: .normal)!
+    }
+    
+    @IBOutlet weak var konecna1outlet: UIButton!
+    
+    @IBOutlet weak var konecna2outlet: UIButton!
     
     var currentLocation = CLLocation()
     //globalni promenna, kam si vlozim soucasnou pozici ve fci location manager
@@ -126,6 +140,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     func displayAllValues(){
     //přiřadí hodnoty jednotlivým labelum
         let hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
+        hlavniStanice = hlavniZastavka
+        //priradi hodnotu do globalni var
         let nahradniZastavka1 = nearestMetro()[1]
         let nahradniZastavka2 = nearestMetro()[2]
         //zastavka, pro kterou se zrovna zobrazuji casy
@@ -138,13 +154,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         if (metro_data?.count)! > 0 {
             
             if (metro_data?.indices.contains(0))!{
-                konecna1.text = String(describing: metro_data?[0][2] as! String)
-                konecna1.textColor = getColor(jmenoZastavky: hlavniZastavka)
+                konecna1outlet.setTitle(String(describing: metro_data?[0][2] as! String), for: .normal)
+                konecna1outlet.setTitleColor(getColor(jmenoZastavky: hlavniZastavka), for: .normal)
             }
             
             if (metro_data?.indices.contains(3))!{
-                konecna2.text = String(describing: metro_data?[3][2] as! String)
-                konecna2.textColor = getColor(jmenoZastavky: hlavniZastavka)
+                konecna2outlet.setTitle(String(describing: metro_data?[3][2] as! String), for: .normal)
+                konecna2outlet.setTitleColor(getColor(jmenoZastavky: hlavniZastavka), for: .normal)
             }
             
             if (metro_data?.indices.contains(0))!{
@@ -177,7 +193,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             metro1outlet.setTitle(nahradniZastavka1Label, for: .normal)
             metro2outlet.setTitle(nahradniZastavka2Label, for: .normal)
             refreshBtnOutlet.setTitle(hlavniZastavkaLabel, for: .normal)
-            
             
             metro2outlet.setTitleColor(getColor(jmenoZastavky: nahradniZastavka2), for: .normal)
             metro1outlet.setTitleColor(getColor(jmenoZastavky: nahradniZastavka1), for: .normal)
