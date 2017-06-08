@@ -46,6 +46,8 @@ var konecnaStanice: String = ""
 
 var metro_data = [[Any]]()
 
+var casZmacknutiAlternativniZastavky = Date()
+
 class ViewController: UIViewController, CLLocationManagerDelegate{
     
     //MAP
@@ -59,9 +61,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var countdown2: UILabel!
     @IBAction func metro1button(_ sender: Any) {
         nearestZastavkaIndex = 1
+        casZmacknutiAlternativniZastavky = Date()
     }
     @IBAction func metro2button(_ sender: Any) {
         nearestZastavkaIndex = 2
+        casZmacknutiAlternativniZastavky = Date()
     }
     @IBAction func refreshButton(_ sender: Any) {
         nearestZastavkaIndex = 0
@@ -143,11 +147,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     func displayAllValues(){
     //přiřadí hodnoty jednotlivým labelum
         let hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
+        let aktualniCas = Date()
+        
+        
+        if rozdilCasuTypuDate(datum1: aktualniCas, datum2: casZmacknutiAlternativniZastavky) > 300{
+            nearestZastavkaIndex = 0
+            //pokud obehne pět minut od zmacknuti alternativni stanice, appka se vyresetuje
+        }
         
         if hlavniStanice != hlavniZastavka{
             metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
             hlavniStanice = hlavniZastavka
-
+        //takhle si nesaha do DB kazdou vterinu, ale jen, pokud se zmenila zastavka
         }
         
         hlavniStanice = hlavniZastavka
@@ -525,6 +536,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         let formattedTime = "\(current_time())     \(minuty):\(sekundy)"
         return formattedTime
+    }
+    
+    func rozdilCasuTypuDate(datum1: Date, datum2: Date) -> Int{
+        //vrati rozdil dvou objektu typu Date v sekundach
+        
+        let datum1prevedeno = datum1.timeIntervalSince1970
+        let datum2prevedeno = datum2.timeIntervalSince1970
+        
+        return Int(datum1prevedeno - datum2prevedeno)
+        
     }
     
     func timeDifference(arrivalTime: Int) -> String {
