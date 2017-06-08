@@ -140,6 +140,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     func displayAllValues(){
     //přiřadí hodnoty jednotlivým labelum
         let hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
+        
+        hlavniStanice = hlavniZastavka
+        let metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
+        
         hlavniStanice = hlavniZastavka
         //priradi hodnotu do globalni var
         let nahradniZastavka1 = nearestMetro()[1]
@@ -148,7 +152,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         nearestZastavkaLabel.text = hlavniZastavka
         nearestZastavkaLabel.textColor = getColor(jmenoZastavky: hlavniZastavka)
-        let metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
+        
         
         
         if (metro_data?.count)! > 0 {

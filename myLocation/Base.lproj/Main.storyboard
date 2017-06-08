@@ -136,6 +136,7 @@
                                 </state>
                                 <connections>
                                     <action selector="konena1Btn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iJS-Ob-nsC"/>
+                                    <segue destination="hWL-Ng-vjH" kind="presentation" id="LjY-dl-zqb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ybl-WT-hrb">
@@ -147,6 +148,7 @@
                                 </state>
                                 <connections>
                                     <action selector="konecna2Btn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hV9-69-gx6"/>
+                                    <segue destination="hWL-Ng-vjH" kind="presentation" identifier="konecna2segue" id="V9r-Rv-HSV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -172,8 +174,38 @@
             </objects>
             <point key="canvasLocation" x="136.875" y="130.98591549295776"/>
         </scene>
+        <!--Stanice View Controller-->
+        <scene sceneID="D0k-XG-fHf">
+            <objects>
+                <viewController id="hWL-Ng-vjH" customClass="StaniceViewController" customModule="myLocation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dvo-PJ-5VB"/>
+                        <viewControllerLayoutGuide type="bottom" id="EnA-1N-aaJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BUZ-GI-nY4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Miha je prima kluk. Mám ho rád. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjK-p2-Bvd">
+                                <rect key="frame" x="36" y="207" width="248" height="135"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oah-mT-V39" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="896.25" y="130.98591549295776"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Circle_-_black_simple_fullpage.svg" width="512" height="512"/>
+        <image name="Circle_-_black_simple_fullpage.svg" width="1024" height="1024"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="V9r-Rv-HSV"/>
+    </inferredMetricsTieBreakers>
 </document>
