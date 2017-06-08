@@ -39,9 +39,12 @@ extension UIColor{
 
 var nearestZastavkaIndex: Int = 0
 // globalni var pro prehazovani zastavky, pro kterou maji byt zobrazeny casove udaje
+
 var hlavniStanice: String = ""
 var konecnaStanice: String = ""
 //globalni vars urcene pro predavani info vedlejsimu VC, ktery zobrazuje stanice pro projeti
+
+var metro_data = [[Any]]()
 
 class ViewController: UIViewController, CLLocationManagerDelegate{
     
@@ -141,8 +144,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     //přiřadí hodnoty jednotlivým labelum
         let hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
         
-        hlavniStanice = hlavniZastavka
-        let metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
+        if hlavniStanice != hlavniZastavka{
+            metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
+            hlavniStanice = hlavniZastavka
+
+        }
         
         hlavniStanice = hlavniZastavka
         //priradi hodnotu do globalni var
@@ -155,36 +161,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         
         
-        if (metro_data?.count)! > 0 {
+        if (metro_data.count) > 0 {
             
-            if (metro_data?.indices.contains(0))!{
-                konecna1outlet.setTitle(String(describing: metro_data?[0][2] as! String), for: .normal)
+            if (metro_data.indices.contains(0)){
+                konecna1outlet.setTitle(String(describing: metro_data[0][2] as! String), for: .normal)
                 konecna1outlet.setTitleColor(getColor(jmenoZastavky: hlavniZastavka), for: .normal)
             }
             
-            if (metro_data?.indices.contains(3))!{
-                konecna2outlet.setTitle(String(describing: metro_data?[3][2] as! String), for: .normal)
+            if (metro_data.indices.contains(3)){
+                konecna2outlet.setTitle(String(describing: metro_data[3][2] as! String), for: .normal)
                 konecna2outlet.setTitleColor(getColor(jmenoZastavky: hlavniZastavka), for: .normal)
             }
             
-            if (metro_data?.indices.contains(0))!{
-                let time1 = (metro_data?[0][1] as! Int)
+            if (metro_data.indices.contains(0)){
+                let time1 = (metro_data[0][1] as! Int)
                 cas11.text = formatTime(time: time1)
                 countdown1.text = timeDifference(arrivalTime: time1)
             }
             
-            if (metro_data?.indices.contains(3))!{
-                let time2 = (metro_data?[3][1] as! Int)
+            if (metro_data.indices.contains(3)){
+                let time2 = (metro_data[3][1] as! Int)
                 cas21.text = formatTime(time: time2)
                 countdown2.text = timeDifference(arrivalTime: time2)
             }
             
-            if (metro_data?.indices.contains(1))!{
-                cas12.text = formatTime(time: metro_data?[1][1] as! Int)
+            if (metro_data.indices.contains(1)){
+                cas12.text = formatTime(time: metro_data[1][1] as! Int)
             }
             
-            if (metro_data?.indices.contains(4))!{
-                cas22.text = formatTime(time: metro_data?[4][1] as! Int)
+            if (metro_data.indices.contains(4)){
+                cas22.text = formatTime(time: metro_data[4][1] as! Int)
             }
             
             let hlavniZastavkaNemenna = nearestMetro()[0]
