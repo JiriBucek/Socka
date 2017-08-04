@@ -47,10 +47,10 @@ var konecnaStanice: String = ""
 var metro_data = [[Any]]()
 
 var casZmacknutiAlternativniZastavky = Date()
+//po nejake dobe chci prehodit appku zpet na puvodni zastavku
 
 class ViewController: UIViewController, CLLocationManagerDelegate{
     
-    //MAP
     @IBOutlet weak var nearestZastavkaLabel: UILabel!
 
     @IBOutlet weak var cas11: UILabel!
