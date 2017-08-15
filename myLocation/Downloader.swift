@@ -1,20 +1,51 @@
 import UIKit
 public class Downloader {
     /*
-    logne se na URL a zjisti aktualni verzi
-    porovna ji s verzi v rtf souboru
-    kdyz neni stejna, tak stahne novy sqlite soubor a nahradi jim stary
+    1. logne se na URL a zjisti aktualni verzi
+    2. porovna ji s verzi v rtf souboru
+    3. kdyz neni stejna, tak stahne novy sqlite soubor a nahradi jim stary
     */
     
+    func zjistiVerziDtbzNaWebu() -> Int{
+        //logne se na muj web a zjistí aktuální verzi dtbz na webu
+        var verzeNaWebu = 0
+
+        if let url = URL(string: "http://socka.funsite.cz/verze.htm") {
+            //defaultní hodnota verze
+            do {
+                verzeNaWebu = try Int(String(contentsOf: url))!
+                print(verzeNaWebu)
+            } catch {
+                // nedokážu se lognout na web a zjistit verzi
+            }
+        } else {
+            print("Nedokážu se lognout na web a zjistit verzi")
+            // the URL was bad!
+        }
+        return verzeNaWebu
+    }
     
-    public init() {
-        // Create destination URL
+    
+    func zjistiVerziDtbzVTelefonu() -> Int{
+        let slozkaDokumentu = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
+        let cestaKDokumentuSVerzi = URL(fileURLWithPath: slozkaDokumentu!).appendingPathComponent("verze.rtf")
+        
+        
+
+    }
+    
+    
+    
+    func downloadAndSave(){
+        //stáhne soubor z URL a uloží ho do složky dokumenty
+        
         let documentsUrl:URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
         let destinationFileUrl = documentsUrl.appendingPathComponent("mujfile3.rtf")
-        print(documentsUrl)
+        //jmeno souboru, ktery se ulozi
         
         //Create URL to the source file you want to download
         let fileURL = URL(string: "https://fq1bua.dm2301.livefilestore.com/y4mI3_oYs96nEf86cqz1YBa8YSM9hA36Cu-B2_sJKqc9aDxaf77qD45suE_x8q8fJLfhGhvrYWqayvEL3UXqpzrs7AywHyJQOD5CIStLL0OWb0Jkz2NxRzwrMB51qtKE50egqACGdmC6VfbP0E0zymJDkkZ4EaM-hcgkJxMNzqCNlayLb4U_6QWTGMeoJAR76Sv/soubor.rtf?download&psid=1")
+        //URL, ze ktereho stahuji
         
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig)
@@ -35,7 +66,7 @@ public class Downloader {
                 }
                 
             } else {
-                print("Error took place while downloading a file. Error description: %@", error?.localizedDescription);
+                print("Error took place while downloading a file. Error description: %@", error?.localizedDescription ?? "Error downloading");
             }
         }
         task.resume()
