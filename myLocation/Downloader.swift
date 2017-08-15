@@ -1,18 +1,20 @@
 import UIKit
-
-class ViewController2: UIViewController  {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+public class Downloader {
+    /*
+    logne se na URL a zjisti aktualni verzi
+    porovna ji s verzi v rtf souboru
+    kdyz neni stejna, tak stahne novy sqlite soubor a nahradi jim stary
+    */
+    
+    
+    public init() {
         // Create destination URL
         let documentsUrl:URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
-        let destinationFileUrl = documentsUrl.appendingPathComponent("downloadedFile.jpg")
+        let destinationFileUrl = documentsUrl.appendingPathComponent("mujfile3.rtf")
+        print(documentsUrl)
         
         //Create URL to the source file you want to download
-        let fileURL = URL(string: "https://s3.amazonaws.com/learn-swift/IMG_0001.JPG")
+        let fileURL = URL(string: "https://fq1bua.dm2301.livefilestore.com/y4mI3_oYs96nEf86cqz1YBa8YSM9hA36Cu-B2_sJKqc9aDxaf77qD45suE_x8q8fJLfhGhvrYWqayvEL3UXqpzrs7AywHyJQOD5CIStLL0OWb0Jkz2NxRzwrMB51qtKE50egqACGdmC6VfbP0E0zymJDkkZ4EaM-hcgkJxMNzqCNlayLb4U_6QWTGMeoJAR76Sv/soubor.rtf?download&psid=1")
         
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig)
@@ -33,7 +35,7 @@ class ViewController2: UIViewController  {
                 }
                 
             } else {
-                print("Error took place while downloading a file. Error description: %@", error?.localizedDescription ?? "defaukt value");
+                print("Error took place while downloading a file. Error description: %@", error?.localizedDescription);
             }
         }
         task.resume()

@@ -27,6 +27,8 @@ class CoreDataStack {
         
         let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
         let storeUrl = URL(fileURLWithPath: documentDirectoryPath!).appendingPathComponent("DataFinal280417")
+        
+        let rtfSouborVerzeUrl = URL(fileURLWithPath: documentDirectoryPath!).appendingPathComponent("verze.rtf")
         //URL odkazujici na umisteni souboru sql s ulozenymi predpripravenymi daty
         
         if !FileManager.default.fileExists(atPath: (storeUrl.path)) {
@@ -38,6 +40,20 @@ class CoreDataStack {
             try! FileManager.default.copyItem(at: seededDataUrl!, to: storeUrl)
             //zkopiruje tento soubor do slozky dokumentu do founu
         }
+        
+        // Kopíruje rtf file s verzí z bundlu do dokumentu
+        if !FileManager.default.fileExists(atPath: (rtfSouborVerzeUrl.path)) {
+            //existuje uz na tom umisteni soubor verze.rtf. Kdyz ne, tak:
+            
+            let seededDataUrl = Bundle.main.url(forResource: "verze", withExtension: "rtf")
+            //najde soubor sql v bundlu appky
+            
+            try! FileManager.default.copyItem(at: seededDataUrl!, to: rtfSouborVerzeUrl)
+            //zkopiruje tento soubor do slozky dokumentu do founu
+        }
+        
+        
+        
         
         //print(storeUrl)
         
