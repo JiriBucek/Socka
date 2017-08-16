@@ -99,6 +99,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         super.viewDidLoad()
         
+        let downloadTest = Downloader()
+        //downloadTest.zapisVerziDtbzDoUserDefaults(novaVerze: 3767)
+        print(downloadTest.zjistiVerziDtbzVTelefonuUserDefaults())
+        
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
         //každou sekundu updatuje funkci displayAllValues
 

@@ -27,12 +27,30 @@ public class Downloader {
     
     
     func zjistiVerziDtbzVTelefonu() -> Int{
+        //dokáže přečíst rtf file
+        
         let slozkaDokumentu = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
         let cestaKDokumentuSVerzi = URL(fileURLWithPath: slozkaDokumentu!).appendingPathComponent("verze.rtf")
+        do{
+        let attributedStringWithRtf:NSAttributedString = try NSAttributedString(url: cestaKDokumentuSVerzi, options: [NSDocumentTypeDocumentAttribute:NSRTFTextDocumentType], documentAttributes: nil)
+            
+            print(attributedStringWithRtf)
+        }catch{
+            
+        }
         
-        
-
+        return 1
     }
+    
+    func zjistiVerziDtbzVTelefonuUserDefaults() -> Int{
+        let verze = UserDefaults.standard.integer(forKey: "verzeDtbz")
+        return verze
+    }
+    
+    func zapisVerziDtbzDoUserDefaults(novaVerze: Int){
+        UserDefaults.standard.set(novaVerze, forKey: "verzeDtbz")
+    }
+    
     
     
     
