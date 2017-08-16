@@ -40,7 +40,7 @@ extension UIColor{
 var nearestZastavkaIndex: Int = 0
 // globalni var pro prehazovani zastavky, pro kterou maji byt zobrazeny casove udaje
 
-var hlavniStanice: String = ""
+var aktualneZobrazovanaStanice: String = ""
 var konecnaStanice: String = ""
 //globalni vars urcene pro predavani info vedlejsimu VC, ktery zobrazuje stanice pro projeti
 
@@ -99,9 +99,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         super.viewDidLoad()
         
-        let downloadTest = Downloader()
-        //downloadTest.zapisVerziDtbzDoUserDefaults(novaVerze: 3767)
-        print(downloadTest.zjistiVerziDtbzVTelefonuUserDefaults())
+        //let downloadTest = Downloader()
         
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
         //každou sekundu updatuje funkci displayAllValues
@@ -151,6 +149,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     func displayAllValues(){
     //přiřadí hodnoty jednotlivým labelum
         let hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
+        //aktuálne vybraná stanice
+        
         let aktualniCas = Date()
         
         
@@ -159,13 +159,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             //pokud obehne pět minut od zmacknuti alternativni stanice, appka se vyresetuje
         }
         
-        if hlavniStanice != hlavniZastavka{
+        if aktualneZobrazovanaStanice != hlavniZastavka{
             metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
-            hlavniStanice = hlavniZastavka
+            aktualneZobrazovanaStanice = hlavniZastavka
         //takhle si nesaha do DB kazdou vterinu, ale jen, pokud se zmenila zastavka
         }
         
-        hlavniStanice = hlavniZastavka
+        
+        aktualneZobrazovanaStanice = hlavniZastavka
         //priradi hodnotu do globalni var
         let nahradniZastavka1 = nearestMetro()[1]
         let nahradniZastavka2 = nearestMetro()[2]
@@ -177,6 +178,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         
         if (metro_data.count) > 0 {
+            
             
             if (metro_data.indices.contains(0)){
                 konecna1outlet.setTitle(String(describing: metro_data[0][2] as! String), for: .normal)
@@ -192,12 +194,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 let time1 = (metro_data[0][1] as! Int)
                 cas11.text = formatTime(time: time1)
                 countdown1.text = timeDifference(arrivalTime: time1)
+                
+                if myTimeDifference(to: time1) <= 0{
+                     metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
+                }
+                
             }
             
             if (metro_data.indices.contains(3)){
                 let time2 = (metro_data[3][1] as! Int)
                 cas21.text = formatTime(time: time2)
                 countdown2.text = timeDifference(arrivalTime: time2)
+                
+                if myTimeDifference(to: time2) <= 0{
+                    metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
+                }
             }
             
             if (metro_data.indices.contains(1)){
@@ -527,9 +538,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     return service_ids
     }
     
-    func myTimeDifference(to targetTime: Int) -> String{
+    func myTimeDifference(to targetTime: Int) -> Int{
     //spočitá rozdíl mezi časem metra a současným časem
         let time = targetTime - current_time()
+        /*
         let minuty = time / 100
         var sekundy = time % 100
         let intervalKOdectu = targetTime % 100
@@ -539,7 +551,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         
         let formattedTime = "\(current_time())     \(minuty):\(sekundy)"
-        return formattedTime
+        */
+        return time
     }
     
     func rozdilCasuTypuDate(datum1: Date, datum2: Date) -> Int{

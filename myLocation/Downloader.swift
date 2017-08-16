@@ -26,6 +26,7 @@ public class Downloader {
     }
     
     
+    /* ČTENÍ Z RTF SOUBORU
     func zjistiVerziDtbzVTelefonu() -> Int{
         //dokáže přečíst rtf file
         
@@ -41,6 +42,8 @@ public class Downloader {
         
         return 1
     }
+ 
+    */
     
     func zjistiVerziDtbzVTelefonuUserDefaults() -> Int{
         let verze = UserDefaults.standard.integer(forKey: "verzeDtbz")
@@ -50,7 +53,6 @@ public class Downloader {
     func zapisVerziDtbzDoUserDefaults(novaVerze: Int){
         UserDefaults.standard.set(novaVerze, forKey: "verzeDtbz")
     }
-    
     
     
     

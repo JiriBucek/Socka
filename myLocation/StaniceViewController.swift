@@ -25,7 +25,7 @@ class StaniceViewController: UIViewController {
     func getPrujezdniZastavky(){
         //dostanu seznam zastavek, kteryma budu projizdet
         
-        var indexSoucasneZastavky = Int(seznamStanic.index(of: hlavniStanice)!)
+        var indexSoucasneZastavky = Int(seznamStanic.index(of: aktualneZobrazovanaStanice)!)
         let indexKonecneStanice = Int(seznamStanic.index(of: konecnaStanice)!)
         var seznamPrujezdnichStanic = [String]()
         
