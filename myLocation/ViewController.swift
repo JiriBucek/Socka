@@ -77,6 +77,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBAction func konena1Btn(_ sender: Any) {
         konecnaStanice = konecna1outlet.title(for: .normal)!
         //priradi po stisknutí tlacitka s konecnou stanici jeji hodnotu do globalni var
+        self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func konecna2Btn(_ sender: Any) {
@@ -98,8 +99,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     //co se stane po loadnutí
         
         super.viewDidLoad()
-        
-        //let downloadTest = Downloader()
         
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
         //každou sekundu updatuje funkci displayAllValues

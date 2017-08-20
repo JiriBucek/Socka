@@ -12,7 +12,14 @@ class StaniceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getPrujezdniZastavky()
+        //getPrujezdniZastavky()
+        
+        let downloadTest = Downloader()
+        
+        //downloadTest.downloadAndSave()
+        
+        print ("Verze na netu: \(downloadTest.zjistiVerziDtbzNaWebu()))")
+        print("Verze v telefonu: \(downloadTest.zjistiVerziDtbzVTelefonuUserDefaults())")
 
         // Do any additional setup after loading the view.
     }

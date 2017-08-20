@@ -55,16 +55,15 @@ public class Downloader {
     }
     
     
-    
     func downloadAndSave(){
         //stáhne soubor z URL a uloží ho do složky dokumenty
         
         let documentsUrl:URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
-        let destinationFileUrl = documentsUrl.appendingPathComponent("mujfile3.rtf")
+        let destinationFileUrlbezPripony = documentsUrl.appendingPathComponent("DataFinal280417")
         //jmeno souboru, ktery se ulozi
         
         //Create URL to the source file you want to download
-        let fileURL = URL(string: "https://fq1bua.dm2301.livefilestore.com/y4mI3_oYs96nEf86cqz1YBa8YSM9hA36Cu-B2_sJKqc9aDxaf77qD45suE_x8q8fJLfhGhvrYWqayvEL3UXqpzrs7AywHyJQOD5CIStLL0OWb0Jkz2NxRzwrMB51qtKE50egqACGdmC6VfbP0E0zymJDkkZ4EaM-hcgkJxMNzqCNlayLb4U_6QWTGMeoJAR76Sv/soubor.rtf?download&psid=1")
+        let fileURL = URL(string: "http://socka.funsite.cz/DataFinal280417.sqlite")
         //URL, ze ktereho stahuji
         
         let sessionConfig = URLSessionConfiguration.default
@@ -80,9 +79,10 @@ public class Downloader {
                 }
                 
                 do {
-                    try FileManager.default.copyItem(at: tempLocalUrl, to: destinationFileUrl)
+                    try FileManager.default.removeItem(at: destinationFileUrlbezPripony)
+                    try FileManager.default.copyItem(at: tempLocalUrl, to: destinationFileUrlbezPripony)
                 } catch (let writeError) {
-                    print("Error creating a file \(destinationFileUrl) : \(writeError)")
+                    print("Error creating a file \(destinationFileUrlbezPripony) : \(writeError)")
                 }
                 
             } else {
