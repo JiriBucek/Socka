@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		891DC14A1EB358980098A983 /* DataFinal280417.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 891DC1481EB358980098A983 /* DataFinal280417.xcdatamodeld */; };
+		8939D7201F530DAD00E21CC5 /* zkratka.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8939D71F1F530DAD00E21CC5 /* zkratka.csv */; };
 		893B14701EA125FA002E8F72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B146F1EA125FA002E8F72 /* AppDelegate.swift */; };
 		893B14721EA125FA002E8F72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B14711EA125FA002E8F72 /* ViewController.swift */; };
 		893B14751EA125FA002E8F72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 893B14731EA125FA002E8F72 /* Main.storyboard */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		891DC1491EB358980098A983 /* DataFinal280417.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataFinal280417.xcdatamodel; sourceTree = "<group>"; };
+		8939D71F1F530DAD00E21CC5 /* zkratka.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zkratka.csv; sourceTree = "<group>"; };
 		893B146C1EA125FA002E8F72 /* myLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		893B146F1EA125FA002E8F72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		893B14711EA125FA002E8F72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				893B14731EA125FA002E8F72 /* Main.storyboard */,
 				893B14761EA125FA002E8F72 /* Assets.xcassets */,
 				893B14781EA125FA002E8F72 /* LaunchScreen.storyboard */,
+				8939D71F1F530DAD00E21CC5 /* zkratka.csv */,
 				893B147B1EA125FA002E8F72 /* Info.plist */,
 			);
 			path = myLocation;
@@ -303,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8939D7201F530DAD00E21CC5 /* zkratka.csv in Resources */,
 				893B147A1EA125FA002E8F72 /* LaunchScreen.storyboard in Resources */,
 				89482BCA1F434F6E00737085 /* verze.rtf in Resources */,
 				8948320C1EB9C9A30013E01A /* mhd_final_data_utf8.csv in Resources */,

@@ -113,7 +113,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
 
         
         /// Funkce pro plneni DB///
-        //parseCSV(fileName: "mhd_final_data_utf8") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
+        //parseCSV(fileName: "zkratka") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
         //fillData(csvFileName: "mhd_final_data_utf8", entityName: "FullEntity")
         //deleteDB(entityName: "FullEntity")
     }
