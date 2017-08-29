@@ -16,7 +16,7 @@ class StaniceViewController: UIViewController {
         
         let downloadTest = Downloader()
         
-        //downloadTest.downloadAndSave()
+        downloadTest.downloadAndSave()
         
         print ("Verze na netu: \(downloadTest.zjistiVerziDtbzNaWebu()))")
         print("Verze v telefonu: \(downloadTest.zjistiVerziDtbzVTelefonuUserDefaults())")

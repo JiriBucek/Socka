@@ -63,7 +63,7 @@ public class Downloader {
         //jmeno souboru, ktery se ulozi
         
         //Create URL to the source file you want to download
-        let fileURL = URL(string: "http://socka.funsite.cz/DataFinal280417.sqlite")
+        let fileURL = URL(string: "http://socka.funsite.cz/databaze")
         //URL, ze ktereho stahuji
         
         let sessionConfig = URLSessionConfiguration.default
