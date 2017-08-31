@@ -54,9 +54,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var nearestZastavkaLabel: UILabel!
 
     @IBOutlet weak var cas11: UILabel!
-    @IBOutlet weak var cas12: UILabel!
     @IBOutlet weak var cas21: UILabel!
-    @IBOutlet weak var cas22: UILabel!
     @IBOutlet weak var countdown1: UILabel!
     @IBOutlet weak var countdown2: UILabel!
     @IBAction func metro1button(_ sender: Any) {
@@ -70,9 +68,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBAction func refreshButton(_ sender: Any) {
         nearestZastavkaIndex = 0
     }
-    @IBOutlet weak var metro1outlet: UIButton!
-    @IBOutlet weak var metro2outlet: UIButton!
-    @IBOutlet weak var refreshBtnOutlet: UIButton!
     
     @IBAction func konena1Btn(_ sender: Any) {
         konecnaStanice = konecna1outlet.title(for: .normal)!
@@ -191,6 +186,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             
             if (metro_data.indices.contains(0)){
                 let time1 = (metro_data[0][1] as! Int)
+                print(time1)
                 cas11.text = formatTime(time: time1)
                 countdown1.text = timeDifference(arrivalTime: time1)
                 
@@ -211,11 +207,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             }
             
             if (metro_data.indices.contains(1)){
-                cas12.text = formatTime(time: metro_data[1][1] as! Int)
+                //cas12.text = formatTime(time: metro_data[1][1] as! Int)
             }
             
             if (metro_data.indices.contains(4)){
-                cas22.text = formatTime(time: metro_data[4][1] as! Int)
+                //cas22.text = formatTime(time: metro_data[4][1] as! Int)
             }
             
             let hlavniZastavkaNemenna = nearestMetro()[0]
@@ -223,15 +219,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             let nahradniZastavka1Label = "2. \(nearestMetro()[1]) - \(nearestMetro()[4])m"
             let nahradniZastavka2Label = "3. \(nearestMetro()[2]) - \(nearestMetro()[5])m"
             let hlavniZastavkaLabel = "1. \(nearestMetro()[0]) - \(nearestMetro()[3])m"
-
-            
-            metro1outlet.setTitle(nahradniZastavka1Label, for: .normal)
-            metro2outlet.setTitle(nahradniZastavka2Label, for: .normal)
-            refreshBtnOutlet.setTitle(hlavniZastavkaLabel, for: .normal)
-            
-            metro2outlet.setTitleColor(getColor(jmenoZastavky: nahradniZastavka2), for: .normal)
-            metro1outlet.setTitleColor(getColor(jmenoZastavky: nahradniZastavka1), for: .normal)
-            refreshBtnOutlet.setTitleColor(getColor(jmenoZastavky: hlavniZastavkaNemenna), for: .normal)
 
         }
     }
