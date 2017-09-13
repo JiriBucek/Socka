@@ -186,7 +186,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             
             if (metro_data.indices.contains(0)){
                 let time1 = (metro_data[0][1] as! Int)
-                print(time1)
                 cas11.text = formatTime(time: time1)
                 countdown1.text = timeDifference(arrivalTime: time1)
                 
