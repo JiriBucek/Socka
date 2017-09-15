@@ -27,11 +27,11 @@
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" updatesFrequently="YES"/>
                                 </accessibility>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="48"/>
-                                <color key="textColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="48"/>
+                                <color key="textColor" red="1" green="0.63137254901960782" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="-1" height="2"/>
+                                <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="-1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jc8-lh-7s0">
                                 <rect key="frame" x="7" y="376" width="147" height="66"/>
@@ -39,10 +39,10 @@
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" updatesFrequently="YES"/>
                                 </accessibility>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="48"/>
-                                <color key="textColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="48"/>
+                                <color key="textColor" red="0.95294117647058818" green="0.019607843137254902" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="-2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dejvická" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8At-9t-L5b">
