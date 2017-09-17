@@ -51,37 +51,32 @@ var casZmacknutiAlternativniZastavky = Date()
 
 class ViewController: UIViewController, CLLocationManagerDelegate{
     
-    @IBOutlet weak var nearestZastavkaLabel: UILabel!
-
+    
+    @IBOutlet weak var nearestZastavkaButton: UIButton!
+    @IBAction func nearestZastavkaButtonPressed(_ sender: Any) {
+        //prepinani trech nejblizsich stanic
+        nearestZastavkaIndex += 1
+        if nearestZastavkaIndex == 3{
+            nearestZastavkaIndex = 0
+        }
+        //kvuli restartu po 5 minutach na puvodni zastavku
+        casZmacknutiAlternativniZastavky = Date()
+    }
+    
     @IBOutlet weak var cas11: UILabel!
     @IBOutlet weak var cas21: UILabel!
     @IBOutlet weak var countdown1: UILabel!
     @IBOutlet weak var countdown2: UILabel!
-    @IBAction func metro1button(_ sender: Any) {
-        nearestZastavkaIndex = 1
-        casZmacknutiAlternativniZastavky = Date()
-    }
-    @IBAction func metro2button(_ sender: Any) {
-        nearestZastavkaIndex = 2
-        casZmacknutiAlternativniZastavky = Date()
-    }
-    @IBAction func refreshButton(_ sender: Any) {
-        nearestZastavkaIndex = 0
-    }
-    
-    @IBAction func konena1Btn(_ sender: Any) {
-        konecnaStanice = konecna1outlet.title(for: .normal)!
-        //priradi po stisknutí tlacitka s konecnou stanici jeji hodnotu do globalni var
-        self.dismiss(animated: true, completion: nil)
-    }
+        
 
-    @IBAction func konecna2Btn(_ sender: Any) {
-        konecnaStanice = konecna2outlet.title(for: .normal)!
-    }
+
+
+    @IBOutlet weak var konecna1outlet: UILabel!
+    @IBOutlet weak var konecna2outlet: UILabel!
     
-    @IBOutlet weak var konecna1outlet: UIButton!
+    //@IBOutlet weak var konecna1outlet: UIButton!
     
-    @IBOutlet weak var konecna2outlet: UIButton!
+    //@IBOutlet weak var konecna2outlet: UIButton!
     
     var currentLocation = CLLocation()
     //globalni promenna, kam si vlozim soucasnou pozici ve fci location manager
@@ -92,6 +87,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     override func viewDidLoad() {
     //co se stane po loadnutí
+        
+        //Nastaví font na buttonu hlavní zastávky 
+        nearestZastavkaButton.titleLabel?.minimumScaleFactor = 0.2
+        nearestZastavkaButton.titleLabel?.numberOfLines = 1
+        nearestZastavkaButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
         super.viewDidLoad()
         
@@ -166,8 +166,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         let nahradniZastavka2 = nearestMetro()[2]
         //zastavka, pro kterou se zrovna zobrazuji casy
         
-        nearestZastavkaLabel.text = hlavniZastavka
-        nearestZastavkaLabel.textColor = getColor(jmenoZastavky: hlavniZastavka)
+        //nearestZastavkaLabel.text = hlavniZastavka
+        //nearestZastavkaLabel.textColor = getColor(jmenoZastavky: hlavniZastavka)
         
         
         
