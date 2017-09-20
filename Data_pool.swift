@@ -15,10 +15,10 @@ let zastavky = ["Depo Hostivař": [50.075541, 14.51532], "Skalka": [50.068435, 1
 
 let seznamStanic = ["Nemocnice Motol", "Petřiny", "Nádraží Veleslavín", "Bořislavka", "Dejvická", "Hradčanská","Malostranská" ,"Staroměstská", "Můstek - A", "Muzeum - A", "Náměstí Míru", "Jiřího z Poděbrad", "Flora", "Želivského", "Strašnická", "Skalka", "Depo Hostivař", "Zličín", "Stodůlky", "Luka", "Lužiny", "Hůrka", "Nové Butovice", "Radlická", "Smíchovské nádraží", "Anděl", "Karlovo náměstí", "Národní třída", "Můstek - B", "Náměstí Republiky", "Florenc - B", "Křižíkova", "Invalidovna", "Palmovka", "Českomoravská", "Vysočanská", "Kolbenova", "Hloubětín", "Rajská zahrada", "Černý Most", "Háje", "Opatov", "Chodov", "Roztyly", "Kačerov", "Budějovická", "Pankrác", "Pražského povstání", "Vyšehrad", "I. P. Pavlova", "Muzeum - C", "Hlavní nádraží", "Florenc - C", "Vltavská", "Nádraží Holešovice", "Kobylisy", "Ládví", "Střížkov", "Prosek", "Letňany"]
 
-/*
- let linka_A = ["Nemocnice Motol", "Petřiny", "Nádraží Veleslavín", "Bořislavka", "Dejvická", "Hradčanská","Malostranská" ,"Staroměstská", "Můstek - A", "Muzeum - A", "Náměstí Míru", "Jiřího z Poděbrad", "Flora", "Želivského", "Strašnická", "Skalka", "Depo Hostivař"]
+
+let linka_A = ["Nemocnice Motol", "Petřiny", "Nádraží Veleslavín", "Bořislavka", "Dejvická", "Hradčanská","Malostranská" ,"Staroměstská", "Můstek - A", "Muzeum - A", "Náměstí Míru", "Jiřího z Poděbrad", "Flora", "Želivského", "Strašnická", "Skalka", "Depo Hostivař"]
 
 let linka_B = ["Zličín", "Stodůlky", "Luka", "Lužiny", "Hůrka", "Nové Butovice", "Radlická", "Smíchovské nádraží", "Anděl", "Karlovo náměstí", "Národní třída", "Můstek - B", "Náměstí Republiky", "Florenc - B", "Křižíkova", "Invalidovna", "Palmovka", "Českomoravská", "Vysočanská", "Kolbenova", "Hloubětín", "Rajská zahrada", "Černý Most"]
 
 let linka_C = ["Háje", "Opatov", "Chodov", "Roztyly", "Kačerov", "Budějovická", "Pankrác", "Pražského povstání", "Vyšehrad", "I. P. Pavlova", "Muzeum - C", "Hlavní nádraží", "Florenc - C", "Vltavská", "Nádraží Holešovice", "Kobylisy", "Ládví", "Střížkov", "Prosek", "Letňany"]
-*/
+

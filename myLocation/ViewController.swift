@@ -65,15 +65,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     @IBOutlet weak var cas11: UILabel!
     @IBOutlet weak var cas21: UILabel!
+    
     @IBOutlet weak var countdown1: UILabel!
     @IBOutlet weak var countdown2: UILabel!
-        
-
-
-
+    
     @IBOutlet weak var konecna1outlet: UILabel!
     @IBOutlet weak var konecna2outlet: UILabel!
     
+    @IBOutlet weak var dalsiZastavkaLabel11: UILabel!
+    @IBOutlet weak var dalsiZastavkaLabel12: UILabel!
+    @IBOutlet weak var dalsiZastavkaLabel13: UILabel!
+    
+    @IBOutlet weak var dalsiZastavkaLabel21: UILabel!
+    @IBOutlet weak var dalsiZastavkaLabel22: UILabel!
+    @IBOutlet weak var dalsiZastavkaLabel23: UILabel!
     //@IBOutlet weak var konecna1outlet: UIButton!
     
     //@IBOutlet weak var konecna2outlet: UIButton!
@@ -98,7 +103,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
         //každou sekundu updatuje funkci displayAllValues
 
-
+        
+        //getDalsiTriZastavkyKeKonecne(jmenoZastavky: "Skalka", jmenoKonecneZastavky: "Depo Hostivař")
+        
         
         ////   LOKACE   ////
         manager.delegate = self
@@ -109,7 +116,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         /// Funkce pro plneni DB///
         //parseCSV(fileName: "zkratka") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
-        fillData(csvFileName: "zkratka", entityName: "FullEntity")
+        //fillData(csvFileName: "zkratka", entityName: "FullEntity")
         //deleteDB(entityName: "FullEntity")
     }
     
@@ -124,20 +131,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         currentLocation = location
         
-        
-        //// V PŘÍPADĚ, ŽE CHCI VYKRESLIT MAPU /////
-        
-        //let span: MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01) //určuje, jak moc chci, aby byla mapa zoomnuta
-        //let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude) //moje poloha
-        
-        //let myLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(50.076286, 14.446349)
-        
-        //let region: MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span) //zkombinuje předchozí dvě vars a vytvoří region
-        //map.setRegion(region, animated: true) //vykreslí mapu
-        
-        //self.map.showsUserLocation = true //vykreslí modrou tečku na místo, kde jsem
-        
-        //displayAllValues()
     }
     
     func displayAllValues(){
@@ -175,13 +168,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             
             
             if (metro_data.indices.contains(0)){
-                konecna1outlet.setTitle(String(describing: metro_data[0][2] as! String), for: .normal)
-                konecna1outlet.setTitleColor(getColor(jmenoZastavky: hlavniZastavka), for: .normal)
+                
+                konecna1outlet.text = String(describing: metro_data[0][2])
+                konecna1outlet.textColor = getColor(jmenoZastavky: hlavniZastavka)
             }
             
             if (metro_data.indices.contains(3)){
-                konecna2outlet.setTitle(String(describing: metro_data[3][2] as! String), for: .normal)
-                konecna2outlet.setTitleColor(getColor(jmenoZastavky: hlavniZastavka), for: .normal)
+                konecna2outlet.text = String(describing: metro_data[3][2])
+                konecna2outlet.textColor = getColor(jmenoZastavky: hlavniZastavka)
             }
             
             if (metro_data.indices.contains(0)){
@@ -205,20 +199,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 }
             }
             
-            if (metro_data.indices.contains(1)){
-                //cas12.text = formatTime(time: metro_data[1][1] as! Int)
-            }
             
-            if (metro_data.indices.contains(4)){
-                //cas22.text = formatTime(time: metro_data[4][1] as! Int)
-            }
-            
-            let hlavniZastavkaNemenna = nearestMetro()[0]
+            //let hlavniZastavkaNemenna = nearestMetro()[0]
             //jen kvůli tomu, ze var hlavniZastavka se meni a nelze ji pouzit na urceni labelu a barvy
-            let nahradniZastavka1Label = "2. \(nearestMetro()[1]) - \(nearestMetro()[4])m"
-            let nahradniZastavka2Label = "3. \(nearestMetro()[2]) - \(nearestMetro()[5])m"
-            let hlavniZastavkaLabel = "1. \(nearestMetro()[0]) - \(nearestMetro()[3])m"
-
         }
     }
     
@@ -526,17 +509,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     func myTimeDifference(to targetTime: Int) -> Int{
     //spočitá rozdíl mezi časem metra a současným časem
         let time = targetTime - current_time()
-        /*
-        let minuty = time / 100
-        var sekundy = time % 100
-        let intervalKOdectu = targetTime % 100
-        if sekundy > (59 - intervalKOdectu){
-            sekundy = sekundy - 40
-        }
-        
-        
-        let formattedTime = "\(current_time())     \(minuty):\(sekundy)"
-        */
+
         return time
     }
     
@@ -592,6 +565,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     func getColor(jmenoZastavky: String) -> UIColor{
+    //returne barvu linky dané stanice metra
         let cervena = UIColor().HexToColor(hexString: "F30503", alpha: 1.0)
         let zluta = UIColor().HexToColor(hexString: "FFA100", alpha: 1.0)
         let zelena = UIColor().HexToColor(hexString: "008900", alpha: 1.0)
@@ -613,6 +587,65 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         return barva
     }
     
+    func getLinkaMetraZastavky(jmenoZastavky: String) -> String{
+    //returne linku metra
+        let linkaMetra = stations_ids[jmenoZastavky]?[2]
+        return linkaMetra!
+    }
+    
+    
+    func getDalsiTriZastavkyKeKonecne(jmenoZastavky: String, jmenoKonecneZastavky: String) -> [String]{
+    //dostanu array s dalsima trema zastavkama ve smeru ke konecne
+        let linkaMetra = getLinkaMetraZastavky(jmenoZastavky: jmenoZastavky)
+        var arrayVsechZastavekLinky = [String]()
+        var arrayTriZastavek = [String]()
+
+        
+        switch linkaMetra{
+            case "A":
+            arrayVsechZastavekLinky = linka_A
+            
+            case "B":
+            arrayVsechZastavekLinky = linka_B
+            
+            case "C":
+            arrayVsechZastavekLinky = linka_C
+            
+            default:
+            print("Nepodařilo se načíst array stanic metra")
+        }
+        
+        let indexZastavky = Int(arrayVsechZastavekLinky.index(of: jmenoZastavky)!)
+        let indexKonecne = Int(arrayVsechZastavekLinky.index(of: jmenoKonecneZastavky)!)
+        
+        var i: Int
+        
+        
+        if indexZastavky > indexKonecne{
+            i = -1
+        }else{
+            i = 1
+        }
+        
+        var pocetZastavekDoKonecne = abs(indexZastavky - indexKonecne) - 1
+        print(pocetZastavekDoKonecne)
+        if pocetZastavekDoKonecne > 3{
+            pocetZastavekDoKonecne = 3
+        }
+        
+        if pocetZastavekDoKonecne > 0{
+        var x = i
+        for _ in 1...pocetZastavekDoKonecne{
+            arrayTriZastavek.append(arrayVsechZastavekLinky[indexZastavky + x])
+            x += i
+            }}
+        
+        while arrayTriZastavek.count < 3{
+            arrayTriZastavek.append("...")
+            }
+        print(arrayTriZastavek)
+        return arrayTriZastavek
+    }
     
     }
 

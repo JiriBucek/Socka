@@ -51,7 +51,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boleslavka" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="z3y-yT-dE9">
-                                <rect key="frame" x="20" y="227" width="112.5" height="53.5"/>
+                                <rect key="frame" x="16" y="227" width="112.5" height="53.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -72,22 +72,22 @@
                                 <rect key="frame" x="161" y="194.5" width="12" height="12"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="wXu-wm-DvN">
-                                <rect key="frame" x="161" y="141" width="12" height="12"/>
+                                <rect key="frame" x="161" y="141.5" width="12" height="12"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nádraží Veleslavín" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Xp-Un-7Tw">
-                                <rect key="frame" x="20" y="174" width="112.5" height="53"/>
+                                <rect key="frame" x="16" y="174" width="112.5" height="53"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Petřiny" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KbY-oR-4j1">
-                                <rect key="frame" x="20" y="120.5" width="112.5" height="53.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Petřiny" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KbY-oR-4j1">
+                                <rect key="frame" x="16" y="121.5" width="112.5" height="53.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AyO-lc-7jq">
-                                <rect key="frame" x="202.5" y="113" width="157.5" height="69"/>
+                                <rect key="frame" x="202.5" y="112" width="157.5" height="69"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" updatesFrequently="YES"/>
                                 </accessibility>
@@ -156,15 +156,15 @@
                                 <color key="textColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nemocnice Motol" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eC-sC-GRu">
-                                <rect key="frame" x="20" y="40.5" width="112.5" height="80"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nemocnice Motol" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eC-sC-GRu">
+                                <rect key="frame" x="16" y="40.5" width="112.5" height="80"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="19"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Depo Hostivař" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksz-g7-AnL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Depo Hostivař" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksz-g7-AnL">
                                 <rect key="frame" x="242" y="546.5" width="112.5" height="80.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -204,7 +204,7 @@
                             <constraint firstItem="8iz-1A-Llv" firstAttribute="width" secondItem="z3y-yT-dE9" secondAttribute="width" id="IZp-ig-meo"/>
                             <constraint firstItem="Apo-7b-BSI" firstAttribute="height" secondItem="z3y-yT-dE9" secondAttribute="height" id="JFH-g9-7GM"/>
                             <constraint firstItem="z3y-yT-dE9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.08" id="JVy-wP-RzP"/>
-                            <constraint firstItem="z3y-yT-dE9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="Kkz-As-QdB"/>
+                            <constraint firstItem="z3y-yT-dE9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Kkz-As-QdB"/>
                             <constraint firstItem="8iz-1A-Llv" firstAttribute="centerX" secondItem="BnQ-e4-QRz" secondAttribute="centerX" id="LIe-Fk-UI6"/>
                             <constraint firstItem="Ksz-g7-AnL" firstAttribute="height" secondItem="z3y-yT-dE9" secondAttribute="height" multiplier="1.5" id="Le2-ZW-aT7"/>
                             <constraint firstItem="Ksz-g7-AnL" firstAttribute="width" secondItem="z3y-yT-dE9" secondAttribute="width" id="MDc-oh-2g2"/>
@@ -269,6 +269,12 @@
                         <outlet property="cas21" destination="Zjg-R2-E9s" id="TCR-40-8Dw"/>
                         <outlet property="countdown1" destination="Jc8-lh-7s0" id="bFZ-gg-EYm"/>
                         <outlet property="countdown2" destination="AyO-lc-7jq" id="Ed5-Pv-u4T"/>
+                        <outlet property="dalsiZastavkaLabel11" destination="z3y-yT-dE9" id="0Co-bO-KlO"/>
+                        <outlet property="dalsiZastavkaLabel12" destination="6Xp-Un-7Tw" id="Fwf-xi-GWP"/>
+                        <outlet property="dalsiZastavkaLabel13" destination="KbY-oR-4j1" id="pNS-c6-HJO"/>
+                        <outlet property="dalsiZastavkaLabel21" destination="BnQ-e4-QRz" id="tHB-3Q-QGV"/>
+                        <outlet property="dalsiZastavkaLabel22" destination="8iz-1A-Llv" id="RlM-Gy-0j5"/>
+                        <outlet property="dalsiZastavkaLabel23" destination="Apo-7b-BSI" id="ucm-KS-C9i"/>
                         <outlet property="konecna1outlet" destination="0eC-sC-GRu" id="jCH-Va-SQ4"/>
                         <outlet property="konecna2outlet" destination="Ksz-g7-AnL" id="63t-EL-bCC"/>
                         <outlet property="nearestZastavkaButton" destination="Tex-5e-ui6" id="jos-27-0wa"/>
