@@ -40,7 +40,7 @@ class CoreDataStack {
         }
         
 
-        print(storeUrl)
+        //print(storeUrl)
         
         //logne se na persistaent store = sql file
         container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: storeUrl)]

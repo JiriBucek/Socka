@@ -17,7 +17,7 @@
 		893B14851EA125FA002E8F72 /* myLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B14841EA125FA002E8F72 /* myLocationTests.swift */; };
 		893B14901EA125FA002E8F72 /* myLocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B148F1EA125FA002E8F72 /* myLocationUITests.swift */; };
 		893B149F1EA12658002E8F72 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893B149E1EA12658002E8F72 /* CoreLocation.framework */; };
-		893BA9ED1EDF6CF6002B9932 /* StaniceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893BA9EC1EDF6CF6002B9932 /* StaniceViewController.swift */; };
+		893BA9ED1EDF6CF6002B9932 /* UpgradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893BA9EC1EDF6CF6002B9932 /* UpgradeViewController.swift */; };
 		8948320C1EB9C9A30013E01A /* mhd_final_data_utf8.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8948320B1EB9C9A30013E01A /* mhd_final_data_utf8.csv */; };
 		895CF86A1F1CD26E002E2859 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895CF8691F1CD26E002E2859 /* Downloader.swift */; };
 		897BFE4E1EBA0D9C009C59F0 /* Data_pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */; };
@@ -83,7 +83,7 @@
 		893B148F1EA125FA002E8F72 /* myLocationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myLocationUITests.swift; sourceTree = "<group>"; };
 		893B14911EA125FA002E8F72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		893B149E1EA12658002E8F72 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		893BA9EC1EDF6CF6002B9932 /* StaniceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaniceViewController.swift; sourceTree = "<group>"; };
+		893BA9EC1EDF6CF6002B9932 /* UpgradeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeViewController.swift; sourceTree = "<group>"; };
 		8948320B1EB9C9A30013E01A /* mhd_final_data_utf8.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mhd_final_data_utf8.csv; sourceTree = "<group>"; };
 		8948320E1EBA03550013E01A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		895CF8691F1CD26E002E2859 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 				895CF8691F1CD26E002E2859 /* Downloader.swift */,
 				893B146F1EA125FA002E8F72 /* AppDelegate.swift */,
 				893B14711EA125FA002E8F72 /* ViewController.swift */,
-				893BA9EC1EDF6CF6002B9932 /* StaniceViewController.swift */,
+				893BA9EC1EDF6CF6002B9932 /* UpgradeViewController.swift */,
 				891DC1481EB358980098A983 /* DataFinal280417.xcdatamodeld */,
 				89CCCE311EC30E610071BF75 /* DataFinal280417.sqlite */,
 				89F298C51EA28B9900AC1968 /* CSV.swift */,
@@ -350,7 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				893B14721EA125FA002E8F72 /* ViewController.swift in Sources */,
-				893BA9ED1EDF6CF6002B9932 /* StaniceViewController.swift in Sources */,
+				893BA9ED1EDF6CF6002B9932 /* UpgradeViewController.swift in Sources */,
 				895CF86A1F1CD26E002E2859 /* Downloader.swift in Sources */,
 				893B14701EA125FA002E8F72 /* AppDelegate.swift in Sources */,
 				89F298C61EA28B9900AC1968 /* CSV.swift in Sources */,

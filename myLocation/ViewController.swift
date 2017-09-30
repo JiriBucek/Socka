@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 import CoreData
+import SystemConfiguration
 
 extension UIColor{
 // rozšíření klasické UIColot, abych mohl zadávat rovnou HEX kod barvy
@@ -45,6 +46,15 @@ var konecnaStanice: String = ""
 //globalni vars urcene pro predavani info vedlejsimu VC, ktery zobrazuje stanice pro projeti
 
 var metro_data = [[Any]]()
+var arrayPristichZastavek1 = [String]()
+var arrayPristichZastavek2 = [String]()
+var konecna1 = ""
+var konecna2 = ""
+var existujeNovaVerzeDTBZ = false
+
+let cervena = UIColor().HexToColor(hexString: "F30503", alpha: 1.0)
+let zluta = UIColor().HexToColor(hexString: "FFA100", alpha: 1.0)
+let zelena = UIColor().HexToColor(hexString: "008900", alpha: 1.0)
 
 var casZmacknutiAlternativniZastavky = Date()
 //po nejake dobe chci prehodit appku zpet na puvodni zastavku
@@ -103,16 +113,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
         //každou sekundu updatuje funkci displayAllValues
 
-        
-        //getDalsiTriZastavkyKeKonecne(jmenoZastavky: "Skalka", jmenoKonecneZastavky: "Depo Hostivař")
-        
+
         
         ////   LOKACE   ////
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest //nejlepší možná přesnost
         manager.requestWhenInUseAuthorization() //hodí request na užívání
         manager.startUpdatingLocation() //updatuje polohu
-
+        
+        if isInternetAvailable(){
+            existujeNovaVerzeDTBZ = zjistiDostupnostNoveDatabaze()
+        }
+        
+        print(getDocumentsDirectory())
         
         /// Funkce pro plneni DB///
         //parseCSV(fileName: "zkratka") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
@@ -140,6 +153,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         let aktualniCas = Date()
         
+        let hlavniBarva = getColor(jmenoZastavky: hlavniZastavka)
+        var barva2 = zelena
+        var barva3 = zelena
+        
+        switch hlavniBarva {
+        case cervena:
+            barva2 = zelena
+            barva3 = zluta
+        case zluta:
+            barva2 = cervena
+            barva3 = zelena
+        case zelena:
+            barva2 = zluta
+            barva3 = cervena
+        default:
+            print("Barvy nefungují.")
+        }
         
         if rozdilCasuTypuDate(datum1: aktualniCas, datum2: casZmacknutiAlternativniZastavky) > 300{
             nearestZastavkaIndex = 0
@@ -148,60 +178,75 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         if aktualneZobrazovanaStanice != hlavniZastavka{
             metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
+            
+            if metro_data.count > 3{
+                konecna1 = String(describing: metro_data[0][2])
+                konecna2 = String(describing: metro_data[3][2])
+            
+                arrayPristichZastavek1 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna1)
+            
+                arrayPristichZastavek2 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna2)
+            }
             aktualneZobrazovanaStanice = hlavniZastavka
         //takhle si nesaha do DB kazdou vterinu, ale jen, pokud se zmenila zastavka
         }
         
         
         aktualneZobrazovanaStanice = hlavniZastavka
-        //priradi hodnotu do globalni var
-        let nahradniZastavka1 = nearestMetro()[1]
-        let nahradniZastavka2 = nearestMetro()[2]
-        //zastavka, pro kterou se zrovna zobrazuji casy
-        
-        //nearestZastavkaLabel.text = hlavniZastavka
-        //nearestZastavkaLabel.textColor = getColor(jmenoZastavky: hlavniZastavka)
-        
-        
-        
-        if (metro_data.count) > 0 {
+
+        if (metro_data.count) > 2 {
             
             
-            if (metro_data.indices.contains(0)){
+            let time1 = (metro_data[0][1] as! Int)
+            let time2 = (metro_data[3][1] as! Int)
+            
+            konecna1outlet.text = konecna1
+            konecna1outlet.textColor = hlavniBarva
+        
+            konecna2outlet.text = konecna2
+            konecna2outlet.textColor = hlavniBarva
+            
+            cas11.text = formatTime(time: time1)
+            countdown1.text = timeDifference(arrivalTime: time1)
+            countdown1.textColor = barva2
                 
-                konecna1outlet.text = String(describing: metro_data[0][2])
-                konecna1outlet.textColor = getColor(jmenoZastavky: hlavniZastavka)
+            if myTimeDifference(to: time1) <= 0{
+                metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
             }
             
-            if (metro_data.indices.contains(3)){
-                konecna2outlet.text = String(describing: metro_data[3][2])
-                konecna2outlet.textColor = getColor(jmenoZastavky: hlavniZastavka)
+            cas21.text = formatTime(time: time2)
+            countdown2.text = timeDifference(arrivalTime: time2)
+            countdown2.textColor = barva3
+                
+            if myTimeDifference(to: time2) <= 0{
+                metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
+            }
+            if arrayPristichZastavek1.count > 2{
+                dalsiZastavkaLabel11.text = arrayPristichZastavek1[0]
+                dalsiZastavkaLabel11.textColor = hlavniBarva
+                dalsiZastavkaLabel12.text = arrayPristichZastavek1[1]
+                dalsiZastavkaLabel12.textColor = hlavniBarva
+                dalsiZastavkaLabel13.text = arrayPristichZastavek1[2]
+                dalsiZastavkaLabel13.textColor = hlavniBarva
             }
             
-            if (metro_data.indices.contains(0)){
-                let time1 = (metro_data[0][1] as! Int)
-                cas11.text = formatTime(time: time1)
-                countdown1.text = timeDifference(arrivalTime: time1)
-                
-                if myTimeDifference(to: time1) <= 0{
-                     metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
-                }
-                
+            if arrayPristichZastavek2.count > 2{
+                dalsiZastavkaLabel21.text = arrayPristichZastavek2[0]
+                dalsiZastavkaLabel21.textColor = hlavniBarva
+                dalsiZastavkaLabel22.text = arrayPristichZastavek2[1]
+                dalsiZastavkaLabel22.textColor = hlavniBarva
+                dalsiZastavkaLabel23.text = arrayPristichZastavek2[2]
+                dalsiZastavkaLabel23.textColor = hlavniBarva
             }
             
-            if (metro_data.indices.contains(3)){
-                let time2 = (metro_data[3][1] as! Int)
-                cas21.text = formatTime(time: time2)
-                countdown2.text = timeDifference(arrivalTime: time2)
-                
-                if myTimeDifference(to: time2) <= 0{
-                    metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
-                }
+            nearestZastavkaButton.setTitle(hlavniZastavka, for: .normal)
+            nearestZastavkaButton.setTitleColor(hlavniBarva, for: .normal)
+            
+            if existujeNovaVerzeDTBZ{
+                ukazUpgradeVC()
+                existujeNovaVerzeDTBZ = false
             }
             
-            
-            //let hlavniZastavkaNemenna = nearestMetro()[0]
-            //jen kvůli tomu, ze var hlavniZastavka se meni a nelze ji pouzit na urceni labelu a barvy
         }
     }
     
@@ -566,9 +611,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     func getColor(jmenoZastavky: String) -> UIColor{
     //returne barvu linky dané stanice metra
-        let cervena = UIColor().HexToColor(hexString: "F30503", alpha: 1.0)
-        let zluta = UIColor().HexToColor(hexString: "FFA100", alpha: 1.0)
-        let zelena = UIColor().HexToColor(hexString: "008900", alpha: 1.0)
         var barva = UIColor()
 
         
@@ -628,7 +670,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }
         
         var pocetZastavekDoKonecne = abs(indexZastavky - indexKonecne) - 1
-        print(pocetZastavekDoKonecne)
         if pocetZastavekDoKonecne > 3{
             pocetZastavekDoKonecne = 3
         }
@@ -643,8 +684,61 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         while arrayTriZastavek.count < 3{
             arrayTriZastavek.append("...")
             }
-        print(arrayTriZastavek)
         return arrayTriZastavek
+    }
+    
+    func zjistiDostupnostNoveDatabaze() -> Bool{
+        let downloader = Downloader()
+        let verzeVtelefonu = downloader.zjistiVerziDtbzVTelefonuUserDefaults()
+        let verzeNaNetu = downloader.zjistiVerziDtbzNaWebu()
+        
+        print("Verze na netu: \(verzeNaNetu)")
+        print("Verze v telefonu \(verzeVtelefonu)")
+        
+        if verzeVtelefonu < verzeNaNetu{
+            print("Je dostupná nová verze!!")
+            return true
+        }else{
+            return false
+        }
+        
+    }
+    
+    func ukazUpgradeVC(){
+    //vyskoci okynko s vystrahou, ze je nova verze dtbz
+        let currentVC = self.view.window?.rootViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "1") as! UpgradeViewController
+        vc.view.isOpaque = false
+        vc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        
+        currentVC?.present(vc, animated: true, completion: nil)
+    }
+    
+    func isInternetAvailable() -> Bool {
+    //checkne, jestli jsem pripojenej k netu
+        
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(MemoryLayout<sockaddr_in>.size)
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        
+        guard let defaultRouteReachability = withUnsafePointer(to: &zeroAddress, {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {
+                SCNetworkReachabilityCreateWithAddress(nil, $0)
+            }
+        }) else {
+            return false
+        }
+        
+        var flags: SCNetworkReachabilityFlags = []
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags) {
+            return false
+        }
+        
+        let isReachable = flags.contains(.reachable)
+        let needsConnection = flags.contains(.connectionRequired)
+        
+        return (isReachable && !needsConnection)
     }
     
     }

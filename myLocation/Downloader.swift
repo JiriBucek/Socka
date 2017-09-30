@@ -1,10 +1,11 @@
 import UIKit
-public class Downloader {
+public class Downloader: NSObject, URLSessionDownloadDelegate{
     /*
     1. logne se na URL a zjisti aktualni verzi
     2. porovna ji s verzi v rtf souboru
     3. kdyz neni stejna, tak stahne novy sqlite soubor a nahradi jim stary
     */
+    
     
     func zjistiVerziDtbzNaWebu() -> Int{
         //logne se na muj web a zjistí aktuální verzi dtbz na webu
@@ -47,16 +48,19 @@ public class Downloader {
     
     func zjistiVerziDtbzVTelefonuUserDefaults() -> Int{
         let verze = UserDefaults.standard.integer(forKey: "verzeDtbz")
+        print("spusteno")
         return verze
     }
     
     func zapisVerziDtbzDoUserDefaults(novaVerze: Int){
+        print("spusteno2")
         UserDefaults.standard.set(novaVerze, forKey: "verzeDtbz")
     }
     
     
     func downloadAndSave(){
         //stáhne soubor z URL a uloží ho do složky dokumenty
+        print("Spusteno3")
         
         let documentsUrl:URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
         let destinationFileUrlbezPripony = documentsUrl.appendingPathComponent("DataFinal280417")
@@ -67,7 +71,7 @@ public class Downloader {
         //URL, ze ktereho stahuji
         
         let sessionConfig = URLSessionConfiguration.default
-        let session = URLSession(configuration: sessionConfig)
+        let session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: OperationQueue.main)
         
         let request = URLRequest(url:fileURL!)
         
@@ -92,4 +96,24 @@ public class Downloader {
         task.resume()
         
     }
+ 
+    // 1
+    public func urlSession(_ session: URLSession,
+                    downloadTask: URLSessionDownloadTask,
+                    didFinishDownloadingTo location: URL){
+                     }
+    // 2
+    public func urlSession(_ session: URLSession,
+                    downloadTask: URLSessionDownloadTask,
+                    didWriteData bytesWritten: Int64,
+                    totalBytesWritten: Int64,
+                    totalBytesExpectedToWrite: Int64){
+        
+        print(totalBytesExpectedToWrite)
+        print(totalBytesWritten)
+        //progressView.setProgress(Float(totalBytesWritten)/Float(totalBytesExpectedToWrite), animated: true)
 }
+
+}
+
+
