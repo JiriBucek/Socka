@@ -1,5 +1,5 @@
 import UIKit
-public class Downloader: NSObject, URLSessionDownloadDelegate{
+public class Downloader{
     /*
     1. logne se na URL a zjisti aktualni verzi
     2. porovna ji s verzi v rtf souboru
@@ -58,7 +58,7 @@ public class Downloader: NSObject, URLSessionDownloadDelegate{
     }
     
     
-    func downloadAndSave(){
+    func downloadAndSave(mojeSession: URLSession){
         //stáhne soubor z URL a uloží ho do složky dokumenty
         print("Spusteno3")
         
@@ -70,8 +70,9 @@ public class Downloader: NSObject, URLSessionDownloadDelegate{
         let fileURL = URL(string: "http://socka.funsite.cz/databaze")
         //URL, ze ktereho stahuji
         
-        let sessionConfig = URLSessionConfiguration.default
-        let session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: OperationQueue.main)
+        //let sessionConfig = URLSessionConfiguration.default
+        let session = mojeSession
+        //let session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: OperationQueue.main)
         
         let request = URLRequest(url:fileURL!)
         
@@ -97,22 +98,6 @@ public class Downloader: NSObject, URLSessionDownloadDelegate{
         
     }
  
-    // 1
-    public func urlSession(_ session: URLSession,
-                    downloadTask: URLSessionDownloadTask,
-                    didFinishDownloadingTo location: URL){
-                     }
-    // 2
-    public func urlSession(_ session: URLSession,
-                    downloadTask: URLSessionDownloadTask,
-                    didWriteData bytesWritten: Int64,
-                    totalBytesWritten: Int64,
-                    totalBytesExpectedToWrite: Int64){
-        
-        print(totalBytesExpectedToWrite)
-        print(totalBytesWritten)
-        //progressView.setProgress(Float(totalBytesWritten)/Float(totalBytesExpectedToWrite), animated: true)
-}
 
 }
 
