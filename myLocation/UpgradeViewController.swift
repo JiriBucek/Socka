@@ -11,6 +11,7 @@ import UIKit
 
 class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
     
+    @IBOutlet weak var progressLabel: UILabel!
 
     @IBOutlet weak var progressView: UIProgressView!
     
@@ -26,6 +27,7 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
         let url = URL(string: "http://socka.funsite.cz/databaze")!
         downloadTask = backgroundSession.downloadTask(with: url)
         downloadTask.resume()
+        
     }
     
 
@@ -49,26 +51,6 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
     var downloadTask: URLSessionDownloadTask!
     var backgroundSession: URLSession!
     
-    @IBAction func startDownload(_ sender: AnyObject) {
-        let url = URL(string: "http://publications.gbdirect.co.uk/c_book/thecbook.pdf")!
-        downloadTask = backgroundSession.downloadTask(with: url)
-        downloadTask.resume()
-    }
-    @IBAction func pause(_ sender: AnyObject) {
-        if downloadTask != nil{
-            downloadTask.suspend()
-        }
-    }
-    @IBAction func resume(_ sender: AnyObject) {
-        if downloadTask != nil{
-            downloadTask.resume()
-        }
-    }
-    @IBAction func cancel(_ sender: AnyObject) {
-        if downloadTask != nil{
-            downloadTask.cancel()
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,6 +108,7 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
         do{
             try FileManager.default.removeItem(at: destinationFileUrlbezPripony)
             try FileManager.default.copyItem(at: location, to: destinationFileUrlbezPripony)
+            aktualneZobrazovanaStanice = "Upgrade"
         }catch{
             print("Error pri mazani filu")
         }
@@ -151,16 +134,11 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
             print(error!.localizedDescription)
         }else{
             print("The task finished transferring data successfully")
+            
         }
     }
     
-    //MARK: UIDocumentInteractionControllerDelegate
-    func documentInteractionControllerViewControllerForPreview(_ controller: UIDocumentInteractionController) -> UIViewController
-    {
-        return self
-    }
-    
-    
+
     
 
 }
