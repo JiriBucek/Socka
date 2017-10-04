@@ -66,6 +66,12 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
         
     }
     
+    func zapisVerziDtbzDoUserDefaults(novaVerze: Int){
+        print("spusteno2")
+        UserDefaults.standard.set(novaVerze, forKey: "verzeDtbz")
+    }
+    
+    
 
     
     //MARK: URLSessionDownloadDelegate
@@ -82,6 +88,9 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
             try FileManager.default.copyItem(at: location, to: destinationFileUrlbezPripony)
             aktualneZobrazovanaStanice = "Upgrade"
             textView.text = "Jízdní řády jsou aktuální."
+            let downloader = Downloader()
+            downloader.zapisVerziDtbzDoUserDefaults(novaVerze: downloader.zjistiVerziDtbzNaWebu())
+            
         }catch{
             print("Error pri mazani a kopirování nové DTBZ")
         }
@@ -111,8 +120,6 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
             
         }
     }
-    
 
-    
 
 }

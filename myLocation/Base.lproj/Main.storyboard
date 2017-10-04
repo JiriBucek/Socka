@@ -358,7 +358,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="0.41451733732876711" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="0.72340539383561642" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oSV-PU-z6u" firstAttribute="centerX" secondItem="BUZ-GI-nY4" secondAttribute="centerX" id="HRz-a7-gIa"/>
                             <constraint firstItem="oSV-PU-z6u" firstAttribute="centerY" secondItem="BUZ-GI-nY4" secondAttribute="centerY" id="Xma-7U-nE5"/>
