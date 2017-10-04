@@ -51,43 +51,43 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boleslavka" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="z3y-yT-dE9">
-                                <rect key="frame" x="20" y="252" width="124" height="59"/>
+                                <rect key="frame" x="20" y="252" width="124.33333333333334" height="59"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metro3_0017_Ikona-Metra-2" translatesAutoresizingMaskIntoConstraints="NO" id="xnP-bA-WRL">
-                                <rect key="frame" x="167" y="69" width="41" height="41"/>
+                                <rect key="frame" x="167" y="70.333333333333329" width="41.333333333333343" height="41.333333333333343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xnP-bA-WRL" secondAttribute="height" multiplier="19:19" id="Iyx-Lw-xKo"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="xCw-hA-0tH">
-                                <rect key="frame" x="180" y="276" width="13" height="13"/>
+                                <rect key="frame" x="180" y="274.66666666666669" width="13" height="13.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xCw-hA-0tH" secondAttribute="height" multiplier="1:1" id="Dfl-yq-tKZ"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="bEx-ic-BcE">
-                                <rect key="frame" x="180" y="216" width="13" height="13"/>
+                                <rect key="frame" x="180" y="215" width="13" height="14"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="wXu-wm-DvN">
-                                <rect key="frame" x="180" y="157" width="13" height="13"/>
+                                <rect key="frame" x="180" y="156.66666666666666" width="13" height="14"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nádraží Veleslavín" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Xp-Un-7Tw">
-                                <rect key="frame" x="20" y="193" width="124" height="59"/>
+                                <rect key="frame" x="20" y="193.66666666666663" width="124.33333333333334" height="58.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Petřiny" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KbY-oR-4j1">
-                                <rect key="frame" x="20" y="134" width="124" height="59"/>
+                                <rect key="frame" x="20" y="134.66666666666666" width="124.33333333333334" height="59"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AyO-lc-7jq">
-                                <rect key="frame" x="224" y="125" width="173" height="76"/>
+                                <rect key="frame" x="223.66666666666669" y="125.33333333333334" width="173.66666666666669" height="76.000000000000028"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" updatesFrequently="YES"/>
                                 </accessibility>
@@ -101,7 +101,7 @@
                                 <size key="shadowOffset" width="-1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:32:40" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjg-R2-E9s">
-                                <rect key="frame" x="224" y="192" width="173" height="60"/>
+                                <rect key="frame" x="223.66666666666669" y="192" width="173.66666666666669" height="60.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Zjg-R2-E9s" secondAttribute="height" multiplier="66:23" id="746-OD-FXg"/>
                                 </constraints>
@@ -110,37 +110,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hradčanská" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BnQ-e4-QRz">
-                                <rect key="frame" x="266" y="425" width="124" height="59"/>
+                                <rect key="frame" x="265.66666666666674" y="425" width="124.33333333333331" height="59"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Malostranská" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8iz-1A-Llv">
-                                <rect key="frame" x="266" y="484" width="124" height="59"/>
+                                <rect key="frame" x="265.66666666666674" y="484.00000000000006" width="124.33333333333331" height="58.333333333333428"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staroměstská" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Apo-7b-BSI">
-                                <rect key="frame" x="266" y="543" width="124" height="59"/>
+                                <rect key="frame" x="265.66666666666674" y="542.33333333333337" width="124.33333333333331" height="59"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="rFf-ho-F7Y">
-                                <rect key="frame" x="221" y="448" width="13" height="13"/>
+                                <rect key="frame" x="221" y="447.66666666666669" width="13" height="13.666666666666629"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="8Mm-BP-hRm">
-                                <rect key="frame" x="221" y="508" width="13" height="13"/>
+                                <rect key="frame" x="221" y="506.00000000000006" width="13" height="14.333333333333428"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="QeM-2z-Nit">
-                                <rect key="frame" x="221" y="566" width="13" height="13"/>
+                                <rect key="frame" x="221" y="565.33333333333337" width="13" height="14"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metro3_0017_Ikona-Metra-2" translatesAutoresizingMaskIntoConstraints="NO" id="6Gx-Eh-0qq">
-                                <rect key="frame" x="207" y="626" width="41" height="41"/>
+                                <rect key="frame" x="207" y="624.33333333333337" width="41.333333333333343" height="41.333333333333258"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jc8-lh-7s0">
-                                <rect key="frame" x="17" y="534" width="173" height="77"/>
+                                <rect key="frame" x="16.666666666666671" y="534.66666666666663" width="173.66666666666669" height="76"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" updatesFrequently="YES"/>
                                 </accessibility>
@@ -151,19 +151,19 @@
                                 <size key="shadowOffset" width="1" height="-2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:31:40" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIZ-gL-5eL">
-                                <rect key="frame" x="17" y="484" width="173" height="60"/>
+                                <rect key="frame" x="16.666666666666671" y="482.33333333333326" width="173.66666666666669" height="60.666666666666742"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nemocnice Motol" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eC-sC-GRu">
-                                <rect key="frame" x="20" y="45" width="124" height="89"/>
+                                <rect key="frame" x="20" y="47" width="124.33333333333334" height="87.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="19"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Depo Hostivař" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksz-g7-AnL">
-                                <rect key="frame" x="266" y="602" width="124" height="89"/>
+                                <rect key="frame" x="265.66666666666674" y="601.33333333333348" width="124.33333333333331" height="87.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -233,7 +233,6 @@
                             <constraint firstItem="QeM-2z-Nit" firstAttribute="centerX" secondItem="OVw-lo-2t9" secondAttribute="centerX" id="d4c-OA-bgx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tex-5e-ui6" secondAttribute="trailing" constant="20" id="f4r-Us-UPF"/>
                             <constraint firstItem="Ksz-g7-AnL" firstAttribute="top" secondItem="Apo-7b-BSI" secondAttribute="bottom" id="fP4-3P-07v"/>
-                            <constraint firstItem="rS4-7A-y7E" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:284" id="fZp-7F-a5A"/>
                             <constraint firstItem="QeM-2z-Nit" firstAttribute="centerY" secondItem="Apo-7b-BSI" secondAttribute="centerY" id="ge1-JS-m3X"/>
                             <constraint firstItem="hIZ-gL-5eL" firstAttribute="centerY" secondItem="8Mm-BP-hRm" secondAttribute="centerY" id="gjY-1j-OKP"/>
                             <constraint firstItem="wXu-wm-DvN" firstAttribute="centerX" secondItem="rS4-7A-y7E" secondAttribute="centerX" id="gty-rB-UnY"/>
@@ -296,28 +295,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oSV-PU-z6u">
-                                <rect key="frame" x="60" y="111" width="294" height="267"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSV-PU-z6u">
+                                <rect key="frame" x="64" y="234.66666666666663" width="286" height="267"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Je k dispozici aktualizace jízdních řádů." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="m96-eD-EIm">
-                                        <rect key="frame" x="8" y="115" width="278" height="73"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Je k dispozici aktualizace jízdních řádů." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="m96-eD-EIm">
+                                        <rect key="frame" x="8" y="121.66666666666666" width="269.66666666666669" height="67"/>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pj2-tB-QON">
-                                        <rect key="frame" x="146" y="188" width="140" height="63"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                        <state key="normal" title="Nestahovat">
-                                            <color key="titleColor" red="0.95294117649999999" green="0.019607843140000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="nestahovatBtn:" destination="hWL-Ng-vjH" eventType="touchUpInside" id="c2h-ci-tiG"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkp-FJ-xqf">
                                         <rect key="frame" x="97" y="19" width="101" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -331,9 +317,18 @@
                                         <color key="progressTintColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </progressView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM2-0v-1m1">
-                                        <rect key="frame" x="8" y="188" width="140" height="63"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pj2-tB-QON">
+                                        <rect key="frame" x="146.66666666666669" y="200.66666666666666" width="143.00000000000006" height="66.999999999999972"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <state key="normal" title="Zrušit">
+                                            <color key="titleColor" red="0.95294117649999999" green="0.019607843140000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nestahovatBtn:" destination="hWL-Ng-vjH" eventType="touchUpInside" id="c2h-ci-tiG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM2-0v-1m1">
+                                        <rect key="frame" x="-3.3333333333333428" y="200.66666666666666" width="143" height="66.999999999999972"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <state key="normal" title="Stáhnout">
                                             <color key="titleColor" red="0.093096765660564337" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -345,19 +340,40 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.56031829119999998" green="0.1801443432" blue="0.16702734929999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="QM2-0v-1m1" firstAttribute="centerX" secondItem="oSV-PU-z6u" secondAttribute="centerX" constant="-75" id="2jr-ZK-LkK"/>
+                                    <constraint firstItem="m96-eD-EIm" firstAttribute="leading" secondItem="oSV-PU-z6u" secondAttribute="leading" constant="8" id="9LZ-Pv-S9n"/>
+                                    <constraint firstItem="m96-eD-EIm" firstAttribute="width" secondItem="oSV-PU-z6u" secondAttribute="height" multiplier="90:89" id="EWD-lY-8jE"/>
+                                    <constraint firstItem="Pj2-tB-QON" firstAttribute="height" secondItem="m96-eD-EIm" secondAttribute="height" id="JEQ-xz-nJh"/>
+                                    <constraint firstItem="m96-eD-EIm" firstAttribute="height" secondItem="oSV-PU-z6u" secondAttribute="height" multiplier="0.25" id="LR7-Qr-TNn"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pj2-tB-QON" secondAttribute="bottom" id="PYe-9T-Egt"/>
+                                    <constraint firstItem="QM2-0v-1m1" firstAttribute="width" secondItem="oSV-PU-z6u" secondAttribute="width" multiplier="0.5" id="UE2-7I-kdP"/>
+                                    <constraint firstAttribute="width" secondItem="oSV-PU-z6u" secondAttribute="height" multiplier="286:267" id="XLd-bk-IQ4"/>
+                                    <constraint firstItem="Pj2-tB-QON" firstAttribute="width" secondItem="oSV-PU-z6u" secondAttribute="width" multiplier="0.5" id="fCU-OS-GPn"/>
+                                    <constraint firstItem="Pj2-tB-QON" firstAttribute="centerX" secondItem="oSV-PU-z6u" secondAttribute="centerX" constant="75" id="g0r-82-cVJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="m96-eD-EIm" secondAttribute="trailing" constant="8" id="gA2-oa-Pmy"/>
+                                    <constraint firstAttribute="bottom" secondItem="QM2-0v-1m1" secondAttribute="bottom" id="lVz-7V-LEG"/>
+                                    <constraint firstItem="QM2-0v-1m1" firstAttribute="height" secondItem="m96-eD-EIm" secondAttribute="height" id="nAI-jK-xtM"/>
+                                    <constraint firstItem="Pj2-tB-QON" firstAttribute="top" secondItem="m96-eD-EIm" secondAttribute="bottom" constant="12.5" id="zRB-tz-8ij"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="0.41451733732876711" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oSV-PU-z6u" firstAttribute="centerX" secondItem="BUZ-GI-nY4" secondAttribute="centerX" id="HRz-a7-gIa"/>
+                            <constraint firstItem="oSV-PU-z6u" firstAttribute="centerY" secondItem="BUZ-GI-nY4" secondAttribute="centerY" id="Xma-7U-nE5"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="downloadProgressLabel" destination="xkp-FJ-xqf" id="DNp-Pn-zlV"/>
+                        <outlet property="celeView" destination="oSV-PU-z6u" id="7vS-tp-kHB"/>
                         <outlet property="progressLabel" destination="xkp-FJ-xqf" id="ypg-MC-zhd"/>
                         <outlet property="progressView" destination="QZw-QB-j4P" id="Hnb-B1-RtF"/>
+                        <outlet property="textView" destination="m96-eD-EIm" id="YGH-nr-DDV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oah-mT-V39" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031.8840579710145" y="99.456521739130437"/>
+            <point key="canvasLocation" x="1031.2" y="99.400299850074973"/>
         </scene>
     </scenes>
     <resources>

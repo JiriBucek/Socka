@@ -12,11 +12,11 @@ import UIKit
 class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
     
     @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
 
+    @IBOutlet weak var celeView: UIView!
     @IBOutlet weak var progressView: UIProgressView!
     
-    
-    @IBOutlet weak var downloadProgressLabel: UILabel!
     
     @IBAction func nestahovatBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -30,7 +30,6 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
         
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -53,6 +52,10 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
     
     
     override func viewDidLoad() {
+        
+        textView.layer.cornerRadius = 15.0
+        celeView.layer.cornerRadius = 15.0
+        
         super.viewDidLoad()
         
         
@@ -61,40 +64,9 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
         progressView.setProgress(0.0, animated: false)
 
         
-        //downloadAndSave(mojeSession: backgroundSession)
     }
     
-    /*func downloadAndSave(mojeSession: URLSession){
-        //stáhne soubor z URL a uloží ho do složky dokumenty
-        let documentsUrl:URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
-        let destinationFileUrlbezPripony = documentsUrl.appendingPathComponent("DataFinal280417")
-        //jmeno souboru, ktery se ulozi
-        
-        //Create URL to the source file you want to download
-        let fileURL = URL(string: "http://socka.funsite.cz/databaze")
-        //URL, ze ktereho stahuji
-        
-        //let sessionConfig = URLSessionConfiguration.default
-        let session = mojeSession
-        //let session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: OperationQueue.main)
-        
-        let request = URLRequest(url:fileURL!)
-        
-        let task = session.downloadTask(with: request)
-        
-        
-        do{
-            try FileManager.default.removeItem(at: destinationFileUrlbezPripony)
-            //try FileManager.default.copyItem(at: fileURL!, to: destinationFileUrlbezPripony)
-        }catch{
-                    print("Error pri mazani filu")
-        }
-        
-        task.resume()
-        
-    }*/
-    
-    
+
     
     //MARK: URLSessionDownloadDelegate
     // 1
@@ -109,8 +81,9 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
             try FileManager.default.removeItem(at: destinationFileUrlbezPripony)
             try FileManager.default.copyItem(at: location, to: destinationFileUrlbezPripony)
             aktualneZobrazovanaStanice = "Upgrade"
+            textView.text = "Jízdní řády jsou aktuální."
         }catch{
-            print("Error pri mazani filu")
+            print("Error pri mazani a kopirování nové DTBZ")
         }
 
     }
@@ -122,6 +95,8 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
                     totalBytesExpectedToWrite: Int64){
         print(totalBytesWritten)
         progressView.setProgress(Float(totalBytesWritten)/Float(totalBytesExpectedToWrite), animated: true)
+        progressLabel.text = "\(Int(Float(totalBytesWritten)/Float(totalBytesExpectedToWrite) * 100)) %"
+        textView.text = "Probíhá stahování."
     }
     
     //MARK: URLSessionTaskDelegate
@@ -129,7 +104,6 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
                     task: URLSessionTask,
                     didCompleteWithError error: Error?){
         downloadTask = nil
-        //progressView.setProgress(0.0, animated: true)
         if (error != nil) {
             print(error!.localizedDescription)
         }else{
