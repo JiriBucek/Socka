@@ -135,7 +135,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
     //vybarví status bar nahoře na bílo
-        return .lightContent
+        return .default
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
