@@ -12,10 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="fcs-CD-dVu">
             <objects>
-                <viewController id="Ayq-MO-Ecb" sceneMemberID="viewController">
+                <viewController id="Ayq-MO-Ecb" customClass="InfoViewController" customModule="myLocation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jCK-Rr-oue"/>
                         <viewControllerLayoutGuide type="bottom" id="tE4-7j-Etm"/>
@@ -24,24 +24,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pexels-photo-442600" translatesAutoresizingMaskIntoConstraints="NO" id="veS-ED-No9">
+                            <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pexels-photo-442600" translatesAutoresizingMaskIntoConstraints="NO" id="veS-ED-No9">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TBe-BZ-dap">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="none" minimumScaleFactor="0.14999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="TBe-BZ-dap">
                                 <rect key="frame" x="20" y="221" width="374" height="294"/>
-                                <string key="text">Socka je domácí fun projekt IT nadšence a lidumila, kterému přátelé říkají Buča. Účelem naprogramování aplikace bylo pomoci Bučovi stát se lepším programátorem a lepším člověkem a Vám pomoci stihnout příští metro.</string>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
+                                <string key="text">Socka je domácí fun projekt IT nadšence a lidumila, kterého přátelé přezdívají Buča. Účelem naprogramování aplikace bylo pomoci Bučovi stát se lepším programátorem a lepším člověkem a Vám pomoci stihnout příští metro.</string>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kontakt: bigboocha@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfV-Jr-u8K">
-                                <rect key="frame" x="20" y="540" width="374" height="24"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <rect key="frame" x="20" y="540" width="374" height="25"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="male socka logo pruhledne" translatesAutoresizingMaskIntoConstraints="NO" id="7Wr-05-bYS">
-                                <rect key="frame" x="62" y="38" width="290" height="174"/>
+                                <rect key="frame" x="83" y="63" width="248" height="149"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7Wr-05-bYS" secondAttribute="height" multiplier="5:3" id="3dJ-Xf-5d5"/>
                                 </constraints>
@@ -49,7 +49,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7Wr-05-bYS" firstAttribute="width" secondItem="gCB-hh-Yfh" secondAttribute="width" multiplier="0.7" id="6d9-2C-V9D"/>
+                            <constraint firstItem="7Wr-05-bYS" firstAttribute="width" secondItem="gCB-hh-Yfh" secondAttribute="width" multiplier="0.6" id="6d9-2C-V9D"/>
                             <constraint firstItem="wfV-Jr-u8K" firstAttribute="leading" secondItem="gCB-hh-Yfh" secondAttribute="leadingMargin" id="7WI-3L-Be2"/>
                             <constraint firstItem="tE4-7j-Etm" firstAttribute="top" secondItem="veS-ED-No9" secondAttribute="bottom" id="AJZ-cH-sME"/>
                             <constraint firstItem="veS-ED-No9" firstAttribute="leading" secondItem="gCB-hh-Yfh" secondAttribute="leading" id="C2f-5f-vDE"/>
@@ -65,6 +65,9 @@
                             <constraint firstItem="TBe-BZ-dap" firstAttribute="top" secondItem="7Wr-05-bYS" secondAttribute="bottom" constant="8.5" id="x8e-9e-ZQz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="hlavniLabel" destination="TBe-BZ-dap" id="BbK-IZ-dK4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMP-sh-KU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,7 +118,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metro3_0017_Ikona-Metra-2" translatesAutoresizingMaskIntoConstraints="NO" id="xnP-bA-WRL">
-                                <rect key="frame" x="166" y="69" width="42" height="41"/>
+                                <rect key="frame" x="167" y="70" width="41" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xnP-bA-WRL" secondAttribute="height" multiplier="19:19" id="Iyx-Lw-xKo"/>
                                 </constraints>
@@ -127,19 +130,19 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="bEx-ic-BcE">
-                                <rect key="frame" x="180" y="215" width="13" height="13"/>
+                                <rect key="frame" x="180" y="216" width="13" height="13"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="wXu-wm-DvN">
-                                <rect key="frame" x="180" y="156" width="13" height="13"/>
+                                <rect key="frame" x="180" y="158" width="13" height="14"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nádraží Veleslavín" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Xp-Un-7Tw">
-                                <rect key="frame" x="20" y="193" width="124" height="59"/>
+                                <rect key="frame" x="20" y="194" width="124" height="58"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Petřiny" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KbY-oR-4j1">
-                                <rect key="frame" x="20" y="134" width="124" height="59"/>
+                                <rect key="frame" x="20" y="135" width="124" height="59"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -174,13 +177,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Malostranská" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8iz-1A-Llv">
-                                <rect key="frame" x="266" y="484" width="124" height="59"/>
+                                <rect key="frame" x="266" y="484" width="124" height="58"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staroměstská" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Apo-7b-BSI">
-                                <rect key="frame" x="266" y="543" width="124" height="59"/>
+                                <rect key="frame" x="266" y="542" width="124" height="59"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -189,13 +192,13 @@
                                 <rect key="frame" x="221" y="448" width="13" height="13"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="8Mm-BP-hRm">
-                                <rect key="frame" x="221" y="508" width="13" height="13"/>
+                                <rect key="frame" x="221" y="507" width="13" height="13"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="QeM-2z-Nit">
-                                <rect key="frame" x="221" y="567" width="13" height="13"/>
+                                <rect key="frame" x="221" y="564" width="13" height="14"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metro3_0017_Ikona-Metra-2" translatesAutoresizingMaskIntoConstraints="NO" id="6Gx-Eh-0qq">
-                                <rect key="frame" x="206" y="626" width="42" height="41"/>
+                                <rect key="frame" x="207" y="625" width="41" height="41"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jc8-lh-7s0">
                                 <rect key="frame" x="17" y="535" width="173" height="76"/>
@@ -209,19 +212,19 @@
                                 <size key="shadowOffset" width="1" height="-2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:31:40" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIZ-gL-5eL">
-                                <rect key="frame" x="17" y="484" width="173" height="60"/>
+                                <rect key="frame" x="17" y="483" width="173" height="60"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nemocnice Motol" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eC-sC-GRu">
-                                <rect key="frame" x="20" y="45" width="124" height="89"/>
+                                <rect key="frame" x="20" y="47" width="124" height="88"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="19"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Depo Hostivař" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksz-g7-AnL">
-                                <rect key="frame" x="266" y="602" width="124" height="89"/>
+                                <rect key="frame" x="266" y="601" width="124" height="88"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -236,6 +239,10 @@
                                     <segue destination="Ayq-MO-Ecb" kind="presentation" id="1vZ-HQ-6cX"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.05000000074505806" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2ou-w6-52j">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -245,6 +252,7 @@
                             <constraint firstItem="OVw-lo-2t9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="20" id="1Vv-na-ORX"/>
                             <constraint firstItem="0eC-sC-GRu" firstAttribute="centerX" secondItem="z3y-yT-dE9" secondAttribute="centerX" id="1vH-aD-94F"/>
                             <constraint firstItem="KbY-oR-4j1" firstAttribute="centerX" secondItem="z3y-yT-dE9" secondAttribute="centerX" id="2A9-gs-i0D"/>
+                            <constraint firstAttribute="trailing" secondItem="2ou-w6-52j" secondAttribute="trailing" id="4FM-JF-baq"/>
                             <constraint firstItem="hIZ-gL-5eL" firstAttribute="centerX" secondItem="Jc8-lh-7s0" secondAttribute="centerX" id="52J-o1-47Q"/>
                             <constraint firstItem="rFf-ho-F7Y" firstAttribute="centerX" secondItem="OVw-lo-2t9" secondAttribute="centerX" id="5Ap-h4-9TX"/>
                             <constraint firstItem="xCw-hA-0tH" firstAttribute="centerY" secondItem="z3y-yT-dE9" secondAttribute="centerY" id="66f-DW-8Cz"/>
@@ -279,6 +287,7 @@
                             <constraint firstItem="Ksz-g7-AnL" firstAttribute="width" secondItem="z3y-yT-dE9" secondAttribute="width" id="MDc-oh-2g2"/>
                             <constraint firstItem="8Mm-BP-hRm" firstAttribute="centerY" secondItem="8iz-1A-Llv" secondAttribute="centerY" id="Mik-fs-40O"/>
                             <constraint firstItem="0eC-sC-GRu" firstAttribute="width" secondItem="z3y-yT-dE9" secondAttribute="width" id="Mo9-2r-0C4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2ou-w6-52j" secondAttribute="bottom" id="Mvm-9y-ZAq"/>
                             <constraint firstAttribute="bottomMargin" secondItem="OVw-lo-2t9" secondAttribute="bottom" constant="20" id="N9Y-PH-AgP"/>
                             <constraint firstItem="rS4-7A-y7E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-20" id="NPS-C8-iJz"/>
                             <constraint firstItem="rFf-ho-F7Y" firstAttribute="height" secondItem="xCw-hA-0tH" secondAttribute="height" id="OmZ-lJ-Bra"/>
@@ -325,10 +334,12 @@
                             <constraint firstItem="Apo-7b-BSI" firstAttribute="centerX" secondItem="8iz-1A-Llv" secondAttribute="centerX" id="tdW-VQ-iBK"/>
                             <constraint firstItem="0hW-vj-hEK" firstAttribute="top" secondItem="z3y-yT-dE9" secondAttribute="bottom" constant="13" id="u5z-Vd-HrW"/>
                             <constraint firstItem="0hW-vj-hEK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="u8m-75-vB3"/>
+                            <constraint firstItem="2ou-w6-52j" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ugw-Cm-wZD"/>
                             <constraint firstItem="AyO-lc-7jq" firstAttribute="centerY" secondItem="bEx-ic-BcE" secondAttribute="centerY" id="vEB-sl-jzS"/>
                             <constraint firstItem="Tex-5e-ui6" firstAttribute="leading" secondItem="0hW-vj-hEK" secondAttribute="trailing" id="vg1-6m-6L4"/>
                             <constraint firstItem="xnP-bA-WRL" firstAttribute="centerX" secondItem="rS4-7A-y7E" secondAttribute="centerX" id="wv6-ho-f0A"/>
                             <constraint firstItem="6Xp-Un-7Tw" firstAttribute="width" secondItem="z3y-yT-dE9" secondAttribute="width" id="x8h-yH-i9n"/>
+                            <constraint firstItem="2ou-w6-52j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xmn-cw-EaC"/>
                             <constraint firstItem="8Mm-BP-hRm" firstAttribute="centerX" secondItem="OVw-lo-2t9" secondAttribute="centerX" id="zgq-j3-cim"/>
                             <constraint firstItem="OVw-lo-2t9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.39" id="zht-TQ-elA"/>
                         </constraints>

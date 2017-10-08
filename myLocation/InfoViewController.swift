@@ -10,8 +10,15 @@ import UIKit
 
 class InfoViewController: UIViewController {
 
+    @IBOutlet weak var hlavniLabel: UILabel!
+    
+    
     override func viewDidLoad() {
+        
+        hlavniLabel.adjustsFontSizeToFitWidth = true
         super.viewDidLoad()
+        hlavniLabel.allowsDefaultTighteningForTruncation = true
+        hlavniLabel.minimumScaleFactor = 0.1
 
         // Do any additional setup after loading the view.
     }
