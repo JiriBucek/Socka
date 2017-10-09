@@ -38,11 +38,12 @@ extension UIColor{
     }
 }
 
+//MARK - global vars
+
 var nearestZastavkaIndex: Int = 0
 // globalni var pro prehazovani zastavky, pro kterou maji byt zobrazeny casove udaje
 
 var aktualneZobrazovanaStanice: String = ""
-var konecnaStanice: String = ""
 //globalni vars urcene pro predavani info vedlejsimu VC, ktery zobrazuje stanice pro projeti
 
 var metro_data = [[Any]]()
@@ -59,10 +60,14 @@ let zelena = UIColor().HexToColor(hexString: "008900", alpha: 1.0)
 var casZmacknutiAlternativniZastavky = Date()
 //po nejake dobe chci prehodit appku zpet na puvodni zastavku
 
+
+//MARK - VC
+
 class ViewController: UIViewController, CLLocationManagerDelegate{
     
     
     @IBOutlet weak var nearestZastavkaButton: UIButton!
+    
     @IBAction func nearestZastavkaButtonPressed(_ sender: Any) {
         //prepinani trech nejblizsich stanic
         nearestZastavkaIndex += 1
@@ -89,9 +94,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var dalsiZastavkaLabel21: UILabel!
     @IBOutlet weak var dalsiZastavkaLabel22: UILabel!
     @IBOutlet weak var dalsiZastavkaLabel23: UILabel!
-    //@IBOutlet weak var konecna1outlet: UIButton!
-    
-    //@IBOutlet weak var konecna2outlet: UIButton!
     
     var currentLocation = CLLocation()
     //globalni promenna, kam si vlozim soucasnou pozici ve fci location manager
@@ -99,6 +101,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     let manager = CLLocationManager()
     //první proměnná nutná pro práci s polohovým službama
     
+    
+//MARK - functions
     
     override func viewDidLoad() {
     //co se stane po loadnutí

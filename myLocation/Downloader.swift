@@ -26,26 +26,6 @@ public class Downloader{
         return verzeNaWebu
     }
     
-    
-    /* ČTENÍ Z RTF SOUBORU
-    func zjistiVerziDtbzVTelefonu() -> Int{
-        //dokáže přečíst rtf file
-        
-        let slozkaDokumentu = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
-        let cestaKDokumentuSVerzi = URL(fileURLWithPath: slozkaDokumentu!).appendingPathComponent("verze.rtf")
-        do{
-        let attributedStringWithRtf:NSAttributedString = try NSAttributedString(url: cestaKDokumentuSVerzi, options: [NSDocumentTypeDocumentAttribute:NSRTFTextDocumentType], documentAttributes: nil)
-            
-            print(attributedStringWithRtf)
-        }catch{
-            
-        }
-        
-        return 1
-    }
- 
-    */
-    
     func zjistiVerziDtbzVTelefonuUserDefaults() -> Int{
         let verze = UserDefaults.standard.integer(forKey: "verzeDtbz")
         print("spusteno")
@@ -56,48 +36,6 @@ public class Downloader{
         print("spusteno2")
         UserDefaults.standard.set(novaVerze, forKey: "verzeDtbz")
     }
-    
-    
-    func downloadAndSave(mojeSession: URLSession){
-        //stáhne soubor z URL a uloží ho do složky dokumenty
-        print("Spusteno3")
-        
-        let documentsUrl:URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
-        let destinationFileUrlbezPripony = documentsUrl.appendingPathComponent("DataFinal280417")
-        //jmeno souboru, ktery se ulozi
-        
-        //Create URL to the source file you want to download
-        let fileURL = URL(string: "http://socka.funsite.cz/databaze")
-        //URL, ze ktereho stahuji
-        
-        //let sessionConfig = URLSessionConfiguration.default
-        let session = mojeSession
-        //let session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: OperationQueue.main)
-        
-        let request = URLRequest(url:fileURL!)
-        
-        let task = session.downloadTask(with: request) { (tempLocalUrl, response, error) in
-            if let tempLocalUrl = tempLocalUrl, error == nil {
-                // Success
-                if let statusCode = (response as? HTTPURLResponse)?.statusCode {
-                    print("Successfully downloaded. Status code: \(statusCode)")
-                }
-                
-                do {
-                    try FileManager.default.removeItem(at: destinationFileUrlbezPripony)
-                    try FileManager.default.copyItem(at: tempLocalUrl, to: destinationFileUrlbezPripony)
-                } catch (let writeError) {
-                    print("Error creating a file \(destinationFileUrlbezPripony) : \(writeError)")
-                }
-                
-            } else {
-                print("Error took place while downloading a file. Error description: %@", error?.localizedDescription ?? "Error downloading");
-            }
-        }
-        task.resume()
-        
-    }
- 
 
 }
 
