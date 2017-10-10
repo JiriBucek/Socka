@@ -187,9 +187,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 konecna2 = String(describing: metro_data[0][2])
                 konecna1 = String(describing: metro_data[3][2])
             
-                arrayPristichZastavek2 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna1)
+                arrayPristichZastavek1 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna1)
             
-                arrayPristichZastavek1 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna2)
+                arrayPristichZastavek2 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna2)
             }
             aktualneZobrazovanaStanice = hlavniZastavka
         //takhle si nesaha do DB kazdou vterinu, ale jen, pokud se zmenila zastavka
