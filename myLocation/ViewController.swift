@@ -184,12 +184,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
             
             if metro_data.count > 3{
-                konecna1 = String(describing: metro_data[0][2])
-                konecna2 = String(describing: metro_data[3][2])
+                konecna2 = String(describing: metro_data[0][2])
+                konecna1 = String(describing: metro_data[3][2])
             
-                arrayPristichZastavek1 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna1)
+                arrayPristichZastavek2 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna1)
             
-                arrayPristichZastavek2 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna2)
+                arrayPristichZastavek1 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna2)
             }
             aktualneZobrazovanaStanice = hlavniZastavka
         //takhle si nesaha do DB kazdou vterinu, ale jen, pokud se zmenila zastavka
