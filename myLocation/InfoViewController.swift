@@ -9,8 +9,14 @@
 import UIKit
 
 class InfoViewController: UIViewController {
+    @IBOutlet weak var scrollView: UIScrollView!
 
+    @IBOutlet weak var zavritBTN: UIButton!
     @IBOutlet weak var hlavniLabel: UILabel!
+    
+    @IBAction func zavritBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     
     override func viewDidLoad() {
@@ -19,7 +25,9 @@ class InfoViewController: UIViewController {
         super.viewDidLoad()
         hlavniLabel.allowsDefaultTighteningForTruncation = true
         hlavniLabel.minimumScaleFactor = 0.1
-
+        
+        scrollView.bottomAnchor.constraint(equalTo: zavritBTN.bottomAnchor).isActive = true
+        
         // Do any additional setup after loading the view.
     }
 
