@@ -558,7 +558,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     func myTimeDifference(to targetTime: Int) -> Int{
     //spočitá rozdíl mezi časem metra a současným časem
         let time = targetTime - current_time()
-
         return time
     }
     
@@ -600,16 +599,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
         let timeDifference = calendar.dateComponents([.minute, .second], from: date, to: stopTime!)
         //spočítá časový rozdíl mezi from a to
-        let minuty = String(describing: timeDifference.minute!)
+        var minuty = String(describing: timeDifference.minute!)
         var sekundy = String(describing: timeDifference.second!)
         
+
+        
+        if Int(minuty)! < 0{
+        //úprava kvůli přepočtu přes půlnoc, aby to neukazovalo minusove casy
+            minuty = String(Int(minuty)! + 1439)
+            sekundy = String(59 + Int(sekundy)!)
+            }
+            
         if sekundy.characters.count == 1{
         //přihodí nulu, pokud sekundy mají jen jeden znak
-            let index = sekundy.startIndex
-            sekundy.insert("0", at: index)
-        }
-        
-        
+                let index = sekundy.startIndex
+                sekundy.insert("0", at: index)
+            }
+    
         return "\(minuty):\(sekundy)"
     }
     
