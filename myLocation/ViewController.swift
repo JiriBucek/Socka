@@ -115,8 +115,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         super.viewDidLoad()
         
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
-        //každou sekundu updatuje funkci displayAllValues
-
+        //každou sekundu updatuje funkci displayAllValue
 
         
         ////   LOKACE   ////
@@ -129,7 +128,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             existujeNovaVerzeDTBZ = zjistiDostupnostNoveDatabaze()
         }
         
-        print(getDocumentsDirectory())
+        //print(getDocumentsDirectory())
         
         /// Funkce pro plneni DB///
         //parseCSV(fileName: "zkratka") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
@@ -200,9 +199,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
 
         if (metro_data.count) > 3 {
             
-            print(metro_data.count)
             let time1 = (metro_data[0][1] as! Int)
-            print(metro_data)
             let time2 = (metro_data[3][1] as! Int)
             
             konecna1outlet.text = konecna1

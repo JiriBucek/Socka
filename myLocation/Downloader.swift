@@ -15,7 +15,6 @@ public class Downloader{
             //defaultní hodnota verze
             do {
                 verzeNaWebu = try Int(String(contentsOf: url))!
-                print(verzeNaWebu)
             } catch {
                 // nedokážu se lognout na web a zjistit verzi
             }
@@ -28,12 +27,10 @@ public class Downloader{
     
     func zjistiVerziDtbzVTelefonuUserDefaults() -> Int{
         let verze = UserDefaults.standard.integer(forKey: "verzeDtbz")
-        print("spusteno")
         return verze
     }
     
     func zapisVerziDtbzDoUserDefaults(novaVerze: Int){
-        print("spusteno2")
         UserDefaults.standard.set(novaVerze, forKey: "verzeDtbz")
     }
 

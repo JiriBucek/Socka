@@ -14,6 +14,13 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var zavritBTN: UIButton!
     @IBOutlet weak var hlavniLabel: UILabel!
     
+    @IBAction func kontaktButton(_ sender: Any) {
+        let email = "bucek.jiri@email.cz"
+        if let url = URL(string: "mailto:\(email)") {
+            UIApplication.shared.open(url)
+        }
+        
+    }
     @IBAction func zavritBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -36,16 +43,6 @@ class InfoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func openMailApp() {
-        
-        let toEmail = "stavik@outlook.com"
-        let subject = "Test email".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        let body = "Just testing ...".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        
-        let urlString = "mailto:\(toEmail)?subject=\(subject)&body=\(body)"
-        let url = URL(string:urlString)
-        UIApplication.shared.openURL(url!)
-    }
     
 
     /*
