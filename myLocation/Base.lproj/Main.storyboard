@@ -27,9 +27,13 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwr-Sk-Iug">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="15" baselineAdjustment="none" minimumScaleFactor="0.14999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="TBe-BZ-dap">
-                                        <rect key="frame" x="16" y="160" width="382" height="301"/>
-                                        <string key="text">Socku jsem napsal pro radost ze zajímavé práce a pro radost z toho, že Vám tato aplikace může každý den pomoci. Eskalátor v logu odkazuje na nejpravděpodobnější místo použití Socky, kde se dle času do příjezdu další soupravy můžete rozhodnout, zda běžet dolů nebo se pokochat pohledem na ostatní zbytečně běžící, kteří tuto aplikaci ještě nemají. Přeji mnoho zábavy a mnoho dostihnutých souprav. </string>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="31" baselineAdjustment="none" minimumScaleFactor="0.14999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="TBe-BZ-dap">
+                                        <rect key="frame" x="16" y="160" width="382" height="438"/>
+                                        <mutableString key="text">Socku jsem napsal ve volných chvílích při pobytu na zahraniční misi v Afghánistánu. A to zejména pro radost ze zajímavé práce a pro radost z toho, že Vám tato aplikace může zpříjemnit každý Váš den.
+
+Eskalátor v logu je odkazem na nejčastější místo použití Socky. Zde se dle času do příjezdu další soupravy metra můžete rozhodnout, zda běžet po schodech dolů anebo zůstat stát a kochat se pohledem na ostatní zbytečně běžící, kteří tuto aplikaci ještě nemají.
+
+Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </mutableString>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -41,7 +45,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urm-I4-ehZ">
-                                        <rect key="frame" x="182" y="539" width="50" height="70"/>
+                                        <rect key="frame" x="182" y="676" width="50" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="S4Q-oz-bV5"/>
                                             <constraint firstAttribute="height" constant="70" id="VZC-AG-VHa"/>
@@ -55,7 +59,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hW1-Pr-Jze">
-                                        <rect key="frame" x="111" y="490" width="193" height="30"/>
+                                        <rect key="frame" x="111" y="627" width="193" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="AwP-Xj-TaX"/>
                                             <constraint firstAttribute="width" constant="193" id="eVz-QY-3wL"/>
@@ -145,13 +149,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metro3_0017_Ikona-Metra-2" translatesAutoresizingMaskIntoConstraints="NO" id="xnP-bA-WRL">
-                                <rect key="frame" x="166" y="69" width="42" height="41"/>
+                                <rect key="frame" x="166" y="69" width="42" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xnP-bA-WRL" secondAttribute="height" multiplier="19:19" id="Iyx-Lw-xKo"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="xCw-hA-0tH">
-                                <rect key="frame" x="180" y="275" width="14" height="13"/>
+                                <rect key="frame" x="180" y="275" width="14" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xCw-hA-0tH" secondAttribute="height" multiplier="1:1" id="Dfl-yq-tKZ"/>
                                 </constraints>
@@ -160,7 +164,7 @@
                                 <rect key="frame" x="180" y="215" width="14" height="14"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="wXu-wm-DvN">
-                                <rect key="frame" x="180" y="157" width="14" height="13"/>
+                                <rect key="frame" x="180" y="157" width="14" height="14"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Xp-Un-7Tw">
                                 <rect key="frame" x="20" y="193" width="124" height="59"/>
@@ -216,16 +220,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="rFf-ho-F7Y">
-                                <rect key="frame" x="220" y="448" width="14" height="13"/>
+                                <rect key="frame" x="220" y="448" width="14" height="14"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="8Mm-BP-hRm">
                                 <rect key="frame" x="220" y="507" width="14" height="14"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="QeM-2z-Nit">
-                                <rect key="frame" x="220" y="566" width="14" height="13"/>
+                                <rect key="frame" x="220" y="566" width="14" height="14"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metro3_0017_Ikona-Metra-2" translatesAutoresizingMaskIntoConstraints="NO" id="6Gx-Eh-0qq">
-                                <rect key="frame" x="206" y="626" width="42" height="41"/>
+                                <rect key="frame" x="206" y="626" width="42" height="42"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jc8-lh-7s0">
                                 <rect key="frame" x="17" y="534" width="173" height="77"/>
@@ -233,13 +237,13 @@
                                     <accessibilityTraits key="traits" staticText="YES" updatesFrequently="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="56"/>
-                                <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.95294117649999999" green="0.019607843140000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="-2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:31:40" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIZ-gL-5eL">
-                                <rect key="frame" x="17" y="483" width="173" height="61"/>
+                                <rect key="frame" x="17" y="484" width="173" height="60"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
