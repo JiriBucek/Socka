@@ -198,10 +198,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         aktualneZobrazovanaStanice = hlavniZastavka
 
-        if (metro_data.count) > 2 {
+        if (metro_data.count) > 3 {
             
-            
+            print(metro_data.count)
             let time1 = (metro_data[0][1] as! Int)
+            print(metro_data)
             let time2 = (metro_data[3][1] as! Int)
             
             konecna1outlet.text = konecna1
@@ -213,7 +214,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             cas11.text = formatTime(time: time1)
             countdown1.text = timeDifference(arrivalTime: time1)
             countdown1.textColor = barva2
-                
+            
             if myTimeDifference(to: time1) <= 0{
                 metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
             }
