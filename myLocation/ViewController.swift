@@ -128,7 +128,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             existujeNovaVerzeDTBZ = zjistiDostupnostNoveDatabaze()
         }
         
-        //print(getDocumentsDirectory())
+        print(getDocumentsDirectory())
         
         /// Funkce pro plneni DB///
         //parseCSV(fileName: "zkratka") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
@@ -513,7 +513,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         //Vypíše cestu do dokumentu
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
-        print("Tohle je cesta dle funkce ve VC:  \(documentsDirectory)")
+        //print("Tohle je cesta dle funkce ve VC:  \(documentsDirectory)")
         return documentsDirectory
     }
     
