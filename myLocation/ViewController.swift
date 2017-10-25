@@ -107,6 +107,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     override func viewDidLoad() {
     //co se stane po loadnutí
         
+        let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
+        appDelegate.refreshVC = self
+        
         //Nastaví font na buttonu hlavní zastávky 
         nearestZastavkaButton.titleLabel?.minimumScaleFactor = 0.2
         nearestZastavkaButton.titleLabel?.numberOfLines = 1
@@ -182,9 +185,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         if aktualneZobrazovanaStanice != hlavniZastavka{
             metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
             
-            if metro_data.count > 3{
+            if metro_data.count > 2{
                 konecna2 = String(describing: metro_data[0][2])
-                konecna1 = String(describing: metro_data[3][2])
+                konecna1 = String(describing: metro_data[2][2])
             
                 arrayPristichZastavek1 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna1)
             
@@ -200,7 +203,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         if (metro_data.count) > 3 {
             
             let time1 = (metro_data[0][1] as! Int)
-            let time2 = (metro_data[3][1] as! Int)
+            let time2 = (metro_data[2][1] as! Int)
+            
+            let time11 = (metro_data[1][1] as! Int)
+            let time22 = (metro_data[3][1] as! Int)
             
             konecna1outlet.text = konecna1
             konecna1outlet.textColor = hlavniBarva
@@ -208,7 +214,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             konecna2outlet.text = konecna2
             konecna2outlet.textColor = hlavniBarva
             
-            cas11.text = formatTime(time: time1)
+            cas11.text = timeDifference(arrivalTime: time11)
             countdown1.text = timeDifference(arrivalTime: time1)
             countdown1.textColor = barva2
             
@@ -216,7 +222,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
             }
             
-            cas21.text = formatTime(time: time2)
+            cas21.text = timeDifference(arrivalTime: time22)
             countdown2.text = timeDifference(arrivalTime: time2)
             countdown2.textColor = barva3
                 
@@ -434,11 +440,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         var service_ids = getServiceId(day: today)
         
-        var times1 = fetchData(station_id: station_ids[0], service_id: service_ids, results_count: 3, current_time: time)
-        var times2 = fetchData(station_id: station_ids[1], service_id: service_ids, results_count: 3, current_time: time)
+        var times1 = fetchData(station_id: station_ids[0], service_id: service_ids, results_count: 2, current_time: time)
+        var times2 = fetchData(station_id: station_ids[1], service_id: service_ids, results_count: 2, current_time: time)
         
         //přiřazení časů po půlnoci
-        if times1.count < 3{
+        if times1.count < 2{
             let resultCount = times1.count
             
             var tomorrow = today + 1
@@ -446,11 +452,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 tomorrow = 1
             }
             service_ids = getServiceId(day: tomorrow)
-            let times11 = fetchData(station_id: station_ids[0], service_id: service_ids, results_count: 3 - resultCount, current_time: 0)
+            let times11 = fetchData(station_id: station_ids[0], service_id: service_ids, results_count: 2 - resultCount, current_time: 0)
             times1 = times1 + times11
         }
         
-        if times2.count < 3{
+        if times2.count < 2{
             let resultCount = times2.count
             
             var tomorrow = today + 1
@@ -458,7 +464,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 tomorrow = 1
             }
             service_ids = getServiceId(day: tomorrow)
-            let times21 = fetchData(station_id: station_ids[0], service_id: service_ids, results_count: 3 - resultCount, current_time: 0)
+            let times21 = fetchData(station_id: station_ids[0], service_id: service_ids, results_count: 2 - resultCount, current_time: 0)
             times2 = times2 + times21
         }
         

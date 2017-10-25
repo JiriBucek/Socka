@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
-            timestampString = "530000528.744419"
+            timestampString = "530646688.12249"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "519"
-            endingLineNumber = "519"
+            startingLineNumber = "525"
+            endingLineNumber = "525"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
-            timestampString = "530000528.744419"
+            timestampString = "530646688.122856"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
             landmarkName = "fetchData(station_id:service_id:results_count:current_time:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
-            timestampString = "530000528.744419"
+            timestampString = "530646688.122934"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "386"
-            endingLineNumber = "386"
+            startingLineNumber = "392"
+            endingLineNumber = "392"
             landmarkName = "fetchData(station_id:service_id:results_count:current_time:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
-            timestampString = "530000528.744419"
+            timestampString = "530646688.122995"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "433"
-            endingLineNumber = "433"
+            startingLineNumber = "439"
+            endingLineNumber = "439"
             landmarkName = "get_metro_times(dayOfWeek:metroStanice:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
-            timestampString = "530000528.744419"
+            timestampString = "530646688.123156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "461"
-            endingLineNumber = "461"
+            startingLineNumber = "467"
+            endingLineNumber = "467"
             landmarkName = "get_metro_times(dayOfWeek:metroStanice:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
-            timestampString = "530000528.744419"
+            timestampString = "530646688.123277"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "369"
-            endingLineNumber = "369"
+            startingLineNumber = "375"
+            endingLineNumber = "375"
             landmarkName = "fetchData(station_id:service_id:results_count:current_time:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
-            timestampString = "530000528.744419"
+            timestampString = "530646688.123342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "327"
-            endingLineNumber = "327"
+            startingLineNumber = "333"
+            endingLineNumber = "333"
             landmarkName = "fetchData(station_id:service_id:results_count:current_time:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
-            timestampString = "530220461.942524"
+            timestampString = "530646688.123399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "627"
-            endingLineNumber = "627"
+            startingLineNumber = "633"
+            endingLineNumber = "633"
             landmarkName = "getColor(jmenoZastavky:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
-            timestampString = "530000528.744419"
+            timestampString = "530646688.123457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "296"
-            endingLineNumber = "296"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
             landmarkName = "fillData(csvFileName:entityName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
-            timestampString = "528233996.21176"
+            timestampString = "530646688.12351"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
-            timestampString = "530000528.744419"
+            timestampString = "530646688.123566"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
             landmarkName = "nearestMetro()"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
-            timestampString = "530000528.744419"
+            timestampString = "530646688.123621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
             landmarkName = "nearestMetro()"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
-            timestampString = "530000528.744419"
+            timestampString = "530646688.123675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "nearestMetro()"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
-            timestampString = "530220461.942524"
+            timestampString = "530646688.123728"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "658"
-            endingLineNumber = "658"
+            startingLineNumber = "664"
+            endingLineNumber = "664"
             landmarkName = "getDalsiTriZastavkyKeKonecne(jmenoZastavky:jmenoKonecneZastavky:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
-            timestampString = "530220461.942524"
+            timestampString = "530646688.123782"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "673"
-            endingLineNumber = "673"
+            startingLineNumber = "679"
+            endingLineNumber = "679"
             landmarkName = "getDalsiTriZastavkyKeKonecne(jmenoZastavky:jmenoKonecneZastavky:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
-            timestampString = "530220461.942524"
+            timestampString = "530646688.123837"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "689"
-            endingLineNumber = "689"
+            startingLineNumber = "695"
+            endingLineNumber = "695"
             landmarkName = "getDalsiTriZastavkyKeKonecne(jmenoZastavky:jmenoKonecneZastavky:)"
             landmarkType = "7">
          </BreakpointContent>
