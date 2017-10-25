@@ -38,7 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         print("I am back!")
+        aktualneZobrazovanaStanice = "načítám"
+        //způsobí to, že funkce displayValues načte nová data z databáze
+        
         nearestZastavkaIndex = 0
+        //přehodí zobrazovanou zastávku zpět na tu nejbližší
         
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         

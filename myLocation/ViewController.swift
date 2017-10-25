@@ -107,8 +107,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     override func viewDidLoad() {
     //co se stane po loadnutí
         
-        let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
-        appDelegate.refreshVC = self
+        //let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
+        //appDelegate.refreshVC = self
         
         //Nastaví font na buttonu hlavní zastávky 
         nearestZastavkaButton.titleLabel?.minimumScaleFactor = 0.2
@@ -152,7 +152,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
     }
     
-    func displayAllValues(){
+    @objc func displayAllValues(){
     //přiřadí hodnoty jednotlivým labelum
         let hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
         //aktuálne vybraná stanice
@@ -183,6 +183,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }
         
         if aktualneZobrazovanaStanice != hlavniZastavka{
+            print("NOVÁ DATA")
             metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
             
             if metro_data.count > 2{
