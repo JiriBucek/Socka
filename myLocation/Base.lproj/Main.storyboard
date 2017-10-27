@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Black</string>
+            <string>Avenir-Book</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Info View Controller-->
         <scene sceneID="fcs-CD-dVu">
@@ -28,12 +34,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="31" baselineAdjustment="none" minimumScaleFactor="0.14999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="TBe-BZ-dap">
-                                        <rect key="frame" x="16" y="160" width="382" height="438"/>
-                                        <mutableString key="text">Socku jsem napsal ve volných chvílích při pobytu na zahraniční misi v Afghánistánu. A to zejména pro radost ze zajímavé práce a pro radost z toho, že Vám tato aplikace může zpříjemnit každý Váš den.
+                                        <rect key="frame" x="16" y="160" width="382" height="137"/>
+                                        <string key="text">Socku jsem napsal ve volných chvílích při pobytu na zahraniční misi v Afghánistánu. A to zejména pro radost ze zajímavé práce a pro radost z toho, že Vám tato aplikace může zpříjemnit každý Váš den.
 
 Eskalátor v logu je odkazem na nejčastější místo použití Socky. Zde se dle času do příjezdu další soupravy metra můžete rozhodnout, zda běžet po schodech dolů anebo zůstat stát a kochat se pohledem na ostatní zbytečně běžící, kteří tuto aplikaci ještě nemají.
 
-Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </mutableString>
+Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -45,9 +51,9 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </mutableString>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urm-I4-ehZ">
-                                        <rect key="frame" x="182" y="676" width="50" height="70"/>
+                                        <rect key="frame" x="182" y="374.66666666666669" width="50" height="70"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="S4Q-oz-bV5"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="S4Q-oz-bV5"/>
                                             <constraint firstAttribute="height" constant="70" id="VZC-AG-VHa"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -59,10 +65,10 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </mutableString>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hW1-Pr-Jze">
-                                        <rect key="frame" x="111" y="627" width="193" height="30"/>
+                                        <rect key="frame" x="111" y="325.66666666666669" width="193" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="AwP-Xj-TaX"/>
-                                            <constraint firstAttribute="width" constant="193" id="eVz-QY-3wL"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="193" id="eVz-QY-3wL"/>
                                         </constraints>
                                         <state key="normal" title="Kontakt: bucek.jiri@email.cz"/>
                                         <connections>
@@ -74,15 +80,15 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </mutableString>
                                     <constraint firstItem="7Wr-05-bYS" firstAttribute="top" secondItem="lwr-Sk-Iug" secondAttribute="top" constant="40" id="1Td-xh-sW3"/>
                                     <constraint firstAttribute="bottom" secondItem="Urm-I4-ehZ" secondAttribute="bottom" constant="823" placeholder="YES" id="1gs-t9-mzA"/>
                                     <constraint firstItem="Urm-I4-ehZ" firstAttribute="centerX" secondItem="lwr-Sk-Iug" secondAttribute="centerX" id="4Tt-Gm-viQ"/>
-                                    <constraint firstItem="TBe-BZ-dap" firstAttribute="centerX" secondItem="lwr-Sk-Iug" secondAttribute="centerX" id="9gj-uI-V0o"/>
                                     <constraint firstItem="TBe-BZ-dap" firstAttribute="top" secondItem="7Wr-05-bYS" secondAttribute="bottom" constant="20" id="Hyz-1k-d8t"/>
                                     <constraint firstItem="7Wr-05-bYS" firstAttribute="width" secondItem="lwr-Sk-Iug" secondAttribute="width" multiplier="0.4" id="IiY-VY-XMy"/>
                                     <constraint firstItem="7Wr-05-bYS" firstAttribute="centerX" secondItem="lwr-Sk-Iug" secondAttribute="centerX" id="IuW-pI-Cbj"/>
                                     <constraint firstItem="hW1-Pr-Jze" firstAttribute="centerX" secondItem="lwr-Sk-Iug" secondAttribute="centerX" id="Jg0-wI-Qrd"/>
                                     <constraint firstItem="TBe-BZ-dap" firstAttribute="leading" secondItem="lwr-Sk-Iug" secondAttribute="leadingMargin" constant="8" id="Khr-ZX-4cI"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="TBe-BZ-dap" secondAttribute="trailing" constant="8" id="M6P-yt-9Kg"/>
                                     <constraint firstItem="hW1-Pr-Jze" firstAttribute="top" secondItem="TBe-BZ-dap" secondAttribute="bottom" constant="29" id="qXD-qD-LE1"/>
                                     <constraint firstItem="Urm-I4-ehZ" firstAttribute="top" secondItem="hW1-Pr-Jze" secondAttribute="bottom" constant="19" id="sVc-kM-Ymz"/>
+                                    <constraint firstItem="TBe-BZ-dap" firstAttribute="centerX" secondItem="lwr-Sk-Iug" secondAttribute="centerX" id="sut-uy-G06"/>
+                                    <constraint firstAttribute="trailing" secondItem="TBe-BZ-dap" secondAttribute="trailing" constant="8" id="zP2-Jn-ukF"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -102,7 +108,7 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </mutableString>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMP-sh-KU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-783.75" y="41.197183098591552"/>
+            <point key="canvasLocation" x="-784.05797101449286" y="40.760869565217398"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -131,7 +137,7 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </mutableString>
                                 <rect key="frame" x="20" y="324" width="66" height="88"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metro3_0027_Cara" translatesAutoresizingMaskIntoConstraints="NO" id="rS4-7A-y7E">
-                                <rect key="frame" x="186" y="20" width="2" height="287"/>
+                                <rect key="frame" x="186" y="40" width="2" height="287"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="2" id="mDO-1X-3jt"/>
                                 </constraints>
@@ -179,7 +185,7 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </mutableString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AyO-lc-7jq">
-                                <rect key="frame" x="224" y="184" width="173" height="77"/>
+                                <rect key="frame" x="224" y="184.33333333333334" width="173" height="76.333333333333343"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" updatesFrequently="YES"/>
                                 </accessibility>
@@ -229,10 +235,10 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </mutableString>
                                 <rect key="frame" x="220" y="566" width="14" height="14"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metro3_0017_Ikona-Metra-2" translatesAutoresizingMaskIntoConstraints="NO" id="6Gx-Eh-0qq">
-                                <rect key="frame" x="206" y="626" width="42" height="42"/>
+                                <rect key="frame" x="206" y="625" width="42" height="42"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jc8-lh-7s0">
-                                <rect key="frame" x="17" y="534" width="173" height="77"/>
+                                <rect key="frame" x="17" y="534.33333333333337" width="173" height="76.333333333333371"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" updatesFrequently="YES"/>
                                 </accessibility>
@@ -261,7 +267,7 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </mutableString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.34999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gy-wQ-cYE">
-                                <rect key="frame" x="267" y="108" width="87" height="76"/>
+                                <rect key="frame" x="267" y="107.66666666666666" width="87" height="76.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8gy-wQ-cYE" secondAttribute="height" multiplier="69:61" id="uoK-AP-cyT"/>
                                 </constraints>

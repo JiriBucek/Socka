@@ -215,17 +215,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             konecna2outlet.text = konecna2
             konecna2outlet.textColor = hlavniBarva
             
-            cas11.text = timeDifference(arrivalTime: time11)
-            countdown1.text = timeDifference(arrivalTime: time1)
-            countdown1.textColor = barva2
             
             if myTimeDifference(to: time1) <= 0{
                 metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
             }
-            
-            cas21.text = timeDifference(arrivalTime: time22)
-            countdown2.text = timeDifference(arrivalTime: time2)
-            countdown2.textColor = barva3
                 
             if myTimeDifference(to: time2) <= 0{
                 metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
@@ -250,6 +243,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             
             nearestZastavkaButton.setTitle(hlavniZastavka, for: .normal)
             nearestZastavkaButton.setTitleColor(hlavniBarva, for: .normal)
+            
+            cas11.text = timeDifference(arrivalTime: time11)
+            countdown1.text = timeDifference(arrivalTime: time1)
+            countdown1.textColor = barva2
+            
+            cas21.text = timeDifference(arrivalTime: time22)
+            countdown2.text = timeDifference(arrivalTime: time2)
+            countdown2.textColor = barva3
+            
             
             if existujeNovaVerzeDTBZ{
                 ukazUpgradeVC()
