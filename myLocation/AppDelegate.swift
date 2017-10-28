@@ -34,12 +34,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Entered background.")
         nearestZastavkaIndex = 0
         aktualneZobrazovanaStanice = "načítám"
+        noveSpusteno = 1
+        
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         print("I am back!")
+        aktualneZobrazovanaStanice = "načítám"
         //způsobí to, že funkce displayValues načte nová data z databáze
         
         

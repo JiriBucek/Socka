@@ -40,6 +40,8 @@ extension UIColor{
 
 //MARK - global vars
 
+var noveSpusteno = 1
+
 var nearestZastavkaIndex: Int = 0
 // globalni var pro prehazovani zastavky, pro kterou maji byt zobrazeny casove udaje
 
@@ -57,8 +59,6 @@ let cervena = UIColor().HexToColor(hexString: "F30503", alpha: 1.0)
 let zluta = UIColor().HexToColor(hexString: "FFA100", alpha: 1.0)
 let zelena = UIColor().HexToColor(hexString: "008900", alpha: 1.0)
 
-var casZmacknutiAlternativniZastavky = Date()
-//po nejake dobe chci prehodit appku zpet na puvodni zastavku
 
 
 //MARK - VC
@@ -75,7 +75,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             nearestZastavkaIndex = 0
         }
         //kvuli restartu po 5 minutach na puvodni zastavku
-        casZmacknutiAlternativniZastavky = Date()
     }
     
     @IBOutlet weak var cas11: UILabel!
@@ -157,8 +156,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         let hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
         //aktuálne vybraná stanice
         
-        let aktualniCas = Date()
-        
         let hlavniBarva = getColor(jmenoZastavky: hlavniZastavka)
         var barva2 = zelena
         var barva3 = zelena
@@ -177,12 +174,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             print("Barvy nefungují.")
         }
         
-        if rozdilCasuTypuDate(datum1: aktualniCas, datum2: casZmacknutiAlternativniZastavky) > 300{
-            nearestZastavkaIndex = 0
-            //pokud obehne pět minut od zmacknuti alternativni stanice, appka se vyresetuje
-        }
         
-        if aktualneZobrazovanaStanice != hlavniZastavka{
+        if aktualneZobrazovanaStanice != hlavniZastavka || noveSpusteno == 1 {
             print("NOVÁ DATA")
             metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
             
@@ -252,6 +245,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             countdown2.text = timeDifference(arrivalTime: time2)
             countdown2.textColor = barva3
             
+            noveSpusteno = 0
             
             if existujeNovaVerzeDTBZ{
                 ukazUpgradeVC()

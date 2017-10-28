@@ -271,7 +271,7 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8gy-wQ-cYE" secondAttribute="height" multiplier="69:61" id="uoK-AP-cyT"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="SEDE LOGO"/>
+                                <state key="normal" title="Button" image="black-n-white-logo"/>
                                 <connections>
                                     <segue destination="Ayq-MO-Ecb" kind="presentation" id="1vZ-HQ-6cX"/>
                                 </connections>
@@ -489,7 +489,7 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
     </scenes>
     <resources>
         <image name="Location_dot_lightgrey" width="120" height="120"/>
-        <image name="SEDE LOGO" width="248" height="245"/>
+        <image name="black-n-white-logo" width="200" height="200"/>
         <image name="location" width="66" height="101"/>
         <image name="male socka logo pruhledne" width="664" height="442"/>
         <image name="metro3_0017_Ikona-Metra-2" width="38" height="38"/>
