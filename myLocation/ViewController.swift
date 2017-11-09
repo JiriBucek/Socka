@@ -40,8 +40,6 @@ extension UIColor{
 
 //MARK - global vars
 
-var noveSpusteno = 1
-
 var nearestZastavkaIndex: Int = 0
 // globalni var pro prehazovani zastavky, pro kterou maji byt zobrazeny casove udaje
 
@@ -58,8 +56,6 @@ var existujeNovaVerzeDTBZ = false
 let cervena = UIColor().HexToColor(hexString: "F30503", alpha: 1.0)
 let zluta = UIColor().HexToColor(hexString: "FFA100", alpha: 1.0)
 let zelena = UIColor().HexToColor(hexString: "008900", alpha: 1.0)
-
-
 
 //MARK - VC
 
@@ -175,7 +171,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }
         
         
-        if aktualneZobrazovanaStanice != hlavniZastavka || noveSpusteno == 1 {
+        if aktualneZobrazovanaStanice != hlavniZastavka{
             print("NOVÁ DATA")
             metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
             
@@ -237,16 +233,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             nearestZastavkaButton.setTitle(hlavniZastavka, for: .normal)
             nearestZastavkaButton.setTitleColor(hlavniBarva, for: .normal)
             
-            cas11.text = timeDifference(arrivalTime: time11)
-            countdown1.text = timeDifference(arrivalTime: time1)
-            countdown1.textColor = barva2
             
-            cas21.text = timeDifference(arrivalTime: time22)
-            countdown2.text = timeDifference(arrivalTime: time2)
-            countdown2.textColor = barva3
+            if (myTimeDifference(to: time1) > 0 && myTimeDifference(to: time2) > 0) || (myTimeDifference(to: time11) < -1000 ){
+                cas11.text = timeDifference(arrivalTime: time11)
+                countdown1.text = timeDifference(arrivalTime: time1)
+                countdown1.textColor = barva2
             
-            noveSpusteno = 0
-            
+                cas21.text = timeDifference(arrivalTime: time22)
+                countdown2.text = timeDifference(arrivalTime: time2)
+                countdown2.textColor = barva3
+            }
+                        
             if existujeNovaVerzeDTBZ{
                 ukazUpgradeVC()
                 existujeNovaVerzeDTBZ = false
@@ -605,12 +602,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
 
         
-        if Int(minuty)! < 0{
+        if Int(minuty)! < -1000{
         //úprava kvůli přepočtu přes půlnoc, aby to neukazovalo minusove casy
             minuty = String(Int(minuty)! + 1439)
             sekundy = String(59 + Int(sekundy)!)
             }
-            
+
         if sekundy.characters.count == 1{
         //přihodí nulu, pokud sekundy mají jen jeden znak
                 let index = sekundy.startIndex
