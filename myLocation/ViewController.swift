@@ -52,6 +52,7 @@ var arrayPristichZastavek2 = [String]()
 var konecna1 = ""
 var konecna2 = ""
 var existujeNovaVerzeDTBZ = false
+var prestupniStaniceVybrana = ""
 
 let cervena = UIColor().HexToColor(hexString: "F30503", alpha: 1.0)
 let zluta = UIColor().HexToColor(hexString: "FFA100", alpha: 1.0)
@@ -59,18 +60,25 @@ let zelena = UIColor().HexToColor(hexString: "008900", alpha: 1.0)
 
 //MARK - VC
 
-class ViewController: UIViewController, CLLocationManagerDelegate{
+class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
     
     
     @IBOutlet weak var nearestZastavkaButton: UIButton!
     
     @IBAction func nearestZastavkaButtonPressed(_ sender: Any) {
         //prepinani trech nejblizsich stanic
+        prestupniStaniceVybrana = ""
+        
         nearestZastavkaIndex += 1
         if nearestZastavkaIndex == 3{
             nearestZastavkaIndex = 0
         }
-        //kvuli restartu po 5 minutach na puvodni zastavku
+    }
+    @IBOutlet weak var schovavaciPickerView: UIView!
+    @IBOutlet weak var picker: UIPickerView!
+    
+    @IBAction func prestupyBtn(_ sender: Any) {
+        schovavaciPickerView.isHidden = false
     }
     
     @IBOutlet weak var cas11: UILabel!
@@ -96,14 +104,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     let manager = CLLocationManager()
     //první proměnná nutná pro práci s polohovým službama
     
+    let prestupyArray = ["Můstek - A", "Můstek - B", "Muzeum - A", "Muzeum - C", "Florenc - B", "Florenc - C"]
     
 //MARK - functions
     
     override func viewDidLoad() {
     //co se stane po loadnutí
         
-        //let appDelegate:AppDelegate = UIApplication.shared.delegate! as! AppDelegate
-        //appDelegate.refreshVC = self
+        schovavaciPickerView.isHidden = true
+        //schová picker view
+        self.picker.delegate = self
+        self.picker.dataSource = self
+        
         
         //Nastaví font na buttonu hlavní zastávky 
         nearestZastavkaButton.titleLabel?.minimumScaleFactor = 0.2
@@ -135,7 +147,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
-    //vybarví status bar nahoře na bílo
+    //vybarví status bar nahoře
         return .default
     }
     
@@ -149,8 +161,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     @objc func displayAllValues(){
     //přiřadí hodnoty jednotlivým labelum
-        let hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
+        var hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
         //aktuálne vybraná stanice
+        
+        if prestupniStaniceVybrana != ""{
+            hlavniZastavka = prestupniStaniceVybrana
+        }
         
         let hlavniBarva = getColor(jmenoZastavky: hlavniZastavka)
         var barva2 = zelena
@@ -424,7 +440,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     func get_metro_times(dayOfWeek: Int, metroStanice: Int) -> [[Any]]!{
         //parametr metroStanice odkazuje na to, která zastávka se má načítat > 0 je nejbližší, 1 je druhá nejbližší, 2 je třetí nejbližší
         //vrátí array s dvěma konecnyma a sesti casama
-        let nearest_station = nearestMetro()[metroStanice]
+        var nearest_station = nearestMetro()[metroStanice]
+        
+        if prestupniStaniceVybrana != ""{
+            nearest_station = prestupniStaniceVybrana
+        }
+        
         //název zastávky metra
         let station_ids = stations_ids[nearest_station]!
         //dva ID kody pro danou zastavku a dvě konecne
@@ -748,6 +769,30 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         return (isReachable && !needsConnection)
     }
+    
+    //MARK - pickerViewDelegate metody
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+        //jedna sada (component) dat pro picker view
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return prestupyArray.count
+        //počet rows na výběr
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return prestupyArray[row]
+        //názvy jednotlivých rows
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        schovavaciPickerView.isHidden = true
+        prestupniStaniceVybrana = prestupyArray[row]
+        
+        //co se stane po tom, co vyberu
+    }
+    
     
     }
 
