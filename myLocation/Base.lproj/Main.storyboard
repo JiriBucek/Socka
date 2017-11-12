@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -27,14 +27,14 @@
                         <viewControllerLayoutGuide type="bottom" id="tE4-7j-Etm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gCB-hh-Yfh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwr-Sk-Iug">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="31" baselineAdjustment="none" minimumScaleFactor="0.14999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="TBe-BZ-dap">
-                                        <rect key="frame" x="16" y="137" width="288" height="546.5"/>
+                                        <rect key="frame" x="16" y="159.33333333333334" width="382" height="437.33333333333326"/>
                                         <string key="text">Socku jsem napsal ve volných chvílích při pobytu na zahraniční misi v Afghánistánu. A to zejména pro radost ze zajímavé práce a pro radost z toho, že Vám tato aplikace může zpříjemnit každý Váš den.
 
 Eskalátor v logu je odkazem na nejčastější místo použití Socky. Zde se dle času do příjezdu další soupravy metra můžete rozhodnout, zda běžet po schodech dolů anebo zůstat stát a kochat se pohledem na ostatní zbytečně běžící, kteří tuto aplikaci ještě nemají.
@@ -45,13 +45,13 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="male socka logo pruhledne" translatesAutoresizingMaskIntoConstraints="NO" id="7Wr-05-bYS">
-                                        <rect key="frame" x="96" y="40" width="128" height="77"/>
+                                        <rect key="frame" x="124.33333333333333" y="39.999999999999993" width="165.66666666666669" height="99.333333333333314"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="7Wr-05-bYS" secondAttribute="height" multiplier="5:3" id="3dJ-Xf-5d5"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urm-I4-ehZ">
-                                        <rect key="frame" x="135" y="761.5" width="50" height="70"/>
+                                        <rect key="frame" x="182.66666666666666" y="674.66666666666663" width="50" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="S4Q-oz-bV5"/>
                                             <constraint firstAttribute="height" constant="70" id="VZC-AG-VHa"/>
@@ -65,7 +65,7 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hW1-Pr-Jze">
-                                        <rect key="frame" x="64" y="712.5" width="193" height="30"/>
+                                        <rect key="frame" x="110.66666666666669" y="625.66666666666663" width="193" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="AwP-Xj-TaX"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="193" id="eVz-QY-3wL"/>
@@ -108,7 +108,7 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMP-sh-KU2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-784.05797101449286" y="40.760869565217398"/>
+            <point key="canvasLocation" x="-551" y="-681"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -119,11 +119,11 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="left" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="Tex-5e-ui6">
-                                <rect key="frame" x="86" y="250" width="198" height="68"/>
+                                <rect key="frame" x="86" y="324" width="288" height="88"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="49"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="5" maxY="0.0"/>
                                 <state key="normal" title="...načítám...">
@@ -134,58 +134,58 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="0hW-vj-hEK">
-                                <rect key="frame" x="20" y="250" width="66" height="68"/>
+                                <rect key="frame" x="20" y="324" width="66" height="88"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metro3_0027_Cara" translatesAutoresizingMaskIntoConstraints="NO" id="rS4-7A-y7E">
-                                <rect key="frame" x="139" y="40" width="2" height="221.5"/>
+                                <rect key="frame" x="186" y="40" width="2" height="287"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="2" id="mDO-1X-3jt"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metro3_0027_Cara" translatesAutoresizingMaskIntoConstraints="NO" id="OVw-lo-2t9">
-                                <rect key="frame" x="179" y="326.5" width="2" height="221.5"/>
+                                <rect key="frame" x="226" y="429" width="2" height="287"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="2" id="d1P-W8-eGU"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="z3y-yT-dE9">
-                                <rect key="frame" x="16" y="191.5" width="96" height="45.5"/>
+                                <rect key="frame" x="19.999999999999993" y="252" width="124.33333333333331" height="59"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metro3_0017_Ikona-Metra-2" translatesAutoresizingMaskIntoConstraints="NO" id="xnP-bA-WRL">
-                                <rect key="frame" x="124" y="51" width="32" height="32"/>
+                                <rect key="frame" x="166.33333333333334" y="71" width="41.666666666666657" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xnP-bA-WRL" secondAttribute="height" multiplier="19:19" id="Iyx-Lw-xKo"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="xCw-hA-0tH">
-                                <rect key="frame" x="134.5" y="209" width="10.5" height="10"/>
+                                <rect key="frame" x="180.33333333333334" y="275.33333333333331" width="13" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xCw-hA-0tH" secondAttribute="height" multiplier="1:1" id="Dfl-yq-tKZ"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="bEx-ic-BcE">
-                                <rect key="frame" x="134.5" y="164" width="10.5" height="9.5"/>
+                                <rect key="frame" x="180.33333333333334" y="215.66666666666666" width="13" height="12.666666666666657"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="wXu-wm-DvN">
-                                <rect key="frame" x="134.5" y="119" width="10.5" height="10"/>
+                                <rect key="frame" x="180.33333333333334" y="157.33333333333334" width="13" height="12.666666666666657"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Xp-Un-7Tw">
-                                <rect key="frame" x="16" y="146.5" width="96" height="45"/>
+                                <rect key="frame" x="19.999999999999993" y="193.66666666666666" width="124.33333333333331" height="58.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KbY-oR-4j1">
-                                <rect key="frame" x="16" y="101" width="96" height="45.5"/>
+                                <rect key="frame" x="19.999999999999993" y="135" width="124.33333333333331" height="58.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AyO-lc-7jq">
-                                <rect key="frame" x="173" y="139.5" width="134" height="59"/>
+                                <rect key="frame" x="223.66666666666669" y="183.66666666666666" width="173.66666666666669" height="76.666666666666657"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" updatesFrequently="YES"/>
                                 </accessibility>
@@ -199,7 +199,7 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                                 <size key="shadowOffset" width="-1" height="1"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:32:40" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjg-R2-E9s">
-                                <rect key="frame" x="173" y="190.5" width="134" height="46.5"/>
+                                <rect key="frame" x="223.66666666666669" y="250.66666666666666" width="173.66666666666669" height="60.666666666666657"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Zjg-R2-E9s" secondAttribute="height" multiplier="66:23" id="746-OD-FXg"/>
                                 </constraints>
@@ -208,37 +208,37 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BnQ-e4-QRz">
-                                <rect key="frame" x="204.5" y="331" width="95.5" height="45.5"/>
+                                <rect key="frame" x="266.33333333333331" y="425" width="123.66666666666669" height="59"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8iz-1A-Llv">
-                                <rect key="frame" x="204.5" y="376.5" width="95.5" height="45"/>
+                                <rect key="frame" x="266.33333333333331" y="483.99999999999994" width="123.66666666666669" height="58.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Apo-7b-BSI">
-                                <rect key="frame" x="204.5" y="421.5" width="95.5" height="45.5"/>
+                                <rect key="frame" x="266.33333333333331" y="542.33333333333337" width="123.66666666666669" height="58.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="rFf-ho-F7Y">
-                                <rect key="frame" x="174.5" y="349" width="10.5" height="10"/>
+                                <rect key="frame" x="220.33333333333334" y="447.66666666666669" width="13" height="13"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="8Mm-BP-hRm">
-                                <rect key="frame" x="174.5" y="394.5" width="10.5" height="9.5"/>
+                                <rect key="frame" x="220.33333333333334" y="507.66666666666669" width="13" height="12.666666666666686"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location_dot_lightgrey" translatesAutoresizingMaskIntoConstraints="NO" id="QeM-2z-Nit">
-                                <rect key="frame" x="174.5" y="440" width="10.5" height="10"/>
+                                <rect key="frame" x="220.33333333333334" y="565" width="13" height="13.333333333333371"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="metro3_0017_Ikona-Metra-2" translatesAutoresizingMaskIntoConstraints="NO" id="6Gx-Eh-0qq">
-                                <rect key="frame" x="164" y="485" width="32" height="32"/>
+                                <rect key="frame" x="206.33333333333334" y="624" width="41.666666666666657" height="41"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jc8-lh-7s0">
-                                <rect key="frame" x="13" y="370" width="134" height="59"/>
+                                <rect key="frame" x="16.666666666666671" y="533.66666666666663" width="173.66666666666663" height="77"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" updatesFrequently="YES"/>
                                 </accessibility>
@@ -249,48 +249,196 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                                 <size key="shadowOffset" width="1" height="-2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15:31:40" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIZ-gL-5eL">
-                                <rect key="frame" x="13" y="330" width="134" height="46.5"/>
+                                <rect key="frame" x="16.666666666666671" y="483" width="173.66666666666663" height="61"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="0.73725490199999999" green="0.74117647060000003" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eC-sC-GRu">
-                                <rect key="frame" x="16" y="33.5" width="96" height="67.5"/>
+                                <rect key="frame" x="19.999999999999993" y="46.666666666666664" width="124.33333333333331" height="88.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="19"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksz-g7-AnL">
-                                <rect key="frame" x="204.5" y="467" width="95.5" height="67.5"/>
+                                <rect key="frame" x="266.33333333333331" y="601" width="123.66666666666669" height="88.333333333333371"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.53725490200000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" alpha="0.34999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gy-wQ-cYE">
-                                <rect key="frame" x="206.5" y="80" width="67.5" height="59.5"/>
+                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wU-CW-5vi">
+                                <rect key="frame" x="335.66666666666669" y="61" width="61.666666666666686" height="61"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="8gy-wQ-cYE" secondAttribute="height" multiplier="69:61" id="uoK-AP-cyT"/>
+                                    <constraint firstAttribute="width" secondItem="6wU-CW-5vi" secondAttribute="height" multiplier="1:1" id="S5a-9R-m9T"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="black-n-white-logo"/>
+                                <state key="normal" image="hamburger"/>
                                 <connections>
-                                    <segue destination="Ayq-MO-Ecb" kind="presentation" id="1vZ-HQ-6cX"/>
+                                    <action selector="sideMenuBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EM2-2z-3Fs"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dT2-ku-pUK">
-                                <rect key="frame" x="0.0" y="142" width="320" height="142"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dT2-ku-pUK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHA-dw-d1H">
+                                        <rect key="frame" x="207.66666666666663" y="0.0" width="206.33333333333337" height="736"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuO-s4-GdF">
+                                                <rect key="frame" x="0.0" y="229.33333333333334" width="206.33333333333334" height="51.333333333333343"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
+                                                <state key="normal" title=" V podzemí:">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLc-ZY-Lmj">
+                                                <rect key="frame" x="0.0" y="347.33333333333331" width="206.33333333333334" height="51.333333333333314"/>
+                                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
+                                                <state key="normal" title=" Můstek - B">
+                                                    <color key="titleColor" red="1" green="0.63137254899999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mustekBBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jrX-6h-ocu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vf-O1-AFN">
+                                                <rect key="frame" x="0.0" y="406.66666666666669" width="206.33333333333334" height="51.333333333333314"/>
+                                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
+                                                <state key="normal" title=" Muzeum - A">
+                                                    <color key="titleColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="muzeumABtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xTR-rb-taO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSo-Q0-Wua">
+                                                <rect key="frame" x="0.0" y="466" width="206.33333333333334" height="51.333333333333371"/>
+                                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
+                                                <state key="normal" title=" Muzeum - C">
+                                                    <color key="titleColor" red="0.95294117649999999" green="0.019607843140000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="muzeumCBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i8v-Kn-OS1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EhB-Hd-fHa">
+                                                <rect key="frame" x="0.0" y="525.33333333333337" width="206.33333333333334" height="51.666666666666629"/>
+                                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
+                                                <state key="normal" title=" Florenc - B">
+                                                    <color key="titleColor" red="1" green="0.63137254899999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="florencBBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aF3-WE-5YO"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="male socka logo pruhledne" translatesAutoresizingMaskIntoConstraints="NO" id="4KY-Cl-Ytt">
+                                                <rect key="frame" x="46.33333333333335" y="40" width="113.66666666666669" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="4KY-Cl-Ytt" secondAttribute="height" multiplier="59:52" id="8gT-ok-5Oi"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ls-gz-evY">
+                                                <rect key="frame" x="0.0" y="170" width="206.33333333333334" height="51.333333333333343"/>
+                                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
+                                                <state key="normal" title=" O aplikaci">
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="oAplikaciBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SeU-x6-P83"/>
+                                                    <segue destination="Ayq-MO-Ecb" kind="presentation" id="0gg-uV-ktz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhd-uR-tbF">
+                                                <rect key="frame" x="0.0" y="585" width="206.33333333333334" height="51"/>
+                                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
+                                                <state key="normal" title=" Florenc - C">
+                                                    <color key="titleColor" red="0.95294117649999999" green="0.019607843140000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="florencCBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M70-np-wBa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5z-oI-bbo">
+                                                <rect key="frame" x="0.0" y="288.33333333333331" width="206.33333333333334" height="51"/>
+                                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
+                                                <state key="normal" title=" Můstek - A">
+                                                    <color key="titleColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="mustekABtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p9g-xj-GMX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="5Ls-gz-evY" firstAttribute="leading" secondItem="OHA-dw-d1H" secondAttribute="leading" id="3dx-Q5-eqH"/>
+                                            <constraint firstItem="Xhd-uR-tbF" firstAttribute="height" secondItem="OHA-dw-d1H" secondAttribute="height" multiplier="0.07" id="4jf-uF-pAu"/>
+                                            <constraint firstItem="4KY-Cl-Ytt" firstAttribute="width" secondItem="OHA-dw-d1H" secondAttribute="width" multiplier="0.55" id="4y3-EA-pLd"/>
+                                            <constraint firstAttribute="trailing" secondItem="CuO-s4-GdF" secondAttribute="trailing" id="BNE-e8-DFU"/>
+                                            <constraint firstItem="EhB-Hd-fHa" firstAttribute="leading" secondItem="OHA-dw-d1H" secondAttribute="leading" id="BuV-2G-n3F"/>
+                                            <constraint firstItem="D5z-oI-bbo" firstAttribute="leading" secondItem="OHA-dw-d1H" secondAttribute="leading" id="CDl-sG-c2V"/>
+                                            <constraint firstItem="EhB-Hd-fHa" firstAttribute="top" secondItem="BSo-Q0-Wua" secondAttribute="bottom" constant="8" id="CNC-ic-qby"/>
+                                            <constraint firstItem="Xhd-uR-tbF" firstAttribute="top" secondItem="EhB-Hd-fHa" secondAttribute="bottom" constant="8" id="CUJ-BI-4Jk"/>
+                                            <constraint firstItem="2Vf-O1-AFN" firstAttribute="top" secondItem="hLc-ZY-Lmj" secondAttribute="bottom" constant="8" id="JES-yF-4cY"/>
+                                            <constraint firstAttribute="trailing" secondItem="5Ls-gz-evY" secondAttribute="trailing" id="Kdt-Of-erR"/>
+                                            <constraint firstItem="D5z-oI-bbo" firstAttribute="top" secondItem="CuO-s4-GdF" secondAttribute="bottom" constant="8" id="KlJ-4Z-aBx"/>
+                                            <constraint firstItem="hLc-ZY-Lmj" firstAttribute="top" secondItem="D5z-oI-bbo" secondAttribute="bottom" constant="8" id="LGM-7x-JhI"/>
+                                            <constraint firstAttribute="trailing" secondItem="D5z-oI-bbo" secondAttribute="trailing" id="NFt-14-nUN"/>
+                                            <constraint firstItem="BSo-Q0-Wua" firstAttribute="height" secondItem="OHA-dw-d1H" secondAttribute="height" multiplier="0.07" id="Ngb-m1-kSH"/>
+                                            <constraint firstItem="Xhd-uR-tbF" firstAttribute="leading" secondItem="OHA-dw-d1H" secondAttribute="leading" id="Nmv-Rt-arr"/>
+                                            <constraint firstItem="D5z-oI-bbo" firstAttribute="height" secondItem="OHA-dw-d1H" secondAttribute="height" multiplier="0.07" id="Pe3-Le-4lN"/>
+                                            <constraint firstItem="hLc-ZY-Lmj" firstAttribute="leading" secondItem="OHA-dw-d1H" secondAttribute="leading" id="SNB-O3-dpC"/>
+                                            <constraint firstAttribute="trailing" secondItem="2Vf-O1-AFN" secondAttribute="trailing" id="TNb-e1-uVC"/>
+                                            <constraint firstItem="5Ls-gz-evY" firstAttribute="height" secondItem="OHA-dw-d1H" secondAttribute="height" multiplier="0.07" id="TPq-qX-CNX"/>
+                                            <constraint firstItem="CuO-s4-GdF" firstAttribute="leading" secondItem="OHA-dw-d1H" secondAttribute="leading" id="VOi-ZK-Wsm"/>
+                                            <constraint firstItem="4KY-Cl-Ytt" firstAttribute="centerX" secondItem="OHA-dw-d1H" secondAttribute="centerX" id="h2y-NK-z3U"/>
+                                            <constraint firstItem="5Ls-gz-evY" firstAttribute="top" secondItem="4KY-Cl-Ytt" secondAttribute="bottom" constant="30" id="iMy-Nq-xht"/>
+                                            <constraint firstItem="2Vf-O1-AFN" firstAttribute="leading" secondItem="OHA-dw-d1H" secondAttribute="leading" id="ipi-f7-MAj"/>
+                                            <constraint firstItem="2Vf-O1-AFN" firstAttribute="height" secondItem="OHA-dw-d1H" secondAttribute="height" multiplier="0.07" id="jh0-OB-gUJ"/>
+                                            <constraint firstItem="EhB-Hd-fHa" firstAttribute="height" secondItem="OHA-dw-d1H" secondAttribute="height" multiplier="0.07" id="mZ1-50-JNb"/>
+                                            <constraint firstItem="CuO-s4-GdF" firstAttribute="top" secondItem="5Ls-gz-evY" secondAttribute="bottom" constant="8" id="mgq-Nb-EcI"/>
+                                            <constraint firstItem="hLc-ZY-Lmj" firstAttribute="height" secondItem="OHA-dw-d1H" secondAttribute="height" multiplier="0.07" id="olC-LG-5F2"/>
+                                            <constraint firstAttribute="trailing" secondItem="hLc-ZY-Lmj" secondAttribute="trailing" id="ptn-OR-hsf"/>
+                                            <constraint firstItem="BSo-Q0-Wua" firstAttribute="top" secondItem="2Vf-O1-AFN" secondAttribute="bottom" constant="8" id="qHF-eH-j7N"/>
+                                            <constraint firstItem="BSo-Q0-Wua" firstAttribute="leading" secondItem="OHA-dw-d1H" secondAttribute="leading" id="qaa-oM-w1b"/>
+                                            <constraint firstAttribute="trailing" secondItem="BSo-Q0-Wua" secondAttribute="trailing" id="raw-Km-a1c"/>
+                                            <constraint firstItem="CuO-s4-GdF" firstAttribute="height" secondItem="OHA-dw-d1H" secondAttribute="height" multiplier="0.07" id="uQf-l8-TU6"/>
+                                            <constraint firstItem="4KY-Cl-Ytt" firstAttribute="top" secondItem="OHA-dw-d1H" secondAttribute="top" constant="40" id="yff-O4-rUA"/>
+                                            <constraint firstAttribute="trailing" secondItem="EhB-Hd-fHa" secondAttribute="trailing" id="yvh-dI-qyB"/>
+                                            <constraint firstAttribute="trailing" secondItem="Xhd-uR-tbF" secondAttribute="trailing" id="zN1-Xh-MVU"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVm-4k-1cv">
+                                        <rect key="frame" x="0.0" y="0.0" width="207.66666666666666" height="736"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.79494863013698636" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <action selector="menuBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m2t-H1-lpc"/>
+                                            <action selector="zavriSideviewBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="apI-aD-FZh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="OHA-dw-d1H" secondAttribute="bottom" id="3Bb-Gh-D5j"/>
+                                    <constraint firstItem="DVm-4k-1cv" firstAttribute="top" secondItem="dT2-ku-pUK" secondAttribute="top" id="6Bp-dK-i3b"/>
+                                    <constraint firstItem="OHA-dw-d1H" firstAttribute="top" secondItem="dT2-ku-pUK" secondAttribute="top" id="MsT-0w-Uk5"/>
+                                    <constraint firstItem="DVm-4k-1cv" firstAttribute="leading" secondItem="dT2-ku-pUK" secondAttribute="leading" id="Zj9-kq-Yga"/>
+                                    <constraint firstItem="OHA-dw-d1H" firstAttribute="width" secondItem="dT2-ku-pUK" secondAttribute="width" multiplier="0.5" id="eZ0-Gi-gfg"/>
+                                    <constraint firstAttribute="trailing" secondItem="OHA-dw-d1H" secondAttribute="trailing" id="n7k-qF-ZHN"/>
+                                    <constraint firstAttribute="bottom" secondItem="DVm-4k-1cv" secondAttribute="bottom" id="qoO-Rf-ObK"/>
+                                    <constraint firstItem="OHA-dw-d1H" firstAttribute="leading" secondItem="DVm-4k-1cv" secondAttribute="trailing" id="vNG-EO-U8o"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2zj-ET-Wzw" appends="YES" id="38v-rs-l8E"/>
+                                </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Lg-lA-HBU">
-                                <rect key="frame" x="40" y="429" width="80" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <state key="normal" title="Podzemí">
-                                    <color key="titleColor" red="0.5999411940574646" green="0.60004258155822754" blue="0.59991961717605591" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="prestupyBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jLL-wd-Z5s"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -307,7 +455,6 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                             <constraint firstItem="0hW-vj-hEK" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.12" id="6sy-6M-Ngc"/>
                             <constraint firstItem="BnQ-e4-QRz" firstAttribute="top" secondItem="Tex-5e-ui6" secondAttribute="bottom" constant="13" id="7Ol-W1-Ujb"/>
                             <constraint firstItem="AyO-lc-7jq" firstAttribute="width" secondItem="z3y-yT-dE9" secondAttribute="width" multiplier="1.4" id="7qu-HZ-WI7"/>
-                            <constraint firstItem="8gy-wQ-cYE" firstAttribute="width" secondItem="AyO-lc-7jq" secondAttribute="width" multiplier="0.5" id="8eR-Qa-QfI"/>
                             <constraint firstItem="8Mm-BP-hRm" firstAttribute="height" secondItem="xCw-hA-0tH" secondAttribute="height" id="A1i-xB-KnP"/>
                             <constraint firstItem="Jc8-lh-7s0" firstAttribute="height" secondItem="AyO-lc-7jq" secondAttribute="height" id="A9O-Ci-LL7"/>
                             <constraint firstItem="8iz-1A-Llv" firstAttribute="height" secondItem="z3y-yT-dE9" secondAttribute="height" id="ATO-zX-PaL"/>
@@ -316,12 +463,10 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                             <constraint firstItem="Zjg-R2-E9s" firstAttribute="width" secondItem="AyO-lc-7jq" secondAttribute="width" id="Bjg-4m-1NF"/>
                             <constraint firstItem="KbY-oR-4j1" firstAttribute="width" secondItem="z3y-yT-dE9" secondAttribute="width" id="CTn-7c-GXi"/>
                             <constraint firstItem="rS4-7A-y7E" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.39" id="CqS-Sn-6cM"/>
-                            <constraint firstAttribute="trailing" secondItem="dT2-ku-pUK" secondAttribute="trailing" id="DZY-DL-Vyn"/>
                             <constraint firstItem="KbY-oR-4j1" firstAttribute="top" secondItem="0eC-sC-GRu" secondAttribute="bottom" id="Dr4-ca-6v2"/>
                             <constraint firstItem="rFf-ho-F7Y" firstAttribute="width" secondItem="xCw-hA-0tH" secondAttribute="width" id="E5A-zu-cIi"/>
                             <constraint firstItem="AyO-lc-7jq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1.5" id="EDv-Lf-k5e"/>
                             <constraint firstItem="Jc8-lh-7s0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.5" id="FxS-6i-gx7"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dT2-ku-pUK" secondAttribute="bottom" id="Gav-ql-JRr"/>
                             <constraint firstItem="BnQ-e4-QRz" firstAttribute="width" secondItem="z3y-yT-dE9" secondAttribute="width" id="GkZ-ej-RE1"/>
                             <constraint firstItem="wXu-wm-DvN" firstAttribute="height" secondItem="bEx-ic-BcE" secondAttribute="height" id="GnM-7t-8GL"/>
                             <constraint firstItem="6Gx-Eh-0qq" firstAttribute="width" secondItem="xnP-bA-WRL" secondAttribute="width" id="GpH-Ah-3t8"/>
@@ -330,6 +475,8 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                             <constraint firstItem="8iz-1A-Llv" firstAttribute="width" secondItem="z3y-yT-dE9" secondAttribute="width" id="IZp-ig-meo"/>
                             <constraint firstItem="Apo-7b-BSI" firstAttribute="height" secondItem="z3y-yT-dE9" secondAttribute="height" id="JFH-g9-7GM"/>
                             <constraint firstItem="z3y-yT-dE9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.08" id="JVy-wP-RzP"/>
+                            <constraint firstItem="dT2-ku-pUK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Kcf-FV-h0l"/>
+                            <constraint firstItem="6wU-CW-5vi" firstAttribute="height" secondItem="xnP-bA-WRL" secondAttribute="height" multiplier="1.5" id="KhT-6R-YnD"/>
                             <constraint firstItem="z3y-yT-dE9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Kkz-As-QdB"/>
                             <constraint firstItem="8iz-1A-Llv" firstAttribute="centerX" secondItem="BnQ-e4-QRz" secondAttribute="centerX" id="LIe-Fk-UI6"/>
                             <constraint firstItem="Ksz-g7-AnL" firstAttribute="height" secondItem="z3y-yT-dE9" secondAttribute="height" multiplier="1.5" id="Le2-ZW-aT7"/>
@@ -338,25 +485,25 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                             <constraint firstItem="0eC-sC-GRu" firstAttribute="width" secondItem="z3y-yT-dE9" secondAttribute="width" id="Mo9-2r-0C4"/>
                             <constraint firstAttribute="bottomMargin" secondItem="OVw-lo-2t9" secondAttribute="bottom" constant="20" id="N9Y-PH-AgP"/>
                             <constraint firstItem="rS4-7A-y7E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-20" id="NPS-C8-iJz"/>
+                            <constraint firstItem="hIZ-gL-5eL" firstAttribute="centerY" secondItem="8Mm-BP-hRm" secondAttribute="centerY" id="OM1-xi-Qcf"/>
                             <constraint firstItem="rFf-ho-F7Y" firstAttribute="height" secondItem="xCw-hA-0tH" secondAttribute="height" id="OmZ-lJ-Bra"/>
                             <constraint firstItem="Jc8-lh-7s0" firstAttribute="width" secondItem="AyO-lc-7jq" secondAttribute="width" id="P9H-DC-5rK"/>
                             <constraint firstItem="Zjg-R2-E9s" firstAttribute="centerX" secondItem="AyO-lc-7jq" secondAttribute="centerX" id="PXy-7s-7SR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dT2-ku-pUK" secondAttribute="bottom" id="Ppk-D2-Zkb"/>
                             <constraint firstItem="KbY-oR-4j1" firstAttribute="height" secondItem="z3y-yT-dE9" secondAttribute="height" id="QC6-GN-cot"/>
                             <constraint firstItem="xnP-bA-WRL" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.1" id="Ro1-rI-PDg"/>
                             <constraint firstItem="QeM-2z-Nit" firstAttribute="height" secondItem="xCw-hA-0tH" secondAttribute="height" id="TbQ-YC-O67"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BnQ-e4-QRz" secondAttribute="trailing" constant="4" id="UdV-dy-mRG"/>
-                            <constraint firstItem="dT2-ku-pUK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Udv-67-grk"/>
                             <constraint firstItem="bEx-ic-BcE" firstAttribute="width" secondItem="xCw-hA-0tH" secondAttribute="width" id="WQM-Xu-Fc1"/>
                             <constraint firstItem="8iz-1A-Llv" firstAttribute="top" secondItem="BnQ-e4-QRz" secondAttribute="bottom" id="XE4-tM-H2R"/>
                             <constraint firstItem="QeM-2z-Nit" firstAttribute="width" secondItem="xCw-hA-0tH" secondAttribute="width" id="Xa1-ic-MfC"/>
                             <constraint firstItem="6Gx-Eh-0qq" firstAttribute="centerX" secondItem="OVw-lo-2t9" secondAttribute="centerX" id="Xk0-vx-gBe"/>
                             <constraint firstItem="wXu-wm-DvN" firstAttribute="width" secondItem="bEx-ic-BcE" secondAttribute="width" id="YnC-aL-L4q"/>
                             <constraint firstItem="wXu-wm-DvN" firstAttribute="centerY" secondItem="KbY-oR-4j1" secondAttribute="centerY" id="YvQ-Gf-rVu"/>
+                            <constraint firstItem="6wU-CW-5vi" firstAttribute="trailing" secondItem="AyO-lc-7jq" secondAttribute="trailing" id="Z4y-A9-1Vl"/>
                             <constraint firstItem="6Xp-Un-7Tw" firstAttribute="height" secondItem="z3y-yT-dE9" secondAttribute="height" id="ZGV-2I-0kW"/>
                             <constraint firstItem="bEx-ic-BcE" firstAttribute="centerY" secondItem="6Xp-Un-7Tw" secondAttribute="centerY" id="aaH-op-nEr"/>
                             <constraint firstItem="Tex-5e-ui6" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.12" id="aeT-QE-1cw"/>
-                            <constraint firstItem="dT2-ku-pUK" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="bJE-hG-KEK"/>
-                            <constraint firstItem="8gy-wQ-cYE" firstAttribute="centerX" secondItem="AyO-lc-7jq" secondAttribute="centerX" id="bZ7-VK-ogY"/>
                             <constraint firstItem="Ksz-g7-AnL" firstAttribute="centerX" secondItem="BnQ-e4-QRz" secondAttribute="centerX" id="cY2-YM-Rjg"/>
                             <constraint firstItem="Zjg-R2-E9s" firstAttribute="centerY" secondItem="xCw-hA-0tH" secondAttribute="centerY" id="cwP-1P-2FQ"/>
                             <constraint firstItem="QeM-2z-Nit" firstAttribute="centerX" secondItem="OVw-lo-2t9" secondAttribute="centerX" id="d4c-OA-bgx"/>
@@ -365,25 +512,26 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                             <constraint firstItem="QeM-2z-Nit" firstAttribute="centerY" secondItem="Apo-7b-BSI" secondAttribute="centerY" id="ge1-JS-m3X"/>
                             <constraint firstItem="wXu-wm-DvN" firstAttribute="centerX" secondItem="rS4-7A-y7E" secondAttribute="centerX" id="gty-rB-UnY"/>
                             <constraint firstItem="0hW-vj-hEK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ivr-HH-TfQ"/>
-                            <constraint firstItem="AyO-lc-7jq" firstAttribute="top" secondItem="8gy-wQ-cYE" secondAttribute="bottom" id="jl4-4z-uvM"/>
+                            <constraint firstItem="6wU-CW-5vi" firstAttribute="centerY" secondItem="xnP-bA-WRL" secondAttribute="centerY" id="jbO-y7-pEv"/>
                             <constraint firstItem="BnQ-e4-QRz" firstAttribute="height" secondItem="z3y-yT-dE9" secondAttribute="height" id="jp1-9h-Hxg"/>
                             <constraint firstItem="0eC-sC-GRu" firstAttribute="centerY" secondItem="xnP-bA-WRL" secondAttribute="centerY" id="ksP-hp-Mvt"/>
-                            <constraint firstItem="Jc8-lh-7s0" firstAttribute="centerY" secondItem="8Mm-BP-hRm" secondAttribute="centerY" id="lF4-gO-RSv"/>
                             <constraint firstItem="8Mm-BP-hRm" firstAttribute="width" secondItem="xCw-hA-0tH" secondAttribute="width" id="lHv-KX-m29"/>
                             <constraint firstItem="6Xp-Un-7Tw" firstAttribute="centerX" secondItem="z3y-yT-dE9" secondAttribute="centerX" id="m3H-Us-ZSZ"/>
                             <constraint firstItem="Apo-7b-BSI" firstAttribute="top" secondItem="8iz-1A-Llv" secondAttribute="bottom" id="mhg-mG-Je2"/>
+                            <constraint firstAttribute="trailing" secondItem="dT2-ku-pUK" secondAttribute="trailing" id="nC9-nh-k8p"/>
                             <constraint firstItem="xCw-hA-0tH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="12:667" id="nMB-0i-sfo"/>
                             <constraint firstItem="Tex-5e-ui6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pAW-gC-lAZ"/>
                             <constraint firstItem="6Xp-Un-7Tw" firstAttribute="top" secondItem="KbY-oR-4j1" secondAttribute="bottom" id="pWi-7Z-g2i"/>
+                            <constraint firstItem="Jc8-lh-7s0" firstAttribute="centerY" secondItem="QeM-2z-Nit" secondAttribute="centerY" id="pgL-95-Q7Q"/>
                             <constraint firstItem="0eC-sC-GRu" firstAttribute="height" secondItem="z3y-yT-dE9" secondAttribute="height" multiplier="1.5" id="pik-cv-Bsu"/>
                             <constraint firstItem="bEx-ic-BcE" firstAttribute="height" secondItem="xCw-hA-0tH" secondAttribute="height" id="pod-QT-BfS"/>
                             <constraint firstItem="xCw-hA-0tH" firstAttribute="centerX" secondItem="rS4-7A-y7E" secondAttribute="centerX" id="qjW-iD-cTV"/>
                             <constraint firstItem="rFf-ho-F7Y" firstAttribute="centerY" secondItem="BnQ-e4-QRz" secondAttribute="centerY" id="r7g-Id-3QS"/>
                             <constraint firstItem="Apo-7b-BSI" firstAttribute="width" secondItem="z3y-yT-dE9" secondAttribute="width" id="rpk-Mv-vLF"/>
-                            <constraint firstItem="hIZ-gL-5eL" firstAttribute="centerY" secondItem="rFf-ho-F7Y" secondAttribute="centerY" id="rwb-Db-Ohc"/>
                             <constraint firstItem="Apo-7b-BSI" firstAttribute="centerX" secondItem="8iz-1A-Llv" secondAttribute="centerX" id="tdW-VQ-iBK"/>
                             <constraint firstItem="0hW-vj-hEK" firstAttribute="top" secondItem="z3y-yT-dE9" secondAttribute="bottom" constant="13" id="u5z-Vd-HrW"/>
                             <constraint firstItem="0hW-vj-hEK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="u8m-75-vB3"/>
+                            <constraint firstItem="dT2-ku-pUK" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="v4D-Oa-fJy"/>
                             <constraint firstItem="AyO-lc-7jq" firstAttribute="centerY" secondItem="bEx-ic-BcE" secondAttribute="centerY" id="vEB-sl-jzS"/>
                             <constraint firstItem="Tex-5e-ui6" firstAttribute="leading" secondItem="0hW-vj-hEK" secondAttribute="trailing" id="vg1-6m-6L4"/>
                             <constraint firstItem="xnP-bA-WRL" firstAttribute="centerX" secondItem="rS4-7A-y7E" secondAttribute="centerX" id="wv6-ho-f0A"/>
@@ -407,12 +555,19 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                         <outlet property="konecna1outlet" destination="0eC-sC-GRu" id="jCH-Va-SQ4"/>
                         <outlet property="konecna2outlet" destination="Ksz-g7-AnL" id="63t-EL-bCC"/>
                         <outlet property="nearestZastavkaButton" destination="Tex-5e-ui6" id="jos-27-0wa"/>
-                        <outlet property="schovavaciPickerView" destination="dT2-ku-pUK" id="o07-sk-wmO"/>
+                        <outlet property="schovavaciSideView" destination="dT2-ku-pUK" id="BVe-iH-YLo"/>
+                        <outlet property="schovavaciSideViewTrailingConstraint" destination="nC9-nh-k8p" id="G95-aF-Ejr"/>
+                        <outlet property="sideMenuMensiView" destination="OHA-dw-d1H" id="JHk-JR-60K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="2zj-ET-Wzw">
+                    <connections>
+                        <action selector="swipeDoprava:" destination="BYZ-38-t0r" id="918-JP-oST"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="93.75" y="128.87323943661971"/>
+            <point key="canvasLocation" x="93.599999999999994" y="128.18590704647679"/>
         </scene>
         <!--Upgrade View Controller-->
         <scene sceneID="D0k-XG-fHf">
@@ -423,14 +578,14 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                         <viewControllerLayoutGuide type="bottom" id="EnA-1N-aaJ"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="BUZ-GI-nY4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSV-PU-z6u">
-                                <rect key="frame" x="17" y="150.5" width="286" height="267"/>
+                                <rect key="frame" x="64" y="234.66666666666663" width="286" height="267"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Je k dispozici aktualizace jízdních řádů." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="m96-eD-EIm">
-                                        <rect key="frame" x="8.5" y="121.5" width="270" height="67"/>
+                                        <rect key="frame" x="8.6666666666666856" y="121.66666666666666" width="270" height="67"/>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -449,7 +604,7 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                                         <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </progressView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pj2-tB-QON">
-                                        <rect key="frame" x="146.5" y="200.5" width="143" height="67"/>
+                                        <rect key="frame" x="146.66666666666666" y="200.66666666666666" width="142.99999999999997" height="66.999999999999972"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <state key="normal" title="Zrušit">
                                             <color key="titleColor" red="0.95294117649999999" green="0.019607843140000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
@@ -459,7 +614,7 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QM2-0v-1m1">
-                                        <rect key="frame" x="-3.5" y="200.5" width="143" height="67"/>
+                                        <rect key="frame" x="-3.3333333333333428" y="200.66666666666666" width="143" height="66.999999999999972"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <state key="normal" title="Stáhnout">
                                             <color key="titleColor" red="0.093096765660564337" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -489,7 +644,7 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="0.72340539383561642" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.73862906678082196" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="oSV-PU-z6u" firstAttribute="centerX" secondItem="BUZ-GI-nY4" secondAttribute="centerX" id="HRz-a7-gIa"/>
                             <constraint firstItem="oSV-PU-z6u" firstAttribute="centerY" secondItem="BUZ-GI-nY4" secondAttribute="centerY" id="Xma-7U-nE5"/>
@@ -509,7 +664,7 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
     </scenes>
     <resources>
         <image name="Location_dot_lightgrey" width="120" height="120"/>
-        <image name="black-n-white-logo" width="200" height="200"/>
+        <image name="hamburger" width="400" height="400"/>
         <image name="location" width="66" height="101"/>
         <image name="male socka logo pruhledne" width="664" height="442"/>
         <image name="metro3_0017_Ikona-Metra-2" width="38" height="38"/>

@@ -60,27 +60,76 @@ let zelena = UIColor().HexToColor(hexString: "008900", alpha: 1.0)
 
 //MARK - VC
 
-class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
+class ViewController: UIViewController, CLLocationManagerDelegate{
     
     
     @IBOutlet weak var nearestZastavkaButton: UIButton!
     
     @IBAction func nearestZastavkaButtonPressed(_ sender: Any) {
         //prepinani trech nejblizsich stanic
-        prestupniStaniceVybrana = ""
-        
         nearestZastavkaIndex += 1
         if nearestZastavkaIndex == 3{
             nearestZastavkaIndex = 0
         }
+        
+        if prestupniStaniceVybrana != ""{
+            nearestZastavkaIndex = 0
+        }
+        prestupniStaniceVybrana = ""
     }
-    @IBOutlet weak var schovavaciPickerView: UIView!
-    @IBOutlet weak var picker: UIPickerView!
     
-    @IBAction func prestupyBtn(_ sender: Any) {
-        schovavaciPickerView.isHidden = false
+    @IBOutlet weak var schovavaciSideView: UIView!
+    
+    @IBAction func swipeDoprava(_ sender: UISwipeGestureRecognizer) {
+        schovejSideView()
+    }
+    @IBAction func mustekABtn(_ sender: Any) {
+        prepniNaPrestupniZastavku(zastavka: "Můstek - A")
+    }
+    @IBAction func mustekBBtn(_ sender: Any) {
+        prepniNaPrestupniZastavku(zastavka: "Můstek - B")
+    }
+    @IBAction func muzeumABtn(_ sender: Any) {
+        prepniNaPrestupniZastavku(zastavka: "Muzeum - A")
+    }
+    @IBAction func muzeumCBtn(_ sender: Any) {
+        prepniNaPrestupniZastavku(zastavka: "Muzeum - C")
+    }
+    @IBAction func florencBBtn(_ sender: Any) {
+        prepniNaPrestupniZastavku(zastavka: "Florenc - B")
+    }
+    @IBAction func florencCBtn(_ sender: Any) {
+        prepniNaPrestupniZastavku(zastavka: "Florenc - C")
     }
     
+    @IBAction func zavriSideviewBtn(_ sender: Any) {
+       schovejSideView()
+    }
+    
+    @IBAction func oAplikaciBtn(_ sender: Any) {
+        
+    }
+
+    
+    
+    
+    @IBAction func sideMenuBtn(_ sender: Any) {
+        schovavaciSideViewTrailingConstraint.constant = 0
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+            })
+        
+    }
+    
+    
+    @IBAction func menuBtn(_ sender: Any) {
+        schovavaciSideViewTrailingConstraint.constant = 0
+    }
+    
+ 
+    @IBOutlet weak var schovavaciSideViewTrailingConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var sideMenuMensiView: UIView!
     @IBOutlet weak var cas11: UILabel!
     @IBOutlet weak var cas21: UILabel!
     
@@ -104,18 +153,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
     let manager = CLLocationManager()
     //první proměnná nutná pro práci s polohovým službama
     
-    let prestupyArray = ["Můstek - A", "Můstek - B", "Muzeum - A", "Muzeum - C", "Florenc - B", "Florenc - C"]
-    
 //MARK - functions
     
     override func viewDidLoad() {
     //co se stane po loadnutí
         
-        schovavaciPickerView.isHidden = true
-        //schová picker view
-        self.picker.delegate = self
-        self.picker.dataSource = self
+        let sirkaObrazovky = schovavaciSideView.frame.size.width
+        schovavaciSideViewTrailingConstraint.constant = -sirkaObrazovky - 100
+        sideMenuMensiView.layer.shadowOpacity = 1
+        sideMenuMensiView.layer.shadowRadius = 6
         
+        print(sirkaObrazovky)
+        
+        //schová side view
         
         //Nastaví font na buttonu hlavní zastávky 
         nearestZastavkaButton.titleLabel?.minimumScaleFactor = 0.2
@@ -770,27 +820,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIPickerViewD
         return (isReachable && !needsConnection)
     }
     
-    //MARK - pickerViewDelegate metody
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-        //jedna sada (component) dat pro picker view
+    func schovejSideView(){
+    //schová otevřené side view
+        schovavaciSideViewTrailingConstraint.constant = -schovavaciSideView.frame.size.width - 100
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return prestupyArray.count
-        //počet rows na výběr
-    }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return prestupyArray[row]
-        //názvy jednotlivých rows
-    }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        schovavaciPickerView.isHidden = true
-        prestupniStaniceVybrana = prestupyArray[row]
-        
-        //co se stane po tom, co vyberu
+    func prepniNaPrestupniZastavku(zastavka: String){
+    //po kliknutí na prestupni zastavku v sideview schová menu a nastaví přestupní zastávka
+        prestupniStaniceVybrana = zastavka
+        schovejSideView()
     }
     
     
