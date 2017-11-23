@@ -35,9 +35,9 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="31" baselineAdjustment="none" minimumScaleFactor="0.14999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="TBe-BZ-dap">
                                         <rect key="frame" x="16" y="159.33333333333334" width="382" height="437.33333333333326"/>
-                                        <string key="text">Socku jsem napsal ve volných chvílích při pobytu na zahraniční misi v Afghánistánu. A to zejména pro radost ze zajímavé práce a pro radost z toho, že Vám tato aplikace může zpříjemnit každý Váš den.
+                                        <string key="text">Socku jsem napsal ve volných chvílích při pobytu na zahraniční misi v Afghánistánu. Zejména pro radost ze zajímavé práce a pro radost z toho, že Vám tato aplikace může zpříjemnit každý Váš den.
 
-Eskalátor v logu je odkazem na nejčastější místo použití Socky. Zde se dle času do příjezdu další soupravy metra můžete rozhodnout, zda běžet po schodech dolů anebo zůstat stát a kochat se pohledem na ostatní zbytečně běžící, kteří tuto aplikaci ještě nemají.
+Eskalátor v logu je odkazem na nejčastější místo použití Socky. Zde se dle času do příjezdu další soupravy metra můžete rozhodnout, zda běžet po schodech dolů anebo zůstat stát a pozorovat ostatní zbytečně běžící, kteří tuto aplikaci ještě nemají.
 
 Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
@@ -415,7 +415,7 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                                     </view>
                                     <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVm-4k-1cv">
                                         <rect key="frame" x="0.0" y="0.0" width="207.66666666666666" height="736"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.79494863013698636" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.78844713184931503" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <action selector="menuBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m2t-H1-lpc"/>
@@ -558,6 +558,7 @@ Přeji Vám tedy mnoho zábavy a dostihnutých souprav. </string>
                         <outlet property="schovavaciSideView" destination="dT2-ku-pUK" id="BVe-iH-YLo"/>
                         <outlet property="schovavaciSideViewTrailingConstraint" destination="nC9-nh-k8p" id="G95-aF-Ejr"/>
                         <outlet property="sideMenuMensiView" destination="OHA-dw-d1H" id="JHk-JR-60K"/>
+                        <outlet property="zavriSideViewOutletBtn" destination="DVm-4k-1cv" id="H7W-bP-MYs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

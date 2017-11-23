@@ -47,7 +47,7 @@ open class CSV {
             
             var row = Dictionary<String, String>()
             let values = line.components(separatedBy: self.delimiter)
-            //tady rozpojí metodou components každou lajnu delimeterem = čárka
+            //tady rozpojí metodou components každou lajnu delimeterem = středník
             for (index, header) in self.headers.enumerated() {
                 if index < values.count {
                     row[header] = values[index]
@@ -57,7 +57,6 @@ open class CSV {
             }
             rows.append(row)
         }
-        
         return rows
     }
     

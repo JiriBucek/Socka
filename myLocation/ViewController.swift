@@ -62,7 +62,7 @@ let zelena = UIColor().HexToColor(hexString: "008900", alpha: 1.0)
 
 class ViewController: UIViewController, CLLocationManagerDelegate{
     
-    
+    //MARK - Outlets
     @IBOutlet weak var nearestZastavkaButton: UIButton!
     
     @IBAction func nearestZastavkaButtonPressed(_ sender: Any) {
@@ -83,6 +83,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBAction func swipeDoprava(_ sender: UISwipeGestureRecognizer) {
         schovejSideView()
     }
+    
     @IBAction func mustekABtn(_ sender: Any) {
         prepniNaPrestupniZastavku(zastavka: "Můstek - A")
     }
@@ -105,28 +106,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBAction func zavriSideviewBtn(_ sender: Any) {
        schovejSideView()
     }
+    @IBOutlet weak var zavriSideViewOutletBtn: UIButton!
+    
+    
     
     @IBAction func oAplikaciBtn(_ sender: Any) {
         
     }
 
-    
-    
-    
     @IBAction func sideMenuBtn(_ sender: Any) {
         schovavaciSideViewTrailingConstraint.constant = 0
         UIView.animate(withDuration: 0.3, animations: {
             self.view.layoutIfNeeded()
             })
-        
     }
-    
     
     @IBAction func menuBtn(_ sender: Any) {
         schovavaciSideViewTrailingConstraint.constant = 0
     }
     
- 
+
     @IBOutlet weak var schovavaciSideViewTrailingConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var sideMenuMensiView: UIView!
@@ -163,10 +162,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         sideMenuMensiView.layer.shadowOpacity = 1
         sideMenuMensiView.layer.shadowRadius = 6
         
-        print(sirkaObrazovky)
-        
-        //schová side view
-        
         //Nastaví font na buttonu hlavní zastávky 
         nearestZastavkaButton.titleLabel?.minimumScaleFactor = 0.2
         nearestZastavkaButton.titleLabel?.numberOfLines = 1
@@ -191,9 +186,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         print(getDocumentsDirectory())
         
         /// Funkce pro plneni DB///
-        //parseCSV(fileName: "zkratka") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
-        //fillData(csvFileName: "zkratka", entityName: "FullEntity")
+        //parseCSV(fileName: "dtbz_v_2") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
         //deleteDB(entityName: "FullEntity")
+        //fillData(csvFileName: "druhy_pokus", entityName: "FullEntity")
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
@@ -240,14 +235,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         if aktualneZobrazovanaStanice != hlavniZastavka{
             print("NOVÁ DATA")
             metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
+            print(metro_data)
             
-            if metro_data.count > 2{
-                konecna2 = String(describing: metro_data[0][2])
-                konecna1 = String(describing: metro_data[2][2])
+            if metro_data.count > 1{
+                
+                if metro_data.indices.contains(0){
+                    konecna2 = String(describing: metro_data[0][2])
+                    arrayPristichZastavek2 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna2)
+                }else{
+                    konecna2 = "..."
+                    arrayPristichZastavek2 = ["...", "...","..."]
+                }
+                
+                if metro_data.indices.contains(2){
+                    konecna1 = String(describing: metro_data[2][2])
+                    arrayPristichZastavek1 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna1)
+                }else{
+                    konecna1 = "..."
+                    arrayPristichZastavek1 = ["...", "...","..."]
+                }
             
-                arrayPristichZastavek1 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna1)
-            
-                arrayPristichZastavek2 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna2)
             }
             aktualneZobrazovanaStanice = hlavniZastavka
         //takhle si nesaha do DB kazdou vterinu, ale jen, pokud se zmenila zastavka
@@ -256,13 +263,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         aktualneZobrazovanaStanice = hlavniZastavka
 
-        if (metro_data.count) > 3 {
+        if (metro_data.count) > 1 {
             
-            let time1 = (metro_data[0][1] as! Int)
-            let time2 = (metro_data[2][1] as! Int)
+            var time1 = 999999
+            if metro_data.indices.contains(0){
+                time1 = (metro_data[0][1] as! Int)
+            }
             
-            let time11 = (metro_data[1][1] as! Int)
-            let time22 = (metro_data[3][1] as! Int)
+            var time2 = 999999
+            if metro_data.indices.contains(2){
+                time2 = (metro_data[2][1] as! Int)
+            }
+            
+            var time11 = 999999
+            if metro_data.indices.contains(1){
+                time11 = (metro_data[1][1] as! Int)
+            }
+            var time22 = 999999
+            if metro_data.indices.contains(3){
+                time22 = (metro_data[3][1] as! Int)
+            }
             
             konecna1outlet.text = konecna1
             konecna1outlet.textColor = hlavniBarva
@@ -300,14 +320,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             nearestZastavkaButton.setTitleColor(hlavniBarva, for: .normal)
             
             
-            if (myTimeDifference(to: time1) > 0 && myTimeDifference(to: time2) > 0) || (myTimeDifference(to: time11) < -1000 ){
-                cas11.text = timeDifference(arrivalTime: time11)
-                countdown1.text = timeDifference(arrivalTime: time1)
-                countdown1.textColor = barva2
-            
-                cas21.text = timeDifference(arrivalTime: time22)
-                countdown2.text = timeDifference(arrivalTime: time2)
+            if (myTimeDifference(to: time1) > 0 && myTimeDifference(to: time2) > 0) || (myTimeDifference(to: time1) < -1000 ){
+                if time1 != 999999 || time11 != 999999{
+                    cas11.text = timeDifference(arrivalTime: time11)
+                    countdown1.text = timeDifference(arrivalTime: time1)
+                }else{
+                    cas11.text = "0:00"
+                    countdown1.text = "0:00"
+                }
+   
+                if time2 != 999999 || time22 != 999999{
+                    cas21.text = timeDifference(arrivalTime: time22)
+                    countdown2.text = timeDifference(arrivalTime: time2)
+                }else{
+                    cas21.text = "0:00"
+                    countdown2.text = "0:00"
+                }
+                
                 countdown2.textColor = barva3
+                countdown1.textColor = barva2
             }
                         
             if existujeNovaVerzeDTBZ{
@@ -572,7 +603,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         do {
             let csv = try CSV(contentsOfURL: path!)
             rows = csv.rows
-            //print(rows)
+            print(rows)
         }catch{
         print(error)
         }
@@ -605,19 +636,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         switch day {
         case 1:
-            service_ids = [1,6]
+            service_ids = [5]
         case 2:
-            service_ids = [1,2]
+            service_ids = [5]
         case 3:
-            service_ids = [1,2]
+            service_ids = [5]
         case 4:
-            service_ids = [1,2]
+            service_ids = [5]
         case 5:
-            service_ids = [1,2]
+            service_ids = [5]
         case 6:
-            service_ids = [2,3]
+            service_ids = [7]
         case 7:
-            service_ids = [4,5]
+            service_ids = [9]
         default:
             print("Nepodařilo se získat service IDs")
         }
