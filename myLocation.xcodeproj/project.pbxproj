@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		891DC14A1EB358980098A983 /* DataFinal280417.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 891DC1481EB358980098A983 /* DataFinal280417.xcdatamodeld */; };
+		891DC14A1EB358980098A983 /* DataBaze.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 891DC1481EB358980098A983 /* DataBaze.xcdatamodeld */; };
 		893B14701EA125FA002E8F72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B146F1EA125FA002E8F72 /* AppDelegate.swift */; };
 		893B14721EA125FA002E8F72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B14711EA125FA002E8F72 /* ViewController.swift */; };
 		893B14751EA125FA002E8F72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 893B14731EA125FA002E8F72 /* Main.storyboard */; };
@@ -20,9 +20,7 @@
 		896E89FC1F85A73A007F029E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E89FB1F85A73A007F029E /* InfoViewController.swift */; };
 		897BFE4E1EBA0D9C009C59F0 /* Data_pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */; };
 		8980EF5D1FA561A2003CE9E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */; };
-		89A94FCB1FC700C2002B36EC /* dtbz_v_2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 89A94FCA1FC700C2002B36EC /* dtbz_v_2.csv */; };
-		89A94FD01FC72534002B36EC /* druhy_pokus.csv in Resources */ = {isa = PBXBuildFile; fileRef = 89A94FCF1FC72534002B36EC /* druhy_pokus.csv */; };
-		89A94FD81FC751AD002B36EC /* DataFinal280417.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 89A94FD71FC751AD002B36EC /* DataFinal280417.sqlite */; };
+		89A94FD81FC751AD002B36EC /* DataBaze.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 89A94FD71FC751AD002B36EC /* DataBaze.sqlite */; };
 		89B61E841EA907460032F3AC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B61E831EA907460032F3AC /* CoreDataStack.swift */; };
 		89F298C61EA28B9900AC1968 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F298C51EA28B9900AC1968 /* CSV.swift */; };
 /* End PBXBuildFile section */
@@ -88,9 +86,7 @@
 		896E89FB1F85A73A007F029E /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data_pool.swift; path = ../Data_pool.swift; sourceTree = "<group>"; };
 		8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		89A94FCA1FC700C2002B36EC /* dtbz_v_2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dtbz_v_2.csv; path = "../../Socka docs/Nova ostra databaze 19.11.17/dtbz_v_2.csv"; sourceTree = "<group>"; };
-		89A94FCF1FC72534002B36EC /* druhy_pokus.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = druhy_pokus.csv; sourceTree = "<group>"; };
-		89A94FD71FC751AD002B36EC /* DataFinal280417.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataFinal280417.sqlite; sourceTree = "<group>"; };
+		89A94FD71FC751AD002B36EC /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataBaze.sqlite; sourceTree = "<group>"; };
 		89B61E831EA907460032F3AC /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		89F298C51EA28B9900AC1968 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,14 +144,12 @@
 			children = (
 				897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */,
 				895CF8691F1CD26E002E2859 /* Downloader.swift */,
-				89A94FCF1FC72534002B36EC /* druhy_pokus.csv */,
 				893B146F1EA125FA002E8F72 /* AppDelegate.swift */,
 				8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */,
-				89A94FCA1FC700C2002B36EC /* dtbz_v_2.csv */,
 				893B14711EA125FA002E8F72 /* ViewController.swift */,
-				89A94FD71FC751AD002B36EC /* DataFinal280417.sqlite */,
+				89A94FD71FC751AD002B36EC /* DataBaze.sqlite */,
 				893BA9EC1EDF6CF6002B9932 /* UpgradeViewController.swift */,
-				891DC1481EB358980098A983 /* DataFinal280417.xcdatamodeld */,
+				891DC1481EB358980098A983 /* DataBaze.xcdatamodeld */,
 				89F298C51EA28B9900AC1968 /* CSV.swift */,
 				89B61E831EA907460032F3AC /* CoreDataStack.swift */,
 				893B14731EA125FA002E8F72 /* Main.storyboard */,
@@ -306,11 +300,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89A94FCB1FC700C2002B36EC /* dtbz_v_2.csv in Resources */,
 				893B147A1EA125FA002E8F72 /* LaunchScreen.storyboard in Resources */,
-				89A94FD81FC751AD002B36EC /* DataFinal280417.sqlite in Resources */,
+				89A94FD81FC751AD002B36EC /* DataBaze.sqlite in Resources */,
 				8980EF5D1FA561A2003CE9E5 /* Assets.xcassets in Resources */,
-				89A94FD01FC72534002B36EC /* druhy_pokus.csv in Resources */,
 				893B14751EA125FA002E8F72 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,7 +350,7 @@
 				893B14701EA125FA002E8F72 /* AppDelegate.swift in Sources */,
 				896E89FC1F85A73A007F029E /* InfoViewController.swift in Sources */,
 				89F298C61EA28B9900AC1968 /* CSV.swift in Sources */,
-				891DC14A1EB358980098A983 /* DataFinal280417.xcdatamodeld in Sources */,
+				891DC14A1EB358980098A983 /* DataBaze.xcdatamodeld in Sources */,
 				89B61E841EA907460032F3AC /* CoreDataStack.swift in Sources */,
 				897BFE4E1EBA0D9C009C59F0 /* Data_pool.swift in Sources */,
 			);
@@ -662,13 +654,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		891DC1481EB358980098A983 /* DataFinal280417.xcdatamodeld */ = {
+		891DC1481EB358980098A983 /* DataBaze.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				891DC1491EB358980098A983 /* DataFinal280417.xcdatamodel */,
 			);
 			currentVersion = 891DC1491EB358980098A983 /* DataFinal280417.xcdatamodel */;
-			path = DataFinal280417.xcdatamodeld;
+			path = DataBaze.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

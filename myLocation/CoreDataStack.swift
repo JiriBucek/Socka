@@ -21,12 +21,12 @@ class CoreDataStack {
     lazy var persistentContainer: NSPersistentContainer = {
         //vytvoří container, který má pod sebou více vrstev core dat
         
-        let container = NSPersistentContainer(name: "DataFinal280417")
-        let seededData: String = "DataFinal280417"
+        let container = NSPersistentContainer(name: "DataBaze")
+        let seededData: String = "DataBaze"
         var persistentStoreDescriptions: NSPersistentStoreDescription
         
         let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
-        let storeUrl = URL(fileURLWithPath: documentDirectoryPath!).appendingPathComponent("DataFinal280417")
+        let storeUrl = URL(fileURLWithPath: documentDirectoryPath!).appendingPathComponent("DataBaze")
   
         
         if !FileManager.default.fileExists(atPath: (storeUrl.path)) {
@@ -36,6 +36,7 @@ class CoreDataStack {
             //najde soubor sql v bundlu appky
             
             try! FileManager.default.copyItem(at: seededDataUrl!, to: storeUrl)
+            print("Databaze zkopirovana")
             //zkopiruje tento soubor do slozky dokumentu do founu
         }
         

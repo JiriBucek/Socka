@@ -70,7 +70,7 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
                     didFinishDownloadingTo location: URL){
         
         let documentsUrl:URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
-        let destinationFileUrlbezPripony = documentsUrl.appendingPathComponent("DataFinal280417")
+        let destinationFileUrlbezPripony = documentsUrl.appendingPathComponent("DataBaze")
 
         do{
             try FileManager.default.removeItem(at: destinationFileUrlbezPripony)

@@ -76,6 +76,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             nearestZastavkaIndex = 0
         }
         prestupniStaniceVybrana = ""
+        //po kliknutí na ručně vybranou přestupní stanici se zobrazí zase první dle GPS
     }
     
     @IBOutlet weak var schovavaciSideView: UIView!
@@ -107,8 +108,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
        schovejSideView()
     }
     @IBOutlet weak var zavriSideViewOutletBtn: UIButton!
-    
-    
     
     @IBAction func oAplikaciBtn(_ sender: Any) {
         
