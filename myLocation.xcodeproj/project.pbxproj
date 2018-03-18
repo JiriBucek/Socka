@@ -20,9 +20,10 @@
 		896E89FC1F85A73A007F029E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E89FB1F85A73A007F029E /* InfoViewController.swift */; };
 		897BFE4E1EBA0D9C009C59F0 /* Data_pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */; };
 		8980EF5D1FA561A2003CE9E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */; };
-		89A94FD81FC751AD002B36EC /* DataBaze.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 89A94FD71FC751AD002B36EC /* DataBaze.sqlite */; };
 		89B61E841EA907460032F3AC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B61E831EA907460032F3AC /* CoreDataStack.swift */; };
 		89F298C61EA28B9900AC1968 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F298C51EA28B9900AC1968 /* CSV.swift */; };
+		89F6632B2059B026008DDFC3 /* DataBazeUnor.csv in Resources */ = {isa = PBXBuildFile; fileRef = 89F6632A2059B026008DDFC3 /* DataBazeUnor.csv */; };
+		89F6632F2059B71F008DDFC3 /* DataBaze.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 89F6632E2059B71F008DDFC3 /* DataBaze.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,9 +87,10 @@
 		896E89FB1F85A73A007F029E /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data_pool.swift; path = ../Data_pool.swift; sourceTree = "<group>"; };
 		8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		89A94FD71FC751AD002B36EC /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataBaze.sqlite; sourceTree = "<group>"; };
 		89B61E831EA907460032F3AC /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		89F298C51EA28B9900AC1968 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
+		89F6632A2059B026008DDFC3 /* DataBazeUnor.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DataBazeUnor.csv; sourceTree = "<group>"; };
+		89F6632E2059B71F008DDFC3 /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataBaze.sqlite; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,9 +149,10 @@
 				893B146F1EA125FA002E8F72 /* AppDelegate.swift */,
 				8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */,
 				893B14711EA125FA002E8F72 /* ViewController.swift */,
-				89A94FD71FC751AD002B36EC /* DataBaze.sqlite */,
 				893BA9EC1EDF6CF6002B9932 /* UpgradeViewController.swift */,
+				89F6632A2059B026008DDFC3 /* DataBazeUnor.csv */,
 				891DC1481EB358980098A983 /* DataBaze.xcdatamodeld */,
+				89F6632E2059B71F008DDFC3 /* DataBaze.sqlite */,
 				89F298C51EA28B9900AC1968 /* CSV.swift */,
 				89B61E831EA907460032F3AC /* CoreDataStack.swift */,
 				893B14731EA125FA002E8F72 /* Main.storyboard */,
@@ -301,8 +304,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				893B147A1EA125FA002E8F72 /* LaunchScreen.storyboard in Resources */,
-				89A94FD81FC751AD002B36EC /* DataBaze.sqlite in Resources */,
+				89F6632F2059B71F008DDFC3 /* DataBaze.sqlite in Resources */,
 				8980EF5D1FA561A2003CE9E5 /* Assets.xcassets in Resources */,
+				89F6632B2059B026008DDFC3 /* DataBazeUnor.csv in Resources */,
 				893B14751EA125FA002E8F72 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

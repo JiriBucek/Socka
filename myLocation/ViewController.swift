@@ -58,6 +58,7 @@ let cervena = UIColor().HexToColor(hexString: "F30503", alpha: 1.0)
 let zluta = UIColor().HexToColor(hexString: "FFA100", alpha: 1.0)
 let zelena = UIColor().HexToColor(hexString: "008900", alpha: 1.0)
 
+
 //MARK - VC
 
 class ViewController: UIViewController, CLLocationManagerDelegate{
@@ -151,10 +152,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     let manager = CLLocationManager()
     //první proměnná nutná pro práci s polohovým službama
     
+
+    //vyskakovací okno s upozorněním pro svátky
+    
 //MARK - functions
     
     override func viewDidLoad() {
     //co se stane po loadnutí
+        
         
         let sirkaObrazovky = schovavaciSideView.frame.size.width
         schovavaciSideViewTrailingConstraint.constant = -sirkaObrazovky - 100
@@ -184,10 +189,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         print(getDocumentsDirectory())
         
+
+        
         /// Funkce pro plneni DB///
-        //parseCSV(fileName: "dtbz_v_2") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
+        //parseCSV(fileName: "databaze210118UTF") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
         //deleteDB(entityName: "FullEntity")
-        //fillData(csvFileName: "druhy_pokus", entityName: "FullEntity")
+        //fillData(csvFileName: "DataBazeUnor", entityName: "FullEntity")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        let alertSvatky = UIAlertController(title: "Dnes je svátek.", message: "Ve dnech svátků je možné, že se některé časy odjezdu metra budou lišit. Děkuji za pochopení.", preferredStyle: .alert)
+        
+        alertSvatky.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertSvatky, animated: true)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
@@ -203,11 +219,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
     }
     
+    
+    
     @objc func displayAllValues(){
     //přiřadí hodnoty jednotlivým labelum
         var hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
         //aktuálne vybraná stanice
         
+
         if prestupniStaniceVybrana != ""{
             hlavniZastavka = prestupniStaniceVybrana
         }
@@ -614,7 +633,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         //Vypíše cestu do dokumentu
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
-        //print("Tohle je cesta dle funkce ve VC:  \(documentsDirectory)")
+        print("Tohle je cesta dle funkce ve VC:  \(documentsDirectory)")
         return documentsDirectory
     }
     
@@ -635,19 +654,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         switch day {
         case 1:
-            service_ids = [5]
+            service_ids = [1]
         case 2:
-            service_ids = [5]
+            service_ids = [1]
         case 3:
-            service_ids = [5]
+            service_ids = [1]
         case 4:
-            service_ids = [5]
+            service_ids = [1]
         case 5:
-            service_ids = [5]
+            service_ids = [1]
         case 6:
-            service_ids = [7]
+            service_ids = [3]
         case 7:
-            service_ids = [9]
+            service_ids = [5]
         default:
             print("Nepodařilo se získat service IDs")
         }
@@ -864,6 +883,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         prestupniStaniceVybrana = zastavka
         schovejSideView()
     }
+    
+    //func jeDnesSvatek() -> Bool{}
     
     
     }
