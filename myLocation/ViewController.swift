@@ -199,11 +199,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        if jeDnesSvatek(){
+            let alertSvatky = UIAlertController(title: "Dnes je svátek.", message: "Ve dnech svátků je možné, že se časy odjezdu metra budou lišit. Tyto změny není možné ošetřit offline databází. Děkuji za pochopení", preferredStyle: .alert)
         
-        let alertSvatky = UIAlertController(title: "Dnes je svátek.", message: "Ve dnech svátků je možné, že se některé časy odjezdu metra budou lišit. Děkuji za pochopení.", preferredStyle: .alert)
-        
-        alertSvatky.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertSvatky, animated: true)
+            alertSvatky.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            present(alertSvatky, animated: true)
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
@@ -578,7 +579,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 tomorrow = 1
             }
             service_ids = getServiceId(day: tomorrow)
-            let times21 = fetchData(station_id: station_ids[0], service_id: service_ids, results_count: 2 - resultCount, current_time: 0)
+            let times21 = fetchData(station_id: station_ids[1], service_id: service_ids, results_count: 2 - resultCount, current_time: 0)
             times2 = times2 + times21
         }
         
@@ -884,7 +885,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         schovejSideView()
     }
     
-    //func jeDnesSvatek() -> Bool{}
+    func jeDnesSvatek() -> Bool{
+    //zjití, zda je tento den státní svátek
+        let svatky = [[1,1],[18,3],[1,5],[8,5],[5,7],[6,7],[28,9],[28,10],[17,11],[24,12],[25,12],[26,12],[1,4]]
+        let now = Date()
+        let kalendar = Calendar.current
+        let den = kalendar.component(.day, from: now)
+        let mesic = kalendar.component(.month, from: now)
+        let dnesniDen = [den, mesic]
+        
+        if svatky.contains(where: {$0 == dnesniDen}){
+            print("Dnes je svátek")
+            return true
+        }else{
+            return false
+        }
+    }
     
     
     }
