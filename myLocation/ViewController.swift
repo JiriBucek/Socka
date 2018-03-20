@@ -194,7 +194,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         /// Funkce pro plneni DB///
         //parseCSV(fileName: "databaze210118UTF") //rozparsuje csv do formátu [["key":"value","key":"value"], ["key":"value"]]
         //deleteDB(entityName: "FullEntity")
-        //fillData(csvFileName: "DataBazeUnor", entityName: "FullEntity")
+        
+        
+        //fillData(csvFileName: "DTBZ2802", entityName: "FullEntity")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -887,7 +889,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     func jeDnesSvatek() -> Bool{
     //zjití, zda je tento den státní svátek
-        let svatky = [[1,1],[18,3],[1,5],[8,5],[5,7],[6,7],[28,9],[28,10],[17,11],[24,12],[25,12],[26,12],[1,4]]
+        let svatky = [[1,1],[30,3],[1,5],[8,5],[5,7],[6,7],[28,9],[28,10],[17,11],[24,12],[25,12],[26,12],[1,4]]
         let now = Date()
         let kalendar = Calendar.current
         let den = kalendar.component(.day, from: now)
