@@ -18,6 +18,8 @@ class CoreDataStack {
         return container
     }()*/
     
+    let downloader = Downloader()
+    
     lazy var persistentContainer: NSPersistentContainer = {
         //vytvoří container, který má pod sebou více vrstev core dat
         
@@ -28,6 +30,19 @@ class CoreDataStack {
         let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
         let storeUrl = URL(fileURLWithPath: documentDirectoryPath!).appendingPathComponent("DataBaze")
   
+        
+        //Přemazávání starých databázi v telefonu při aktualizaci databáze. Databáze z 25.2.2018 je označena jako databáze č. 1
+        //Při další aktualizaci musím přepsat tento kôd tak, aby se Socka aktualizovala na vyšší databázi (dvojku)
+        if FileManager.default.fileExists(atPath: (storeUrl.path)) && (downloader.zjistiVerziDtbzVTelefonuUserDefaults() == 0){
+            print("Přemazávám starou databázi.")
+            do{
+                try FileManager.default.removeItem(at: storeUrl)
+            }catch{
+                print("Nepodařilo se smazat starou databázi.")
+            }
+            downloader.zapisVerziDtbzDoUserDefaults(novaVerze: 1)
+        }
+        
         
         if !FileManager.default.fileExists(atPath: (storeUrl.path)) {
             //existuje uz na tom umisteni soubor DataFinal280417.sqlite?. Kdyz ne, tak:
