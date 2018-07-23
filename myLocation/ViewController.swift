@@ -196,7 +196,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         //deleteDB(entityName: "FullEntity")
         
         
-        //fillData(csvFileName: "DTBZ2802", entityName: "FullEntity")
+        //fillData(csvFileName: "letni_hotova", entityName: "FullEntity")
     }
     
     override func viewDidAppear(_ animated: Bool) {
