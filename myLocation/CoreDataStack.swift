@@ -31,16 +31,16 @@ class CoreDataStack {
         let storeUrl = URL(fileURLWithPath: documentDirectoryPath!).appendingPathComponent("DataBaze")
   
         
-        //Přemazávání starých databázi v telefonu při aktualizaci databáze. Databáze z 25.2.2018 je označena jako databáze č. 1
-        //Při další aktualizaci musím přepsat tento kôd tak, aby se Socka aktualizovala na vyšší databázi (dvojku)
-        if FileManager.default.fileExists(atPath: (storeUrl.path)) && (downloader.zjistiVerziDtbzVTelefonuUserDefaults() == 0){
+        //Přemazávání starých databázi v telefonu při aktualizaci databáze. Databáze z 25.7.2018 je označena jako databáze č. 2
+        //Při další aktualizaci musím přepsat tento kôd tak, aby se Socka aktualizovala na vyšší databázi (trojku)
+        if FileManager.default.fileExists(atPath: (storeUrl.path)) && (downloader.zjistiVerziDtbzVTelefonuUserDefaults() < 2){
             print("Přemazávám starou databázi.")
             do{
                 try FileManager.default.removeItem(at: storeUrl)
             }catch{
                 print("Nepodařilo se smazat starou databázi.")
             }
-            downloader.zapisVerziDtbzDoUserDefaults(novaVerze: 1)
+            downloader.zapisVerziDtbzDoUserDefaults(novaVerze: 2)
         }
         
         
