@@ -56,7 +56,6 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
     }
     
     func zapisVerziDtbzDoUserDefaults(novaVerze: Int){
-        print("spusteno2")
         UserDefaults.standard.set(novaVerze, forKey: "verzeDtbz")
     }
     
@@ -77,6 +76,19 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
             try FileManager.default.copyItem(at: location, to: destinationFileUrlbezPripony)
             aktualneZobrazovanaStanice = "Upgrade"
             textView.text = "Jízdní řády jsou aktuální."
+            
+            self.celeView.isHidden = true
+            
+            let alert = UIAlertController(title: "Jízdní řády byly aktualizovány.", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+            self.dismiss(animated: true, completion: nil)
+            }
+            ))
+            
+            
+            self.present(alert, animated: true, completion: nil)
+
+            
             let downloader = Downloader()
             downloader.zapisVerziDtbzDoUserDefaults(novaVerze: downloader.zjistiVerziDtbzNaWebu())
             

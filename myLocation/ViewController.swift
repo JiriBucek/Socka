@@ -160,6 +160,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     override func viewDidLoad() {
     //co se stane po loadnutí
         
+        //pro testovani stazeni databaze
+        let dl = Downloader()
+        dl.zapisVerziDtbzDoUserDefaults(novaVerze: 0)
+        /////////////////////////////////////////////
         
         let sirkaObrazovky = schovavaciSideView.frame.size.width
         schovavaciSideViewTrailingConstraint.constant = -sirkaObrazovky - 100
