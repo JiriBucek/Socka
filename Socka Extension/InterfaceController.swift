@@ -178,6 +178,7 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
                 
                 if metro_data.indices.contains(0){
                     konecna2 = String(describing: metro_data[0][2])
+                    print("Konecna2: ", konecna2)
                     //arrayPristichZastavek2 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna2)
                 }else{
                     konecna2 = "..."
@@ -186,6 +187,7 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
                 
                 if metro_data.indices.contains(2){
                     konecna1 = String(describing: metro_data[2][2])
+                    print("Konecna1: ", konecna1)
                     //arrayPristichZastavek1 = getDalsiTriZastavkyKeKonecne(jmenoZastavky: hlavniZastavka, jmenoKonecneZastavky: konecna1)
                 }else{
                     konecna1 = "..."
@@ -221,11 +223,15 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
                 time22 = (metro_data[3][1] as! Int)
             }
             
+            print("Konecna1: ", konecna1)
             konecna1outlet.setText(konecna1)
             //konecna1outlet.textColor = hlavniBarva
             
+            print("Konecna2: ", konecna2)
             konecna2outlet.setText(konecna2)
             //konecna2outlet.textColor = hlavniBarva
+            
+            nearestZastavkaBtn.setTitle(hlavniZastavka)
             
             
             if myTimeDifference(to: time1) <= 0{
@@ -257,30 +263,32 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
             nearestZastavkaBtn.setTitle(hlavniZastavka)
             //nearestZastavkaBtn.setTitleColor(hlavniBarva, for: .normal)
             
-            /*
+            
             if (myTimeDifference(to: time1) > 0 && myTimeDifference(to: time2) > 0) || (myTimeDifference(to: time1) < -1000 ){
                 if time1 != 999999 || time11 != 999999{
-                    cas11.text = timeDifference(arrivalTime: time11)
-                    countdown1.text = timeDifference(arrivalTime: time1)
+                    print("cas12: ", timeDifference(arrivalTime: time11))
+                    print("countdown1: ", timeDifference(arrivalTime: time1))
+                    cas12.setText(timeDifference(arrivalTime: time11))
+                    countdown1.setText(timeDifference(arrivalTime: time1))
                 }else{
-                    cas11.text = "0:00"
-                    countdown1.text = "0:00"
+                    cas12.setText("0:00")
+                    countdown1.setText("0:00")
                 }
                 
                 if time2 != 999999 || time22 != 999999{
-                    cas21.text = timeDifference(arrivalTime: time22)
-                    countdown2.text = timeDifference(arrivalTime: time2)
+                    cas22.setText(timeDifference(arrivalTime: time22))
+                    countdown2.setText(timeDifference(arrivalTime: time2))
                 }else{
-                    cas21.text = "0:00"
-                    countdown2.text = "0:00"
+                    cas22.setText("0:00")
+                    countdown2.setText("0:00")
                 }
                 
-                countdown2.textColor = barva3
-                countdown1.textColor = barva2
+               // countdown2.textColor = barva3
+                // countdown1.textColor = barva2
             }
  
             
-            
+            /*
             if existujeNovaVerzeDTBZ{
                 ukazUpgradeVC()
                 existujeNovaVerzeDTBZ = false
