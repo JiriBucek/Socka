@@ -161,8 +161,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     //co se stane po loadnutí
         
         //pro testovani stazeni databaze
-        let dl = Downloader()
-        dl.zapisVerziDtbzDoUserDefaults(novaVerze: 0)
+        //let dl = Downloader()
+        //dl.zapisVerziDtbzDoUserDefaults(novaVerze: 0)
         /////////////////////////////////////////////
         
         let sirkaObrazovky = schovavaciSideView.frame.size.width
