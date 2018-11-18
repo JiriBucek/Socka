@@ -30,7 +30,7 @@ class CoreDataStack {
         let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
         let storeUrl = URL(fileURLWithPath: documentDirectoryPath!).appendingPathComponent("DataBaze")
         
-        
+        /*
         //Přemazávání starých databázi v telefonu při aktualizaci databáze. Databáze z 25.7.2018 je označena jako databáze č. 2
         //Při další aktualizaci musím přepsat tento kôd tak, aby se Socka aktualizovala na vyšší databázi (trojku)
         if FileManager.default.fileExists(atPath: (storeUrl.path)) && (downloader.zjistiVerziDtbzVTelefonuUserDefaults() < 2){
@@ -57,7 +57,7 @@ class CoreDataStack {
         
         
         //print(storeUrl)
-        
+        */
         //logne se na persistaent store = sql file
         container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: storeUrl)]
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in

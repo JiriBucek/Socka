@@ -31,6 +31,8 @@
 		896E89FC1F85A73A007F029E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E89FB1F85A73A007F029E /* InfoViewController.swift */; };
 		897BFE4E1EBA0D9C009C59F0 /* Data_pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */; };
 		8980EF5D1FA561A2003CE9E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */; };
+		8995999F21A18E8B002F490E /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8995999E21A18E8B002F490E /* Downloader.swift */; };
+		899599A221A18FDA002F490E /* DataBaze.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 899599A021A18FDA002F490E /* DataBaze.xcdatamodeld */; };
 		89B61E841EA907460032F3AC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B61E831EA907460032F3AC /* CoreDataStack.swift */; };
 		89C1058C21063582006EBD5F /* letni_hotova.csv in Resources */ = {isa = PBXBuildFile; fileRef = 89C1058B21063582006EBD5F /* letni_hotova.csv */; };
 		89C1058E21064171006EBD5F /* DataBaze.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 89C1058D21064171006EBD5F /* DataBaze.sqlite */; };
@@ -148,6 +150,8 @@
 		896E89FB1F85A73A007F029E /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data_pool.swift; path = ../Data_pool.swift; sourceTree = "<group>"; };
 		8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8995999E21A18E8B002F490E /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Downloader.swift; path = myLocation/Downloader.swift; sourceTree = SOURCE_ROOT; };
+		899599A121A18FDA002F490E /* DataFinal280417.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataFinal280417.xcdatamodel; sourceTree = "<group>"; };
 		89B61E831EA907460032F3AC /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		89C1058B21063582006EBD5F /* letni_hotova.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = letni_hotova.csv; sourceTree = "<group>"; };
 		89C1058D21064171006EBD5F /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataBaze.sqlite; sourceTree = "<group>"; };
@@ -203,9 +207,11 @@
 				892F531121A0DF0B0058CDFC /* InterfaceController.swift */,
 				892F531321A0DF0C0058CDFC /* ExtensionDelegate.swift */,
 				892F531521A0DF0C0058CDFC /* NotificationController.swift */,
+				899599A021A18FDA002F490E /* DataBaze.xcdatamodeld */,
 				892F531721A0DF0C0058CDFC /* ComplicationController.swift */,
 				892F532821A0F5E20058CDFC /* Data_pool.swift */,
 				892F532A21A0F64E0058CDFC /* CoreDataStack.swift */,
+				8995999E21A18E8B002F490E /* Downloader.swift */,
 				892F531921A0DF0C0058CDFC /* Assets.xcassets */,
 				892F531B21A0DF0C0058CDFC /* Info.plist */,
 				892F531C21A0DF0C0058CDFC /* PushNotificationPayload.apns */,
@@ -512,6 +518,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				892F532921A0F5E20058CDFC /* Data_pool.swift in Sources */,
+				899599A221A18FDA002F490E /* DataBaze.xcdatamodeld in Sources */,
+				8995999F21A18E8B002F490E /* Downloader.swift in Sources */,
 				892F531621A0DF0C0058CDFC /* NotificationController.swift in Sources */,
 				892F531821A0DF0C0058CDFC /* ComplicationController.swift in Sources */,
 				892F532B21A0F64E0058CDFC /* CoreDataStack.swift in Sources */,
@@ -975,6 +983,17 @@
 			);
 			currentVersion = 891DC1491EB358980098A983 /* DataFinal280417.xcdatamodel */;
 			path = DataBaze.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		899599A021A18FDA002F490E /* DataBaze.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				899599A121A18FDA002F490E /* DataFinal280417.xcdatamodel */,
+			);
+			currentVersion = 899599A121A18FDA002F490E /* DataFinal280417.xcdatamodel */;
+			name = DataBaze.xcdatamodeld;
+			path = ../myLocation/DataBaze.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

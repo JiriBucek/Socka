@@ -260,7 +260,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         if aktualneZobrazovanaStanice != hlavniZastavka{
             print("NOVÁ DATA")
             metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
-            print(metro_data)
+            print("Data na mobilu: ",metro_data)
             
             if metro_data.count > 1{
                 

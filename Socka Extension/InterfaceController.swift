@@ -78,12 +78,15 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
         //po kliknutí na ručně vybranou přestupní stanici se zobrazí zase první dle GPS
     }
     
+
     @IBOutlet var konecna1outlet: WKInterfaceLabel!
     @IBOutlet var konecna2outlet: WKInterfaceLabel!
     
     @IBOutlet var countdown1: WKInterfaceLabel!
     @IBOutlet var countdown2: WKInterfaceLabel!
-    @IBOutlet var cas21: WKInterfaceLabel!
+    
+    @IBOutlet var cas12: WKInterfaceLabel!
+    
     @IBOutlet var cas22: WKInterfaceLabel!
     
     var currentLocation = CLLocation()
@@ -97,6 +100,8 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        
+        getDocumentsDirectory()
         
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
         //každou sekundu updatuje funkci displayAllValue
@@ -139,7 +144,7 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
         //přiřadí hodnoty jednotlivým labelum
         var hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
         //aktuálne vybraná stanice
-        
+        print("Hlavní zastávka: ", hlavniZastavka)
         
         if prestupniStaniceVybrana != ""{
             hlavniZastavka = prestupniStaniceVybrana
@@ -167,7 +172,7 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
         if aktualneZobrazovanaStanice != hlavniZastavka{
             print("NOVÁ DATA")
             metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
-            print(metro_data)
+            print("Data na hodinkách: ", metro_data)
             
             if metro_data.count > 1{
                 
@@ -606,7 +611,7 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
         //Vypíše cestu do dokumentu
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
-        print("Tohle je cesta dle funkce ve VC:  \(documentsDirectory)")
+        print("Tohle je na hodinkach:  \(documentsDirectory)")
         return documentsDirectory
     }
 

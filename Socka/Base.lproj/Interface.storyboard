@@ -49,11 +49,12 @@
                         </label>
                     </items>
                     <connections>
-                        <outlet property="cas11" destination="Jrr-fd-6kU" id="3rr-AF-lnP"/>
-                        <outlet property="cas12" destination="OTu-gB-eKh" id="zUD-qI-8xc"/>
-                        <outlet property="cas22" destination="Rk5-KE-Gjk" id="cpS-kQ-AGp"/>
-                        <outlet property="konecna1" destination="Cdj-pW-jwa" id="zAX-lp-m3b"/>
-                        <outlet property="konecna2" destination="8Lv-ar-PvR" id="7HI-6i-9wl"/>
+                        <outlet property="cas12" destination="OTu-gB-eKh" id="lAD-Mr-lPA"/>
+                        <outlet property="cas22" destination="Rk5-KE-Gjk" id="yHO-W4-cJE"/>
+                        <outlet property="countdown1" destination="Jrr-fd-6kU" id="ALq-uL-gX6"/>
+                        <outlet property="countdown2" destination="HNk-ex-Hrj" id="Ras-ay-6aB"/>
+                        <outlet property="konecna1outlet" destination="Cdj-pW-jwa" id="93f-14-YNq"/>
+                        <outlet property="konecna2outlet" destination="8Lv-ar-PvR" id="ydN-IL-ay0"/>
                         <outlet property="nearestZastavkaBtn" destination="Hza-CO-jgc" id="ALV-QV-olp"/>
                     </connections>
                 </controller>
