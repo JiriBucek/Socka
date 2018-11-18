@@ -3,7 +3,7 @@
 //  Socka Extension
 //
 //  Created by Boocha on 18.11.18.
-//  Copyright © 2018 Boocha. All rights reserved.
+//  Copyright © 2018 Boocha. All rights reserved. sfsf
 //
 
 import WatchKit
