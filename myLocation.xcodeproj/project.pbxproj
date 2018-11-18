@@ -17,6 +17,8 @@
 		892F531821A0DF0C0058CDFC /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F531721A0DF0C0058CDFC /* ComplicationController.swift */; };
 		892F531A21A0DF0C0058CDFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 892F531921A0DF0C0058CDFC /* Assets.xcassets */; };
 		892F531F21A0DF0C0058CDFC /* Socka.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 892F530021A0DF070058CDFC /* Socka.app */; };
+		892F532921A0F5E20058CDFC /* Data_pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F532821A0F5E20058CDFC /* Data_pool.swift */; };
+		892F532B21A0F64E0058CDFC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F532A21A0F64E0058CDFC /* CoreDataStack.swift */; };
 		893B14701EA125FA002E8F72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B146F1EA125FA002E8F72 /* AppDelegate.swift */; };
 		893B14721EA125FA002E8F72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B14711EA125FA002E8F72 /* ViewController.swift */; };
 		893B14751EA125FA002E8F72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 893B14731EA125FA002E8F72 /* Main.storyboard */; };
@@ -125,6 +127,8 @@
 		892F531921A0DF0C0058CDFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		892F531B21A0DF0C0058CDFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		892F531C21A0DF0C0058CDFC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		892F532821A0F5E20058CDFC /* Data_pool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data_pool.swift; sourceTree = "<group>"; };
+		892F532A21A0F64E0058CDFC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		893B146C1EA125FA002E8F72 /* myLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		893B146F1EA125FA002E8F72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		893B14711EA125FA002E8F72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 				892F531321A0DF0C0058CDFC /* ExtensionDelegate.swift */,
 				892F531521A0DF0C0058CDFC /* NotificationController.swift */,
 				892F531721A0DF0C0058CDFC /* ComplicationController.swift */,
+				892F532821A0F5E20058CDFC /* Data_pool.swift */,
+				892F532A21A0F64E0058CDFC /* CoreDataStack.swift */,
 				892F531921A0DF0C0058CDFC /* Assets.xcassets */,
 				892F531B21A0DF0C0058CDFC /* Info.plist */,
 				892F531C21A0DF0C0058CDFC /* PushNotificationPayload.apns */,
@@ -505,8 +511,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				892F532921A0F5E20058CDFC /* Data_pool.swift in Sources */,
 				892F531621A0DF0C0058CDFC /* NotificationController.swift in Sources */,
 				892F531821A0DF0C0058CDFC /* ComplicationController.swift in Sources */,
+				892F532B21A0F64E0058CDFC /* CoreDataStack.swift in Sources */,
 				892F531421A0DF0C0058CDFC /* ExtensionDelegate.swift in Sources */,
 				892F531221A0DF0B0058CDFC /* InterfaceController.swift in Sources */,
 			);

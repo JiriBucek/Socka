@@ -25,13 +25,14 @@
                                     <color key="textColor" red="1" green="0.63137254899999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
-                                <label alignment="left" text="8:36" id="PU4-iH-BMx">
-                                    <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
-                                </label>
+                                <label alignment="left" text="6:45" id="OTu-gB-eKh"/>
                             </items>
                         </group>
                         <button width="1" alignment="left" title="Dejvická" id="Hza-CO-jgc">
                             <color key="backgroundColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="nearestZastavkaBtnPressed" destination="AgC-eL-Hgc" id="wFW-t5-b49"/>
+                            </connections>
                         </button>
                         <group width="136" alignment="left" id="Buh-Ic-OaP">
                             <items>
@@ -39,9 +40,7 @@
                                     <color key="textColor" red="0.95294117649999999" green="0.019607843140000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
-                                <label width="53" alignment="left" text="9:54" id="voO-Xx-V0F">
-                                    <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
-                                </label>
+                                <label alignment="left" text="12:34" id="Rk5-KE-Gjk"/>
                             </items>
                         </group>
                         <separator alignment="left" id="Upf-p6-sUf"/>
@@ -49,6 +48,14 @@
                             <color key="textColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </label>
                     </items>
+                    <connections>
+                        <outlet property="cas11" destination="Jrr-fd-6kU" id="3rr-AF-lnP"/>
+                        <outlet property="cas12" destination="OTu-gB-eKh" id="zUD-qI-8xc"/>
+                        <outlet property="cas22" destination="Rk5-KE-Gjk" id="cpS-kQ-AGp"/>
+                        <outlet property="konecna1" destination="Cdj-pW-jwa" id="zAX-lp-m3b"/>
+                        <outlet property="konecna2" destination="8Lv-ar-PvR" id="7HI-6i-9wl"/>
+                        <outlet property="nearestZastavkaBtn" destination="Hza-CO-jgc" id="ALV-QV-olp"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="219.69230769230771" y="344.79487179487182"/>
