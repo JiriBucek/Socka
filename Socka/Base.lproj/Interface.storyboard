@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
+    <device id="watch44" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,49 +14,51 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Socka" customModuleProvider="target">
                     <items>
-                        <group width="1" height="1" alignment="center" verticalAlignment="center" contentMode="top" layout="vertical" spacing="6" id="10M-NY-Ck9">
+                        <group width="1" height="1" alignment="center" verticalAlignment="center" contentMode="top" layout="vertical" id="10M-NY-Ck9">
                             <items>
-                                <group width="1" alignment="center" verticalAlignment="center" spacing="5" id="Umi-Qw-4L8">
+                                <group width="1" height="0.40000000000000002" alignment="center" verticalAlignment="center" spacing="5" id="Umi-Qw-4L8">
                                     <items>
-                                        <group alignment="left" layout="vertical" id="R33-U6-aZY">
+                                        <group width="0.40000000000000002" alignment="left" verticalAlignment="center" layout="vertical" id="R33-U6-aZY">
                                             <items>
                                                 <label alignment="center" text="3:21" textAlignment="center" minimumScaleFactor="0.59999999999999998" id="Jrr-fd-6kU">
                                                     <color key="textColor" red="1" green="0.63137254899999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="font" type="system" pointSize="39"/>
+                                                    <fontDescription key="font" type="system" pointSize="28"/>
                                                 </label>
                                                 <label alignment="center" text="8:03" id="C2K-ub-i60">
                                                     <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="16"/>
                                                 </label>
                                             </items>
                                         </group>
-                                        <label width="0.59999999999999998" alignment="left" verticalAlignment="center" text="Depo Hostivař" numberOfLines="2" minimumScaleFactor="0.59999999999999998" id="Cdj-pW-jwa">
+                                        <label width="0.59999999999999998" alignment="right" verticalAlignment="center" text="Depo Hostivař" textAlignment="center" numberOfLines="2" minimumScaleFactor="0.59999999999999998" id="Cdj-pW-jwa">
                                             <color key="textColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="font" type="system" pointSize="20"/>
                                         </label>
                                     </items>
                                 </group>
-                                <button width="1" widthAdjustment="8" alignment="center" verticalAlignment="center" title="Hradčanská" id="Hza-CO-jgc">
+                                <button width="1" widthAdjustment="8" height="0.20000000000000001" alignment="center" verticalAlignment="center" title="Hradčanská" id="Hza-CO-jgc">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="font" type="system" pointSize="17"/>
+                                    <fontDescription key="font" type="system" pointSize="20"/>
                                     <connections>
                                         <action selector="nearestZastavkaBtnPressed" destination="AgC-eL-Hgc" id="wFW-t5-b49"/>
                                     </connections>
                                 </button>
-                                <group width="1" alignment="center" verticalAlignment="center" spacing="5" id="L9I-sR-Lfk">
+                                <group width="1" height="0.40000000000000002" alignment="center" verticalAlignment="center" spacing="5" id="L9I-sR-Lfk">
                                     <items>
-                                        <group alignment="right" layout="vertical" id="fmS-Rc-jZJ">
+                                        <group width="0.40000000000000002" alignment="right" verticalAlignment="center" layout="vertical" id="fmS-Rc-jZJ">
                                             <items>
-                                                <label alignment="left" text="6:34" textAlignment="center" minimumScaleFactor="0.59999999999999998" id="HNk-ex-Hrj">
+                                                <label alignment="center" text="6:34" textAlignment="center" minimumScaleFactor="0.59999999999999998" id="HNk-ex-Hrj">
                                                     <color key="textColor" red="0.95294117649999999" green="0.019607843140000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="font" type="system" pointSize="39"/>
+                                                    <fontDescription key="font" type="system" pointSize="28"/>
                                                 </label>
-                                                <label alignment="center" verticalAlignment="bottom" text="9:21" id="X9E-6W-KcU">
+                                                <label alignment="center" text="9:21" id="X9E-6W-KcU">
                                                     <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="font" type="system" pointSize="16"/>
                                                 </label>
                                             </items>
                                         </group>
-                                        <label width="0.59999999999999998" alignment="left" verticalAlignment="center" text="Nemocnice Motol" textAlignment="right" numberOfLines="2" minimumScaleFactor="0.59999999999999998" id="8Lv-ar-PvR">
+                                        <label width="0.59999999999999998" alignment="left" verticalAlignment="center" text="Nemocnice Motol" textAlignment="center" numberOfLines="2" minimumScaleFactor="0.59999999999999998" id="8Lv-ar-PvR">
                                             <color key="textColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="font" type="system" pointSize="20"/>
                                         </label>
@@ -66,6 +68,8 @@
                         </group>
                     </items>
                     <connections>
+                        <outlet property="cas12" destination="C2K-ub-i60" id="6fl-L8-hl8"/>
+                        <outlet property="cas22" destination="X9E-6W-KcU" id="3vY-mX-Mey"/>
                         <outlet property="countdown1" destination="Jrr-fd-6kU" id="ALq-uL-gX6"/>
                         <outlet property="countdown2" destination="HNk-ex-Hrj" id="Ras-ay-6aB"/>
                         <outlet property="konecna1outlet" destination="Cdj-pW-jwa" id="93f-14-YNq"/>
@@ -74,7 +78,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="218.78260869565216" y="343.79464285714289"/>
+            <point key="canvasLocation" x="218" y="343.5"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
