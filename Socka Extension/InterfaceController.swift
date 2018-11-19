@@ -228,8 +228,8 @@ class InterfaceController: WKInterfaceController, CLLocationManagerDelegate {
             //konecna1outlet.textColor = hlavniBarva
             
             print("Konecna2: ", konecna2)
-            konecna2outlet.setText(konecna2)
             //konecna2outlet.textColor = hlavniBarva
+            konecna2outlet.setText(konecna2)
             
             nearestZastavkaBtn.setTitle(hlavniZastavka)
             

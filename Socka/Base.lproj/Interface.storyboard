@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch42" orientation="portrait">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch44" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -14,43 +14,42 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Socka" customModuleProvider="target">
                     <items>
-                        <table alignment="left" id="G2o-hM-pAu"/>
-                        <label alignment="left" text="Depo Hostivař" id="Cdj-pW-jwa">
-                            <color key="textColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </label>
-                        <separator alignment="left" id="A3k-pe-ePc"/>
-                        <group width="1" alignment="left" id="Umi-Qw-4L8">
+                        <group width="1" height="1" alignment="center" verticalAlignment="center" layout="vertical" id="10M-NY-Ck9">
                             <items>
-                                <label width="74" alignment="left" text="3:21" textAlignment="center" id="Jrr-fd-6kU">
-                                    <color key="textColor" red="1" green="0.63137254899999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
-                                </label>
-                                <label alignment="left" text="6:45" id="OTu-gB-eKh"/>
+                                <group width="1" alignment="left" id="Umi-Qw-4L8">
+                                    <items>
+                                        <label width="74" alignment="left" text="3:21" textAlignment="center" id="Jrr-fd-6kU">
+                                            <color key="textColor" red="1" green="0.63137254899999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="35"/>
+                                        </label>
+                                        <label alignment="left" text="Depo Hostivař" numberOfLines="2" id="Cdj-pW-jwa">
+                                            <color key="textColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="17"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <button width="1" alignment="center" title="Dejvická" id="Hza-CO-jgc">
+                                    <color key="backgroundColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <action selector="nearestZastavkaBtnPressed" destination="AgC-eL-Hgc" id="wFW-t5-b49"/>
+                                    </connections>
+                                </button>
+                                <group width="1" alignment="left" id="L9I-sR-Lfk">
+                                    <items>
+                                        <label width="79" height="78" alignment="left" text="6:34" textAlignment="center" id="HNk-ex-Hrj">
+                                            <color key="textColor" red="0.95294117649999999" green="0.019607843140000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="35"/>
+                                        </label>
+                                        <label width="101" height="78" alignment="right" text="Nemocnice Motol" numberOfLines="2" id="8Lv-ar-PvR">
+                                            <color key="textColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" type="system" pointSize="17"/>
+                                        </label>
+                                    </items>
+                                </group>
                             </items>
                         </group>
-                        <button width="1" alignment="left" title="Dejvická" id="Hza-CO-jgc">
-                            <color key="backgroundColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <action selector="nearestZastavkaBtnPressed" destination="AgC-eL-Hgc" id="wFW-t5-b49"/>
-                            </connections>
-                        </button>
-                        <group width="136" alignment="left" id="Buh-Ic-OaP">
-                            <items>
-                                <label width="73" alignment="left" text="6:34" textAlignment="center" id="HNk-ex-Hrj">
-                                    <color key="textColor" red="0.95294117649999999" green="0.019607843140000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
-                                </label>
-                                <label alignment="left" text="12:34" id="Rk5-KE-Gjk"/>
-                            </items>
-                        </group>
-                        <separator alignment="left" id="Upf-p6-sUf"/>
-                        <label alignment="left" text="Nemocnice Motol" id="8Lv-ar-PvR">
-                            <color key="textColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </label>
                     </items>
                     <connections>
-                        <outlet property="cas12" destination="OTu-gB-eKh" id="lAD-Mr-lPA"/>
-                        <outlet property="cas22" destination="Rk5-KE-Gjk" id="yHO-W4-cJE"/>
                         <outlet property="countdown1" destination="Jrr-fd-6kU" id="ALq-uL-gX6"/>
                         <outlet property="countdown2" destination="HNk-ex-Hrj" id="Ras-ay-6aB"/>
                         <outlet property="konecna1outlet" destination="Cdj-pW-jwa" id="93f-14-YNq"/>
@@ -59,7 +58,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="219.69230769230771" y="344.79487179487182"/>
+            <point key="canvasLocation" x="218.78260869565216" y="343.79464285714289"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
