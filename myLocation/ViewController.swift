@@ -444,7 +444,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
         // FETCHING RESULTS FROM CORE DATA - Swift Guy
-         
+    
+    /*
     func fetchData(station_id: String, service_id: [Int], results_count: Int, current_time: Int) -> [[Any]]{
     //fetchne data z databíze
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FullEntity")
@@ -515,7 +516,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }
         return final_data
         }
-    
+    */
     
     func deleteDB(entityName: String) {
         //Vymaže všechna data v dané položce

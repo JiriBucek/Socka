@@ -37,6 +37,9 @@
 		89C1058C21063582006EBD5F /* letni_hotova.csv in Resources */ = {isa = PBXBuildFile; fileRef = 89C1058B21063582006EBD5F /* letni_hotova.csv */; };
 		89C1058E21064171006EBD5F /* DataBaze.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 89C1058D21064171006EBD5F /* DataBaze.sqlite */; };
 		89C3838821C28F0C0070E276 /* Lokace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838721C28F0C0070E276 /* Lokace.swift */; };
+		89C3838A21C366DB0070E276 /* MetroDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838921C366DB0070E276 /* MetroDataClass.swift */; };
+		89C3838C21C36A9E0070E276 /* SockaBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */; };
+		89C3838E21C36AEF0070E276 /* Databaze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838D21C36AEF0070E276 /* Databaze.swift */; };
 		89F298C61EA28B9900AC1968 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F298C51EA28B9900AC1968 /* CSV.swift */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +160,9 @@
 		89C1058B21063582006EBD5F /* letni_hotova.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = letni_hotova.csv; sourceTree = "<group>"; };
 		89C1058D21064171006EBD5F /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataBaze.sqlite; sourceTree = "<group>"; };
 		89C3838721C28F0C0070E276 /* Lokace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lokace.swift; sourceTree = "<group>"; };
+		89C3838921C366DB0070E276 /* MetroDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroDataClass.swift; sourceTree = "<group>"; };
+		89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SockaBaseVC.swift; sourceTree = "<group>"; };
+		89C3838D21C36AEF0070E276 /* Databaze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Databaze.swift; sourceTree = "<group>"; };
 		89F298C51EA28B9900AC1968 /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +258,9 @@
 			children = (
 				897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */,
 				89C3838721C28F0C0070E276 /* Lokace.swift */,
+				89C3838921C366DB0070E276 /* MetroDataClass.swift */,
+				89C3838D21C36AEF0070E276 /* Databaze.swift */,
+				89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */,
 				895CF8691F1CD26E002E2859 /* Downloader.swift */,
 				893B146F1EA125FA002E8F72 /* AppDelegate.swift */,
 				8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */,
@@ -540,9 +549,12 @@
 				895CF86A1F1CD26E002E2859 /* Downloader.swift in Sources */,
 				893B14701EA125FA002E8F72 /* AppDelegate.swift in Sources */,
 				896E89FC1F85A73A007F029E /* InfoViewController.swift in Sources */,
+				89C3838E21C36AEF0070E276 /* Databaze.swift in Sources */,
 				89F298C61EA28B9900AC1968 /* CSV.swift in Sources */,
+				89C3838A21C366DB0070E276 /* MetroDataClass.swift in Sources */,
 				89C3838821C28F0C0070E276 /* Lokace.swift in Sources */,
 				891DC14A1EB358980098A983 /* DataBaze.xcdatamodeld in Sources */,
+				89C3838C21C36A9E0070E276 /* SockaBaseVC.swift in Sources */,
 				89B61E841EA907460032F3AC /* CoreDataStack.swift in Sources */,
 				897BFE4E1EBA0D9C009C59F0 /* Data_pool.swift in Sources */,
 			);
