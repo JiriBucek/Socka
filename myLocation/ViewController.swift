@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-import CoreLocation
+//import CoreLocation
 import CoreData
 import SystemConfiguration
 
@@ -146,12 +146,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var dalsiZastavkaLabel22: UILabel!
     @IBOutlet weak var dalsiZastavkaLabel23: UILabel!
     
+    
+    /*
     var currentLocation = CLLocation()
     //globalni promenna, kam si vlozim soucasnou pozici ve fci location manager
     
     let manager = CLLocationManager()
     //první proměnná nutná pro práci s polohovým službama
-    
+    */
 
     //vyskakovací okno s upozorněním pro svátky
     
@@ -180,13 +182,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
         //každou sekundu updatuje funkci displayAllValue
 
-        
+        /*
         ////   LOKACE   ////
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest //nejlepší možná přesnost
         manager.requestWhenInUseAuthorization() //hodí request na užívání
         manager.startUpdatingLocation() //updatuje polohu
-        
+        */
+ 
         if isInternetAvailable(){
             existujeNovaVerzeDTBZ = zjistiDostupnostNoveDatabaze()
         }
@@ -218,6 +221,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         return .default
     }
     
+    /*
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     //vrátí aktuální polohu a vykreslí ji do mapy, všechny vykomentarovany veci se vztahuji k mape, kterou jsem odstranil
         let location = locations[0]//všechny lokace budou v tomto array, dostanu tu nejnovější
@@ -225,7 +229,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         currentLocation = location
         
     }
-    
+    */
     
     
     @objc func displayAllValues(){
@@ -374,6 +378,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }
     }
     
+    /*
     func nearestMetro() -> [String]{
     //vrátí název tří nejbližších zastávek metra a vzdálenosti od usera
         var zastavkyArray = [String:Double]()
@@ -402,7 +407,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
         return triNejblizsiZastavky
     }
-
+    */
 
     
 //////////// CORE DATA by Swift Guy ///////////
@@ -764,13 +769,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         return barva
     }
     
+    /*
     func getLinkaMetraZastavky(jmenoZastavky: String) -> String{
     //returne linku metra
         let linkaMetra = stations_ids[jmenoZastavky]?[2]
         return linkaMetra!
     }
-    
-    
+    */
+ 
+    /*
     func getDalsiTriZastavkyKeKonecne(jmenoZastavky: String, jmenoKonecneZastavky: String) -> [String]{
     //dostanu array s dalsima trema zastavkama ve smeru ke konecne
         let linkaMetra = getLinkaMetraZastavky(jmenoZastavky: jmenoZastavky)
@@ -821,6 +828,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             }
         return arrayTriZastavek
     }
+    */
     
     func zjistiDostupnostNoveDatabaze() -> Bool{
         let downloader = Downloader()
