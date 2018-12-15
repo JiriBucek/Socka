@@ -81,10 +81,6 @@ class ViewController: SockaBaseVC{
             zastavkySwitch = 0
         }
         
-        if  rucneZadanaZastavka != ""{
-            zastavkySwitch = 0
-            rucneZadanaZastavka = ""
-        }
         prepinaciPomocnaZastavka = triNejblizsiZastavky[zastavkySwitch]
 
         //po kliknutí na ručně vybranou přestupní stanici se zobrazí zase první dle GPS
@@ -254,6 +250,8 @@ class ViewController: SockaBaseVC{
             aktualneZobrazovanaZastavka = rucneZadanaZastavka
             prepinaciPomocnaZastavka = aktualneZobrazovanaZastavka
             fillMetroDataObject()
+            rucneZadanaZastavka = ""
+            zastavkySwitch = 2
         }
         
         if prepinaciPomocnaZastavka != aktualneZobrazovanaZastavka{
