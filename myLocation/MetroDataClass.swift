@@ -12,7 +12,9 @@ class MetroDataClass: NSObject{
     //obsahuje veškerá data pro zobrazení na displeji
     
     var jmenoZastavky: String?
-    var zastavkaID: String?
+    var zastavkaID1: String?
+    var zastavkaID2: String?
+
     
     var konecna1: String?
     var konecna2: String?

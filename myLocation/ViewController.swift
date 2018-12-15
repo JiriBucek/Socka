@@ -46,13 +46,17 @@ var nearestZastavkaIndex: Int = 0
 var aktualneZobrazovanaStanice: String = ""
 //globalni vars urcene pro predavani info vedlejsimu VC, ktery zobrazuje stanice pro projeti
 
+/*
 var metro_data = [[Any]]()
 var arrayPristichZastavek1 = [String]()
 var arrayPristichZastavek2 = [String]()
 var konecna1 = ""
 var konecna2 = ""
+*/
+
 var existujeNovaVerzeDTBZ = false
 var prestupniStaniceVybrana = ""
+
 
 let cervena = UIColor().HexToColor(hexString: "F30503", alpha: 1.0)
 let zluta = UIColor().HexToColor(hexString: "FFA100", alpha: 1.0)
@@ -61,7 +65,7 @@ let zelena = UIColor().HexToColor(hexString: "008900", alpha: 1.0)
 
 //MARK - VC
 
-class ViewController: UIViewController, CLLocationManagerDelegate{
+class ViewController: SockaBaseVC, CLLocationManagerDelegate{
     
     //MARK - Outlets
     @IBOutlet weak var nearestZastavkaButton: UIButton!
@@ -167,6 +171,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         //dl.zapisVerziDtbzDoUserDefaults(novaVerze: 0)
         /////////////////////////////////////////////
         
+        super.viewDidLoad()
+        
         let sirkaObrazovky = schovavaciSideView.frame.size.width
         schovavaciSideViewTrailingConstraint.constant = -sirkaObrazovky - 100
         sideMenuMensiView.layer.shadowOpacity = 1
@@ -177,7 +183,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         nearestZastavkaButton.titleLabel?.numberOfLines = 1
         nearestZastavkaButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
-        super.viewDidLoad()
         
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
         //každou sekundu updatuje funkci displayAllValue
@@ -234,15 +239,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     @objc func displayAllValues(){
     //přiřadí hodnoty jednotlivým labelum
-        var hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
+        //var hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
         //aktuálne vybraná stanice
         
 
         if prestupniStaniceVybrana != ""{
-            hlavniZastavka = prestupniStaniceVybrana
+            aktualneZobrazovanaZastavka = prestupniStaniceVybrana
         }
         
-        let hlavniBarva = getColor(jmenoZastavky: hlavniZastavka)
+        let hlavniBarva = getColor(jmenoZastavky: aktualneZobrazovanaZastavka)
         var barva2 = zelena
         var barva3 = zelena
         
@@ -261,6 +266,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }
         
         
+        /*
         if aktualneZobrazovanaStanice != hlavniZastavka{
             print("NOVÁ DATA")
             metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
@@ -312,14 +318,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             if metro_data.indices.contains(3){
                 time22 = (metro_data[3][1] as! Int)
             }
-            
-            konecna1outlet.text = konecna1
+            */
+        
+            konecna1outlet.text = metroData.konecna1
             konecna1outlet.textColor = hlavniBarva
         
-            konecna2outlet.text = konecna2
+            konecna2outlet.text = metroData.konecna2
             konecna2outlet.textColor = hlavniBarva
-            
-            
+        
+        
+        
+        
+            /*
             if myTimeDifference(to: time1) <= 0{
                 metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
             }
@@ -327,6 +337,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             if myTimeDifference(to: time2) <= 0{
                 metro_data = get_metro_times(dayOfWeek: getDayOfWeek(), metroStanice: nearestZastavkaIndex)
             }
+ 
             if arrayPristichZastavek1.count > 2{
                 dalsiZastavkaLabel11.text = arrayPristichZastavek1[0]
                 dalsiZastavkaLabel11.textColor = hlavniBarva
@@ -348,7 +359,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             nearestZastavkaButton.setTitle(hlavniZastavka, for: .normal)
             nearestZastavkaButton.setTitleColor(hlavniBarva, for: .normal)
             
-            
+         
             if (myTimeDifference(to: time1) > 0 && myTimeDifference(to: time2) > 0) || (myTimeDifference(to: time1) < -1000 ){
                 if time1 != 999999 || time11 != 999999{
                     cas11.text = timeDifference(arrivalTime: time11)
@@ -369,12 +380,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
                 countdown2.textColor = barva3
                 countdown1.textColor = barva2
             }
-                        
+            */
             if existujeNovaVerzeDTBZ{
                 ukazUpgradeVC()
                 existujeNovaVerzeDTBZ = false
             }
-            
         }
     }
     
@@ -605,10 +615,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
     }*/
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
     func formatTime(time: Int) -> String{
     //vezme cas v INT a preklopi ho do stringu s dvojteckama
@@ -756,7 +763,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         var barva = UIColor()
 
         
-        if let metroLinka = stations_ids[jmenoZastavky]?[2]{
+        if let metroLinka = zastavkyIDs[jmenoZastavky]?[2]{
             switch metroLinka {
             case "A":
                 barva = zelena
@@ -851,13 +858,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     func ukazUpgradeVC(){
     //vyskoci okynko s vystrahou, ze je nova verze dtbz
-        let currentVC = self.view.window?.rootViewController
+        //let currentVC = self.view.window?.rootViewController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "1") as! UpgradeViewController
         vc.view.isOpaque = false
         vc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         
-        currentVC?.present(vc, animated: true, completion: nil)
+        //currentVC?.present(vc, animated: true, completion: nil)
     }
     
     func isInternetAvailable() -> Bool {
@@ -888,9 +895,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     func schovejSideView(){
     //schová otevřené side view
-        schovavaciSideViewTrailingConstraint.constant = -schovavaciSideView.frame.size.width - 100
+        //schovavaciSideViewTrailingConstraint.constant = -schovavaciSideView.frame.size.width - 100
         UIView.animate(withDuration: 0.3, animations: {
-            self.view.layoutIfNeeded()
+            //self.view.layoutIfNeeded()
         })
     }
     
@@ -918,6 +925,5 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }
     }
     
-    
-    }
+
 

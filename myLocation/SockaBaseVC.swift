@@ -16,28 +16,74 @@ class SockaBaseVC: UIViewController{
     var device: String = "mobil"
     var triNejblizsiZastavky: Array = ["...", "...", "..."]
     var zastavkySwitch: Int = 0
-    var metroData: MetroDataClass?
+    var metroData = MetroDataClass()
+    //objekt, který obsahuje veškeré informace pro zobrazení na displeji
+    
     let databaze = Databaze()
+    var lokace = Lokace()
+    
 
     
     override func viewDidLoad() {
-        
-        let lokace = Lokace()
+
         triNejblizsiZastavky = lokace.getTriNejblizsiZastavky()
         aktualneZobrazovanaZastavka = triNejblizsiZastavky[0]
-        
+        fillMetroDataObject()
         
     }
     
     func fillMetroDataObject(){
-            metroData?.jmenoZastavky = aktualneZobrazovanaZastavka
+        //vytvoří objekt se všemi informacemi pro screen
+        
+        var metro_times = [[Any]]()
+        var konecna1 = String()
+        var konecna2 = String()
+        var arrayPristichZastavek2 = [String]()
+        var arrayPristichZastavek1 = [String]()
+        
+        
+        
+        metro_times = get_metro_times(jmenoZastavky: aktualneZobrazovanaZastavka)
+        print("Metro times: ", metro_times)
+        
+        if metro_times.indices.contains(2){
+            //sezene konecne a nasledne zastavky ke konecnym
+            
+            konecna2 = String(describing: metro_times[0][2])
+            arrayPristichZastavek2 = lokace.getDalsiTriZastavkyKeKonecne(jmenoZastavky: aktualneZobrazovanaZastavka, jmenoKonecneZastavky: konecna2)
+            
+            konecna1 = String(describing: metro_times[2][2])
+            arrayPristichZastavek1 = lokace.getDalsiTriZastavkyKeKonecne(jmenoZastavky: aktualneZobrazovanaZastavka, jmenoKonecneZastavky: konecna1)
+                
+            metroData.jmenoZastavky = aktualneZobrazovanaZastavka
+            metroData.konecna1 = konecna1
+            metroData.konecna2 = konecna2
+            metroData.nextZastavka11 = arrayPristichZastavek1[0]
+            metroData.nextZastavka12 = arrayPristichZastavek1[1]
+            metroData.nextZastavka13 = arrayPristichZastavek1[2]
+            metroData.nextZastavka21 = arrayPristichZastavek2[0]
+            metroData.nextZastavka22 = arrayPristichZastavek2[1]
+            metroData.nextZastavka23 = arrayPristichZastavek2[2]
+            metroData.cas11 = metro_times[0][1] as? Int
+            metroData.cas12 = metro_times[1][1] as? Int
+            metroData.cas21 = metro_times[2][1] as? Int
+            metroData.cas22 = metro_times[3][1] as? Int
+            print("metroData: ", metroData)
+            
+            
+        }else{
+            print("Nemám žádná data z databáze, nevytvořil jsem objekt metroDataClass.")
+        }
+        
+
+        
         
     }
     
     
     
     func get_metro_times(jmenoZastavky: String) -> [[Any]]!{
-        //vrátí array s dvěma konecnyma a sesti casama
+        //vrátí array s dvěma konecnyma a ctyrma casama
         
         /*
         if prestupniStaniceVybrana != ""{
@@ -127,11 +173,11 @@ class SockaBaseVC: UIViewController{
         let calendar = NSCalendar.current
         let hour = calendar.component(.hour, from: date as Date)
         var minutes = String(calendar.component(.minute, from: date as Date))
-        if minutes.characters.count == 1{
+        if minutes.count == 1{
             minutes = "0" + minutes
         }
         var seconds = String(calendar.component(.second, from: date as Date))
-        if seconds.characters.count == 1{
+        if seconds.count == 1{
             seconds = "0" + seconds
         }
         let final = Int("\(hour)\(minutes)\(seconds)")

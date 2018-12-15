@@ -34,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Entered background.")
         nearestZastavkaIndex = 0
         aktualneZobrazovanaStanice = "načítám"
-        metro_data = []
         prestupniStaniceVybrana = ""
         
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
