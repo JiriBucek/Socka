@@ -40,11 +40,9 @@ extension UIColor{
 
 //MARK - global vars
 
-var nearestZastavkaIndex: Int = 0
+var zastavkySwitch: Int = 0
 // globalni var pro prehazovani zastavky, pro kterou maji byt zobrazeny casove udaje
 
-var aktualneZobrazovanaStanice: String = ""
-//globalni vars urcene pro predavani info vedlejsimu VC, ktery zobrazuje stanice pro projeti
 
 /*
 var metro_data = [[Any]]()
@@ -55,32 +53,40 @@ var konecna2 = ""
 */
 
 var existujeNovaVerzeDTBZ = false
-var prestupniStaniceVybrana = ""
+var prepinaciPomocnaZastavka = ""
+var rucneZadanaZastavka = ""
 
 
-let cervena = UIColor().HexToColor(hexString: "F30503", alpha: 1.0)
-let zluta = UIColor().HexToColor(hexString: "FFA100", alpha: 1.0)
-let zelena = UIColor().HexToColor(hexString: "008900", alpha: 1.0)
 
 
 //MARK - VC
 
-class ViewController: SockaBaseVC, CLLocationManagerDelegate{
+class ViewController: SockaBaseVC{
+    
+    let cervena = UIColor().HexToColor(hexString: "F30503", alpha: 1.0)
+    let zluta = UIColor().HexToColor(hexString: "FFA100", alpha: 1.0)
+    let zelena = UIColor().HexToColor(hexString: "008900", alpha: 1.0)
+    
+    lazy var hlavniBarva = zluta
+    lazy var barva2 = zelena
+    lazy var barva3 = zelena
     
     //MARK - Outlets
     @IBOutlet weak var nearestZastavkaButton: UIButton!
     
     @IBAction func nearestZastavkaButtonPressed(_ sender: Any) {
         //prepinani trech nejblizsich stanic
-        nearestZastavkaIndex += 1
-        if nearestZastavkaIndex == 3{
-            nearestZastavkaIndex = 0
+        zastavkySwitch += 1
+        if zastavkySwitch == 3{
+            zastavkySwitch = 0
         }
         
-        if prestupniStaniceVybrana != ""{
-            nearestZastavkaIndex = 0
+        if  rucneZadanaZastavka != ""{
+            zastavkySwitch = 0
+            rucneZadanaZastavka = ""
         }
-        prestupniStaniceVybrana = ""
+        prepinaciPomocnaZastavka = triNejblizsiZastavky[zastavkySwitch]
+
         //po kliknutí na ručně vybranou přestupní stanici se zobrazí zase první dle GPS
     }
     
@@ -242,28 +248,52 @@ class ViewController: SockaBaseVC, CLLocationManagerDelegate{
         //var hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
         //aktuálne vybraná stanice
         
-
-        if prestupniStaniceVybrana != ""{
-            aktualneZobrazovanaZastavka = prestupniStaniceVybrana
+        
+        if rucneZadanaZastavka != ""{
+        //čeká na manuální přepnutí přestupní zastávky
+            aktualneZobrazovanaZastavka = rucneZadanaZastavka
+            prepinaciPomocnaZastavka = aktualneZobrazovanaZastavka
+            fillMetroDataObject()
         }
         
-        let hlavniBarva = getColor(jmenoZastavky: aktualneZobrazovanaZastavka)
-        var barva2 = zelena
-        var barva3 = zelena
-        
-        switch hlavniBarva {
-        case cervena:
-            barva2 = zelena
-            barva3 = zluta
-        case zluta:
-            barva2 = cervena
-            barva3 = zelena
-        case zelena:
-            barva2 = zluta
-            barva3 = cervena
-        default:
-            print("Barvy nefungují.")
+        if prepinaciPomocnaZastavka != aktualneZobrazovanaZastavka{
+        //čeká na přepnutí na další nejbližší zastávku
+            aktualneZobrazovanaZastavka = prepinaciPomocnaZastavka
+            fillMetroDataObject()
         }
+        
+        nastavBarvy(jmenoZastavky: aktualneZobrazovanaZastavka)
+        
+        nearestZastavkaButton.setTitle(aktualneZobrazovanaZastavka, for: .normal)
+        nearestZastavkaButton.setTitleColor(hlavniBarva, for: .normal)
+        
+        cas11.text = timeDifference(arrivalTime: metroData.cas12!)
+        countdown1.text = timeDifference(arrivalTime: metroData.cas11!)
+        countdown1.textColor = barva2
+        
+        cas21.text = timeDifference(arrivalTime: metroData.cas22!)
+        countdown2.text = timeDifference(arrivalTime: metroData.cas21!)
+        countdown2.textColor = barva3
+        
+        konecna1outlet.text = metroData.konecna1
+        konecna1outlet.textColor = hlavniBarva
+        
+        konecna2outlet.text = metroData.konecna2
+        konecna2outlet.textColor = hlavniBarva
+        
+        dalsiZastavkaLabel11.text = metroData.nextZastavka11
+        dalsiZastavkaLabel11.textColor = hlavniBarva
+        dalsiZastavkaLabel12.text = metroData.nextZastavka12
+        dalsiZastavkaLabel12.textColor = hlavniBarva
+        dalsiZastavkaLabel13.text = metroData.nextZastavka13
+        dalsiZastavkaLabel13.textColor = hlavniBarva
+        
+        dalsiZastavkaLabel21.text = metroData.nextZastavka21
+        dalsiZastavkaLabel21.textColor = hlavniBarva
+        dalsiZastavkaLabel22.text = metroData.nextZastavka22
+        dalsiZastavkaLabel22.textColor = hlavniBarva
+        dalsiZastavkaLabel23.text = metroData.nextZastavka23
+        dalsiZastavkaLabel23.textColor = hlavniBarva
         
         
         /*
@@ -320,36 +350,7 @@ class ViewController: SockaBaseVC, CLLocationManagerDelegate{
             }
             */
         
-            nearestZastavkaButton.setTitle(aktualneZobrazovanaZastavka, for: .normal)
-            nearestZastavkaButton.setTitleColor(hlavniBarva, for: .normal)
-        
-            cas11.text = timeDifference(arrivalTime: metroData.cas12!)
-            countdown1.text = timeDifference(arrivalTime: metroData.cas11!)
-            countdown1.textColor = barva2
 
-            cas21.text = timeDifference(arrivalTime: metroData.cas22!)
-            countdown2.text = timeDifference(arrivalTime: metroData.cas21!)
-            countdown2.textColor = barva3
-        
-            konecna1outlet.text = metroData.konecna1
-            konecna1outlet.textColor = hlavniBarva
-        
-            konecna2outlet.text = metroData.konecna2
-            konecna2outlet.textColor = hlavniBarva
-        
-            dalsiZastavkaLabel11.text = metroData.nextZastavka11
-            dalsiZastavkaLabel11.textColor = hlavniBarva
-            dalsiZastavkaLabel12.text = metroData.nextZastavka12
-            dalsiZastavkaLabel12.textColor = hlavniBarva
-            dalsiZastavkaLabel13.text = metroData.nextZastavka13
-            dalsiZastavkaLabel13.textColor = hlavniBarva
-        
-            dalsiZastavkaLabel21.text = metroData.nextZastavka21
-            dalsiZastavkaLabel21.textColor = hlavniBarva
-            dalsiZastavkaLabel22.text = metroData.nextZastavka22
-            dalsiZastavkaLabel22.textColor = hlavniBarva
-            dalsiZastavkaLabel23.text = metroData.nextZastavka23
-            dalsiZastavkaLabel23.textColor = hlavniBarva
         
         
             /*
@@ -409,7 +410,7 @@ class ViewController: SockaBaseVC, CLLocationManagerDelegate{
                 existujeNovaVerzeDTBZ = false
             }
         }
-    }
+    
     
     /*
     func nearestMetro() -> [String]{
@@ -565,6 +566,7 @@ class ViewController: SockaBaseVC, CLLocationManagerDelegate{
         }
     }
     
+    /*
     func current_time() -> Int{
     //vrátísoučasný čas jako Int
         let date = NSDate()
@@ -582,7 +584,7 @@ class ViewController: SockaBaseVC, CLLocationManagerDelegate{
         return final!
     }
     
-    /*
+    
     func get_metro_times(dayOfWeek: Int, metroStanice: Int) -> [[Any]]!{
         //parametr metroStanice odkazuje na to, která zastávka se má načítat > 0 je nejbližší, 1 je druhá nejbližší, 2 je třetí nejbližší
         //vrátí array s dvěma konecnyma a sesti casama
@@ -681,6 +683,7 @@ class ViewController: SockaBaseVC, CLLocationManagerDelegate{
         return documentsDirectory
     }
     
+    /*
     func getDayOfWeek() -> Int{
     //vrátí den v týdnu jako Int od 1 do 7. Musím od toho odečíst jedničku, protože začínají nedělí jako jedna
         let date = Date()
@@ -716,7 +719,7 @@ class ViewController: SockaBaseVC, CLLocationManagerDelegate{
         }
     return service_ids
     }
-    
+    */
     func myTimeDifference(to targetTime: Int) -> Int{
     //spočitá rozdíl mezi časem metra a současným časem
         let time = targetTime - current_time()
@@ -780,7 +783,7 @@ class ViewController: SockaBaseVC, CLLocationManagerDelegate{
     
         return "\(minuty):\(sekundy)"
     }
-    
+    /*
     func getColor(jmenoZastavky: String) -> UIColor{
     //returne barvu linky dané stanice metra
         var barva = UIColor()
@@ -799,6 +802,27 @@ class ViewController: SockaBaseVC, CLLocationManagerDelegate{
             }
         }
         return barva
+    }
+     */
+    func nastavBarvy(jmenoZastavky: String){
+        if let metroLinka = zastavkyIDs[jmenoZastavky]?[2]{
+            switch metroLinka {
+            case "A":
+                hlavniBarva = zelena
+                barva2 = zluta
+                barva3 = cervena
+            case "B":
+                hlavniBarva = zluta
+                barva2 = cervena
+                barva3 = zelena
+            case "C":
+                hlavniBarva = cervena
+                barva2 = zelena
+                barva3 = zluta
+            default:
+                print("Nepodařilo se určit barvu")
+            }
+        }
     }
     
     /*
@@ -881,13 +905,13 @@ class ViewController: SockaBaseVC, CLLocationManagerDelegate{
     
     func ukazUpgradeVC(){
     //vyskoci okynko s vystrahou, ze je nova verze dtbz
-        //let currentVC = self.view.window?.rootViewController
+        let currentVC = self.view.window?.rootViewController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "1") as! UpgradeViewController
         vc.view.isOpaque = false
         vc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         
-        //currentVC?.present(vc, animated: true, completion: nil)
+        currentVC?.present(vc, animated: true, completion: nil)
     }
     
     func isInternetAvailable() -> Bool {
@@ -918,16 +942,16 @@ class ViewController: SockaBaseVC, CLLocationManagerDelegate{
     
     func schovejSideView(){
     //schová otevřené side view
-        //schovavaciSideViewTrailingConstraint.constant = -schovavaciSideView.frame.size.width - 100
+        schovavaciSideViewTrailingConstraint.constant = -schovavaciSideView.frame.size.width - 100
         UIView.animate(withDuration: 0.3, animations: {
-            //self.view.layoutIfNeeded()
+        self.view.layoutIfNeeded()
         })
     }
     
     
     func prepniNaPrestupniZastavku(zastavka: String){
     //po kliknutí na prestupni zastavku v sideview schová menu a nastaví přestupní zastávka
-        prestupniStaniceVybrana = zastavka
+        rucneZadanaZastavka = zastavka
         schovejSideView()
     }
     
@@ -947,6 +971,6 @@ class ViewController: SockaBaseVC, CLLocationManagerDelegate{
             return false
         }
     }
-    
+}
 
 

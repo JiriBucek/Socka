@@ -12,9 +12,10 @@ import UIKit
 
 class SockaBaseVC: UIViewController{
     
-    var aktualneZobrazovanaZastavka: String = "..."
+    public var aktualneZobrazovanaZastavka: String = ""
+    var prepinaciPomocnaZastavka = ""
     var device: String = "mobil"
-    var triNejblizsiZastavky: Array = ["...", "...", "..."]
+    public var triNejblizsiZastavky: Array = ["...", "...", "..."]
     var zastavkySwitch: Int = 0
     var metroData = MetroDataClass()
     //objekt, který obsahuje veškeré informace pro zobrazení na displeji
@@ -28,6 +29,7 @@ class SockaBaseVC: UIViewController{
 
         triNejblizsiZastavky = lokace.getTriNejblizsiZastavky()
         aktualneZobrazovanaZastavka = triNejblizsiZastavky[0]
+        prepinaciPomocnaZastavka = aktualneZobrazovanaZastavka
         fillMetroDataObject()
         
     }

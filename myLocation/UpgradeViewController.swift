@@ -74,7 +74,6 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
         do{
             try FileManager.default.removeItem(at: destinationFileUrlbezPripony)
             try FileManager.default.copyItem(at: location, to: destinationFileUrlbezPripony)
-            aktualneZobrazovanaStanice = "Upgrade"
             textView.text = "Jízdní řády jsou aktuální."
             
             self.celeView.isHidden = true
