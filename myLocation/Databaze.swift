@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class Databaze{
+public class Databaze{
     
     let downloader = Downloader()
     
@@ -77,7 +77,7 @@ class Databaze{
         }
     }
     
-    func fetchData(station_id: String, service_id: [Int], results_count: Int, current_time: Int) -> [[Any]]{
+    func fetchData(station_id: String, service_id: Int, results_count: Int, current_time: Int) -> [[Any]]{
         //fetchne data z databíze
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FullEntity")
         //vytvoření kominikacniho objectu a zadání názvu entity
@@ -100,11 +100,10 @@ class Databaze{
         
         var subPredicates = [NSPredicate]()
         //array s predikátama
-        for i in 0..<schedule_id.count{
-            let oneSubpredicate = NSPredicate(format: "stop_id == %@ AND service_id == %i AND arrival_time > %i", station_id, schedule_id[i], current_time)
+        
+        let oneSubpredicate = NSPredicate(format: "stop_id == %@ AND service_id == %i AND arrival_time > %i", station_id, schedule_id, current_time)
             // pro string pouziju %@, integer %i, key %K
-            subPredicates.append(oneSubpredicate)
-        }//vytvoří tolik subpredicates, kolik je pro daný den potřeba service ids
+        subPredicates.append(oneSubpredicate)
         
         let myPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: subPredicates)
         //souhrnný predicate typu OR

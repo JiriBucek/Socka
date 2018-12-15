@@ -549,6 +549,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         return final!
     }
     
+    /*
     func get_metro_times(dayOfWeek: Int, metroStanice: Int) -> [[Any]]!{
         //parametr metroStanice odkazuje na to, která zastávka se má načítat > 0 je nejbližší, 1 je druhá nejbližší, 2 je třetí nejbližší
         //vrátí array s dvěma konecnyma a sesti casama
@@ -602,7 +603,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         return times
         
         
-    }
+    }*/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
