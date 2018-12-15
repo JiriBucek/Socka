@@ -320,13 +320,36 @@ class ViewController: SockaBaseVC, CLLocationManagerDelegate{
             }
             */
         
+            nearestZastavkaButton.setTitle(aktualneZobrazovanaZastavka, for: .normal)
+            nearestZastavkaButton.setTitleColor(hlavniBarva, for: .normal)
+        
+            cas11.text = timeDifference(arrivalTime: metroData.cas12!)
+            countdown1.text = timeDifference(arrivalTime: metroData.cas11!)
+            countdown1.textColor = barva2
+
+            cas21.text = timeDifference(arrivalTime: metroData.cas22!)
+            countdown2.text = timeDifference(arrivalTime: metroData.cas21!)
+            countdown2.textColor = barva3
+        
             konecna1outlet.text = metroData.konecna1
             konecna1outlet.textColor = hlavniBarva
         
             konecna2outlet.text = metroData.konecna2
             konecna2outlet.textColor = hlavniBarva
         
+            dalsiZastavkaLabel11.text = metroData.nextZastavka11
+            dalsiZastavkaLabel11.textColor = hlavniBarva
+            dalsiZastavkaLabel12.text = metroData.nextZastavka12
+            dalsiZastavkaLabel12.textColor = hlavniBarva
+            dalsiZastavkaLabel13.text = metroData.nextZastavka13
+            dalsiZastavkaLabel13.textColor = hlavniBarva
         
+            dalsiZastavkaLabel21.text = metroData.nextZastavka21
+            dalsiZastavkaLabel21.textColor = hlavniBarva
+            dalsiZastavkaLabel22.text = metroData.nextZastavka22
+            dalsiZastavkaLabel22.textColor = hlavniBarva
+            dalsiZastavkaLabel23.text = metroData.nextZastavka23
+            dalsiZastavkaLabel23.textColor = hlavniBarva
         
         
             /*
