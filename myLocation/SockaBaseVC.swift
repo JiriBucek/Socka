@@ -8,9 +8,9 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
-
-class SockaBaseVC: UIViewController{
+class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
     
     public var aktualneZobrazovanaZastavka: String = ""
     var prepinaciPomocnaZastavka = ""
@@ -21,13 +21,16 @@ class SockaBaseVC: UIViewController{
     //objekt, který obsahuje veškeré informace pro zobrazení na displeji
     
     let databaze = Databaze()
-    var lokace = Lokace()
+    var lokace: Lokace?
     
 
     
     override func viewDidLoad() {
-
-        triNejblizsiZastavky = lokace.getTriNejblizsiZastavky()
+        lokace = Lokace.shared
+        lokace?.start()
+        
+        
+        triNejblizsiZastavky = (lokace?.getTriNejblizsiZastavky())!
         aktualneZobrazovanaZastavka = triNejblizsiZastavky[0]
         prepinaciPomocnaZastavka = aktualneZobrazovanaZastavka
         fillMetroDataObject()
@@ -52,10 +55,10 @@ class SockaBaseVC: UIViewController{
             //sezene konecne a nasledne zastavky ke konecnym
             
             konecna2 = String(describing: metro_times[0][2])
-            arrayPristichZastavek2 = lokace.getDalsiTriZastavkyKeKonecne(jmenoZastavky: aktualneZobrazovanaZastavka, jmenoKonecneZastavky: konecna2)
+            arrayPristichZastavek2 = (lokace?.getDalsiTriZastavkyKeKonecne(jmenoZastavky: aktualneZobrazovanaZastavka, jmenoKonecneZastavky: konecna2))!
             
             konecna1 = String(describing: metro_times[2][2])
-            arrayPristichZastavek1 = lokace.getDalsiTriZastavkyKeKonecne(jmenoZastavky: aktualneZobrazovanaZastavka, jmenoKonecneZastavky: konecna1)
+            arrayPristichZastavek1 = (lokace?.getDalsiTriZastavkyKeKonecne(jmenoZastavky: aktualneZobrazovanaZastavka, jmenoKonecneZastavky: konecna1))!
                 
             metroData.jmenoZastavky = aktualneZobrazovanaZastavka
             metroData.konecna1 = konecna1
