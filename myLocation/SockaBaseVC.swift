@@ -15,23 +15,30 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
     public var aktualneZobrazovanaZastavka: String = ""
     var prepinaciPomocnaZastavka = ""
     var device: String = "mobil"
-    public var triNejblizsiZastavky: Array = ["...", "...", "..."]
+    var triNejblizsiZastavky: Array = ["...", "...", "..."]
     var zastavkySwitch: Int = 0
     var metroData = MetroDataClass()
     //objekt, který obsahuje veškeré informace pro zobrazení na displeji
     
     let databaze = Databaze()
-    var lokace: Lokace?
+    var lokace = Lokace()
     
 
     
     override func viewDidLoad() {
         lokace = Lokace.shared
-        lokace?.start()
+        lokace.start()
         
         
-        triNejblizsiZastavky = (lokace?.getTriNejblizsiZastavky())!
-        aktualneZobrazovanaZastavka = triNejblizsiZastavky[0]
+        triNejblizsiZastavky = lokace.triNejblizsiZastavkyArray ?? ["...", "...", "..."]
+        
+        if triNejblizsiZastavky.count == 3{
+            aktualneZobrazovanaZastavka = triNejblizsiZastavky[0]
+        }else{
+            triNejblizsiZastavky = ["Dejvická", "...", "..."]
+            aktualneZobrazovanaZastavka = triNejblizsiZastavky[0]
+        }
+        
         prepinaciPomocnaZastavka = aktualneZobrazovanaZastavka
         fillMetroDataObject()
         
@@ -55,10 +62,10 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
             //sezene konecne a nasledne zastavky ke konecnym
             
             konecna2 = String(describing: metro_times[0][2])
-            arrayPristichZastavek2 = (lokace?.getDalsiTriZastavkyKeKonecne(jmenoZastavky: aktualneZobrazovanaZastavka, jmenoKonecneZastavky: konecna2))!
+            arrayPristichZastavek2 = (lokace.getDalsiTriZastavkyKeKonecne(jmenoZastavky: aktualneZobrazovanaZastavka, jmenoKonecneZastavky: konecna2))
             
             konecna1 = String(describing: metro_times[2][2])
-            arrayPristichZastavek1 = (lokace?.getDalsiTriZastavkyKeKonecne(jmenoZastavky: aktualneZobrazovanaZastavka, jmenoKonecneZastavky: konecna1))!
+            arrayPristichZastavek1 = (lokace.getDalsiTriZastavkyKeKonecne(jmenoZastavky: aktualneZobrazovanaZastavka, jmenoKonecneZastavky: konecna1))
                 
             metroData.jmenoZastavky = aktualneZobrazovanaZastavka
             metroData.konecna1 = konecna1

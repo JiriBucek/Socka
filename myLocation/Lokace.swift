@@ -16,6 +16,7 @@ class Lokace: NSObject, CLLocationManagerDelegate{
     var currentLocation = CLLocation()
     
     let locationManager : CLLocationManager
+    var triNejblizsiZastavkyArray = [String]()
     
     override init() {
         locationManager = CLLocationManager()
@@ -31,15 +32,17 @@ class Lokace: NSObject, CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations.last!
-    
+        triNejblizsiZastavkyArray = getTriNejblizsiZastavky()
         print(currentLocation)
+        print(triNejblizsiZastavkyArray)
     }
     
+    /*
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
         locationManager.stopUpdatingLocation()
     }
-    
+    */
     
     func getTriNejblizsiZastavky() -> [String]{
         //vrátí název tří nejbližších zastávek metra a vzdálenosti od usera
