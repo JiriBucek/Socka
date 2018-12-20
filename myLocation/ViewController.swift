@@ -54,8 +54,6 @@ var konecna2 = ""
 
 var existujeNovaVerzeDTBZ = false
 var prepinaciPomocnaZastavka = ""
-var rucneZadanaZastavka = ""
-
 
 
 
@@ -244,7 +242,7 @@ class ViewController: SockaBaseVC{
         //var hlavniZastavka = nearestMetro()[nearestZastavkaIndex]
         //aktuálne vybraná stanice
         
-        
+        /*
         if rucneZadanaZastavka != ""{
         //čeká na manuální přepnutí přestupní zastávky
             aktualneZobrazovanaZastavka = rucneZadanaZastavka
@@ -253,13 +251,23 @@ class ViewController: SockaBaseVC{
             rucneZadanaZastavka = ""
             zastavkySwitch = 2
         }
+        */
+        
+        triNejblizsiZastackyPrepinaciArray = lokace.triNejblizsiZastavkyArray
+        print("Pomocný array: ", triNejblizsiZastackyPrepinaciArray   )
+        print("Real array: ", triNejblizsiZastavky)
+        if triNejblizsiZastackyPrepinaciArray != triNejblizsiZastavky{
+            triNejblizsiZastavky = triNejblizsiZastackyPrepinaciArray
+            prepinaciPomocnaZastavka = triNejblizsiZastavky[0]
+        }
+        
+        
         
         if prepinaciPomocnaZastavka != aktualneZobrazovanaZastavka{
         //čeká na přepnutí na další nejbližší zastávku
             aktualneZobrazovanaZastavka = prepinaciPomocnaZastavka
             fillMetroDataObject()
         }
-        
         
         
         nastavBarvy(jmenoZastavky: aktualneZobrazovanaZastavka)
@@ -951,7 +959,8 @@ class ViewController: SockaBaseVC{
     
     func prepniNaPrestupniZastavku(zastavka: String){
     //po kliknutí na prestupni zastavku v sideview schová menu a nastaví přestupní zastávka
-        rucneZadanaZastavka = zastavka
+        prepinaciPomocnaZastavka = zastavka
+        zastavkySwitch = 2
         schovejSideView()
     }
     

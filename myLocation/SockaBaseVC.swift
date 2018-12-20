@@ -15,9 +15,10 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
     public var aktualneZobrazovanaZastavka: String = ""
     var prepinaciPomocnaZastavka = ""
     var device: String = "mobil"
-    var triNejblizsiZastavky: Array = ["...", "...", "..."]
+    var triNejblizsiZastavky = [String]()
     var zastavkySwitch: Int = 0
     var metroData = MetroDataClass()
+    var triNejblizsiZastackyPrepinaciArray = [String]()
     //objekt, který obsahuje veškeré informace pro zobrazení na displeji
     
     let databaze = Databaze()
@@ -31,13 +32,11 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
         lokace.start()
         //zacne updatovat polohu
         
-        triNejblizsiZastavky = lokace.triNejblizsiZastavkyArray ?? ["...", "...", "..."]
+        triNejblizsiZastavky = lokace.triNejblizsiZastavkyArray
+        print("Prvnotni array: ", triNejblizsiZastavky)
         
         if triNejblizsiZastavky.count == 3{
         //pro pripad, ze by se lokace jeste nechytila
-            aktualneZobrazovanaZastavka = triNejblizsiZastavky[0]
-        }else{
-            triNejblizsiZastavky = ["Dejvická", "...", "..."]
             aktualneZobrazovanaZastavka = triNejblizsiZastavky[0]
         }
         
@@ -54,7 +53,6 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
         var konecna2 = String()
         var arrayPristichZastavek2 = [String]()
         var arrayPristichZastavek1 = [String]()
-        
         
         
         metro_times = get_metro_times(jmenoZastavky: aktualneZobrazovanaZastavka)
@@ -95,19 +93,10 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
     }
     
     
-    
     func get_metro_times(jmenoZastavky: String) -> [[Any]]!{
         //vrátí array s dvěma konecnyma a ctyrma casama
         
-        /*
-        if prestupniStaniceVybrana != ""{
-            nearest_station = prestupniStaniceVybrana
-        }
-        */
-        
-        //název zastávky metra
-        
-        let station_ids = zastavkyIDs[jmenoZastavky]!
+        if let station_ids = zastavkyIDs[jmenoZastavky]{
         //dva ID kody pro danou zastavku a dvě konecne
         
         let time = current_time()
@@ -153,6 +142,10 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
         
         //print(times)
         return times
+            
+        }else{
+            return []
+        }
         
     }
     
