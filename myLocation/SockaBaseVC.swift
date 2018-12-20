@@ -27,12 +27,14 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
     
     override func viewDidLoad() {
         lokace = Lokace.shared
+        //shared je singleton lokace
         lokace.start()
-        
+        //zacne updatovat polohu
         
         triNejblizsiZastavky = lokace.triNejblizsiZastavkyArray ?? ["...", "...", "..."]
         
         if triNejblizsiZastavky.count == 3{
+        //pro pripad, ze by se lokace jeste nechytila
             aktualneZobrazovanaZastavka = triNejblizsiZastavky[0]
         }else{
             triNejblizsiZastavky = ["Dejvická", "...", "..."]

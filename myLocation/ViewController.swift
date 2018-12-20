@@ -260,6 +260,8 @@ class ViewController: SockaBaseVC{
             fillMetroDataObject()
         }
         
+        
+        
         nastavBarvy(jmenoZastavky: aktualneZobrazovanaZastavka)
         
         nearestZastavkaButton.setTitle(aktualneZobrazovanaZastavka, for: .normal)
