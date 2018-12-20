@@ -303,6 +303,10 @@ class ViewController: SockaBaseVC{
         dalsiZastavkaLabel23.text = metroData.nextZastavka23
         dalsiZastavkaLabel23.textColor = hlavniBarva
         
+        if myTimeDifference(to: metroData.cas11!) < 1 || myTimeDifference(to: metroData.cas21!) < 1{
+            fillMetroDataObject()
+        }
+        
         
         /*
         if aktualneZobrazovanaStanice != hlavniZastavka{
