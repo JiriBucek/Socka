@@ -27,6 +27,7 @@ class Lokace: NSObject, CLLocationManagerDelegate{
     
     func start() {
         locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
     

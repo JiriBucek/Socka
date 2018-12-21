@@ -202,5 +202,11 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
         return day
     }
     
+    func locationNotEnabled(){
+        
+        
+        
+    }
+    
     
 }

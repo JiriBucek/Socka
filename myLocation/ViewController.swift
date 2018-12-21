@@ -78,9 +78,11 @@ class ViewController: SockaBaseVC{
         if zastavkySwitch == 3{
             zastavkySwitch = 0
         }
+        if triNejblizsiZastavky.count > 0{
+            prepinaciPomocnaZastavka = triNejblizsiZastavky[zastavkySwitch]
+        }
         
-        prepinaciPomocnaZastavka = triNejblizsiZastavky[zastavkySwitch]
-
+        
         //po kliknutí na ručně vybranou přestupní stanici se zobrazí zase první dle GPS
     }
     
@@ -183,7 +185,6 @@ class ViewController: SockaBaseVC{
         nearestZastavkaButton.titleLabel?.numberOfLines = 1
         nearestZastavkaButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
-        
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
         //každou sekundu updatuje funkci displayAllValue
 
@@ -218,7 +219,12 @@ class ViewController: SockaBaseVC{
         
             alertSvatky.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             present(alertSvatky, animated: true)
+        }else{
+            checkLocationEnabled()
         }
+        
+        
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
@@ -257,18 +263,19 @@ class ViewController: SockaBaseVC{
         print("Pomocný array: ", triNejblizsiZastackyPrepinaciArray   )
         print("Real array: ", triNejblizsiZastavky)
         if triNejblizsiZastackyPrepinaciArray != triNejblizsiZastavky{
+        //prepinac pro pripad, ze se zmeni poloha
             triNejblizsiZastavky = triNejblizsiZastackyPrepinaciArray
             prepinaciPomocnaZastavka = triNejblizsiZastavky[0]
         }
         
         
-        
         if prepinaciPomocnaZastavka != aktualneZobrazovanaZastavka{
-        //čeká na přepnutí na další nejbližší zastávku
+        //prepinac pro pripad zmeny polohy nebo prepnuti zastacky uzivatelem
             aktualneZobrazovanaZastavka = prepinaciPomocnaZastavka
             fillMetroDataObject()
         }
         
+        if metroData.cas11 != nil && metroData.nextZastavka11 != nil{
         
         nastavBarvy(jmenoZastavky: aktualneZobrazovanaZastavka)
         
@@ -306,7 +313,7 @@ class ViewController: SockaBaseVC{
         if myTimeDifference(to: metroData.cas11!) < 1 || myTimeDifference(to: metroData.cas21!) < 1{
             fillMetroDataObject()
         }
-        
+        }
         
         /*
         if aktualneZobrazovanaStanice != hlavniZastavka{
@@ -984,6 +991,30 @@ class ViewController: SockaBaseVC{
             return false
         }
     }
+    
+    func checkLocationEnabled() {
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+                
+                case .notDetermined, .restricted, .denied:
+                    print("Lokalizace vypnuta!")
+                    
+                    let alert = UIAlertController(title: "Lokalizační služby nedostupné", message: "Máš vypnuty lokalizační služby, bez nichž nemůže Socka určit tvou polohu a nejbližší zastávku metra. Zapni je prosím v Nastavení/Socka/Poloha/", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                    ))
+                
+                     self.present(alert, animated: true, completion: nil)
+                
+                case .authorizedAlways, .authorizedWhenInUse:
+                    print("Localizační služby povoleny.")
+                }
+        }
+    }
+    
+    
 }
 
 
