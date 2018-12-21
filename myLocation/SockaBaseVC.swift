@@ -202,10 +202,16 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
         return day
     }
     
-    func locationNotEnabled(){
-        
-        
-        
+    func isAppAlreadyLaunchedOnce()->Bool{
+        let defaults = UserDefaults.standard
+        if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
+            print("Aplikace již byla v minulosti spuštěna.")
+            return true
+        }else{
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+            print("První spuštění aplikace.")
+            return false
+        }
     }
     
     

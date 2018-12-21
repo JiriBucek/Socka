@@ -220,7 +220,9 @@ class ViewController: SockaBaseVC{
             alertSvatky.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             present(alertSvatky, animated: true)
         }else{
-            checkLocationEnabled()
+            if isAppAlreadyLaunchedOnce(){
+                checkLocationEnabled()
+            }
         }
         
         
@@ -1009,7 +1011,7 @@ class ViewController: SockaBaseVC{
                      self.present(alert, animated: true, completion: nil)
                 
                 case .authorizedAlways, .authorizedWhenInUse:
-                    print("Localizační služby povoleny.")
+                    print("Lokalizační služby povoleny.")
                 }
         }
     }
