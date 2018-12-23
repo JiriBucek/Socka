@@ -11,60 +11,59 @@ import CoreData
 
 public class Databaze{
     
+    
+    let verzeDTBZvTomtoBundlu = 2
+    //verze dtbz, kterou prikladam do bundlu. Nemeni se.
     let downloader = Downloader()
     
     lazy var persistentContainer: NSPersistentContainer = {
         //vytvoří container, který má pod sebou více vrstev core dat
         
         let container = NSPersistentContainer(name: "DataBaze")
-        let seededData: String = "DataBaze"
+        let DatabazeString: String = "DataBaze"
         var persistentStoreDescriptions: NSPersistentStoreDescription
         
         let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
-        let storeUrl = URL(fileURLWithPath: documentDirectoryPath!).appendingPathComponent("DataBaze")
+        let dtbzFileUrlVDokumentech = URL(fileURLWithPath: documentDirectoryPath!).appendingPathComponent("DataBaze")
         
         
-        //Přemazávání starých databázi v telefonu při aktualizaci databáze. Databáze z 25.7.2018 je označena jako databáze č. 2
-        //Při další aktualizaci musím přepsat tento kôd tak, aby se Socka aktualizovala na vyšší databázi (trojku)
-        if FileManager.default.fileExists(atPath: (storeUrl.path)) && (downloader.zjistiVerziDtbzVTelefonuUserDefaults() < 2){
-            
-            
-            print("Přemazávám starou databázi.")
+        
+        //CHECK ZDA V TELEFONU NENÍ ZASTARALÁ DATABÁZE
+        if FileManager.default.fileExists(atPath: (dtbzFileUrlVDokumentech.path)) && (downloader.zjistiVerziDtbzVTelefonuUserDefaults() < verzeDTBZvTomtoBundlu){
+        //Přemazávání starých databázi v telefonu při aktualizaci databáze. Pro případ aktualizace a existence staré dtbz v telefonu
+            print("Mažu starou databázi.")
             do{
-                try FileManager.default.removeItem(at: storeUrl)
+                try FileManager.default.removeItem(at: dtbzFileUrlVDokumentech)
             }catch{
                 print("Nepodařilo se smazat starou databázi.")
             }
-            downloader.zapisVerziDtbzDoUserDefaults(novaVerze: 2)
         }
         
-        
-        if !FileManager.default.fileExists(atPath: (storeUrl.path)) {
+        //KOPÍROVÁNÍ DATABÁZE Z BUNDLU
+        if !FileManager.default.fileExists(atPath: (dtbzFileUrlVDokumentech.path)) {
             //existuje uz na tom umisteni soubor DataFinal280417.sqlite?. Kdyz ne, tak:
             
-            let seededDataUrl = Bundle.main.url(forResource: seededData, withExtension: "sqlite")
+            let bundleFileUrl = Bundle.main.url(forResource: DatabazeString, withExtension: "sqlite")
             //najde soubor sql v bundlu appky
             
-            try! FileManager.default.copyItem(at: seededDataUrl!, to: storeUrl)
-            print("Databaze zkopirovana")
-            //zkopiruje tento soubor do slozky dokumentu do founu
+            do {
+                try FileManager.default.copyItem(at: bundleFileUrl!, to: dtbzFileUrlVDokumentech)
+                downloader.zapisVerziDtbzDoUserDefaults(novaVerze: verzeDTBZvTomtoBundlu)
+                print("Databaze zkopirovana z bundlu do dokumentů.")
+                //zkopiruje tento soubor do slozky dokumentu do founu
+            }catch{
+                print("Nepodařilo se zkopírovat databázi z bundlu.")
+            }
         }
         
-        
-        //print(storeUrl)
-        
         //logne se na persistaent store = sql file
-        container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: storeUrl)]
+        container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: dtbzFileUrlVDokumentech)]
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error {
-                
-                fatalError("Unresolved error \(error),")
+                fatalError("Error v databázi: \(error),")
             }
         })
-        
         return container
-        
-        
     }()
     
     func saveContext() {
@@ -74,7 +73,7 @@ public class Databaze{
             do {
                 try context.save()
             } catch let error as NSError {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+                fatalError("Error ve funkci saveContext: \(error), \(error.userInfo)")
             }
         }
     }
@@ -87,12 +86,12 @@ public class Databaze{
         var final_data = [[Any]]()
         //tohle to nakonec vrátí
         
-        let coreDataStack = CoreDataStack()
+        let databaze = Databaze()
         
         request.returnsObjectsAsFaults = false
         //pokud je to false, nereturnuju to fetchnuty data jako faults .. faults znamena, ze to napise misto konkretnich dat jen data = faults. Setri to pamet.
         
-        let context = coreDataStack.persistentContainer.viewContext
+        let context = databaze.persistentContainer.viewContext
         
         
         //PREDICATES a SORTDESCRIPTORS

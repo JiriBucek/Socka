@@ -43,18 +43,8 @@ extension UIColor{
 var zastavkySwitch: Int = 0
 // globalni var pro prehazovani zastavky, pro kterou maji byt zobrazeny casove udaje
 
-
-/*
-var metro_data = [[Any]]()
-var arrayPristichZastavek1 = [String]()
-var arrayPristichZastavek2 = [String]()
-var konecna1 = ""
-var konecna2 = ""
-*/
-
 var existujeNovaVerzeDTBZ = false
 var prepinaciPomocnaZastavka = ""
-
 
 
 //MARK - VC
@@ -168,6 +158,9 @@ class ViewController: SockaBaseVC{
     override func viewDidLoad() {
     //co se stane po loadnutí
         
+        let downloader = Downloader()
+        downloader.zapisVerziDtbzDoUserDefaults(novaVerze: 0)
+
         //pro testovani stazeni databaze
         //let dl = Downloader()
         //dl.zapisVerziDtbzDoUserDefaults(novaVerze: 0)
@@ -262,8 +255,6 @@ class ViewController: SockaBaseVC{
         */
         
         triNejblizsiZastavkyPrepinaciArray = lokace.triNejblizsiZastavkyArray
-        print("Pomocný array: ", triNejblizsiZastavkyPrepinaciArray   )
-        print("Real array: ", triNejblizsiZastavky)
         if triNejblizsiZastavkyPrepinaciArray != triNejblizsiZastavky{
         //prepinac pro pripad, ze se zmeni poloha
             triNejblizsiZastavky = triNejblizsiZastavkyPrepinaciArray
@@ -277,7 +268,7 @@ class ViewController: SockaBaseVC{
             fillMetroDataObject()
         }
         
-        if metroData.cas11 != nil && metroData.nextZastavka11 != nil{
+        if metroData.cas11 != nil && metroData.nextZastavka11 != nil{
         
         nastavBarvy(jmenoZastavky: aktualneZobrazovanaZastavka)
         
@@ -667,7 +658,7 @@ class ViewController: SockaBaseVC{
     //vezme cas v INT a preklopi ho do stringu s dvojteckama
         var time = String(describing: time)
         
-        while time.characters.count < 5{
+        while time.count < 5{
             let index = time.startIndex
             time.insert("0", at: index)
         }
@@ -796,7 +787,7 @@ class ViewController: SockaBaseVC{
             sekundy = String(59 + Int(sekundy)!)
             }
 
-        if sekundy.characters.count == 1{
+        if sekundy.count == 1{
         //přihodí nulu, pokud sekundy mají jen jeden znak
                 let index = sekundy.startIndex
                 sekundy.insert("0", at: index)

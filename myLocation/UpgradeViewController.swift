@@ -47,17 +47,12 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
         
         super.viewDidLoad()
         
-        
         let backgroundSessionConfiguration = URLSessionConfiguration.background(withIdentifier: "backgroundSession")
         backgroundSession = Foundation.URLSession(configuration: backgroundSessionConfiguration, delegate: self, delegateQueue: OperationQueue.main)
         progressView.setProgress(0.0, animated: false)
-
-        
     }
     
-    func zapisVerziDtbzDoUserDefaults(novaVerze: Int){
-        UserDefaults.standard.set(novaVerze, forKey: "verzeDtbz")
-    }
+
     
     
 
@@ -68,12 +63,10 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
                     downloadTask: URLSessionDownloadTask,
                     didFinishDownloadingTo location: URL){
         
-        let documentsUrl:URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as URL!
+        let documentsUrl:URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as! URL
         let destinationFileUrlbezPripony = documentsUrl.appendingPathComponent("DataBaze")
 
         do{
-            
-            
             try FileManager.default.removeItem(at: destinationFileUrlbezPripony)
             try FileManager.default.copyItem(at: location, to: destinationFileUrlbezPripony)
             textView.text = "Jízdní řády jsou aktuální."
@@ -82,8 +75,7 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
             
             let alert = UIAlertController(title: "Jízdní řády byly aktualizovány.", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
-            self.dismiss(animated: true, completion: nil)
-            }
+            self.dismiss(animated: true, completion: nil)}
             ))
             
             
@@ -95,6 +87,14 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
             
         }catch{
             print("Error pri mazani a kopirování nové DTBZ")
+            
+            self.celeView.isHidden = true
+            
+            let alert = UIAlertController(title: "Chyba.", message: "Chyba při ukládání nové databáze. Zkuste Socku restartovat.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+                self.dismiss(animated: true, completion: nil)}))
+            self.present(alert, animated: true, completion: nil)
+
         }
 
     }
@@ -104,7 +104,6 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
                     didWriteData bytesWritten: Int64,
                     totalBytesWritten: Int64,
                     totalBytesExpectedToWrite: Int64){
-        print(totalBytesWritten)
         progressView.setProgress(Float(totalBytesWritten)/Float(totalBytesExpectedToWrite), animated: true)
         progressLabel.text = "\(Int(Float(totalBytesWritten)/Float(totalBytesExpectedToWrite) * 100)) %"
         textView.text = "Probíhá stahování."
