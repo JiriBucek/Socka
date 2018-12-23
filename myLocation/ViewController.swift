@@ -261,12 +261,12 @@ class ViewController: SockaBaseVC{
         }
         */
         
-        triNejblizsiZastackyPrepinaciArray = lokace.triNejblizsiZastavkyArray
-        print("Pomocný array: ", triNejblizsiZastackyPrepinaciArray   )
+        triNejblizsiZastavkyPrepinaciArray = lokace.triNejblizsiZastavkyArray
+        print("Pomocný array: ", triNejblizsiZastavkyPrepinaciArray   )
         print("Real array: ", triNejblizsiZastavky)
-        if triNejblizsiZastackyPrepinaciArray != triNejblizsiZastavky{
+        if triNejblizsiZastavkyPrepinaciArray != triNejblizsiZastavky{
         //prepinac pro pripad, ze se zmeni poloha
-            triNejblizsiZastavky = triNejblizsiZastackyPrepinaciArray
+            triNejblizsiZastavky = triNejblizsiZastavkyPrepinaciArray
             prepinaciPomocnaZastavka = triNejblizsiZastavky[0]
         }
         

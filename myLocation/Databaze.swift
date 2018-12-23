@@ -27,6 +27,8 @@ public class Databaze{
         //Přemazávání starých databázi v telefonu při aktualizaci databáze. Databáze z 25.7.2018 je označena jako databáze č. 2
         //Při další aktualizaci musím přepsat tento kôd tak, aby se Socka aktualizovala na vyšší databázi (trojku)
         if FileManager.default.fileExists(atPath: (storeUrl.path)) && (downloader.zjistiVerziDtbzVTelefonuUserDefaults() < 2){
+            
+            
             print("Přemazávám starou databázi.")
             do{
                 try FileManager.default.removeItem(at: storeUrl)

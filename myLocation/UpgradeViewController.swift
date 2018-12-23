@@ -72,6 +72,8 @@ class UpgradeViewController: UIViewController, URLSessionDownloadDelegate{
         let destinationFileUrlbezPripony = documentsUrl.appendingPathComponent("DataBaze")
 
         do{
+            
+            
             try FileManager.default.removeItem(at: destinationFileUrlbezPripony)
             try FileManager.default.copyItem(at: location, to: destinationFileUrlbezPripony)
             textView.text = "Jízdní řády jsou aktuální."

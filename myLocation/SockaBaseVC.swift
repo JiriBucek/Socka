@@ -18,7 +18,7 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
     var triNejblizsiZastavky = [String]()
     var zastavkySwitch: Int = 0
     var metroData = MetroDataClass()
-    var triNejblizsiZastackyPrepinaciArray = [String]()
+    var triNejblizsiZastavkyPrepinaciArray = [String]()
     //objekt, který obsahuje veškeré informace pro zobrazení na displeji
     
     let databaze = Databaze()
