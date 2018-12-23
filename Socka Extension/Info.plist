@@ -4,6 +4,13 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key></key>
+	<string></string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>CFBundleDisplayName</key>
 	<string>Socka Extension</string>
 	<key>CFBundleExecutable</key>
@@ -45,6 +52,8 @@
 	<key>WKExtensionDelegateClassName</key>
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Použití vaší lokace k určení nejbližší zastávky metra.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Použití vaší lokace k určení nejbližší zastávky metra.</string>
 </dict>
 </plist>

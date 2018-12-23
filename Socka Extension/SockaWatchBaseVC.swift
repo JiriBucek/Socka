@@ -9,12 +9,16 @@
 import Foundation
 import UIKit
 import CoreLocation
+import WatchKit
 
-class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
+
+
+
+class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
     
     public var aktualneZobrazovanaZastavka: String = ""
     var prepinaciPomocnaZastavka = ""
-    var device: String = "mobil"
+    var device: String = "hodinky"
     var triNejblizsiZastavky = [String]()
     var zastavkySwitch: Int = 0
     var metroData = MetroDataClass()
@@ -24,9 +28,9 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
     let databaze = Databaze()
     var lokace = Lokace()
     
-
     
-    override func viewDidLoad() {
+    
+    override func awake(withContext context: Any?) {
         lokace = Lokace.shared
         //shared je singleton lokace
         lokace.start()
@@ -36,7 +40,7 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
         print("Prvnotni array: ", triNejblizsiZastavky)
         
         if triNejblizsiZastavky.count == 3{
-        //pro pripad, ze by se lokace jeste nechytila
+            //pro pripad, ze by se lokace jeste nechytila
             aktualneZobrazovanaZastavka = triNejblizsiZastavky[0]
         }
         
@@ -65,7 +69,7 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
             
             konecna1 = String(describing: metro_times[2][2])
             arrayPristichZastavek1 = (lokace.getDalsiTriZastavkyKeKonecne(jmenoZastavky: aktualneZobrazovanaZastavka, jmenoKonecneZastavky: konecna1))
-                
+            
             metroData.jmenoZastavky = aktualneZobrazovanaZastavka
             metroData.konecna1 = konecna1
             metroData.konecna2 = konecna2
@@ -86,7 +90,7 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
             print("Nemám žádná data z databáze, nevytvořil jsem objekt metroDataClass.")
         }
         
-
+        
         
         
     }
@@ -96,51 +100,51 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
         //vrátí array s dvěma konecnyma a ctyrma casama
         
         if let station_ids = zastavkyIDs[jmenoZastavky]{
-        //dva ID kody pro danou zastavku a dvě konecne
-        
-        let time = current_time()
-        //soucasny cas jako INT
-        
-        let today = getDayOfWeek()
-        
-        var service_id = getServiceId(day: today)
-        
-        var times1 = databaze.fetchData(station_id: station_ids[0], service_id: service_id, results_count: 2, current_time: time)
-        var times2 = databaze.fetchData(station_id: station_ids[1], service_id: service_id, results_count: 2, current_time: time)
-        
-        //přiřazení časů po půlnoci
-        if times1.count < 2{
-            let resultCount = times1.count
+            //dva ID kody pro danou zastavku a dvě konecne
             
-            var tomorrow = today + 1
-            if tomorrow == 8{
-                tomorrow = 1
+            let time = current_time()
+            //soucasny cas jako INT
+            
+            let today = getDayOfWeek()
+            
+            var service_id = getServiceId(day: today)
+            
+            var times1 = databaze.fetchData(station_id: station_ids[0], service_id: service_id, results_count: 2, current_time: time)
+            var times2 = databaze.fetchData(station_id: station_ids[1], service_id: service_id, results_count: 2, current_time: time)
+            
+            //přiřazení časů po půlnoci
+            if times1.count < 2{
+                let resultCount = times1.count
+                
+                var tomorrow = today + 1
+                if tomorrow == 8{
+                    tomorrow = 1
+                }
+                
+                service_id = getServiceId(day: tomorrow)
+                
+                let times11 = databaze.fetchData(station_id: station_ids[0], service_id: service_id, results_count: 2 - resultCount, current_time: 0)
+                
+                times1 = times1 + times11
             }
             
-            service_id = getServiceId(day: tomorrow)
-            
-            let times11 = databaze.fetchData(station_id: station_ids[0], service_id: service_id, results_count: 2 - resultCount, current_time: 0)
-            
-            times1 = times1 + times11
-        }
-        
-        if times2.count < 2{
-            let resultCount = times2.count
-            
-            var tomorrow = today + 1
-            if tomorrow == 8{
-                tomorrow = 1
+            if times2.count < 2{
+                let resultCount = times2.count
+                
+                var tomorrow = today + 1
+                if tomorrow == 8{
+                    tomorrow = 1
+                }
+                service_id = getServiceId(day: tomorrow)
+                let times21 = databaze.fetchData(station_id: station_ids[1], service_id: service_id, results_count: 2 - resultCount, current_time: 0)
+                times2 = times2 + times21
             }
-            service_id = getServiceId(day: tomorrow)
-            let times21 = databaze.fetchData(station_id: station_ids[1], service_id: service_id, results_count: 2 - resultCount, current_time: 0)
-            times2 = times2 + times21
-        }
-        
-        
-        let times = times1 + times2
-        
-        //print(times)
-        return times
+            
+            
+            let times = times1 + times2
+            
+            //print(times)
+            return times
             
         }else{
             return []

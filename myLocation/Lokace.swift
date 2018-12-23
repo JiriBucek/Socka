@@ -34,8 +34,6 @@ class Lokace: NSObject, CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations.last!
         triNejblizsiZastavkyArray = getTriNejblizsiZastavky()
-        print(currentLocation)
-        print(triNejblizsiZastavkyArray)
     }
     
     /*

@@ -57,7 +57,7 @@ class ViewController: SockaBaseVC{
     
     lazy var hlavniBarva = zluta
     lazy var barva2 = zelena
-    lazy var barva3 = zelena
+    lazy var barva3 = cervena
     
     //MARK - Outlets
     @IBOutlet weak var nearestZastavkaButton: UIButton!
@@ -158,8 +158,7 @@ class ViewController: SockaBaseVC{
     override func viewDidLoad() {
     //co se stane po loadnutí
         
-        let downloader = Downloader()
-        downloader.zapisVerziDtbzDoUserDefaults(novaVerze: 0)
+   
 
         //pro testovani stazeni databaze
         //let dl = Downloader()
@@ -458,36 +457,7 @@ class ViewController: SockaBaseVC{
     
 //////////// CORE DATA by Swift Guy ///////////
     
-    func fillData(csvFileName: String, entityName: String){
-    //naplní data z csv do DB
-        
-        let coreDataStack = CoreDataStack()
-        //object ze souboru coredatastack
-        let context = coreDataStack.persistentContainer.viewContext
-        //objekt contex, na kterej se odvolavam
-        
-        let hodnoty = parseCSV(fileName: csvFileName)
-        
-        for hodnota in hodnoty{
-            let novaPolozka = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context)
-            
-            for (key, value) in hodnota{
-                
-                if let cislo = Int(value){
-                    novaPolozka.setValue(cislo, forKey: key)
-                }else{
-                    novaPolozka.setValue(value, forKey: key)
-                }
-            }
-        }
-        
-        do{
-            try context.save()
-            print("SAVED")
-        }catch{
-            print("ANI PRD")
-        }
-    }
+
     
         // FETCHING RESULTS FROM CORE DATA - Swift Guy
     
@@ -564,19 +534,7 @@ class ViewController: SockaBaseVC{
         }
     */
     
-    func deleteDB(entityName: String) {
-        //Vymaže všechna data v dané položce
-        let coreDataStack = CoreDataStack()
-        let context = coreDataStack.persistentContainer.viewContext
-        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
-        let request = NSBatchDeleteRequest(fetchRequest: fetch)
-        do{
-        try context.execute(request)
-            print("Databáze vymazána")
-        }catch{
-            print(error)
-        }
-    }
+
     
     /*
     func current_time() -> Int{
@@ -672,26 +630,12 @@ class ViewController: SockaBaseVC{
 
     }
     
-    func parseCSV(fileName: String) -> [Dictionary<String, String>]{
-    //rozparsuje SCVecko a vrátí array plnej dictionaries, kde key je název sloupce a value je hodnota
-        let path = Bundle.main.path(forResource: fileName, ofType: "csv")
-        var rows = [Dictionary<String, String>]()
-        do {
-            let csv = try CSV(contentsOfURL: path!)
-            rows = csv.rows
-            print(rows)
-        }catch{
-        print(error)
-        }
-        return rows
-    }
     
 
     func getDocumentsDirectory() -> URL {
         //Vypíše cestu do dokumentu
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
-        print("Tohle je cesta dle funkce ve VC:  \(documentsDirectory)")
         return documentsDirectory
     }
     
