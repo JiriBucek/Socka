@@ -37,7 +37,6 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
         //zacne updatovat polohu
         
         triNejblizsiZastavky = lokace.triNejblizsiZastavkyArray
-        print("Prvnotni array: ", triNejblizsiZastavky)
         
         if triNejblizsiZastavky.count == 3{
             //pro pripad, ze by se lokace jeste nechytila
@@ -83,11 +82,10 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
             metroData.cas12 = metro_times[1][1] as? Int
             metroData.cas21 = metro_times[2][1] as? Int
             metroData.cas22 = metro_times[3][1] as? Int
-            print("metroData: ", metroData)
             
             
         }else{
-            print("Nemám žádná data z databáze, nevytvořil jsem objekt metroDataClass.")
+            print("Nemám žádná data z databáze, nevytvořil jsem objekt metroDataClass v hodinkách.")
         }
         
         
@@ -172,7 +170,7 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
         case 7:
             service_id = 5
         default:
-            print("Nepodařilo se získat service IDs")
+            print("Nepodařilo se získat service IDs v hodinkách")
         }
         return service_id
     }
@@ -208,11 +206,11 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
     func isAppAlreadyLaunchedOnce()->Bool{
         let defaults = UserDefaults.standard
         if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
-            print("Aplikace již byla v minulosti spuštěna.")
+            print("Aplikace již byla v minulosti v hodinkách spuštěna.")
             return true
         }else{
             defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
-            print("První spuštění aplikace.")
+            print("První spuštění aplikace v hodinkách.")
             return false
         }
     }

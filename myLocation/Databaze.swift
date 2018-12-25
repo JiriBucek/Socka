@@ -31,11 +31,11 @@ public class Databaze{
         //CHECK ZDA V TELEFONU NENÍ ZASTARALÁ DATABÁZE
         if FileManager.default.fileExists(atPath: (dtbzFileUrlVDokumentech.path)) && (downloader.zjistiVerziDtbzVTelefonuUserDefaults() < verzeDTBZvTomtoBundlu){
         //Přemazávání starých databázi v telefonu při aktualizaci databáze. Pro případ aktualizace a existence staré dtbz v telefonu
-            print("Mažu starou databázi.")
+            print("Mažu starou databázi v hodinkách.")
             do{
                 try FileManager.default.removeItem(at: dtbzFileUrlVDokumentech)
             }catch{
-                print("Nepodařilo se smazat starou databázi.")
+                print("Nepodařilo se smazat starou databázi v hodinkách.")
             }
         }
         
@@ -49,10 +49,10 @@ public class Databaze{
             do {
                 try FileManager.default.copyItem(at: bundleFileUrl!, to: dtbzFileUrlVDokumentech)
                 downloader.zapisVerziDtbzDoUserDefaults(novaVerze: verzeDTBZvTomtoBundlu)
-                print("Databaze zkopirovana z bundlu do dokumentů.")
+                print("Databaze zkopirovana z bundlu do dokumentů v hodinkách.")
                 //zkopiruje tento soubor do slozky dokumentu do founu
             }catch{
-                print("Nepodařilo se zkopírovat databázi z bundlu.")
+                print("Nepodařilo se zkopírovat databázi z bundlu do hodinek.")
             }
         }
         
@@ -60,7 +60,7 @@ public class Databaze{
         container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: dtbzFileUrlVDokumentech)]
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error {
-                fatalError("Error v databázi: \(error),")
+                fatalError("Error ve watch databázi: \(error),")
             }
         })
         return container
@@ -73,7 +73,7 @@ public class Databaze{
             do {
                 try context.save()
             } catch let error as NSError {
-                fatalError("Error ve funkci saveContext: \(error), \(error.userInfo)")
+                fatalError("Error ve funkci saveContext v hodinkách: \(error), \(error.userInfo)")
             }
         }
     }
@@ -143,7 +143,7 @@ public class Databaze{
             }
             
         }catch{
-            print("Nepodařil se fetch")
+            print("Nepodařil se fetch v hodinkách.")
         }
         return final_data
     }
