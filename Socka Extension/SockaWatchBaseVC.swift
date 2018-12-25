@@ -25,13 +25,13 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
     var triNejblizsiZastavkyPrepinaciArray = [String]()
     //objekt, který obsahuje veškeré informace pro zobrazení na displeji
     
-    let databaze = Databaze()
-    var lokace = Lokace()
+    let databaze = Databaze_W()
+    var lokace = Lokace_W()
     
     
     
     override func awake(withContext context: Any?) {
-        lokace = Lokace.shared
+        lokace = Lokace_W.shared
         //shared je singleton lokace
         lokace.start()
         //zacne updatovat polohu

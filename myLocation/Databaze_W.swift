@@ -9,12 +9,12 @@
 import Foundation
 import CoreData
 
-public class Databaze{
+public class Databaze_W{
     
     
     let verzeDTBZvTomtoBundlu = 2
     //verze dtbz, kterou prikladam do bundlu. Nemeni se.
-    let downloader = Downloader()
+    let downloader = Downloader_W()
     
     lazy var persistentContainer: NSPersistentContainer = {
         //vytvoří container, který má pod sebou více vrstev core dat
@@ -29,13 +29,13 @@ public class Databaze{
         
         
         //CHECK ZDA V TELEFONU NENÍ ZASTARALÁ DATABÁZE
-        if FileManager.default.fileExists(atPath: (dtbzFileUrlVDokumentech.path)) && (downloader.zjistiVerziDtbzVTelefonuUserDefaults() < verzeDTBZvTomtoBundlu){
-            //Přemazávání starých databázi v telefonu při aktualizaci databáze. Pro případ aktualizace a existence staré dtbz v telefonu
-            print("Mažu starou databázi v telefonu.")
+        if FileManager.default.fileExists(atPath: (dtbzFileUrlVDokumentech.path)) && (downloader.zjistiVerziDtbzVHodinkachUserDefaults() < verzeDTBZvTomtoBundlu){
+        //Přemazávání starých databázi v telefonu při aktualizaci databáze. Pro případ aktualizace a existence staré dtbz v telefonu
+            print("Mažu starou databázi v hodinkách.")
             do{
                 try FileManager.default.removeItem(at: dtbzFileUrlVDokumentech)
             }catch{
-                print("Nepodařilo se smazat starou databázi v telefonu.")
+                print("Nepodařilo se smazat starou databázi v hodinkách.")
             }
         }
         
@@ -48,8 +48,8 @@ public class Databaze{
             
             do {
                 try FileManager.default.copyItem(at: bundleFileUrl!, to: dtbzFileUrlVDokumentech)
-                downloader.zapisVerziDtbzDoUserDefaults(novaVerze: verzeDTBZvTomtoBundlu)
-                print("Databaze zkopirovana z bundlu do dokumentů v telefonu.")
+                downloader.zapisVerziDtbzDoUserDefaultsHodinek(novaVerze: verzeDTBZvTomtoBundlu)
+                print("Databaze zkopirovana z bundlu do dokumentů v hodinkách.")
                 //zkopiruje tento soubor do slozky dokumentu do founu
             }catch{
                 print("Nepodařilo se zkopírovat databázi z bundlu do hodinek.")
@@ -73,7 +73,7 @@ public class Databaze{
             do {
                 try context.save()
             } catch let error as NSError {
-                fatalError("Error ve funkci saveContext v telefonu: \(error), \(error.userInfo)")
+                fatalError("Error ve funkci saveContext v hodinkách: \(error), \(error.userInfo)")
             }
         }
     }
@@ -86,7 +86,7 @@ public class Databaze{
         var final_data = [[Any]]()
         //tohle to nakonec vrátí
         
-        let databaze = Databaze()
+        let databaze = Databaze_W()
         
         request.returnsObjectsAsFaults = false
         //pokud je to false, nereturnuju to fetchnuty data jako faults .. faults znamena, ze to napise misto konkretnich dat jen data = faults. Setri to pamet.
@@ -103,7 +103,7 @@ public class Databaze{
         //array s predikátama
         
         let oneSubpredicate = NSPredicate(format: "stop_id == %@ AND service_id == %i AND arrival_time > %i", station_id, schedule_id, current_time)
-        // pro string pouziju %@, integer %i, key %K
+            // pro string pouziju %@, integer %i, key %K
         subPredicates.append(oneSubpredicate)
         
         let myPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: subPredicates)
@@ -143,7 +143,7 @@ public class Databaze{
             }
             
         }catch{
-            print("Nepodařil se fetch v telefonu.")
+            print("Nepodařil se fetch v hodinkách.")
         }
         return final_data
     }

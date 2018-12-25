@@ -1,16 +1,16 @@
 import UIKit
 public class Downloader{
     /*
-    1. logne se na URL a zjisti aktualni verzi
-    2. porovna ji s verzi v rtf souboru
-    3. kdyz neni stejna, tak stahne novy sqlite soubor a nahradi jim stary
-    */
+     1. logne se na URL a zjisti aktualni verzi
+     2. porovna ji s verzi v rtf souboru
+     3. kdyz neni stejna, tak stahne novy sqlite soubor a nahradi jim stary
+     */
     
     
     func zjistiVerziDtbzNaWebu() -> Int{
         //logne se na muj web a zjistí aktuální verzi dtbz na webu
         var verzeNaWebu = 0
-
+        
         if let url = URL(string: "http://socka.funsite.cz/verze.htm") {
             //defaultní hodnota verze
             do {
@@ -32,8 +32,9 @@ public class Downloader{
     
     func zapisVerziDtbzDoUserDefaults(novaVerze: Int){
         UserDefaults.standard.set(novaVerze, forKey: "verzeDtbz")
+        print("Zapisuji novou verzi: ", novaVerze)
     }
-
+    
 }
 
 

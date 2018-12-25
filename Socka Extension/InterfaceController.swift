@@ -56,7 +56,7 @@ class InterfaceController:  SockaWatchBaseVC{
     lazy var hlavniBarva = zluta
     lazy var barva2 = zelena
     lazy var barva3 = cervena
-
+    
     
     @IBOutlet var nearestZastavkaBtn: WKInterfaceButton!
     
@@ -87,23 +87,31 @@ class InterfaceController:  SockaWatchBaseVC{
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        let dl = Downloader()
-        print("Dtbz na webu: ", dl.zjistiVerziDtbzNaWebu())
-        print("Dtbz v hodinkách: ", dl.zjistiVerziDtbzVTelefonuUserDefaults())
-        
         printDocumentsDirectory()
         
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
         //každou sekundu updatuje funkci displayAllValue
         
         //existujeNovaVerzeDTBZ = zjistiDostupnostNoveDatabaze()
+        
+        
+        
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         
-        
         super.willActivate()
+        
+        let dl = Downloader_W()
+        dl.zapisVerziDtbzDoUserDefaultsHodinek(novaVerze: 2)
+        print("Dtbz na webu: ", dl.zjistiVerziDtbzNaWebu())
+        print("Dtbz v hodinkách: ", dl.zjistiVerziDtbzVHodinkachUserDefaults())
+        
+        if dl.zjistiVerziDtbzNaWebu() > dl.zjistiVerziDtbzVHodinkachUserDefaults(){
+            ukazUpgradePopUp()
+        }
+
     }
     
     override func didDeactivate() {
@@ -169,14 +177,14 @@ class InterfaceController:  SockaWatchBaseVC{
     }
     
     func zjistiDostupnostNoveDatabaze() -> Bool{
-        let downloader = Downloader()
-        let verzeVtelefonu = downloader.zjistiVerziDtbzVTelefonuUserDefaults()
+        let downloader = Downloader_W()
+        let verzeVHodinakch = downloader.zjistiVerziDtbzVHodinkachUserDefaults()
         let verzeNaNetu = downloader.zjistiVerziDtbzNaWebu()
         
         print("Verze na netu: \(verzeNaNetu)")
-        print("Verze v telefonu \(verzeVtelefonu)")
+        print("Verze v hodinkách \(verzeVHodinakch)")
         
-        if verzeVtelefonu < verzeNaNetu{
+        if verzeVHodinakch < verzeNaNetu{
             print("Je dostupná nová verze!!")
             return true
         }else{
@@ -289,5 +297,82 @@ class InterfaceController:  SockaWatchBaseVC{
         
     }
 
-
+    //DOWNLOADER PRO NOVOU DATABAZI
+    
+    
+    func ukazUpgradePopUp(){
+        
+        let stahniClosure = {
+            self.presentController(withName: "downloadVC", context: nil)
+        }
+        
+        let action1 = WKAlertAction(title: "Stáhnout", style: .default, handler: stahniClosure)
+        let action2 = WKAlertAction(title: "Zrušit", style: .cancel) {}
+        
+        presentAlert(withTitle: "Nová databáze.", message: "Jsou dostupné nové jízdní řády (cca 4MB). Stahování proběhne na pozadí. Aplikace Vás po ukončení stahování informuje.", preferredStyle: .actionSheet, actions: [action1,action2])
+    }
+    
+    /*
+    func stahniNovouDtbz(){
+        print("Začínám stahovat.")
+        let backgroundSessionConfiguration = URLSessionConfiguration.background(withIdentifier: "backgroundSession")
+        backgroundSession = Foundation.URLSession(configuration: backgroundSessionConfiguration, delegate: self, delegateQueue: OperationQueue.main)
+        let url = URL(string: "http://socka.funsite.cz/databaze")!
+        downloadTask = backgroundSession.downloadTask(with: url)
+        downloadTask.resume()
+    }
+    
+    
+    
+    func urlSession(_ session: URLSession,
+                    downloadTask: URLSessionDownloadTask,
+                    didFinishDownloadingTo location: URL){
+        
+        let documentsUrl:URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as! URL
+        let destinationFileUrlbezPripony = documentsUrl.appendingPathComponent("DataBaze")
+        
+        do{
+            try FileManager.default.removeItem(at: destinationFileUrlbezPripony)
+            try FileManager.default.copyItem(at: location, to: destinationFileUrlbezPripony)
+            
+            let downloader = Downloader_W()
+            downloader.zapisVerziDtbzDoUserDefaultsHodinek(novaVerze: downloader.zjistiVerziDtbzNaWebu())
+            
+            let action1 = WKAlertAction(title: "Zpět", style: .cancel) {}
+            presentAlert(withTitle: "Stahování dokončeno.", message: "Jízdní řády jsou aktuální.", preferredStyle: .actionSheet, actions: [action1])
+            
+        }catch{
+            print("Error pri mazani a kopirování nové DTBZ", error)
+        }
+        
+    }
+    // 2
+    func urlSession(_ session: URLSession,
+                    downloadTask: URLSessionDownloadTask,
+                    didWriteData bytesWritten: Int64,
+                    totalBytesWritten: Int64,
+                    totalBytesExpectedToWrite: Int64){
+        
+        print(totalBytesWritten)
+        /*
+        progressView.setProgress(Float(totalBytesWritten)/Float(totalBytesExpectedToWrite), animated: true)
+        progressLabel.text = "\(Int(Float(totalBytesWritten)/Float(totalBytesExpectedToWrite) * 100)) %"
+        */
+    }
+    
+    //MARK: URLSessionTaskDelegate
+    func urlSession(_ session: URLSession,
+                    task: URLSessionTask,
+                    didCompleteWithError error: Error?){
+        downloadTask = nil
+        if (error != nil) {
+            print(error!.localizedDescription)
+        }else{
+            print("Stahování v hodinkách dokončeno.")
+            
+            
+        }
+    }
+    */
+    
 }

@@ -281,54 +281,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "myLocation/Downloader.swift"
-            timestampString = "567404593.5098"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2"
-            endingLineNumber = "2"
-            landmarkName = "Downloader"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "myLocation.Downloader.__deallocating_deinit"
-                  moduleName = "myLocation"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/boocha/Documents/CODE/MHD-APP/myLocation/Downloader.swift"
-                  timestampString = "528316421.323189"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "9">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "myLocation.Downloader.deinit"
-                  moduleName = "myLocation"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/boocha/Documents/CODE/MHD-APP/myLocation/Downloader.swift"
-                  timestampString = "528316421.334836"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "7">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "myLocation/ViewController.swift"
             timestampString = "567404593.509863"
             startingColumnNumber = "9223372036854775807"
