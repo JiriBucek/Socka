@@ -11,6 +11,7 @@ import Foundation
 import UIKit
 import CoreLocation
 import CoreData
+import Alamofire
 
 extension UIColor{
     // rozšíření klasické UIColot, abych mohl zadávat rovnou HEX kod barvy
@@ -102,6 +103,13 @@ class InterfaceController:  SockaWatchBaseVC{
         // This method is called when watch view controller is about to be visible to user
         
         super.willActivate()
+        
+        Alamofire.SessionManager.default.session.getTasksWithCompletionHandler { (sessionDataTask, uploadData, downloadData) in
+            sessionDataTask.forEach { $0.cancel() }
+            uploadData.forEach { $0.cancel() }
+            downloadData.forEach { $0.cancel() }
+        }
+        
         
         let dl = Downloader_W()
         dl.zapisVerziDtbzDoUserDefaultsHodinek(novaVerze: 2)

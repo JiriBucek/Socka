@@ -43,6 +43,7 @@
 		89C1058E21064171006EBD5F /* DataBaze.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 89C1058D21064171006EBD5F /* DataBaze.sqlite */; };
 		89C3838A21C366DB0070E276 /* MetroDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838921C366DB0070E276 /* MetroDataClass.swift */; };
 		89C3838C21C36A9E0070E276 /* SockaBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */; };
+		9C1D9CEAEFB4AC3228B85CEE /* libPods-Socka Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF70C0D0D660B48A602B755 /* libPods-Socka Extension.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		481793089E17EDB58FA103C2 /* Pods-Socka Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Socka Extension/Pods-Socka Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		891DC1491EB358980098A983 /* DataFinal280417.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataFinal280417.xcdatamodel; sourceTree = "<group>"; };
 		892F530021A0DF070058CDFC /* Socka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Socka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		892F530321A0DF070058CDFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -167,6 +169,8 @@
 		89C1058D21064171006EBD5F /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataBaze.sqlite; sourceTree = "<group>"; };
 		89C3838921C366DB0070E276 /* MetroDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroDataClass.swift; sourceTree = "<group>"; };
 		89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SockaBaseVC.swift; sourceTree = "<group>"; };
+		D552D31CDC65E80080E0D6C7 /* Pods-Socka Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Socka Extension/Pods-Socka Extension.release.xcconfig"; sourceTree = "<group>"; };
+		EDF70C0D0D660B48A602B755 /* libPods-Socka Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Socka Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C1D9CEAEFB4AC3228B85CEE /* libPods-Socka Extension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,9 +204,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AF8A77973F516147E03DD72A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		738F30CEC1529587162C000C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				481793089E17EDB58FA103C2 /* Pods-Socka Extension.debug.xcconfig */,
+				D552D31CDC65E80080E0D6C7 /* Pods-Socka Extension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		892F530121A0DF070058CDFC /* Socka */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +266,7 @@
 				892F531021A0DF0B0058CDFC /* Socka Extension */,
 				893B146D1EA125FA002E8F72 /* Products */,
 				893B149D1EA12658002E8F72 /* Frameworks */,
+				738F30CEC1529587162C000C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -305,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				893B149E1EA12658002E8F72 /* CoreLocation.framework */,
+				EDF70C0D0D660B48A602B755 /* libPods-Socka Extension.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -318,6 +341,7 @@
 			buildPhases = (
 				892F52FE21A0DF070058CDFC /* Resources */,
 				892F532521A0DF0C0058CDFC /* Embed App Extensions */,
+				AF8A77973F516147E03DD72A /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -333,6 +357,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 892F532421A0DF0C0058CDFC /* Build configuration list for PBXNativeTarget "Socka Extension" */;
 			buildPhases = (
+				9336DE962D3C149354046AEE /* [CP] Check Pods Manifest.lock */,
 				892F530821A0DF0B0058CDFC /* Sources */,
 				892F530921A0DF0B0058CDFC /* Frameworks */,
 				892F530A21A0DF0B0058CDFC /* Resources */,
@@ -526,6 +551,24 @@
 			shellPath = /bin/sh;
 			shellScript = "";
 		};
+		9336DE962D3C149354046AEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Socka Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -687,6 +730,7 @@
 		};
 		892F532221A0DF0C0058CDFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 481793089E17EDB58FA103C2 /* Pods-Socka Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -711,6 +755,7 @@
 		};
 		892F532321A0DF0C0058CDFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D552D31CDC65E80080E0D6C7 /* Pods-Socka Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

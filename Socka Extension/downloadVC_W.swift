@@ -8,18 +8,56 @@
 import WatchKit
 import UIKit
 import Foundation
+import Alamofire
 
-class downloadVC_W: WKInterfaceController, URLSessionDownloadDelegate {
+
+class downloadVC_W: WKInterfaceController {
     
     
     @IBOutlet var percentOutlet: WKInterfaceLabel!
     
-    override func awake(withContext context: Any?) {
+    
+    override func willActivate() {
         stahniNovouDtbz()
     }
     
     
     
+    func stahniNovouDtbz(){
+        
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let fileURL = documentsURL.appendingPathComponent("DataBaze")
+            
+            return (fileURL, [.removePreviousFile])
+        }
+        
+        Alamofire.download("http://socka.funsite.cz/databaze", to: destination)
+            .downloadProgress { progress in
+                print("Download Progress: \(progress.fractionCompleted)")
+                self.percentOutlet.setText("\(Int(progress.fractionCompleted * 100)) %")
+        }
+        
+            .response{response in
+                
+                if response.error == nil{
+                    
+                    let presentMainVC = { self.presentController(withName: "mainVC", context: nil) }
+                    let action1 = WKAlertAction(title: "Ok", style: .default, handler: presentMainVC)
+                    self.presentAlert(withTitle: "Jízdní řády jsou aktuální.", message: nil, preferredStyle: .alert, actions: [action1])
+                }else{
+                    print(response.error)
+                }
+            }
+        }
+    
+    
+    
+    
+    
+    
+    
+    /*
     var downloadTask: URLSessionDownloadTask!
     var backgroundSession: URLSession!
     
@@ -91,7 +129,7 @@ class downloadVC_W: WKInterfaceController, URLSessionDownloadDelegate {
         }
     }
     
-    
+    */
     
     
 }
