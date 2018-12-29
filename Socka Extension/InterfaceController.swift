@@ -46,6 +46,7 @@ var zastavkySwitch: Int = 0
 
 var existujeNovaVerzeDTBZ = false
 var prepinaciPomocnaZastavka = ""
+var dtbzPopUpAlreadyShowed = false
 
 
 class InterfaceController:  SockaWatchBaseVC{
@@ -91,6 +92,8 @@ class InterfaceController:  SockaWatchBaseVC{
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        dtbzPopUpAlreadyShowed = false
+        
         printDocumentsDirectory()
         
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
@@ -110,15 +113,19 @@ class InterfaceController:  SockaWatchBaseVC{
             uploadData.forEach { $0.cancel() }
             downloadData.forEach { $0.cancel() }
         }
-        
-        func didAppear(){
-            ukazUpgradePopUp()
-        }
-        
+
         
         dl.zapisVerziDtbzDoUserDefaultsHodinek(novaVerze: 2)
         print("Dtbz na webu: ", dl.zjistiVerziDtbzNaWebu())
         print("Dtbz v hodinkách: ", dl.zjistiVerziDtbzVHodinkachUserDefaults())
+    }
+    
+    
+    override func didAppear(){
+        if !dtbzPopUpAlreadyShowed{
+        ukazUpgradePopUp()
+        }
+        lokaceDostupnaPopUp()
     }
     
     override func didDeactivate() {
@@ -317,8 +324,34 @@ class InterfaceController:  SockaWatchBaseVC{
             let action1 = WKAlertAction(title: "Stáhnout", style: .default, handler: stahniClosure)
             let action2 = WKAlertAction(title: "Zrušit", style: .cancel) {}
         
-            presentAlert(withTitle: "Nová databáze.", message: "Jsou dostupné nové jízdní řády (cca 4MB). Stahování proběhne na pozadí. Aplikace Vás po ukončení stahování informuje.", preferredStyle: .actionSheet, actions: [action1,action2])
+            presentAlert(withTitle: "Nová databáze.", message: "Ke stažení jsou dostupné nové jízdní řády (cca 4MB).", preferredStyle: .actionSheet, actions: [action1,action2])
         }
+        
+        dtbzPopUpAlreadyShowed = true
+    }
+    
+    
+    func lokaceDostupnaPopUp(){
+        
+        if CLLocationManager.locationServicesEnabled() {
+            print(CLLocationManager.locationServicesEnabled())
+            
+            switch CLLocationManager.authorizationStatus() {
+                
+            case .notDetermined, .restricted, .denied:
+                print("Lokalizace vypnuta!")
+                
+                let action1 = WKAlertAction(title: "Zrušit", style: .cancel) {}
+                
+                presentAlert(withTitle: "GPS vypnuta.", message: "Zapni polohové služby pro Socku na svém iPhonu v Nastavení/Socka/Poloha/Vždy. Jinak nelze určit nejbližší zastávku metra.", preferredStyle: .actionSheet, actions: [action1])
+                print("Lokalizační služby povoleny.")
+                
+            case .authorizedAlways, .authorizedWhenInUse:
+                    print("Lokalizační služby povoleny.")
+            }
+            
+            }
+        
     }
     
     /*

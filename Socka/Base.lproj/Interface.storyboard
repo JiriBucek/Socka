@@ -20,23 +20,23 @@
                                     <items>
                                         <group width="0.40000000000000002" alignment="left" verticalAlignment="center" layout="vertical" id="R33-U6-aZY">
                                             <items>
-                                                <label alignment="center" text="3:21" textAlignment="center" minimumScaleFactor="0.59999999999999998" id="Jrr-fd-6kU">
+                                                <label alignment="center" text="0:00" textAlignment="center" minimumScaleFactor="0.59999999999999998" id="Jrr-fd-6kU">
                                                     <color key="textColor" red="1" green="0.63137254899999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="font" type="system" pointSize="28"/>
                                                 </label>
-                                                <label alignment="center" text="8:03" id="C2K-ub-i60">
+                                                <label alignment="center" text="0:00" id="C2K-ub-i60">
                                                     <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="font" type="system" pointSize="16"/>
                                                 </label>
                                             </items>
                                         </group>
-                                        <label width="0.59999999999999998" alignment="right" verticalAlignment="center" text="Depo Hostivař" textAlignment="center" numberOfLines="2" minimumScaleFactor="0.59999999999999998" id="Cdj-pW-jwa">
+                                        <label width="0.59999999999999998" alignment="right" verticalAlignment="center" text="..." textAlignment="center" numberOfLines="2" minimumScaleFactor="0.59999999999999998" id="Cdj-pW-jwa">
                                             <color key="textColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="font" type="system" pointSize="20"/>
                                         </label>
                                     </items>
                                 </group>
-                                <button width="1" widthAdjustment="8" height="0.20000000000000001" alignment="center" verticalAlignment="center" title="Hradčanská" id="Hza-CO-jgc">
+                                <button width="1" widthAdjustment="8" height="0.20000000000000001" alignment="center" verticalAlignment="center" title="..." id="Hza-CO-jgc">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" type="system" pointSize="20"/>
@@ -48,17 +48,17 @@
                                     <items>
                                         <group width="0.40000000000000002" alignment="right" verticalAlignment="center" layout="vertical" id="fmS-Rc-jZJ">
                                             <items>
-                                                <label alignment="center" text="6:34" textAlignment="center" minimumScaleFactor="0.59999999999999998" id="HNk-ex-Hrj">
+                                                <label alignment="center" text="0:00" textAlignment="center" minimumScaleFactor="0.59999999999999998" id="HNk-ex-Hrj">
                                                     <color key="textColor" red="0.95294117649999999" green="0.019607843140000001" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="font" type="system" pointSize="28"/>
                                                 </label>
-                                                <label alignment="center" text="9:21" id="X9E-6W-KcU">
+                                                <label alignment="center" text="0:00" id="X9E-6W-KcU">
                                                     <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="font" type="system" pointSize="16"/>
                                                 </label>
                                             </items>
                                         </group>
-                                        <label width="0.59999999999999998" alignment="left" verticalAlignment="center" text="Nemocnice Motol" textAlignment="center" numberOfLines="2" minimumScaleFactor="0.59999999999999998" id="8Lv-ar-PvR">
+                                        <label width="0.59999999999999998" alignment="left" verticalAlignment="center" text=".." textAlignment="center" numberOfLines="2" minimumScaleFactor="0.59999999999999998" id="8Lv-ar-PvR">
                                             <color key="textColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="font" type="system" pointSize="20"/>
                                         </label>
@@ -87,7 +87,7 @@
                     <items>
                         <group width="1" height="1" alignment="center" verticalAlignment="center" layout="vertical" spacing="11" id="Bsi-6p-fru">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="Stahuji jízdní řády" id="qI8-QI-964">
+                                <label alignment="center" verticalAlignment="center" text="Stahuji jízdní řády" textAlignment="center" numberOfLines="2" id="qI8-QI-964">
                                     <fontDescription key="font" type="system" pointSize="20"/>
                                 </label>
                                 <label width="1" alignment="center" verticalAlignment="center" text="0 %" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="2" id="a4v-9B-eO6">
