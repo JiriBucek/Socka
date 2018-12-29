@@ -44,6 +44,7 @@
 		89C3838A21C366DB0070E276 /* MetroDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838921C366DB0070E276 /* MetroDataClass.swift */; };
 		89C3838C21C36A9E0070E276 /* SockaBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */; };
 		9C1D9CEAEFB4AC3228B85CEE /* libPods-Socka Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF70C0D0D660B48A602B755 /* libPods-Socka Extension.a */; };
+		AEAAEA8FB67DEBD825929E15 /* libPods-MHD APP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F02EAD2B0B42CE59A876949 /* libPods-MHD APP.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +170,9 @@
 		89C1058D21064171006EBD5F /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataBaze.sqlite; sourceTree = "<group>"; };
 		89C3838921C366DB0070E276 /* MetroDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroDataClass.swift; sourceTree = "<group>"; };
 		89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SockaBaseVC.swift; sourceTree = "<group>"; };
+		9F02EAD2B0B42CE59A876949 /* libPods-MHD APP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MHD APP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC8DA6115DCA3D0E396ABD8E /* Pods-MHD APP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHD APP.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHD APP/Pods-MHD APP.release.xcconfig"; sourceTree = "<group>"; };
+		C30AA060E76DF00B527714D4 /* Pods-MHD APP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHD APP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHD APP/Pods-MHD APP.debug.xcconfig"; sourceTree = "<group>"; };
 		D552D31CDC65E80080E0D6C7 /* Pods-Socka Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Socka Extension/Pods-Socka Extension.release.xcconfig"; sourceTree = "<group>"; };
 		EDF70C0D0D660B48A602B755 /* libPods-Socka Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Socka Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -187,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				893B149F1EA12658002E8F72 /* CoreLocation.framework in Frameworks */,
+				AEAAEA8FB67DEBD825929E15 /* libPods-MHD APP.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +224,8 @@
 			children = (
 				481793089E17EDB58FA103C2 /* Pods-Socka Extension.debug.xcconfig */,
 				D552D31CDC65E80080E0D6C7 /* Pods-Socka Extension.release.xcconfig */,
+				C30AA060E76DF00B527714D4 /* Pods-MHD APP.debug.xcconfig */,
+				AC8DA6115DCA3D0E396ABD8E /* Pods-MHD APP.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -328,6 +335,7 @@
 			children = (
 				893B149E1EA12658002E8F72 /* CoreLocation.framework */,
 				EDF70C0D0D660B48A602B755 /* libPods-Socka Extension.a */,
+				9F02EAD2B0B42CE59A876949 /* libPods-MHD APP.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -375,6 +383,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 893B14941EA125FA002E8F72 /* Build configuration list for PBXNativeTarget "MHD APP" */;
 			buildPhases = (
+				4A856E8FB94F18F5871AF3D0 /* [CP] Check Pods Manifest.lock */,
 				893B14681EA125FA002E8F72 /* Sources */,
 				893B14691EA125FA002E8F72 /* Frameworks */,
 				893B146A1EA125FA002E8F72 /* Resources */,
@@ -538,6 +547,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4A856E8FB94F18F5871AF3D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MHD APP-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		89F298C31EA27F3200AC1968 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -887,6 +914,7 @@
 		};
 		893B14951EA125FA002E8F72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C30AA060E76DF00B527714D4 /* Pods-MHD APP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F9SQL5NE4J;
@@ -907,6 +935,7 @@
 		};
 		893B14961EA125FA002E8F72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC8DA6115DCA3D0E396ABD8E /* Pods-MHD APP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F9SQL5NE4J;

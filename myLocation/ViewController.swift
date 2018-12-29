@@ -161,8 +161,8 @@ class ViewController: SockaBaseVC{
    
 
         //pro testovani stazeni databaze
-        //let dl = Downloader()
-        //dl.zapisVerziDtbzDoUserDefaults(novaVerze: 0)
+        let dl = Downloader()
+        dl.zapisVerziDtbzDoUserDefaults(novaVerze: 0)
         /////////////////////////////////////////////
         
         super.viewDidLoad()
@@ -206,18 +206,11 @@ class ViewController: SockaBaseVC{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        if jeDnesSvatek(){
-            let alertSvatky = UIAlertController(title: "Dnes je svátek.", message: "Ve dnech svátků je možné, že se časy odjezdu metra budou lišit. Tyto změny není možné ošetřit offline databází. Děkuji za pochopení", preferredStyle: .alert)
+        //jeDnesSvatek()
         
-            alertSvatky.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            present(alertSvatky, animated: true)
-        }else{
-            if isAppAlreadyLaunchedOnce(){
+        if isAppAlreadyLaunchedOnce(){
                 checkLocationEnabled()
             }
-        }
-        
-        
         
     }
     
@@ -912,8 +905,10 @@ class ViewController: SockaBaseVC{
         schovejSideView()
     }
     
-    func jeDnesSvatek() -> Bool{
-    //zjití, zda je tento den státní svátek
+    func jeDnesSvatek(){
+    //zjití, zda je tento den státní svátek a pokud ano, vyhodí o tom hlášku
+        var svatek = false
+        
         let svatky = [[1,1],[30,3],[1,5],[8,5],[5,7],[6,7],[28,9],[28,10],[17,11],[24,12],[25,12],[26,12],[1,4]]
         let now = Date()
         let kalendar = Calendar.current
@@ -923,10 +918,18 @@ class ViewController: SockaBaseVC{
         
         if svatky.contains(where: {$0 == dnesniDen}){
             print("Dnes je svátek")
-            return true
+            svatek = true
         }else{
-            return false
+            svatek = false
         }
+        
+        if svatek{
+             let alertSvatky = UIAlertController(title: "Dnes je svátek.", message: "Ve dnech svátků je možné, že se časy odjezdu metra budou lišit. Tyto změny není možné ošetřit offline databází. Děkuji za pochopení", preferredStyle: .alert)
+        
+            alertSvatky.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            present(alertSvatky, animated: true)
+        }
+        
     }
     
     func checkLocationEnabled() {

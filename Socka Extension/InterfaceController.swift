@@ -58,6 +58,9 @@ class InterfaceController:  SockaWatchBaseVC{
     lazy var barva2 = zelena
     lazy var barva3 = cervena
     
+    let dl = Downloader_W()
+
+    
     
     @IBOutlet var nearestZastavkaBtn: WKInterfaceButton!
     
@@ -95,8 +98,6 @@ class InterfaceController:  SockaWatchBaseVC{
         
         //existujeNovaVerzeDTBZ = zjistiDostupnostNoveDatabaze()
         
-        
-        
     }
     
     override func willActivate() {
@@ -110,16 +111,14 @@ class InterfaceController:  SockaWatchBaseVC{
             downloadData.forEach { $0.cancel() }
         }
         
+        func didAppear(){
+            ukazUpgradePopUp()
+        }
         
-        let dl = Downloader_W()
+        
         dl.zapisVerziDtbzDoUserDefaultsHodinek(novaVerze: 2)
         print("Dtbz na webu: ", dl.zjistiVerziDtbzNaWebu())
         print("Dtbz v hodinkách: ", dl.zjistiVerziDtbzVHodinkachUserDefaults())
-        
-        if dl.zjistiVerziDtbzNaWebu() > dl.zjistiVerziDtbzVHodinkachUserDefaults(){
-            ukazUpgradePopUp()
-        }
-
     }
     
     override func didDeactivate() {
@@ -309,15 +308,17 @@ class InterfaceController:  SockaWatchBaseVC{
     
     
     func ukazUpgradePopUp(){
+        if dl.zjistiVerziDtbzNaWebu() > dl.zjistiVerziDtbzVHodinkachUserDefaults(){
+            let stahniClosure = {
+                self.dismiss()
+                self.pushController(withName: "downloadVC", context: nil)
+            }
         
-        let stahniClosure = {
-            self.presentController(withName: "downloadVC", context: nil)
+            let action1 = WKAlertAction(title: "Stáhnout", style: .default, handler: stahniClosure)
+            let action2 = WKAlertAction(title: "Zrušit", style: .cancel) {}
+        
+            presentAlert(withTitle: "Nová databáze.", message: "Jsou dostupné nové jízdní řády (cca 4MB). Stahování proběhne na pozadí. Aplikace Vás po ukončení stahování informuje.", preferredStyle: .actionSheet, actions: [action1,action2])
         }
-        
-        let action1 = WKAlertAction(title: "Stáhnout", style: .default, handler: stahniClosure)
-        let action2 = WKAlertAction(title: "Zrušit", style: .cancel) {}
-        
-        presentAlert(withTitle: "Nová databáze.", message: "Jsou dostupné nové jízdní řády (cca 4MB). Stahování proběhne na pozadí. Aplikace Vás po ukončení stahování informuje.", preferredStyle: .actionSheet, actions: [action1,action2])
     }
     
     /*
