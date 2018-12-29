@@ -47,6 +47,7 @@ var zastavkySwitch: Int = 0
 var existujeNovaVerzeDTBZ = false
 var prepinaciPomocnaZastavka = ""
 var dtbzPopUpAlreadyShowed = false
+//aby se dtbz alert neozobrazoval pořád dokola
 
 
 class InterfaceController:  SockaWatchBaseVC{
@@ -334,7 +335,6 @@ class InterfaceController:  SockaWatchBaseVC{
     func lokaceDostupnaPopUp(){
         
         if CLLocationManager.locationServicesEnabled() {
-            print(CLLocationManager.locationServicesEnabled())
             
             switch CLLocationManager.authorizationStatus() {
                 
@@ -347,7 +347,7 @@ class InterfaceController:  SockaWatchBaseVC{
                 print("Lokalizační služby povoleny.")
                 
             case .authorizedAlways, .authorizedWhenInUse:
-                    print("Lokalizační služby povoleny.")
+                return
             }
             
             }
