@@ -70,8 +70,8 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
             arrayPristichZastavek1 = (lokace.getDalsiTriZastavkyKeKonecne(jmenoZastavky: aktualneZobrazovanaZastavka, jmenoKonecneZastavky: konecna1))
             
             metroData.jmenoZastavky = aktualneZobrazovanaZastavka
-            metroData.konecna1 = konecna1
-            metroData.konecna2 = konecna2
+            metroData.konecna1 = konecna2
+            metroData.konecna2 = konecna1
             metroData.nextZastavka11 = arrayPristichZastavek1[0]
             metroData.nextZastavka12 = arrayPristichZastavek1[1]
             metroData.nextZastavka13 = arrayPristichZastavek1[2]
