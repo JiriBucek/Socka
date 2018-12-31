@@ -36,10 +36,16 @@
                                         </label>
                                     </items>
                                 </group>
-                                <button width="1" widthAdjustment="8" height="0.20000000000000001" alignment="center" verticalAlignment="center" title="..." id="Hza-CO-jgc">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="backgroundColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="font" type="system" pointSize="20"/>
+                                <button widthAdjustment="8" alignment="center" verticalAlignment="center" id="Hza-CO-jgc">
+                                    <group key="contentGroup" width="1" height="0.20000000000000001" alignment="left" id="veV-sz-kTv">
+                                        <items>
+                                            <label width="1" height="1" alignment="center" verticalAlignment="center" text="..." textAlignment="center" id="iji-Vq-Hdn">
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="font" type="system" pointSize="20"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.26350808139999998" green="0.56644243000000005" blue="0.21398517489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </group>
                                     <connections>
                                         <action selector="nearestZastavkaBtnPressed" destination="AgC-eL-Hgc" id="wFW-t5-b49"/>
                                     </connections>
@@ -75,6 +81,8 @@
                         <outlet property="konecna1outlet" destination="Cdj-pW-jwa" id="93f-14-YNq"/>
                         <outlet property="konecna2outlet" destination="8Lv-ar-PvR" id="ydN-IL-ay0"/>
                         <outlet property="nearestZastavkaBtn" destination="Hza-CO-jgc" id="ALV-QV-olp"/>
+                        <outlet property="nearestZastavkaGroup" destination="veV-sz-kTv" id="FJl-fK-Cut"/>
+                        <outlet property="nearestZastavkaLabel" destination="iji-Vq-Hdn" id="PaD-4o-DW5"/>
                     </connections>
                 </controller>
             </objects>

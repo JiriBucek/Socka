@@ -66,6 +66,10 @@ class InterfaceController:  SockaWatchBaseVC{
     
     @IBOutlet var nearestZastavkaBtn: WKInterfaceButton!
     
+    @IBOutlet var nearestZastavkaLabel: WKInterfaceLabel!
+    
+    @IBOutlet var nearestZastavkaGroup: WKInterfaceGroup!
+    
     @IBAction func nearestZastavkaBtnPressed() {
         //prepinani trech nejblizsich stanic
         zastavkySwitch += 1
@@ -101,6 +105,7 @@ class InterfaceController:  SockaWatchBaseVC{
         //každou sekundu updatuje funkci displayAllValue
         
         //existujeNovaVerzeDTBZ = zjistiDostupnostNoveDatabaze()
+        
         
     }
     
@@ -158,8 +163,10 @@ class InterfaceController:  SockaWatchBaseVC{
             nastavBarvy(jmenoZastavky: aktualneZobrazovanaZastavka)
             
             
-            nearestZastavkaBtn.setTitle(aktualneZobrazovanaZastavka)
-            nearestZastavkaBtn.setBackgroundColor(hlavniBarva)
+            nearestZastavkaLabel.setText(aktualneZobrazovanaZastavka)
+            
+            //nearestZastavkaBtn.setTitle(aktualneZobrazovanaZastavka)
+            nearestZastavkaGroup.setBackgroundColor(hlavniBarva)
             
             cas12.setText(timeDifference(arrivalTime: metroData.cas12!))
             countdown1.setText(timeDifference(arrivalTime: metroData.cas11!))
