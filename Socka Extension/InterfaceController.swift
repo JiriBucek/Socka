@@ -119,11 +119,16 @@ class InterfaceController:  SockaWatchBaseVC{
             uploadData.forEach { $0.cancel() }
             downloadData.forEach { $0.cancel() }
         }
-
         
         dl.zapisVerziDtbzDoUserDefaultsHodinek(novaVerze: 2)
         print("Dtbz na webu: ", dl.zjistiVerziDtbzNaWebu())
         print("Dtbz v hodinkách: ", dl.zjistiVerziDtbzVHodinkachUserDefaults())
+        
+        if triNejblizsiZastavky.count > 0{
+            prepinaciPomocnaZastavka = triNejblizsiZastavky[zastavkySwitch]
+        }
+        
+        
     }
     
     
