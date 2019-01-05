@@ -206,8 +206,8 @@ class ViewController: SockaBaseVC{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        //jeDnesSvatek()
-        
+        jeDnesSvatek()
+    
         if isAppAlreadyLaunchedOnce(){
                 checkLocationEnabled()
             }

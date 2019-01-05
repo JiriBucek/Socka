@@ -16,8 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var refreshVC: ViewController?
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // Override point for customization after application launch.
@@ -32,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         print("Entered background.")
+        let lokace = Lokace.shared
+        lokace.locationManager.stopUpdatingLocation()
 
         
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
@@ -40,12 +40,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         print("I am back!")
-        //aktualneZobrazovanaStanice = "načítám"
-        //způsobí to, že funkce displayValues načte nová data z databáze
         
+        let lokace = Lokace.shared
+        lokace.locationManager.startUpdatingLocation()
         
+        let myVC = self.window?.rootViewController as? ViewController
+        myVC?.zastavkySwitch = 0
+    
         //přehodí zobrazovanou zastávku zpět na tu nejbližší
+        if (myVC?.triNejblizsiZastavky.count)! > 0{
+            myVC?.prepinaciPomocnaZastavka = (myVC?.triNejblizsiZastavky[(myVC?.zastavkySwitch)!])!
+        }
         
+        myVC?.checkLocationEnabled()
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         
     }

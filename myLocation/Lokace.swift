@@ -33,15 +33,14 @@ class Lokace: NSObject, CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations.last!
+        print(currentLocation)
         triNejblizsiZastavkyArray = getTriNejblizsiZastavky()
     }
     
-    /*
-     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
      print(error)
-     locationManager.stopUpdatingLocation()
      }
-     */
+ 
     
     func getTriNejblizsiZastavky() -> [String]{
         //vrátí název tří nejbližších zastávek metra a vzdálenosti od usera
