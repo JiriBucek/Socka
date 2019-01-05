@@ -46,6 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let myVC = self.window?.rootViewController as? ViewController
         myVC?.zastavkySwitch = 0
+        
     
         //přehodí zobrazovanou zastávku zpět na tu nejbližší
         if (myVC?.triNejblizsiZastavky.count)! > 0{
@@ -53,6 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         myVC?.checkLocationEnabled()
+        myVC?.ukazUpgradeVC()
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         
     }

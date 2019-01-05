@@ -38,10 +38,6 @@ class UpgradeViewController: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-    var downloadTask: URLSessionDownloadTask!
-    var backgroundSession: URLSession!
-    */
     
     override func viewDidLoad() {
         
@@ -49,11 +45,7 @@ class UpgradeViewController: UIViewController{
         celeView.layer.cornerRadius = 15.0
         
         super.viewDidLoad()
-        /*
-        let backgroundSessionConfiguration = URLSessionConfiguration.background(withIdentifier: "backgroundSession")
-        backgroundSession = Foundation.URLSession(configuration: backgroundSessionConfiguration, delegate: self, delegateQueue: OperationQueue.main)
-        
-        */
+
         progressView.setProgress(0.0, animated: false)
     }
     
@@ -100,78 +92,8 @@ class UpgradeViewController: UIViewController{
                         self.dismiss(animated: true, completion: nil)}))
                     self.present(alert, animated: true, completion: nil)
                     
-                    print(response.error)
+                    print(response.error!)
                 }
         }
     }
-    
-    
-/*
-    
-    //MARK: URLSessionDownloadDelegate
-    // 1
-    func urlSession(_ session: URLSession,
-                    downloadTask: URLSessionDownloadTask,
-                    didFinishDownloadingTo location: URL){
-        
-        let documentsUrl:URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as! URL
-        let destinationFileUrlbezPripony = documentsUrl.appendingPathComponent("DataBaze")
-
-        do{
-            try FileManager.default.removeItem(at: destinationFileUrlbezPripony)
-            try FileManager.default.copyItem(at: location, to: destinationFileUrlbezPripony)
-            textView.text = "Jízdní řády jsou aktuální."
-            
-            self.celeView.isHidden = true
-            
-            let alert = UIAlertController(title: "Jízdní řády byly aktualizovány.", message: nil, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
-            self.dismiss(animated: true, completion: nil)}
-            ))
-            
-            
-            self.present(alert, animated: true, completion: nil)
-
-            
-            let downloader = Downloader()
-            downloader.zapisVerziDtbzDoUserDefaults(novaVerze: downloader.zjistiVerziDtbzNaWebu())
-            
-        }catch{
-            print("Error pri mazani a kopirování nové DTBZ")
-            
-            self.celeView.isHidden = true
-            
-            let alert = UIAlertController(title: "Chyba.", message: "Chyba při ukládání nové databáze. Zkuste Socku restartovat.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
-                self.dismiss(animated: true, completion: nil)}))
-            self.present(alert, animated: true, completion: nil)
-
-        }
-
-    }
-    // 2
-    func urlSession(_ session: URLSession,
-                    downloadTask: URLSessionDownloadTask,
-                    didWriteData bytesWritten: Int64,
-                    totalBytesWritten: Int64,
-                    totalBytesExpectedToWrite: Int64){
-        progressView.setProgress(Float(totalBytesWritten)/Float(totalBytesExpectedToWrite), animated: true)
-        progressLabel.text = "\(Int(Float(totalBytesWritten)/Float(totalBytesExpectedToWrite) * 100)) %"
-        textView.text = "Probíhá stahování."
-    }
-    
-    //MARK: URLSessionTaskDelegate
-    func urlSession(_ session: URLSession,
-                    task: URLSessionTask,
-                    didCompleteWithError error: Error?){
-        downloadTask = nil
-        if (error != nil) {
-            print(error!.localizedDescription)
-        }else{
-            print("The task finished transferring data successfully")
-            
-        }
-    }
-
-*/
 }
