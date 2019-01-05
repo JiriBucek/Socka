@@ -13,6 +13,8 @@ class InfoViewController: UIViewController {
 
     @IBOutlet weak var zavritBTN: UIButton!
     @IBOutlet weak var hlavniLabel: UILabel!
+    @IBOutlet weak var verzeDtbzLabel: UILabel!
+    
     
     @IBAction func kontaktButton(_ sender: Any) {
         let email = "bucek.jiri@email.cz"
@@ -33,6 +35,9 @@ class InfoViewController: UIViewController {
         hlavniLabel.allowsDefaultTighteningForTruncation = true
         hlavniLabel.minimumScaleFactor = 0.1
         
+        let dl = Downloader()
+        verzeDtbzLabel.text = "Verze databáze: \(dl.zjistiVerziDtbzVTelefonuUserDefaults())"
+    
         scrollView.bottomAnchor.constraint(equalTo: zavritBTN.bottomAnchor).isActive = true
         
         // Do any additional setup after loading the view.
