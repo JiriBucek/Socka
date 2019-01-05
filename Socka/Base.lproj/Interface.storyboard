@@ -36,7 +36,7 @@
                                         </label>
                                     </items>
                                 </group>
-                                <button widthAdjustment="8" alignment="center" verticalAlignment="center" id="Hza-CO-jgc">
+                                <button alignment="center" verticalAlignment="center" id="Hza-CO-jgc">
                                     <group key="contentGroup" width="1" height="0.20000000000000001" alignment="left" id="veV-sz-kTv">
                                         <items>
                                             <label width="1" height="1" alignment="center" verticalAlignment="center" text="..." textAlignment="center" id="iji-Vq-Hdn">
@@ -137,4 +137,5 @@
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.26350808139999998" green="0.56644243000000005" blue="0.21398517489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
