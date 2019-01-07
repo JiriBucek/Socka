@@ -353,16 +353,21 @@ class InterfaceController:  SockaWatchBaseVC{
             case .notDetermined, .restricted, .denied:
                 print("Lokalizace vypnuta!")
                 
-                let action1 = WKAlertAction(title: "Zrušit", style: .cancel) {}
+                let action1 = WKAlertAction(title: "Zrušit", style: .cancel){}
                 
                 presentAlert(withTitle: "GPS vypnuta.", message: "Zapni polohové služby pro Socku na svém iPhonu v Nastavení/Socka/Poloha/Vždy. Jinak nelze určit nejbližší zastávku metra.", preferredStyle: .actionSheet, actions: [action1])
-                print("Lokalizační služby povoleny.")
                 
             case .authorizedAlways, .authorizedWhenInUse:
+                print("Lokalizační služby povoleny.")
                 return
             }
             
-            }
+        }else{
+            let action1 = WKAlertAction(title: "Zrušit", style: .cancel){}
+            
+            presentAlert(withTitle: "GPS vypnuta.", message: "Zapni polohové služby na svém iPhonu v Nastavení/Soukromí/Polohové služby. Jinak nelze určit nejbližší zastávku metra.", preferredStyle: .actionSheet, actions: [action1])
+            
+        }
         
     }
     
