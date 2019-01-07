@@ -12,7 +12,7 @@ import CoreData
 public class Databaze{
     
     
-    let verzeDTBZvTomtoBundlu = 2
+    let verzeDTBZvTomtoBundlu = 4
     //verze dtbz, kterou prikladam do bundlu. Nemeni se.
     let downloader = Downloader()
     

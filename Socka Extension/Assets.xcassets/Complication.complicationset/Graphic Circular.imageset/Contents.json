@@ -1,22 +1,8 @@
 {
   "images" : [
     {
-      "resizing" : {
-        "mode" : "9-part",
-        "center" : {
-          "mode" : "tile",
-          "width" : 21,
-          "height" : 1
-        },
-        "cap-insets" : {
-          "bottom" : 47,
-          "top" : 6,
-          "right" : 42,
-          "left" : 31
-        }
-      },
       "idiom" : "watch",
-      "filename" : "94_transparent.png",
+      "filename" : "47@2x.png",
       "scale" : "2x"
     }
   ],

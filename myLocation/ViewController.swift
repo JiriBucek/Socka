@@ -472,11 +472,13 @@ class ViewController: SockaBaseVC{
     }
     
     func checkLocationEnabled() {
+        //zkontroluje zapnutí polohových služeb. Ty mohou být vypnuty konkrétně pro Socku nebo globálně
+        
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
                 
                 case .notDetermined, .restricted, .denied:
-                    print("Lokalizace vypnuta!")
+                    print("Lokalizace pro Socku vypnuta!")
                     
                     let alert = UIAlertController(title: "Lokalizační služby nedostupné", message: "Máš vypnuty lokalizační služby, bez nichž nemůže Socka určit tvou polohu a nejbližší zastávku metra. Zapni je prosím v Nastavení/Socka/Poloha/", preferredStyle: .alert)
                     
@@ -489,7 +491,16 @@ class ViewController: SockaBaseVC{
                 
                 case .authorizedAlways, .authorizedWhenInUse:
                     print("Lokalizační služby povoleny.")
-                }
+            }
+        }else{
+            let alert = UIAlertController(title: "Lokalizační služby nedostupné", message: "Máš vypnuty lokalizační služby, bez nichž nemůže Socka určit tvou polohu a nejbližší zastávku metra. Zapni je prosím v Nastavení/Soukromí/Polohové služby/", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
+                self.dismiss(animated: true, completion: nil)
+            }
+            ))
+            
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }
