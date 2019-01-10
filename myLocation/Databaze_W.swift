@@ -25,8 +25,7 @@ public class Databaze_W{
         
         let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
         let dtbzFileUrlVDokumentech = URL(fileURLWithPath: documentDirectoryPath!).appendingPathComponent("DataBaze")
-        
-        
+                
         
         //CHECK ZDA V TELEFONU NENÍ ZASTARALÁ DATABÁZE
         if FileManager.default.fileExists(atPath: (dtbzFileUrlVDokumentech.path)) && (downloader.zjistiVerziDtbzVHodinkachUserDefaults() < verzeDTBZvTomtoBundlu){

@@ -99,7 +99,6 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
         
         if let station_ids = zastavkyIDs[jmenoZastavky]{
             //dva ID kody pro danou zastavku a dvě konecne
-            
             let time = current_time()
             //soucasny cas jako INT
             

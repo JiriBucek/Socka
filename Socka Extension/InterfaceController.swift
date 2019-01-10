@@ -114,13 +114,13 @@ class InterfaceController:  SockaWatchBaseVC{
         
         super.willActivate()
         
+        //ukončí všechna probíhající stahování. Pro případ, že se neukončí po stáhnutí dtbz
         Alamofire.SessionManager.default.session.getTasksWithCompletionHandler { (sessionDataTask, uploadData, downloadData) in
             sessionDataTask.forEach { $0.cancel() }
             uploadData.forEach { $0.cancel() }
             downloadData.forEach { $0.cancel() }
         }
         
-        dl.zapisVerziDtbzDoUserDefaultsHodinek(novaVerze: 2)
         print("Dtbz na webu: ", dl.zjistiVerziDtbzNaWebu())
         print("Dtbz v hodinkách: ", dl.zjistiVerziDtbzVHodinkachUserDefaults())
         
@@ -136,7 +136,7 @@ class InterfaceController:  SockaWatchBaseVC{
         if !dtbzPopUpAlreadyShowed{
         ukazUpgradePopUp()
         }
-        lokaceDostupnaPopUp()
+        //lokaceDostupnaPopUp()
     }
     
     override func didDeactivate() {
