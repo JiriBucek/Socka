@@ -97,9 +97,6 @@ class InterfaceController:  SockaWatchBaseVC{
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        dl.zapisVerziDtbzDoUserDefaultsHodinek(novaVerze: 3)
-        
-        
         dtbzPopUpAlreadyShowed = false
         
         printDocumentsDirectory()
