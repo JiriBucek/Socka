@@ -20,7 +20,6 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         if let root = WKExtension.shared().rootInterfaceController as? InterfaceController {
             root.ukazUpgradePopUp()
             root.zastavkySwitch = 0
-            
         }
         
     }

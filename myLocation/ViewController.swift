@@ -11,6 +11,7 @@ import MapKit
 //import CoreLocation
 import CoreData
 import SystemConfiguration
+import Alamofire
 
 extension UIColor{
 // rozšíření klasické UIColot, abych mohl zadávat rovnou HEX kod barvy
@@ -158,7 +159,6 @@ class ViewController: SockaBaseVC{
     override func viewDidLoad() {
     //co se stane po loadnutí
         
-   
 
         //pro testovani stazeni databaze
         //let dl = Downloader()

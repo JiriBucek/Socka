@@ -25,7 +25,7 @@
                                                     <fontDescription key="font" type="system" pointSize="28"/>
                                                 </label>
                                                 <label alignment="center" text="0:00" id="C2K-ub-i60">
-                                                    <color key="textColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="font" type="system" pointSize="16"/>
                                                 </label>
                                             </items>
@@ -64,7 +64,7 @@
                                                 </label>
                                             </items>
                                         </group>
-                                        <label width="0.59999999999999998" alignment="left" verticalAlignment="center" text=".." textAlignment="center" numberOfLines="2" minimumScaleFactor="0.59999999999999998" id="8Lv-ar-PvR">
+                                        <label width="0.59999999999999998" alignment="left" verticalAlignment="center" text="..." textAlignment="center" numberOfLines="2" minimumScaleFactor="0.59999999999999998" id="8Lv-ar-PvR">
                                             <color key="textColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="font" type="system" pointSize="20"/>
                                         </label>

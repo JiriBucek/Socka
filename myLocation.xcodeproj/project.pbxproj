@@ -156,6 +156,7 @@
 		8941677B21D255C50048047E /* Databaze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Databaze.swift; sourceTree = "<group>"; };
 		8941677D21D256F60048047E /* Lokace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lokace.swift; sourceTree = "<group>"; };
 		8941677F21D2E0270048047E /* downloadVC_W.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = downloadVC_W.swift; sourceTree = "<group>"; };
+		8941C0442232524300DF9D2B /* newPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = newPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8948320E1EBA03550013E01A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		896E89FB1F85A73A007F029E /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data_pool.swift; path = ../Data_pool.swift; sourceTree = "<group>"; };
@@ -292,6 +293,7 @@
 		893B146E1EA125FA002E8F72 /* myLocation */ = {
 			isa = PBXGroup;
 			children = (
+				8941C0442232524300DF9D2B /* newPlayground.playground */,
 				897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */,
 				89C3838921C366DB0070E276 /* MetroDataClass.swift */,
 				8941677521D255120048047E /* Downloader.swift */,

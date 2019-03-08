@@ -97,11 +97,14 @@ class InterfaceController:  SockaWatchBaseVC{
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        dl.zapisVerziDtbzDoUserDefaultsHodinek(novaVerze: 3)
+        
+        
         dtbzPopUpAlreadyShowed = false
         
         printDocumentsDirectory()
         
-        var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
+        var _ = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
         //každou sekundu updatuje funkci displayAllValue
         
         //existujeNovaVerzeDTBZ = zjistiDostupnostNoveDatabaze()
@@ -115,14 +118,19 @@ class InterfaceController:  SockaWatchBaseVC{
         super.willActivate()
         
         //ukončí všechna probíhající stahování. Pro případ, že se neukončí po stáhnutí dtbz
+        
+        
         Alamofire.SessionManager.default.session.getTasksWithCompletionHandler { (sessionDataTask, uploadData, downloadData) in
             sessionDataTask.forEach { $0.cancel() }
             uploadData.forEach { $0.cancel() }
             downloadData.forEach { $0.cancel() }
         }
         
+        /*
         print("Dtbz na webu: ", dl.zjistiVerziDtbzNaWebu())
         print("Dtbz v hodinkách: ", dl.zjistiVerziDtbzVHodinkachUserDefaults())
+        */
+        
         
         if triNejblizsiZastavky.count > 0{
             prepinaciPomocnaZastavka = triNejblizsiZastavky[zastavkySwitch]
@@ -133,9 +141,12 @@ class InterfaceController:  SockaWatchBaseVC{
     
     
     override func didAppear(){
+        
+        
         if !dtbzPopUpAlreadyShowed{
         ukazUpgradePopUp()
         }
+        
         //lokaceDostupnaPopUp()
     }
     
@@ -328,19 +339,32 @@ class InterfaceController:  SockaWatchBaseVC{
     
     
     func ukazUpgradePopUp(){
-        if dl.zjistiVerziDtbzNaWebu() > dl.zjistiVerziDtbzVHodinkachUserDefaults(){
-            let stahniClosure = {
-                self.dismiss()
-                self.pushController(withName: "downloadVC", context: nil)
+        
+        Alamofire.request("http://socka.funsite.cz/verze.htm").responseString
+            {response in
+                if let verze = Int(response.value ?? "0"){
+                    
+                    if verze > self.dl.zjistiVerziDtbzVHodinkachUserDefaults(){
+                        let stahniClosure = {
+                            self.dismiss()
+                            self.pushController(withName: "downloadVC", context: nil)
+                        }
+                        
+                        let action1 = WKAlertAction(title: "Stáhnout", style: .default, handler: stahniClosure)
+                        let action2 = WKAlertAction(title: "Zrušit", style: .cancel) {}
+                        
+                        self.presentAlert(withTitle: "Nová databáze.", message: "Ke stažení jsou dostupné nové jízdní řády (cca 4MB).", preferredStyle: .actionSheet, actions: [action1,action2])
+                    }
+                    
+                    dtbzPopUpAlreadyShowed = true
+            
+                }
             }
         
-            let action1 = WKAlertAction(title: "Stáhnout", style: .default, handler: stahniClosure)
-            let action2 = WKAlertAction(title: "Zrušit", style: .cancel) {}
         
-            presentAlert(withTitle: "Nová databáze.", message: "Ke stažení jsou dostupné nové jízdní řády (cca 4MB).", preferredStyle: .actionSheet, actions: [action1,action2])
-        }
         
-        dtbzPopUpAlreadyShowed = true
+      
+        
     }
     
     
