@@ -27,7 +27,6 @@ public class Databaze{
         let dtbzFileUrlVDokumentech = URL(fileURLWithPath: documentDirectoryPath!).appendingPathComponent("DataBaze")
         
         
-        
         //CHECK ZDA V TELEFONU NENÍ ZASTARALÁ DATABÁZE
         if FileManager.default.fileExists(atPath: (dtbzFileUrlVDokumentech.path)) && (downloader.zjistiVerziDtbzVTelefonuUserDefaults() < verzeDTBZvTomtoBundlu){
             //Přemazávání starých databázi v telefonu při aktualizaci databáze. Pro případ aktualizace a existence staré dtbz v telefonu

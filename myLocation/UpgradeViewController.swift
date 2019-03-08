@@ -25,11 +25,6 @@ class UpgradeViewController: UIViewController{
     }
     
     @IBAction func stahnoutBtn(_ sender: Any) {
-        /*
-        let url = URL(string: "http://socka.funsite.cz/databaze")!
-        downloadTask = backgroundSession.downloadTask(with: url)
-        downloadTask.resume()
-        */
         stahniNovouDtbz()
     }
     

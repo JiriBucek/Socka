@@ -15,7 +15,6 @@ class MetroDataClass: NSObject{
     var zastavkaID1: String?
     var zastavkaID2: String?
 
-    
     var konecna1: String?
     var konecna2: String?
     

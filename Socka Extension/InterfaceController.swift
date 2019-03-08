@@ -61,8 +61,6 @@ class InterfaceController:  SockaWatchBaseVC{
     lazy var barva3 = cervena
     
     let dl = Downloader_W()
-
-    
     
     @IBOutlet var nearestZastavkaBtn: WKInterfaceButton!
     
@@ -81,7 +79,6 @@ class InterfaceController:  SockaWatchBaseVC{
         }
     }
     
-
     @IBOutlet var konecna1outlet: WKInterfaceLabel!
     @IBOutlet var konecna2outlet: WKInterfaceLabel!
     
@@ -93,7 +90,6 @@ class InterfaceController:  SockaWatchBaseVC{
     @IBOutlet var cas22: WKInterfaceLabel!
     
     
-    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -103,57 +99,33 @@ class InterfaceController:  SockaWatchBaseVC{
         
         var _ = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
         //každou sekundu updatuje funkci displayAllValue
-        
-        //existujeNovaVerzeDTBZ = zjistiDostupnostNoveDatabaze()
-        
-        
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        
         super.willActivate()
-        
         //ukončí všechna probíhající stahování. Pro případ, že se neukončí po stáhnutí dtbz
-        
-        
         Alamofire.SessionManager.default.session.getTasksWithCompletionHandler { (sessionDataTask, uploadData, downloadData) in
             sessionDataTask.forEach { $0.cancel() }
             uploadData.forEach { $0.cancel() }
             downloadData.forEach { $0.cancel() }
         }
         
-        /*
-        print("Dtbz na webu: ", dl.zjistiVerziDtbzNaWebu())
-        print("Dtbz v hodinkách: ", dl.zjistiVerziDtbzVHodinkachUserDefaults())
-        */
-        
-        
         if triNejblizsiZastavky.count > 0{
             prepinaciPomocnaZastavka = triNejblizsiZastavky[zastavkySwitch]
         }
-        
-        
     }
     
-    
     override func didAppear(){
-        
-        
         if !dtbzPopUpAlreadyShowed{
         ukazUpgradePopUp()
         }
-        
-        //lokaceDostupnaPopUp()
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-    
-    
-    
     
     @objc func displayAllValues(){
         
@@ -164,7 +136,6 @@ class InterfaceController:  SockaWatchBaseVC{
             prepinaciPomocnaZastavka = triNejblizsiZastavky[0]
         }
         
-        
         if prepinaciPomocnaZastavka != aktualneZobrazovanaZastavka{
             //prepinac pro pripad zmeny polohy nebo prepnuti zastacky uzivatelem
             aktualneZobrazovanaZastavka = prepinaciPomocnaZastavka
@@ -174,7 +145,6 @@ class InterfaceController:  SockaWatchBaseVC{
         if metroData.cas11 != nil && metroData.nextZastavka11 != nil{
             
             nastavBarvy(jmenoZastavky: aktualneZobrazovanaZastavka)
-            
             
             nearestZastavkaLabel.setText(aktualneZobrazovanaZastavka)
             
@@ -189,19 +159,16 @@ class InterfaceController:  SockaWatchBaseVC{
             countdown2.setText(timeDifference(arrivalTime: metroData.cas21!))
             countdown2.setTextColor(barva3)
             
-            
             konecna1outlet.setText(metroData.konecna1)
             konecna1outlet.setTextColor(hlavniBarva)
             
             konecna2outlet.setText(metroData.konecna2)
             konecna2outlet.setTextColor(hlavniBarva)
             
-            
             if myTimeDifference(to: metroData.cas11!) < 1 || myTimeDifference(to: metroData.cas21!) < 1{
                 fillMetroDataObject()
             }
         }
-        
     }
     
     func printDocumentsDirectory() {
@@ -263,7 +230,6 @@ class InterfaceController:  SockaWatchBaseVC{
         let datum2prevedeno = datum2.timeIntervalSince1970
         
         return Int(datum1prevedeno - datum2prevedeno)
-        
     }
     
     func timeDifference(arrivalTime: Int) -> String {
@@ -297,8 +263,6 @@ class InterfaceController:  SockaWatchBaseVC{
         var minuty = String(describing: timeDifference.minute!)
         var sekundy = String(describing: timeDifference.second!)
         
-        
-        
         if Int(minuty)! < -1000{
             //úprava kvůli přepočtu přes půlnoc, aby to neukazovalo minusove casy
             minuty = String(Int(minuty)! + 1439)
@@ -329,12 +293,9 @@ class InterfaceController:  SockaWatchBaseVC{
         time.insert(":", at: index2)
         
         return time
-        
     }
 
     //DOWNLOADER PRO NOVOU DATABAZI
-    
-    
     func ukazUpgradePopUp(){
         
         Alamofire.request("http://socka.funsite.cz/verze.htm").responseString
@@ -357,13 +318,7 @@ class InterfaceController:  SockaWatchBaseVC{
             
                 }
             }
-        
-        
-        
-      
-        
     }
-    
     
     func lokaceDostupnaPopUp(){
         
@@ -391,68 +346,4 @@ class InterfaceController:  SockaWatchBaseVC{
         }
         
     }
-    
-    /*
-    func stahniNovouDtbz(){
-        print("Začínám stahovat.")
-        let backgroundSessionConfiguration = URLSessionConfiguration.background(withIdentifier: "backgroundSession")
-        backgroundSession = Foundation.URLSession(configuration: backgroundSessionConfiguration, delegate: self, delegateQueue: OperationQueue.main)
-        let url = URL(string: "http://socka.funsite.cz/databaze")!
-        downloadTask = backgroundSession.downloadTask(with: url)
-        downloadTask.resume()
-    }
-    
-    
-    
-    func urlSession(_ session: URLSession,
-                    downloadTask: URLSessionDownloadTask,
-                    didFinishDownloadingTo location: URL){
-        
-        let documentsUrl:URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first as! URL
-        let destinationFileUrlbezPripony = documentsUrl.appendingPathComponent("DataBaze")
-        
-        do{
-            try FileManager.default.removeItem(at: destinationFileUrlbezPripony)
-            try FileManager.default.copyItem(at: location, to: destinationFileUrlbezPripony)
-            
-            let downloader = Downloader_W()
-            downloader.zapisVerziDtbzDoUserDefaultsHodinek(novaVerze: downloader.zjistiVerziDtbzNaWebu())
-            
-            let action1 = WKAlertAction(title: "Zpět", style: .cancel) {}
-            presentAlert(withTitle: "Stahování dokončeno.", message: "Jízdní řády jsou aktuální.", preferredStyle: .actionSheet, actions: [action1])
-            
-        }catch{
-            print("Error pri mazani a kopirování nové DTBZ", error)
-        }
-        
-    }
-    // 2
-    func urlSession(_ session: URLSession,
-                    downloadTask: URLSessionDownloadTask,
-                    didWriteData bytesWritten: Int64,
-                    totalBytesWritten: Int64,
-                    totalBytesExpectedToWrite: Int64){
-        
-        print(totalBytesWritten)
-        /*
-        progressView.setProgress(Float(totalBytesWritten)/Float(totalBytesExpectedToWrite), animated: true)
-        progressLabel.text = "\(Int(Float(totalBytesWritten)/Float(totalBytesExpectedToWrite) * 100)) %"
-        */
-    }
-    
-    //MARK: URLSessionTaskDelegate
-    func urlSession(_ session: URLSession,
-                    task: URLSessionTask,
-                    didCompleteWithError error: Error?){
-        downloadTask = nil
-        if (error != nil) {
-            print(error!.localizedDescription)
-        }else{
-            print("Stahování v hodinkách dokončeno.")
-            
-            
-        }
-    }
-    */
-    
 }

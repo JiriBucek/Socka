@@ -8,7 +8,6 @@
 
 import UIKit
 import MapKit
-//import CoreLocation
 import CoreData
 import SystemConfiguration
 import Alamofire
@@ -43,7 +42,6 @@ extension UIColor{
 
 var zastavkySwitch: Int = 0
 // globalni var pro prehazovani zastavky, pro kterou maji byt zobrazeny casove udaje
-
 var existujeNovaVerzeDTBZ = false
 var prepinaciPomocnaZastavka = ""
 
@@ -143,23 +141,11 @@ class ViewController: SockaBaseVC{
     @IBOutlet weak var dalsiZastavkaLabel22: UILabel!
     @IBOutlet weak var dalsiZastavkaLabel23: UILabel!
     
-    
-    /*
-    var currentLocation = CLLocation()
-    //globalni promenna, kam si vlozim soucasnou pozici ve fci location manager
-    
-    let manager = CLLocationManager()
-    //první proměnná nutná pro práci s polohovým službama
-    */
-
-    //vyskakovací okno s upozorněním pro svátky
-    
 //MARK - functions
     
     override func viewDidLoad() {
     //co se stane po loadnutí
         
-
         //pro testovani stazeni databaze
         //let dl = Downloader()
         //dl.zapisVerziDtbzDoUserDefaults(novaVerze: 0)
@@ -179,7 +165,6 @@ class ViewController: SockaBaseVC{
         
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
         //každou sekundu updatuje funkci displayAllValue
-        
         
         print(getDocumentsDirectory())
     }
@@ -292,12 +277,9 @@ class ViewController: SockaBaseVC{
     
     func rozdilCasuTypuDate(datum1: Date, datum2: Date) -> Int{
         //vrati rozdil dvou objektu typu Date v sekundach
-        
         let datum1prevedeno = datum1.timeIntervalSince1970
         let datum2prevedeno = datum2.timeIntervalSince1970
-        
         return Int(datum1prevedeno - datum2prevedeno)
-        
     }
     
     func timeDifference(arrivalTime: Int) -> String {
@@ -330,9 +312,7 @@ class ViewController: SockaBaseVC{
         //spočítá časový rozdíl mezi from a to
         var minuty = String(describing: timeDifference.minute!)
         var sekundy = String(describing: timeDifference.second!)
-        
-
-        
+    
         if Int(minuty)! < -1000{
         //úprava kvůli přepočtu přes půlnoc, aby to neukazovalo minusove casy
             minuty = String(Int(minuty)! + 1439)
@@ -343,7 +323,7 @@ class ViewController: SockaBaseVC{
         //přihodí nulu, pokud sekundy mají jen jeden znak
                 let index = sekundy.startIndex
                 sekundy.insert("0", at: index)
-            }
+        }
     
         return "\(minuty):\(sekundy)"
     }
@@ -374,9 +354,6 @@ class ViewController: SockaBaseVC{
         let verzeVtelefonu = downloader.zjistiVerziDtbzVTelefonuUserDefaults()
         let verzeNaNetu = downloader.zjistiVerziDtbzNaWebu()
         
-        print("Verze na netu: \(verzeNaNetu)")
-        print("Verze v telefonu \(verzeVtelefonu)")
-        
         if verzeVtelefonu < verzeNaNetu{
             print("Je dostupná nová verze!!")
             return true
@@ -388,7 +365,6 @@ class ViewController: SockaBaseVC{
     func ukazUpgradeVC(){
     //vyskoci okynko s vystrahou, ze je nova verze dtbz
         if isInternetAvailable() && zjistiDostupnostNoveDatabaze(){
-        
         
         let currentVC = self.view.window?.rootViewController
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

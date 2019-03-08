@@ -19,12 +19,9 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
     var zastavkySwitch: Int = 0
     var metroData = MetroDataClass()
     var triNejblizsiZastavkyPrepinaciArray = [String]()
-    //objekt, který obsahuje veškeré informace pro zobrazení na displeji
-    
     let databaze = Databaze()
     var lokace = Lokace()
     
-
     
     override func viewDidLoad() {
         lokace = Lokace.shared
@@ -33,7 +30,6 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
         //zacne updatovat polohu
         
         triNejblizsiZastavky = lokace.triNejblizsiZastavkyArray
-        print("Prvnotni array: ", triNejblizsiZastavky)
         
         if triNejblizsiZastavky.count == 3{
         //pro pripad, ze by se lokace jeste nechytila
@@ -53,7 +49,6 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
         var konecna2 = String()
         var arrayPristichZastavek2 = [String]()
         var arrayPristichZastavek1 = [String]()
-        
         
         metro_times = get_metro_times(jmenoZastavky: aktualneZobrazovanaZastavka)
         
@@ -79,8 +74,6 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
             metroData.cas12 = metro_times[1][1] as? Int
             metroData.cas21 = metro_times[2][1] as? Int
             metroData.cas22 = metro_times[3][1] as? Int
-            print("metroData: ", metroData)
-            
             
         }else{
             print("Nemám žádná data z databáze, nevytvořil jsem objekt metroDataClass.")
@@ -212,6 +205,5 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
             return false
         }
     }
-    
     
 }
