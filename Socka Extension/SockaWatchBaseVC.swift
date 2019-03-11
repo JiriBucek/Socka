@@ -11,9 +11,6 @@ import UIKit
 import CoreLocation
 import WatchKit
 
-
-
-
 class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
     
     public var aktualneZobrazovanaZastavka: String = ""
@@ -27,8 +24,6 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
     
     let databaze = Databaze_W()
     var lokace = Lokace_W()
-    
-    
     
     override func awake(withContext context: Any?) {
         lokace = Lokace_W.shared
@@ -87,12 +82,7 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
         }else{
             print("Nemám žádná data z databáze, nevytvořil jsem objekt metroDataClass v hodinkách.")
         }
-        
-        
-        
-        
     }
-    
     
     func get_metro_times(jmenoZastavky: String) -> [[Any]]!{
         //vrátí array s dvěma konecnyma a ctyrma casama
@@ -137,10 +127,8 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
                 times2 = times2 + times21
             }
             
-            
             let times = times1 + times2
             
-            //print(times)
             return times
             
         }else{

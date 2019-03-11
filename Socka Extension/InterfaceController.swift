@@ -263,10 +263,17 @@ class InterfaceController:  SockaWatchBaseVC{
         var minuty = String(describing: timeDifference.minute!)
         var sekundy = String(describing: timeDifference.second!)
         
-        if Int(minuty)! < -1000{
-            //úprava kvůli přepočtu přes půlnoc, aby to neukazovalo minusove casy
-            minuty = String(Int(minuty)! + 1439)
-            sekundy = String(59 + Int(sekundy)!)
+        
+        if let minutyWrap = Int(minuty){
+            if minutyWrap < -1000{
+                //úprava kvůli přepočtu přes půlnoc, aby to neukazovalo minusove casy
+                minuty = String(Int(minuty)! + 1439)
+                sekundy = String(59 + Int(sekundy)!)
+            }else if minutyWrap < 0 || minutyWrap > -1000{
+                //kvůli nezobrazování minusovych hodnot pri chybnem nacteni casu
+                minuty = "0"
+                sekundy = "O"
+            }
         }
         
         if sekundy.count == 1{

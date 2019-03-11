@@ -78,10 +78,6 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
         }else{
             print("Nemám žádná data z databáze, nevytvořil jsem objekt metroDataClass.")
         }
-        
-
-        
-        
     }
     
     
