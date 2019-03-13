@@ -26,13 +26,13 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="31" baselineAdjustment="none" minimumScaleFactor="0.14999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="TBe-BZ-dap">
                                         <rect key="frame" x="16" y="159.33333333333334" width="382" height="464.66666666666663"/>
-                                        <mutableString key="text">Socka Vám pomůže načasovat příchod k přijíždějící soupravě metra. 
+                                        <string key="text">Socka Vám pomůže načasovat příchod k přijíždějící soupravě metra. 
  Hodí se zejména těsně před příchodem do podzemí stanice metra anebo na eskalátoru, kdy jste schopni jedním ťuknutím do iPhonu zjistit, zda přidat do kroku nebo naopak zvolnit a zbytečně nečekat na nástupišti. 
 
 Pro případ přestupu si v menu lze vybrat libovolnou přestupní stanici. GPS není totiž v podzemí vždy dostupné. 
 
 Socku si můžete nainstalovat i na Vaše Apple Watch.
-</mutableString>
+</string>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -44,7 +44,7 @@ Socku si můžete nainstalovat i na Vaše Apple Watch.
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urm-I4-ehZ">
-                                        <rect key="frame" x="182" y="736.33333333333337" width="50" height="70"/>
+                                        <rect key="frame" x="182" y="780.33333333333337" width="50" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="S4Q-oz-bV5"/>
                                             <constraint firstAttribute="height" constant="70" id="VZC-AG-VHa"/>
@@ -58,7 +58,7 @@ Socku si můžete nainstalovat i na Vaše Apple Watch.
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hW1-Pr-Jze">
-                                        <rect key="frame" x="110.66666666666669" y="687.33333333333337" width="193" height="30"/>
+                                        <rect key="frame" x="110.66666666666669" y="731.33333333333337" width="193" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="AwP-Xj-TaX"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="193" id="eVz-QY-3wL"/>
@@ -69,7 +69,13 @@ Socku si můžete nainstalovat i na Vaše Apple Watch.
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verze databáze: nedostupná." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cb4-rI-URJ">
-                                        <rect key="frame" x="97.000000000000014" y="644" width="220.33333333333337" height="23.333333333333371"/>
+                                        <rect key="frame" x="97.000000000000014" y="688" width="220.33333333333337" height="23.333333333333371"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verze aplikace: nedostupná" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tx5-3y-tBm">
+                                        <rect key="frame" x="103" y="644" width="208" height="24"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -80,12 +86,14 @@ Socku si můžete nainstalovat i na Vaše Apple Watch.
                                     <constraint firstAttribute="bottom" secondItem="Urm-I4-ehZ" secondAttribute="bottom" constant="823" placeholder="YES" id="1gs-t9-mzA"/>
                                     <constraint firstItem="Urm-I4-ehZ" firstAttribute="centerX" secondItem="lwr-Sk-Iug" secondAttribute="centerX" id="4Tt-Gm-viQ"/>
                                     <constraint firstItem="cb4-rI-URJ" firstAttribute="centerX" secondItem="lwr-Sk-Iug" secondAttribute="centerX" id="964-Qa-d7L"/>
-                                    <constraint firstItem="cb4-rI-URJ" firstAttribute="top" secondItem="TBe-BZ-dap" secondAttribute="bottom" constant="20" id="APQ-nc-Cae"/>
+                                    <constraint firstItem="cb4-rI-URJ" firstAttribute="top" secondItem="tx5-3y-tBm" secondAttribute="bottom" constant="20" id="ATJ-71-w2X"/>
                                     <constraint firstItem="TBe-BZ-dap" firstAttribute="top" secondItem="7Wr-05-bYS" secondAttribute="bottom" constant="20" id="Hyz-1k-d8t"/>
                                     <constraint firstItem="7Wr-05-bYS" firstAttribute="width" secondItem="lwr-Sk-Iug" secondAttribute="width" multiplier="0.4" id="IiY-VY-XMy"/>
                                     <constraint firstItem="7Wr-05-bYS" firstAttribute="centerX" secondItem="lwr-Sk-Iug" secondAttribute="centerX" id="IuW-pI-Cbj"/>
                                     <constraint firstItem="hW1-Pr-Jze" firstAttribute="centerX" secondItem="lwr-Sk-Iug" secondAttribute="centerX" id="Jg0-wI-Qrd"/>
                                     <constraint firstItem="TBe-BZ-dap" firstAttribute="leading" secondItem="lwr-Sk-Iug" secondAttribute="leadingMargin" constant="8" id="Khr-ZX-4cI"/>
+                                    <constraint firstItem="tx5-3y-tBm" firstAttribute="top" secondItem="TBe-BZ-dap" secondAttribute="bottom" constant="20" id="d06-La-Dd4"/>
+                                    <constraint firstItem="tx5-3y-tBm" firstAttribute="centerX" secondItem="lwr-Sk-Iug" secondAttribute="centerX" id="je2-q0-vlS"/>
                                     <constraint firstItem="hW1-Pr-Jze" firstAttribute="top" secondItem="cb4-rI-URJ" secondAttribute="bottom" constant="20" id="qXD-qD-LE1"/>
                                     <constraint firstItem="Urm-I4-ehZ" firstAttribute="top" secondItem="hW1-Pr-Jze" secondAttribute="bottom" constant="19" id="sVc-kM-Ymz"/>
                                     <constraint firstItem="TBe-BZ-dap" firstAttribute="centerX" secondItem="lwr-Sk-Iug" secondAttribute="centerX" id="sut-uy-G06"/>
@@ -104,6 +112,7 @@ Socku si můžete nainstalovat i na Vaše Apple Watch.
                     <connections>
                         <outlet property="hlavniLabel" destination="TBe-BZ-dap" id="BbK-IZ-dK4"/>
                         <outlet property="scrollView" destination="lwr-Sk-Iug" id="jNI-em-17F"/>
+                        <outlet property="verzeAplikaceLabel" destination="tx5-3y-tBm" id="MJw-Tv-3gh"/>
                         <outlet property="verzeDtbzLabel" destination="cb4-rI-URJ" id="nZG-nj-kOz"/>
                         <outlet property="zavritBTN" destination="Urm-I4-ehZ" id="781-Yn-LrO"/>
                     </connections>

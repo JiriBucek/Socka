@@ -269,7 +269,7 @@ class InterfaceController:  SockaWatchBaseVC{
                 //úprava kvůli přepočtu přes půlnoc, aby to neukazovalo minusove casy
                 minuty = String(Int(minuty)! + 1439)
                 sekundy = String(59 + Int(sekundy)!)
-            }else if minutyWrap < 0 || minutyWrap > -1000{
+            }else if minutyWrap < 0 && minutyWrap > -1000{
                 //kvůli nezobrazování minusovych hodnot pri chybnem nacteni casu
                 minuty = "0"
                 sekundy = "O"

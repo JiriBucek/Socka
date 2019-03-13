@@ -14,6 +14,7 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var zavritBTN: UIButton!
     @IBOutlet weak var hlavniLabel: UILabel!
     @IBOutlet weak var verzeDtbzLabel: UILabel!
+    @IBOutlet weak var verzeAplikaceLabel: UILabel!
     
     
     @IBAction func kontaktButton(_ sender: Any) {
@@ -37,7 +38,8 @@ class InfoViewController: UIViewController {
         
         let dl = Downloader()
         verzeDtbzLabel.text = "Verze databáze: \(dl.zjistiVerziDtbzVTelefonuUserDefaults())"
-    
+        verzeAplikaceLabel.text = "Verze aplikace: \(String(describing: Bundle.main.infoDictionary!["CFBundleShortVersionString"]!))"
+        
         scrollView.bottomAnchor.constraint(equalTo: zavritBTN.bottomAnchor).isActive = true
         
         // Do any additional setup after loading the view.
