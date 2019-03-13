@@ -355,7 +355,7 @@ class ViewController: SockaBaseVC{
         let verzeNaNetu = downloader.zjistiVerziDtbzNaWebu()
         
         if verzeVtelefonu < verzeNaNetu{
-            print("Je dostupná nová verze!!")
+            print("Je dostupná nová verze!")
             return true
         }else{
             return false
