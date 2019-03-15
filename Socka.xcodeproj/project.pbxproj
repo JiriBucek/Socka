@@ -10,13 +10,13 @@
 		891DC14A1EB358980098A983 /* DataBaze.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 891DC1481EB358980098A983 /* DataBaze.xcdatamodeld */; };
 		892F530421A0DF070058CDFC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 892F530221A0DF070058CDFC /* Interface.storyboard */; };
 		892F530621A0DF0B0058CDFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 892F530521A0DF0B0058CDFC /* Assets.xcassets */; };
-		892F530D21A0DF0B0058CDFC /* Socka Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 892F530C21A0DF0B0058CDFC /* Socka Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		892F530D21A0DF0B0058CDFC /* Socka_ Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 892F530C21A0DF0B0058CDFC /* Socka_ Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		892F531221A0DF0B0058CDFC /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F531121A0DF0B0058CDFC /* InterfaceController.swift */; };
 		892F531421A0DF0C0058CDFC /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F531321A0DF0C0058CDFC /* ExtensionDelegate.swift */; };
 		892F531621A0DF0C0058CDFC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F531521A0DF0C0058CDFC /* NotificationController.swift */; };
 		892F531821A0DF0C0058CDFC /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F531721A0DF0C0058CDFC /* ComplicationController.swift */; };
 		892F531A21A0DF0C0058CDFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 892F531921A0DF0C0058CDFC /* Assets.xcassets */; };
-		892F531F21A0DF0C0058CDFC /* Socka.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 892F530021A0DF070058CDFC /* Socka.app */; };
+		892F531F21A0DF0C0058CDFC /* Socka_Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 892F530021A0DF070058CDFC /* Socka_Watch.app */; };
 		893B14701EA125FA002E8F72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B146F1EA125FA002E8F72 /* AppDelegate.swift */; };
 		893B14721EA125FA002E8F72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B14711EA125FA002E8F72 /* ViewController.swift */; };
 		893B14751EA125FA002E8F72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 893B14731EA125FA002E8F72 /* Main.storyboard */; };
@@ -83,7 +83,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				892F530D21A0DF0B0058CDFC /* Socka Extension.appex in Embed App Extensions */,
+				892F530D21A0DF0B0058CDFC /* Socka_ Watch Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,7 +94,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				892F531F21A0DF0C0058CDFC /* Socka.app in Embed Watch Content */,
+				892F531F21A0DF0C0058CDFC /* Socka_Watch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,11 +124,11 @@
 /* Begin PBXFileReference section */
 		481793089E17EDB58FA103C2 /* Pods-Socka Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Socka Extension/Pods-Socka Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		891DC1491EB358980098A983 /* DataFinal280417.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataFinal280417.xcdatamodel; sourceTree = "<group>"; };
-		892F530021A0DF070058CDFC /* Socka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Socka.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		892F530021A0DF070058CDFC /* Socka_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Socka_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		892F530321A0DF070058CDFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		892F530521A0DF0B0058CDFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		892F530721A0DF0B0058CDFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		892F530C21A0DF0B0058CDFC /* Socka Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Socka Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		892F530C21A0DF0B0058CDFC /* Socka_ Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Socka_ Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		892F531121A0DF0B0058CDFC /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		892F531321A0DF0C0058CDFC /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		892F531521A0DF0C0058CDFC /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -154,12 +154,12 @@
 		897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data_pool.swift; path = ../Data_pool.swift; sourceTree = "<group>"; };
 		8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		899CA19A21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SockaWatchBaseVC.swift; sourceTree = "<group>"; };
-		899CA19C21CFC671009F9DF0 /* Lokace_W.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lokace_W.swift; path = myLocation/Lokace_W.swift; sourceTree = SOURCE_ROOT; };
+		899CA19C21CFC671009F9DF0 /* Lokace_W.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lokace_W.swift; path = "Socka_Watch Extension/Lokace_W.swift"; sourceTree = SOURCE_ROOT; };
 		899CA19E21CFC6F3009F9DF0 /* Data_pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data_pool.swift; sourceTree = SOURCE_ROOT; };
-		899CA1A021CFC71A009F9DF0 /* Databaze_W.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Databaze_W.swift; path = myLocation/Databaze_W.swift; sourceTree = SOURCE_ROOT; };
-		899CA1A221CFC73A009F9DF0 /* Downloader_W.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Downloader_W.swift; path = myLocation/Downloader_W.swift; sourceTree = SOURCE_ROOT; };
+		899CA1A021CFC71A009F9DF0 /* Databaze_W.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Databaze_W.swift; path = "Socka_Watch Extension/Databaze_W.swift"; sourceTree = SOURCE_ROOT; };
+		899CA1A221CFC73A009F9DF0 /* Downloader_W.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Downloader_W.swift; path = "Socka_Watch Extension/Downloader_W.swift"; sourceTree = SOURCE_ROOT; };
 		899CE12C21E1054E00F51F6D /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataBaze.sqlite; sourceTree = "<group>"; };
-		899CE12F21E1057C00F51F6D /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = DataBaze.sqlite; path = myLocation/DataBaze.sqlite; sourceTree = SOURCE_ROOT; };
+		899CE12F21E1057C00F51F6D /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = DataBaze.sqlite; path = "Socka_Watch Extension/DataBaze.sqlite"; sourceTree = SOURCE_ROOT; };
 		89AFC225223BE05200D7E207 /* DataBaze.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = DataBaze.xcdatamodel; path = Socka_Phone/DataBaze.xcdatamodeld/DataBaze.xcdatamodel; sourceTree = SOURCE_ROOT; };
 		89C3838921C366DB0070E276 /* MetroDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroDataClass.swift; sourceTree = "<group>"; };
 		89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SockaBaseVC.swift; sourceTree = "<group>"; };
@@ -273,8 +273,8 @@
 				893B146C1EA125FA002E8F72 /* Socka.app */,
 				893B14801EA125FA002E8F72 /* MHD APPTests.xctest */,
 				893B148B1EA125FA002E8F72 /* MHD APPUITests.xctest */,
-				892F530021A0DF070058CDFC /* Socka.app */,
-				892F530C21A0DF0B0058CDFC /* Socka Extension.appex */,
+				892F530021A0DF070058CDFC /* Socka_Watch.app */,
+				892F530C21A0DF0B0058CDFC /* Socka_ Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,9 +315,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		892F52FF21A0DF070058CDFC /* Socka */ = {
+		892F52FF21A0DF070058CDFC /* Socka_Watch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 892F532621A0DF0C0058CDFC /* Build configuration list for PBXNativeTarget "Socka" */;
+			buildConfigurationList = 892F532621A0DF0C0058CDFC /* Build configuration list for PBXNativeTarget "Socka_Watch" */;
 			buildPhases = (
 				892F52FE21A0DF070058CDFC /* Resources */,
 				892F532521A0DF0C0058CDFC /* Embed App Extensions */,
@@ -328,14 +328,14 @@
 			dependencies = (
 				892F530F21A0DF0B0058CDFC /* PBXTargetDependency */,
 			);
-			name = Socka;
+			name = Socka_Watch;
 			productName = Socka;
-			productReference = 892F530021A0DF070058CDFC /* Socka.app */;
+			productReference = 892F530021A0DF070058CDFC /* Socka_Watch.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		892F530B21A0DF0B0058CDFC /* Socka Extension */ = {
+		892F530B21A0DF0B0058CDFC /* Socka_ Watch Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 892F532421A0DF0C0058CDFC /* Build configuration list for PBXNativeTarget "Socka Extension" */;
+			buildConfigurationList = 892F532421A0DF0C0058CDFC /* Build configuration list for PBXNativeTarget "Socka_ Watch Extension" */;
 			buildPhases = (
 				9336DE962D3C149354046AEE /* [CP] Check Pods Manifest.lock */,
 				892F530821A0DF0B0058CDFC /* Sources */,
@@ -346,14 +346,14 @@
 			);
 			dependencies = (
 			);
-			name = "Socka Extension";
+			name = "Socka_ Watch Extension";
 			productName = "Socka Extension";
-			productReference = 892F530C21A0DF0B0058CDFC /* Socka Extension.appex */;
+			productReference = 892F530C21A0DF0B0058CDFC /* Socka_ Watch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
-		893B146B1EA125FA002E8F72 /* MHD APP */ = {
+		893B146B1EA125FA002E8F72 /* Socka_Phone */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 893B14941EA125FA002E8F72 /* Build configuration list for PBXNativeTarget "MHD APP" */;
+			buildConfigurationList = 893B14941EA125FA002E8F72 /* Build configuration list for PBXNativeTarget "Socka_Phone" */;
 			buildPhases = (
 				4A856E8FB94F18F5871AF3D0 /* [CP] Check Pods Manifest.lock */,
 				893B14681EA125FA002E8F72 /* Sources */,
@@ -369,7 +369,7 @@
 			dependencies = (
 				892F531E21A0DF0C0058CDFC /* PBXTargetDependency */,
 			);
-			name = "MHD APP";
+			name = Socka_Phone;
 			productName = myLocation;
 			productReference = 893B146C1EA125FA002E8F72 /* Socka.app */;
 			productType = "com.apple.product-type.application";
@@ -463,11 +463,11 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				893B146B1EA125FA002E8F72 /* MHD APP */,
+				893B146B1EA125FA002E8F72 /* Socka_Phone */,
 				893B147F1EA125FA002E8F72 /* MHD APPTests */,
 				893B148A1EA125FA002E8F72 /* MHD APPUITests */,
-				892F52FF21A0DF070058CDFC /* Socka */,
-				892F530B21A0DF0B0058CDFC /* Socka Extension */,
+				892F52FF21A0DF070058CDFC /* Socka_Watch */,
+				892F530B21A0DF0B0058CDFC /* Socka_ Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -627,22 +627,22 @@
 /* Begin PBXTargetDependency section */
 		892F530F21A0DF0B0058CDFC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 892F530B21A0DF0B0058CDFC /* Socka Extension */;
+			target = 892F530B21A0DF0B0058CDFC /* Socka_ Watch Extension */;
 			targetProxy = 892F530E21A0DF0B0058CDFC /* PBXContainerItemProxy */;
 		};
 		892F531E21A0DF0C0058CDFC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 892F52FF21A0DF070058CDFC /* Socka */;
+			target = 892F52FF21A0DF070058CDFC /* Socka_Watch */;
 			targetProxy = 892F531D21A0DF0C0058CDFC /* PBXContainerItemProxy */;
 		};
 		893B14821EA125FA002E8F72 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 893B146B1EA125FA002E8F72 /* MHD APP */;
+			target = 893B146B1EA125FA002E8F72 /* Socka_Phone */;
 			targetProxy = 893B14811EA125FA002E8F72 /* PBXContainerItemProxy */;
 		};
 		893B148D1EA125FA002E8F72 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 893B146B1EA125FA002E8F72 /* MHD APP */;
+			target = 893B146B1EA125FA002E8F72 /* Socka_Phone */;
 			targetProxy = 893B148C1EA125FA002E8F72 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -689,8 +689,8 @@
 				DEVELOPMENT_TEAM = F9SQL5NE4J;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				IBSC_MODULE = Socka_Extension;
-				INFOPLIST_FILE = Socka/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.myLocation.watchkitapp";
+				INFOPLIST_FILE = "$(SRCROOT)/Socka_Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.Socka.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -714,8 +714,8 @@
 				DEVELOPMENT_TEAM = F9SQL5NE4J;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				IBSC_MODULE = Socka_Extension;
-				INFOPLIST_FILE = Socka/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.myLocation.watchkitapp";
+				INFOPLIST_FILE = "$(SRCROOT)/Socka_Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.Socka.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -738,9 +738,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F9SQL5NE4J;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "Socka Extension/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Socka_Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.myLocation.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.Socka.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -763,9 +763,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F9SQL5NE4J;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "Socka Extension/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Socka_Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.myLocation.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.Socka.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -893,9 +893,9 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = myLocation/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Socka_Phone/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.myLocation";
+				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.Socka";
 				PRODUCT_NAME = Socka;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -914,9 +914,9 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = myLocation/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Socka_Phone/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.myLocation";
+				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.Socka";
 				PRODUCT_NAME = Socka;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -985,7 +985,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		892F532421A0DF0C0058CDFC /* Build configuration list for PBXNativeTarget "Socka Extension" */ = {
+		892F532421A0DF0C0058CDFC /* Build configuration list for PBXNativeTarget "Socka_ Watch Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				892F532221A0DF0C0058CDFC /* Debug */,
@@ -994,7 +994,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		892F532621A0DF0C0058CDFC /* Build configuration list for PBXNativeTarget "Socka" */ = {
+		892F532621A0DF0C0058CDFC /* Build configuration list for PBXNativeTarget "Socka_Watch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				892F532021A0DF0C0058CDFC /* Debug */,
@@ -1012,7 +1012,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		893B14941EA125FA002E8F72 /* Build configuration list for PBXNativeTarget "MHD APP" */ = {
+		893B14941EA125FA002E8F72 /* Build configuration list for PBXNativeTarget "Socka_Phone" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				893B14951EA125FA002E8F72 /* Debug */,
