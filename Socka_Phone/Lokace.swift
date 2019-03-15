@@ -62,12 +62,6 @@ class Lokace: NSObject, CLLocationManagerDelegate{
             triNejblizsiZastavky.append(zastavkyTuple[i].key)
         }
         
-        /*
-         for i in 0...2{
-         //další tři pozice jsou vzdálenosti
-         triNejblizsiZastavky.append(String(format: "%.f",zastavkyTuple[i].value))
-         }
-         */
         return triNejblizsiZastavky
     }
     

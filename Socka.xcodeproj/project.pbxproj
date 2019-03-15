@@ -21,8 +21,6 @@
 		893B14721EA125FA002E8F72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B14711EA125FA002E8F72 /* ViewController.swift */; };
 		893B14751EA125FA002E8F72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 893B14731EA125FA002E8F72 /* Main.storyboard */; };
 		893B147A1EA125FA002E8F72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 893B14781EA125FA002E8F72 /* LaunchScreen.storyboard */; };
-		893B14851EA125FA002E8F72 /* myLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B14841EA125FA002E8F72 /* myLocationTests.swift */; };
-		893B14901EA125FA002E8F72 /* myLocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B148F1EA125FA002E8F72 /* myLocationUITests.swift */; };
 		893B149F1EA12658002E8F72 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893B149E1EA12658002E8F72 /* CoreLocation.framework */; };
 		893BA9ED1EDF6CF6002B9932 /* UpgradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893BA9EC1EDF6CF6002B9932 /* UpgradeViewController.swift */; };
 		8941677621D255120048047E /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941677521D255120048047E /* Downloader.swift */; };
@@ -32,15 +30,15 @@
 		896E89FC1F85A73A007F029E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E89FB1F85A73A007F029E /* InfoViewController.swift */; };
 		897BFE4E1EBA0D9C009C59F0 /* Data_pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */; };
 		8980EF5D1FA561A2003CE9E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */; };
-		899599A221A18FDA002F490E /* DataBaze.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 899599A021A18FDA002F490E /* DataBaze.xcdatamodeld */; };
 		899CA19621CFBA35009F9DF0 /* MetroDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838921C366DB0070E276 /* MetroDataClass.swift */; };
 		899CA19B21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA19A21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift */; };
-		899CA19D21CFC671009F9DF0 /* Lokace_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA19C21CFC671009F9DF0 /* Lokace_W.swift */; };
 		899CA19F21CFC6F3009F9DF0 /* Data_pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA19E21CFC6F3009F9DF0 /* Data_pool.swift */; };
-		899CA1A121CFC71A009F9DF0 /* Databaze_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA1A021CFC71A009F9DF0 /* Databaze_W.swift */; };
-		899CA1A321CFC73A009F9DF0 /* Downloader_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA1A221CFC73A009F9DF0 /* Downloader_W.swift */; };
 		899CE12D21E1054E00F51F6D /* DataBaze.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 899CE12C21E1054E00F51F6D /* DataBaze.sqlite */; };
-		899CE13221E1E73100F51F6D /* DataBaze.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 899CE12F21E1057C00F51F6D /* DataBaze.sqlite */; };
+		89AFC21E223BDF8E00D7E207 /* DataBaze.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 899CE12F21E1057C00F51F6D /* DataBaze.sqlite */; };
+		89AFC21F223BDF9200D7E207 /* Databaze_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA1A021CFC71A009F9DF0 /* Databaze_W.swift */; };
+		89AFC220223BDF9500D7E207 /* Lokace_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA19C21CFC671009F9DF0 /* Lokace_W.swift */; };
+		89AFC221223BDF9900D7E207 /* Downloader_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA1A221CFC73A009F9DF0 /* Downloader_W.swift */; };
+		89AFC226223BE05200D7E207 /* DataBaze.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 89AFC225223BE05200D7E207 /* DataBaze.xcdatamodel */; };
 		89C3838A21C366DB0070E276 /* MetroDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838921C366DB0070E276 /* MetroDataClass.swift */; };
 		89C3838C21C36A9E0070E276 /* SockaBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */; };
 		9C1D9CEAEFB4AC3228B85CEE /* libPods-Socka Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF70C0D0D660B48A602B755 /* libPods-Socka Extension.a */; };
@@ -138,30 +136,23 @@
 		892F531921A0DF0C0058CDFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		892F531B21A0DF0C0058CDFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		892F531C21A0DF0C0058CDFC /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		893B146C1EA125FA002E8F72 /* myLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		893B146C1EA125FA002E8F72 /* Socka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Socka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		893B146F1EA125FA002E8F72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		893B14711EA125FA002E8F72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		893B14741EA125FA002E8F72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		893B14791EA125FA002E8F72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		893B147B1EA125FA002E8F72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		893B14801EA125FA002E8F72 /* MHD APPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MHD APPTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		893B14841EA125FA002E8F72 /* myLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myLocationTests.swift; sourceTree = "<group>"; };
-		893B14861EA125FA002E8F72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		893B148B1EA125FA002E8F72 /* MHD APPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MHD APPUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		893B148F1EA125FA002E8F72 /* myLocationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myLocationUITests.swift; sourceTree = "<group>"; };
-		893B14911EA125FA002E8F72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		893B149E1EA12658002E8F72 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		893BA9EC1EDF6CF6002B9932 /* UpgradeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeViewController.swift; sourceTree = "<group>"; };
 		8941677521D255120048047E /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		8941677B21D255C50048047E /* Databaze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Databaze.swift; sourceTree = "<group>"; };
 		8941677D21D256F60048047E /* Lokace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lokace.swift; sourceTree = "<group>"; };
 		8941677F21D2E0270048047E /* downloadVC_W.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = downloadVC_W.swift; sourceTree = "<group>"; };
-		8941C0442232524300DF9D2B /* newPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = newPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		8948320E1EBA03550013E01A /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		896E89FB1F85A73A007F029E /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data_pool.swift; path = ../Data_pool.swift; sourceTree = "<group>"; };
 		8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		899599A121A18FDA002F490E /* DataFinal280417.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataFinal280417.xcdatamodel; sourceTree = "<group>"; };
 		899CA19A21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SockaWatchBaseVC.swift; sourceTree = "<group>"; };
 		899CA19C21CFC671009F9DF0 /* Lokace_W.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lokace_W.swift; path = myLocation/Lokace_W.swift; sourceTree = SOURCE_ROOT; };
 		899CA19E21CFC6F3009F9DF0 /* Data_pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data_pool.swift; sourceTree = SOURCE_ROOT; };
@@ -169,6 +160,7 @@
 		899CA1A221CFC73A009F9DF0 /* Downloader_W.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Downloader_W.swift; path = myLocation/Downloader_W.swift; sourceTree = SOURCE_ROOT; };
 		899CE12C21E1054E00F51F6D /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataBaze.sqlite; sourceTree = "<group>"; };
 		899CE12F21E1057C00F51F6D /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = DataBaze.sqlite; path = myLocation/DataBaze.sqlite; sourceTree = SOURCE_ROOT; };
+		89AFC225223BE05200D7E207 /* DataBaze.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = DataBaze.xcdatamodel; path = Socka_Phone/DataBaze.xcdatamodeld/DataBaze.xcdatamodel; sourceTree = SOURCE_ROOT; };
 		89C3838921C366DB0070E276 /* MetroDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroDataClass.swift; sourceTree = "<group>"; };
 		89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SockaBaseVC.swift; sourceTree = "<group>"; };
 		9F02EAD2B0B42CE59A876949 /* libPods-MHD APP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MHD APP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,17 +223,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		892F530121A0DF070058CDFC /* Socka */ = {
+		892F530121A0DF070058CDFC /* Socka_Watch */ = {
 			isa = PBXGroup;
 			children = (
 				892F530221A0DF070058CDFC /* Interface.storyboard */,
 				892F530521A0DF0B0058CDFC /* Assets.xcassets */,
 				892F530721A0DF0B0058CDFC /* Info.plist */,
 			);
-			path = Socka;
+			path = Socka_Watch;
 			sourceTree = "<group>";
 		};
-		892F531021A0DF0B0058CDFC /* Socka Extension */ = {
+		892F531021A0DF0B0058CDFC /* Socka_Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
 				892F531121A0DF0B0058CDFC /* InterfaceController.swift */,
@@ -253,25 +245,22 @@
 				899CA19E21CFC6F3009F9DF0 /* Data_pool.swift */,
 				899CA19A21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift */,
 				892F531321A0DF0C0058CDFC /* ExtensionDelegate.swift */,
+				89AFC225223BE05200D7E207 /* DataBaze.xcdatamodel */,
 				892F531521A0DF0C0058CDFC /* NotificationController.swift */,
-				899599A021A18FDA002F490E /* DataBaze.xcdatamodeld */,
 				892F531721A0DF0C0058CDFC /* ComplicationController.swift */,
 				892F531921A0DF0C0058CDFC /* Assets.xcassets */,
 				892F531B21A0DF0C0058CDFC /* Info.plist */,
 				892F531C21A0DF0C0058CDFC /* PushNotificationPayload.apns */,
 			);
-			path = "Socka Extension";
+			path = "Socka_Watch Extension";
 			sourceTree = "<group>";
 		};
 		893B14631EA125FA002E8F72 = {
 			isa = PBXGroup;
 			children = (
-				8948320E1EBA03550013E01A /* MyPlayground.playground */,
-				893B146E1EA125FA002E8F72 /* myLocation */,
-				893B14831EA125FA002E8F72 /* myLocationTests */,
-				893B148E1EA125FA002E8F72 /* myLocationUITests */,
-				892F530121A0DF070058CDFC /* Socka */,
-				892F531021A0DF0B0058CDFC /* Socka Extension */,
+				893B146E1EA125FA002E8F72 /* Socka_Phone */,
+				892F530121A0DF070058CDFC /* Socka_Watch */,
+				892F531021A0DF0B0058CDFC /* Socka_Watch Extension */,
 				893B146D1EA125FA002E8F72 /* Products */,
 				893B149D1EA12658002E8F72 /* Frameworks */,
 				738F30CEC1529587162C000C /* Pods */,
@@ -281,7 +270,7 @@
 		893B146D1EA125FA002E8F72 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				893B146C1EA125FA002E8F72 /* myLocation.app */,
+				893B146C1EA125FA002E8F72 /* Socka.app */,
 				893B14801EA125FA002E8F72 /* MHD APPTests.xctest */,
 				893B148B1EA125FA002E8F72 /* MHD APPUITests.xctest */,
 				892F530021A0DF070058CDFC /* Socka.app */,
@@ -290,10 +279,9 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		893B146E1EA125FA002E8F72 /* myLocation */ = {
+		893B146E1EA125FA002E8F72 /* Socka_Phone */ = {
 			isa = PBXGroup;
 			children = (
-				8941C0442232524300DF9D2B /* newPlayground.playground */,
 				897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */,
 				89C3838921C366DB0070E276 /* MetroDataClass.swift */,
 				8941677521D255120048047E /* Downloader.swift */,
@@ -311,25 +299,7 @@
 				893B14781EA125FA002E8F72 /* LaunchScreen.storyboard */,
 				893B147B1EA125FA002E8F72 /* Info.plist */,
 			);
-			path = myLocation;
-			sourceTree = "<group>";
-		};
-		893B14831EA125FA002E8F72 /* myLocationTests */ = {
-			isa = PBXGroup;
-			children = (
-				893B14841EA125FA002E8F72 /* myLocationTests.swift */,
-				893B14861EA125FA002E8F72 /* Info.plist */,
-			);
-			path = myLocationTests;
-			sourceTree = "<group>";
-		};
-		893B148E1EA125FA002E8F72 /* myLocationUITests */ = {
-			isa = PBXGroup;
-			children = (
-				893B148F1EA125FA002E8F72 /* myLocationUITests.swift */,
-				893B14911EA125FA002E8F72 /* Info.plist */,
-			);
-			path = myLocationUITests;
+			path = Socka_Phone;
 			sourceTree = "<group>";
 		};
 		893B149D1EA12658002E8F72 /* Frameworks */ = {
@@ -401,7 +371,7 @@
 			);
 			name = "MHD APP";
 			productName = myLocation;
-			productReference = 893B146C1EA125FA002E8F72 /* myLocation.app */;
+			productReference = 893B146C1EA125FA002E8F72 /* Socka.app */;
 			productType = "com.apple.product-type.application";
 		};
 		893B147F1EA125FA002E8F72 /* MHD APPTests */ = {
@@ -480,7 +450,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 893B14671EA125FA002E8F72 /* Build configuration list for PBXProject "myLocation" */;
+			buildConfigurationList = 893B14671EA125FA002E8F72 /* Build configuration list for PBXProject "Socka" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -517,7 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				892F531A21A0DF0C0058CDFC /* Assets.xcassets in Resources */,
-				899CE13221E1E73100F51F6D /* DataBaze.sqlite in Resources */,
+				89AFC21E223BDF8E00D7E207 /* DataBaze.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,12 +575,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				899CA1A321CFC73A009F9DF0 /* Downloader_W.swift in Sources */,
-				899599A221A18FDA002F490E /* DataBaze.xcdatamodeld in Sources */,
-				899CA1A121CFC71A009F9DF0 /* Databaze_W.swift in Sources */,
+				89AFC21F223BDF9200D7E207 /* Databaze_W.swift in Sources */,
+				89AFC220223BDF9500D7E207 /* Lokace_W.swift in Sources */,
+				89AFC221223BDF9900D7E207 /* Downloader_W.swift in Sources */,
 				892F531621A0DF0C0058CDFC /* NotificationController.swift in Sources */,
 				8941678021D2E0270048047E /* downloadVC_W.swift in Sources */,
-				899CA19D21CFC671009F9DF0 /* Lokace_W.swift in Sources */,
+				89AFC226223BE05200D7E207 /* DataBaze.xcdatamodel in Sources */,
 				892F531821A0DF0C0058CDFC /* ComplicationController.swift in Sources */,
 				899CA19B21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift in Sources */,
 				899CA19F21CFC6F3009F9DF0 /* Data_pool.swift in Sources */,
@@ -642,7 +612,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				893B14851EA125FA002E8F72 /* myLocationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,7 +619,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				893B14901EA125FA002E8F72 /* myLocationUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,7 +896,7 @@
 				INFOPLIST_FILE = myLocation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.myLocation";
-				PRODUCT_NAME = myLocation;
+				PRODUCT_NAME = Socka;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -949,7 +917,7 @@
 				INFOPLIST_FILE = myLocation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.myLocation";
-				PRODUCT_NAME = myLocation;
+				PRODUCT_NAME = Socka;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1035,7 +1003,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		893B14671EA125FA002E8F72 /* Build configuration list for PBXProject "myLocation" */ = {
+		893B14671EA125FA002E8F72 /* Build configuration list for PBXProject "Socka" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				893B14921EA125FA002E8F72 /* Debug */,
@@ -1081,17 +1049,6 @@
 			);
 			currentVersion = 891DC1491EB358980098A983 /* DataFinal280417.xcdatamodel */;
 			path = DataBaze.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		899599A021A18FDA002F490E /* DataBaze.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				899599A121A18FDA002F490E /* DataFinal280417.xcdatamodel */,
-			);
-			currentVersion = 899599A121A18FDA002F490E /* DataFinal280417.xcdatamodel */;
-			name = DataBaze.xcdatamodeld;
-			path = ../myLocation/DataBaze.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
