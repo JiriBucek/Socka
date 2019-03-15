@@ -60,7 +60,6 @@ class InterfaceController:  SockaWatchBaseVC{
     lazy var barva2 = zelena
     lazy var barva3 = cervena
     
-    let dl = Downloader_W()
     
     @IBOutlet var nearestZastavkaBtn: WKInterfaceButton!
     
@@ -179,9 +178,8 @@ class InterfaceController:  SockaWatchBaseVC{
     }
     
     func zjistiDostupnostNoveDatabaze() -> Bool{
-        let downloader = Downloader_W()
-        let verzeVHodinakch = downloader.zjistiVerziDtbzVHodinkachUserDefaults()
-        let verzeNaNetu = downloader.zjistiVerziDtbzNaWebu()
+        let verzeVHodinakch = databaze.zjistiVerziDtbzVHodinkachUserDefaults()
+        let verzeNaNetu = databaze.zjistiVerziDtbzNaWebu()
         
         print("Verze na netu: \(verzeNaNetu)")
         print("Verze v hodinkách \(verzeVHodinakch)")
@@ -309,7 +307,7 @@ class InterfaceController:  SockaWatchBaseVC{
             {response in
                 if let verze = Int(response.value ?? "0"){
                     
-                    if verze > self.dl.zjistiVerziDtbzVHodinkachUserDefaults(){
+                    if verze > self.databaze.zjistiVerziDtbzVHodinkachUserDefaults(){
                         let stahniClosure = {
                             self.dismiss()
                             self.pushController(withName: "downloadVC", context: nil)
@@ -322,7 +320,6 @@ class InterfaceController:  SockaWatchBaseVC{
                     }
                     
                     dtbzPopUpAlreadyShowed = true
-            
                 }
             }
     }

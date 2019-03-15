@@ -75,8 +75,8 @@ class UpgradeViewController: UIViewController{
                     
                     self.present(alert, animated: true, completion: nil)
                     
-                    let downloader = Downloader()
-                    downloader.zapisVerziDtbzDoUserDefaults(novaVerze: downloader.zjistiVerziDtbzNaWebu())
+                    let databaze = Databaze()
+                    databaze.zapisVerziDtbzDoUserDefaults(novaVerze: databaze.zjistiVerziDtbzNaWebu())
 
                 }else{
                     

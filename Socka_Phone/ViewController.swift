@@ -350,9 +350,8 @@ class ViewController: SockaBaseVC{
     }
     
     func zjistiDostupnostNoveDatabaze() -> Bool{
-        let downloader = Downloader()
-        let verzeVtelefonu = downloader.zjistiVerziDtbzVTelefonuUserDefaults()
-        let verzeNaNetu = downloader.zjistiVerziDtbzNaWebu()
+        let verzeVtelefonu = databaze.zjistiVerziDtbzVTelefonuUserDefaults()
+        let verzeNaNetu = databaze.zjistiVerziDtbzNaWebu()
         
         if verzeVtelefonu < verzeNaNetu{
             print("Je dostupná nová verze!")

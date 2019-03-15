@@ -36,8 +36,8 @@ class InfoViewController: UIViewController {
         hlavniLabel.allowsDefaultTighteningForTruncation = true
         hlavniLabel.minimumScaleFactor = 0.1
         
-        let dl = Downloader()
-        verzeDtbzLabel.text = "Verze databáze: \(dl.zjistiVerziDtbzVTelefonuUserDefaults())"
+        let databaze = Databaze()
+        verzeDtbzLabel.text = "Verze databáze: \(databaze.zjistiVerziDtbzVTelefonuUserDefaults())"
         verzeAplikaceLabel.text = "Verze aplikace: \(String(describing: Bundle.main.infoDictionary!["CFBundleShortVersionString"]!))"
         
         scrollView.bottomAnchor.constraint(equalTo: zavritBTN.bottomAnchor).isActive = true

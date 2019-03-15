@@ -132,7 +132,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Socka_Watch" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Socka__Watch_Extension"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>

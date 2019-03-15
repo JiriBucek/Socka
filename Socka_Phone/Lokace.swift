@@ -11,6 +11,7 @@ import CoreLocation
 
 
 class Lokace: NSObject, CLLocationManagerDelegate{
+    //vrací polohu uživatele
     
     static let shared = Lokace()
     var currentLocation = CLLocation()

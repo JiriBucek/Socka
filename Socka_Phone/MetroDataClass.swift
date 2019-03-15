@@ -31,8 +31,5 @@ class MetroDataClass: NSObject{
     var nextZastavka21: String?
     var nextZastavka22: String?
     var nextZastavka23: String?
-
-    
-    
 }
 

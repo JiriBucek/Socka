@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		891DC14A1EB358980098A983 /* DataBaze.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 891DC1481EB358980098A983 /* DataBaze.xcdatamodeld */; };
+		892E47ED223C193C00E64350 /* Data_pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */; };
 		892F530421A0DF070058CDFC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 892F530221A0DF070058CDFC /* Interface.storyboard */; };
 		892F530621A0DF0B0058CDFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 892F530521A0DF0B0058CDFC /* Assets.xcassets */; };
 		892F530D21A0DF0B0058CDFC /* Socka_ Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 892F530C21A0DF0B0058CDFC /* Socka_ Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -23,7 +24,6 @@
 		893B147A1EA125FA002E8F72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 893B14781EA125FA002E8F72 /* LaunchScreen.storyboard */; };
 		893B149F1EA12658002E8F72 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 893B149E1EA12658002E8F72 /* CoreLocation.framework */; };
 		893BA9ED1EDF6CF6002B9932 /* UpgradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893BA9EC1EDF6CF6002B9932 /* UpgradeViewController.swift */; };
-		8941677621D255120048047E /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941677521D255120048047E /* Downloader.swift */; };
 		8941677C21D255C50048047E /* Databaze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941677B21D255C50048047E /* Databaze.swift */; };
 		8941677E21D256F60048047E /* Lokace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941677D21D256F60048047E /* Lokace.swift */; };
 		8941678021D2E0270048047E /* downloadVC_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941677F21D2E0270048047E /* downloadVC_W.swift */; };
@@ -32,12 +32,10 @@
 		8980EF5D1FA561A2003CE9E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */; };
 		899CA19621CFBA35009F9DF0 /* MetroDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838921C366DB0070E276 /* MetroDataClass.swift */; };
 		899CA19B21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA19A21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift */; };
-		899CA19F21CFC6F3009F9DF0 /* Data_pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA19E21CFC6F3009F9DF0 /* Data_pool.swift */; };
 		899CE12D21E1054E00F51F6D /* DataBaze.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 899CE12C21E1054E00F51F6D /* DataBaze.sqlite */; };
 		89AFC21E223BDF8E00D7E207 /* DataBaze.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 899CE12F21E1057C00F51F6D /* DataBaze.sqlite */; };
 		89AFC21F223BDF9200D7E207 /* Databaze_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA1A021CFC71A009F9DF0 /* Databaze_W.swift */; };
 		89AFC220223BDF9500D7E207 /* Lokace_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA19C21CFC671009F9DF0 /* Lokace_W.swift */; };
-		89AFC221223BDF9900D7E207 /* Downloader_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA1A221CFC73A009F9DF0 /* Downloader_W.swift */; };
 		89AFC226223BE05200D7E207 /* DataBaze.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 89AFC225223BE05200D7E207 /* DataBaze.xcdatamodel */; };
 		89C3838A21C366DB0070E276 /* MetroDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838921C366DB0070E276 /* MetroDataClass.swift */; };
 		89C3838C21C36A9E0070E276 /* SockaBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */; };
@@ -146,7 +144,6 @@
 		893B148B1EA125FA002E8F72 /* MHD APPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MHD APPUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		893B149E1EA12658002E8F72 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		893BA9EC1EDF6CF6002B9932 /* UpgradeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeViewController.swift; sourceTree = "<group>"; };
-		8941677521D255120048047E /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		8941677B21D255C50048047E /* Databaze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Databaze.swift; sourceTree = "<group>"; };
 		8941677D21D256F60048047E /* Lokace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lokace.swift; sourceTree = "<group>"; };
 		8941677F21D2E0270048047E /* downloadVC_W.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = downloadVC_W.swift; sourceTree = "<group>"; };
@@ -157,7 +154,6 @@
 		899CA19C21CFC671009F9DF0 /* Lokace_W.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lokace_W.swift; path = "Socka_Watch Extension/Lokace_W.swift"; sourceTree = SOURCE_ROOT; };
 		899CA19E21CFC6F3009F9DF0 /* Data_pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data_pool.swift; sourceTree = SOURCE_ROOT; };
 		899CA1A021CFC71A009F9DF0 /* Databaze_W.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Databaze_W.swift; path = "Socka_Watch Extension/Databaze_W.swift"; sourceTree = SOURCE_ROOT; };
-		899CA1A221CFC73A009F9DF0 /* Downloader_W.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Downloader_W.swift; path = "Socka_Watch Extension/Downloader_W.swift"; sourceTree = SOURCE_ROOT; };
 		899CE12C21E1054E00F51F6D /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataBaze.sqlite; sourceTree = "<group>"; };
 		899CE12F21E1057C00F51F6D /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = DataBaze.sqlite; path = "Socka_Watch Extension/DataBaze.sqlite"; sourceTree = SOURCE_ROOT; };
 		89AFC225223BE05200D7E207 /* DataBaze.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = DataBaze.xcdatamodel; path = Socka_Phone/DataBaze.xcdatamodeld/DataBaze.xcdatamodel; sourceTree = SOURCE_ROOT; };
@@ -238,7 +234,6 @@
 			children = (
 				892F531121A0DF0B0058CDFC /* InterfaceController.swift */,
 				8941677F21D2E0270048047E /* downloadVC_W.swift */,
-				899CA1A221CFC73A009F9DF0 /* Downloader_W.swift */,
 				899CA19C21CFC671009F9DF0 /* Lokace_W.swift */,
 				899CA1A021CFC71A009F9DF0 /* Databaze_W.swift */,
 				899CE12F21E1057C00F51F6D /* DataBaze.sqlite */,
@@ -284,7 +279,6 @@
 			children = (
 				897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */,
 				89C3838921C366DB0070E276 /* MetroDataClass.swift */,
-				8941677521D255120048047E /* Downloader.swift */,
 				8941677D21D256F60048047E /* Lokace.swift */,
 				89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */,
 				8941677B21D255C50048047E /* Databaze.swift */,
@@ -577,13 +571,12 @@
 			files = (
 				89AFC21F223BDF9200D7E207 /* Databaze_W.swift in Sources */,
 				89AFC220223BDF9500D7E207 /* Lokace_W.swift in Sources */,
-				89AFC221223BDF9900D7E207 /* Downloader_W.swift in Sources */,
 				892F531621A0DF0C0058CDFC /* NotificationController.swift in Sources */,
 				8941678021D2E0270048047E /* downloadVC_W.swift in Sources */,
+				892E47ED223C193C00E64350 /* Data_pool.swift in Sources */,
 				89AFC226223BE05200D7E207 /* DataBaze.xcdatamodel in Sources */,
 				892F531821A0DF0C0058CDFC /* ComplicationController.swift in Sources */,
 				899CA19B21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift in Sources */,
-				899CA19F21CFC6F3009F9DF0 /* Data_pool.swift in Sources */,
 				892F531421A0DF0C0058CDFC /* ExtensionDelegate.swift in Sources */,
 				892F531221A0DF0B0058CDFC /* InterfaceController.swift in Sources */,
 				899CA19621CFBA35009F9DF0 /* MetroDataClass.swift in Sources */,
@@ -594,7 +587,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8941677621D255120048047E /* Downloader.swift in Sources */,
 				893B14721EA125FA002E8F72 /* ViewController.swift in Sources */,
 				893BA9ED1EDF6CF6002B9932 /* UpgradeViewController.swift in Sources */,
 				893B14701EA125FA002E8F72 /* AppDelegate.swift in Sources */,

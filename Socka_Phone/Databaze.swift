@@ -10,11 +10,11 @@ import Foundation
 import CoreData
 
 public class Databaze{
+    //propojeni na Core Data datamodel
+    //fetch dat z sqlite souboru
     
     
     let verzeDTBZvTomtoBundlu = 4
-    //verze dtbz, kterou prikladam do bundlu. Nemeni se.
-    let downloader = Downloader()
     
     lazy var persistentContainer: NSPersistentContainer = {
         //vytvoří container, který má pod sebou více vrstev core dat
@@ -28,7 +28,7 @@ public class Databaze{
         
         
         //CHECK ZDA V TELEFONU NENÍ ZASTARALÁ DATABÁZE
-        if FileManager.default.fileExists(atPath: (dtbzFileUrlVDokumentech.path)) && (downloader.zjistiVerziDtbzVTelefonuUserDefaults() < verzeDTBZvTomtoBundlu){
+        if FileManager.default.fileExists(atPath: (dtbzFileUrlVDokumentech.path)) && (zjistiVerziDtbzVTelefonuUserDefaults() < verzeDTBZvTomtoBundlu){
             //Přemazávání starých databázi v telefonu při aktualizaci databáze. Pro případ aktualizace a existence staré dtbz v telefonu
             print("Mažu starou databázi v telefonu.")
             do{
@@ -47,7 +47,7 @@ public class Databaze{
             
             do {
                 try FileManager.default.copyItem(at: bundleFileUrl!, to: dtbzFileUrlVDokumentech)
-                downloader.zapisVerziDtbzDoUserDefaults(novaVerze: verzeDTBZvTomtoBundlu)
+                zapisVerziDtbzDoUserDefaults(novaVerze: verzeDTBZvTomtoBundlu)
                 print("Databaze zkopirovana z bundlu do dokumentů v telefonu.")
                 //zkopiruje tento soubor do slozky dokumentu do founu
             }catch{
@@ -146,6 +146,34 @@ public class Databaze{
         }
         return final_data
     }
+    
+    func zjistiVerziDtbzNaWebu() -> Int{
+        //logne se na muj web a zjistí aktuální verzi dtbz na webu
+        var verzeNaWebu = 0
+        
+        if let url = URL(string: "http://socka.funsite.cz/verze.htm") {
+            do {
+                verzeNaWebu = try Int(String(contentsOf: url)) ?? 0
+            } catch {
+                print("")
+            }
+        } else {
+            print("Nedokážu se lognout na web a zjistit verzi")
+            // the URL was bad!
+        }
+        return verzeNaWebu
+    }
+    
+    func zjistiVerziDtbzVTelefonuUserDefaults() -> Int{
+        let verze = UserDefaults.standard.integer(forKey: "verzeDtbz")
+        return verze
+    }
+    
+    func zapisVerziDtbzDoUserDefaults(novaVerze: Int){
+        UserDefaults.standard.set(novaVerze, forKey: "verzeDtbz")
+        print("Zapisuji novou verzi: ", novaVerze)
+    }
+    
     
     
 }
