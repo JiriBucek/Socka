@@ -11,6 +11,7 @@ import Alamofire
 
 
 class UpgradeViewController: UIViewController{
+    // VC pro aktualizaci databaze.
     
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
@@ -28,14 +29,8 @@ class UpgradeViewController: UIViewController{
         stahniNovouDtbz()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     override func viewDidLoad() {
-        
         textView.layer.cornerRadius = 15.0
         celeView.layer.cornerRadius = 15.0
         
@@ -45,7 +40,7 @@ class UpgradeViewController: UIViewController{
     }
     
     func stahniNovouDtbz(){
-        //Stáhne přes Alamofire soubor databáze z webu a zkopíruje jej do služky dokumentů. Pokud už tam něco je, tak ten soubor přemaže.
+        // Stáhne přes Alamofire soubor databáze z webu a zkopíruje jej do složky dokumentů. Pokud už tam něco je, tak ten soubor přemaže.
         
         let destination: DownloadRequest.DownloadFileDestination = { _, _ in
             let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -65,7 +60,7 @@ class UpgradeViewController: UIViewController{
             .response{response in
                 
                 if response.error == nil{
-                    
+                    // Uspech.
                     self.celeView.isHidden = true
                     
                     let alert = UIAlertController(title: "Jízdní řády byly aktualizovány.", message: nil, preferredStyle: .alert)
@@ -79,7 +74,7 @@ class UpgradeViewController: UIViewController{
                     databaze.zapisVerziDtbzDoUserDefaults(novaVerze: databaze.zjistiVerziDtbzNaWebu())
 
                 }else{
-                    
+                    // Neuspech.
                     self.celeView.isHidden = true
                     
                     let alert = UIAlertController(title: "Chyba.", message: "Chyba při ukládání nové databáze. Zkuste Socku restartovat.", preferredStyle: .alert)

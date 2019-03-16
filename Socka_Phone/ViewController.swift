@@ -7,10 +7,6 @@
 //
 
 import UIKit
-import MapKit
-import CoreData
-import SystemConfiguration
-import Alamofire
 
 
 var zastavkySwitch: Int = 0
@@ -204,92 +200,9 @@ class ViewController: SockaBaseVC{
         }
         }
     
-    func formatTime(time: Int) -> String{
-    //v ezme cas v INT a preklopi ho do stringu s dvojteckama
-        var time = String(describing: time)
-        
-        while time.count < 5{
-            let index = time.startIndex
-            time.insert("0", at: index)
-        }
-        
-        let index = time.index(time.endIndex, offsetBy: -2)
-        time.insert(":", at: index)
-        let index2 = time.index(time.endIndex, offsetBy: -5)
-        time.insert(":", at: index2)
-
-        return time
-    }
-    
-
-    func getDocumentsDirectory() -> URL {
-        //Vypíše cestu do dokumentu
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
-    }
-    
-    
-    func myTimeDifference(to targetTime: Int) -> Int{
-    //spočitá rozdíl mezi časem metra a současným časem
-        let time = targetTime - current_time()
-        return time
-    }
-    
-    func rozdilCasuTypuDate(datum1: Date, datum2: Date) -> Int{
-        //vrati rozdil dvou objektu typu Date v sekundach
-        let datum1prevedeno = datum1.timeIntervalSince1970
-        let datum2prevedeno = datum2.timeIntervalSince1970
-        return Int(datum1prevedeno - datum2prevedeno)
-    }
-    
-    func timeDifference(arrivalTime: Int) -> String {
-    //odpočítávadlo času ... vezme si Int ve formátu 153421 a dopočítává, kolik zbývá minut a sekund do toho času
-        let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "HH:mm:ss"
-        //velke hacka znamenaji, ze misto 4pm budu mit 16:00
-        
-        let time = formatTime(time: arrivalTime)
-        var stopTime = timeFormatter.date(from: time)
-    
-        let date = Date()
-        let calendar = Calendar.current
-    
-        let year = calendar.component(.year, from: date)
-        let month = calendar.component(.month, from: date)
-        let day = calendar.component(.day, from: date)
-        let hour = calendar.component(.hour, from: stopTime!)
-        let minute = calendar.component(.minute, from: stopTime!)
-        let second = calendar.component(.second, from: stopTime!)
-    
-        stopTime = calendar.date(bySetting: .year, value: year, of: stopTime!)
-        stopTime = calendar.date(bySetting: .month, value: month, of: stopTime!)
-        stopTime = calendar.date(bySetting: .day, value: day, of: stopTime!)
-        stopTime = calendar.date(bySetting: .hour, value: hour, of: stopTime!)
-        stopTime = calendar.date(bySetting: .minute, value: minute, of: stopTime!)
-        stopTime = calendar.date(bySetting: .second, value: second, of: stopTime!)
-    
-        let timeDifference = calendar.dateComponents([.minute, .second], from: date, to: stopTime!)
-        //spočítá časový rozdíl mezi from a to
-        var minuty = String(describing: timeDifference.minute!)
-        var sekundy = String(describing: timeDifference.second!)
-    
-        if Int(minuty)! < -1000{
-        //úprava kvůli přepočtu přes půlnoc, aby to neukazovalo minusove casy
-            minuty = String(Int(minuty)! + 1439)
-            sekundy = String(59 + Int(sekundy)!)
-            }
-
-        if sekundy.count == 1{
-        //přihodí nulu, pokud sekundy mají jen jeden znak
-                let index = sekundy.startIndex
-                sekundy.insert("0", at: index)
-        }
-    
-        return "\(minuty):\(sekundy)"
-    }
-    
     func nastavBarvy(jmenoZastavky: String){
+        // Automaticky nastaví barevné schéma dle aktuální zastávky.
+        
         if let metroLinka = zastavkyIDs[jmenoZastavky]?[2]{
             switch metroLinka {
             case "A":
@@ -310,20 +223,8 @@ class ViewController: SockaBaseVC{
         }
     }
     
-    func zjistiDostupnostNoveDatabaze() -> Bool{
-        let verzeVtelefonu = databaze.zjistiVerziDtbzVDefaults()
-        let verzeNaNetu = databaze.zjistiVerziDtbzNaWebu()
-        
-        if verzeVtelefonu < verzeNaNetu{
-            print("Je dostupná nová verze!")
-            return true
-        }else{
-            return false
-        }
-    }
-    
     func ukazUpgradeVC(){
-    //vyskoci okynko s vystrahou, ze je nova verze dtbz
+    // Upgrade VC pro aktualizaci databaze.
         if isInternetAvailable() && zjistiDostupnostNoveDatabaze(){
         
         let currentVC = self.view.window?.rootViewController
@@ -336,35 +237,8 @@ class ViewController: SockaBaseVC{
         }
     }
         
-    
-    func isInternetAvailable() -> Bool {
-    //checkne, jestli jsem pripojenej k netu
-        
-        var zeroAddress = sockaddr_in()
-        zeroAddress.sin_len = UInt8(MemoryLayout<sockaddr_in>.size)
-        zeroAddress.sin_family = sa_family_t(AF_INET)
-        
-        guard let defaultRouteReachability = withUnsafePointer(to: &zeroAddress, {
-            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {
-                SCNetworkReachabilityCreateWithAddress(nil, $0)
-            }
-        }) else {
-            return false
-        }
-        
-        var flags: SCNetworkReachabilityFlags = []
-        if !SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags) {
-            return false
-        }
-        
-        let isReachable = flags.contains(.reachable)
-        let needsConnection = flags.contains(.connectionRequired)
-        
-        return (isReachable && !needsConnection)
-    }
-    
     func schovejSideView(){
-    //schová otevřené side view
+    // Schová otevřené side view
         schovavaciSideViewTrailingConstraint.constant = -schovavaciSideView.frame.size.width - 100
         UIView.animate(withDuration: 0.3, animations: {
         self.view.layoutIfNeeded()
@@ -373,72 +247,12 @@ class ViewController: SockaBaseVC{
     
     
     func prepniNaPrestupniZastavku(zastavka: String){
-    //po kliknutí na prestupni zastavku v sideview schová menu a nastaví přestupní zastávka
+    // Po kliknutí na prestupni zastavku v sideview schová menu a nastaví přestupní zastávka
         prepinaciPomocnaZastavka = zastavka
         zastavkySwitch = 2
         schovejSideView()
     }
     
-    
-    func jeDnesSvatek(){
-    //zjití, zda je tento den státní svátek a pokud ano, vyhodí o tom hlášku
-        var svatek = false
-        
-        let svatky = [[1,1],[30,3],[1,5],[8,5],[5,7],[6,7],[28,9],[28,10],[17,11],[24,12],[25,12],[26,12],[1,4]]
-        let now = Date()
-        let kalendar = Calendar.current
-        let den = kalendar.component(.day, from: now)
-        let mesic = kalendar.component(.month, from: now)
-        let dnesniDen = [den, mesic]
-        
-        if svatky.contains(where: {$0 == dnesniDen}){
-            print("Dnes je svátek")
-            svatek = true
-        }else{
-            svatek = false
-        }
-        
-        if svatek{
-             let alertSvatky = UIAlertController(title: "Dnes je svátek.", message: "Ve dnech svátků je možné, že se časy odjezdu metra budou lišit. Tyto změny není možné ošetřit offline databází. Děkuji za pochopení", preferredStyle: .alert)
-        
-            alertSvatky.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            present(alertSvatky, animated: true)
-        }
-        
-    }
-    
-    func checkLocationEnabled() {
-        //zkontroluje zapnutí polohových služeb. Ty mohou být vypnuty konkrétně pro Socku nebo globálně
-        
-        if CLLocationManager.locationServicesEnabled() {
-            switch CLLocationManager.authorizationStatus() {
-                
-                case .notDetermined, .restricted, .denied:
-                    print("Lokalizace pro Socku vypnuta!")
-                    
-                    let alert = UIAlertController(title: "Lokalizační služby nedostupné", message: "Máš vypnuty lokalizační služby, bez nichž nemůže Socka určit tvou polohu a nejbližší zastávku metra. Zapni je prosím v Nastavení/Socka/Poloha/", preferredStyle: .alert)
-                    
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
-                        self.dismiss(animated: true, completion: nil)
-                    }
-                    ))
-                
-                     self.present(alert, animated: true, completion: nil)
-                
-                case .authorizedAlways, .authorizedWhenInUse:
-                    print("Lokalizační služby povoleny.")
-            }
-        }else{
-            let alert = UIAlertController(title: "Lokalizační služby nedostupné", message: "Máš vypnuty lokalizační služby, bez nichž nemůže Socka určit tvou polohu a nejbližší zastávku metra. Zapni je prosím v Nastavení/Soukromí/Polohové služby/", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {action in
-                self.dismiss(animated: true, completion: nil)
-            }
-            ))
-            
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
 }
 
 
