@@ -75,7 +75,7 @@ class UpgradeViewController: UIViewController{
                     
                     self.present(alert, animated: true, completion: nil)
                     
-                    let databaze = Databaze()
+                    let databaze = Databaze(zarizeni: .MOBIL)
                     databaze.zapisVerziDtbzDoUserDefaults(novaVerze: databaze.zjistiVerziDtbzNaWebu())
 
                 }else{

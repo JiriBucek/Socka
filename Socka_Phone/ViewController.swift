@@ -350,7 +350,7 @@ class ViewController: SockaBaseVC{
     }
     
     func zjistiDostupnostNoveDatabaze() -> Bool{
-        let verzeVtelefonu = databaze.zjistiVerziDtbzVTelefonuUserDefaults()
+        let verzeVtelefonu = databaze.zjistiVerziDtbzVDefaults()
         let verzeNaNetu = databaze.zjistiVerziDtbzNaWebu()
         
         if verzeVtelefonu < verzeNaNetu{

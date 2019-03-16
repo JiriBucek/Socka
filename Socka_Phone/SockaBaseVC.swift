@@ -19,7 +19,7 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
     var zastavkySwitch: Int = 0
     var metroData = MetroDataClass()
     var triNejblizsiZastavkyPrepinaciArray = [String]()
-    let databaze = Databaze()
+    let databaze = Databaze(zarizeni: .MOBIL)
     var lokace = Lokace()
     
     

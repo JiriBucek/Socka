@@ -225,6 +225,7 @@
 				89C3838921C366DB0070E276 /* MetroDataClass.swift */,
 				892E47F9223D50F100E64350 /* DataBaze.xcdatamodeld */,
 				899CE12C21E1054E00F51F6D /* DataBaze.sqlite */,
+				8941677B21D255C50048047E /* Databaze.swift */,
 				8941677D21D256F60048047E /* Lokace.swift */,
 			);
 			path = Socka_common;
@@ -287,7 +288,6 @@
 			isa = PBXGroup;
 			children = (
 				89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */,
-				8941677B21D255C50048047E /* Databaze.swift */,
 				893B146F1EA125FA002E8F72 /* AppDelegate.swift */,
 				8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */,
 				893B14711EA125FA002E8F72 /* ViewController.swift */,

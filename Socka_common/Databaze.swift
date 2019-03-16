@@ -10,11 +10,12 @@ import Foundation
 import CoreData
 
 public class Databaze{
-    //propojeni na Core Data datamodel
-    //fetch dat z sqlite souboru
+    //  Propojeni na Core Data datamodel.
+    //  Kopírování databáze z bundlu.
+    //  Fetch dat z sqlite souboru.
+    //  Ukládání verze uložené databáze.
     
     var zarizeni: typZarizeni
-    
     enum typZarizeni
         {
             case MOBIL
@@ -28,99 +29,83 @@ public class Databaze{
     let verzeDTBZvTomtoBundlu = 4
     
     lazy var persistentContainer: NSPersistentContainer = {
-        //vytvoří container, který má pod sebou více vrstev core dat
+        // Core Data
         
         let container = NSPersistentContainer(name: "DataBaze")
         let DatabazeString: String = "DataBaze"
         var persistentStoreDescriptions: NSPersistentStoreDescription
-        
         let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
         let dtbzFileUrlVDokumentech = URL(fileURLWithPath: documentDirectoryPath!).appendingPathComponent("DataBaze")
         
-        
-        //CHECK ZDA V TELEFONU NENÍ ZASTARALÁ DATABÁZE
-        if FileManager.default.fileExists(atPath: (dtbzFileUrlVDokumentech.path)) && (zjistiVerziDtbzVTelefonuUserDefaults() < verzeDTBZvTomtoBundlu){
-            //Přemazávání starých databázi v telefonu při aktualizaci databáze. Pro případ aktualizace a existence staré dtbz v telefonu
-            print("Mažu starou databázi v telefonu.")
+        //  Check, zda není v telefonu stará databáze. Kvůli aktualizaci z App Storu.
+        if FileManager.default.fileExists(atPath: (dtbzFileUrlVDokumentech.path)) && (zjistiVerziDtbzVDefaults() < verzeDTBZvTomtoBundlu){
+            
             do{
                 try FileManager.default.removeItem(at: dtbzFileUrlVDokumentech)
+                  print("Mažu starou databázi pro", zarizeni)
             }catch{
-                print("Nepodařilo se smazat starou databázi v telefonu.")
+                print("Nepodařilo se smazat starou databázi pro", zarizeni)
             }
         }
         
-        //KOPÍROVÁNÍ DATABÁZE Z BUNDLU
+        // Kopírování databáze z bundlu
         if !FileManager.default.fileExists(atPath: (dtbzFileUrlVDokumentech.path)) {
-            //existuje uz na tom umisteni soubor DataFinal280417.sqlite?. Kdyz ne, tak:
             
             let bundleFileUrl = Bundle.main.url(forResource: DatabazeString, withExtension: "sqlite")
-            //najde soubor sql v bundlu appky
             
             do {
                 try FileManager.default.copyItem(at: bundleFileUrl!, to: dtbzFileUrlVDokumentech)
                 zapisVerziDtbzDoUserDefaults(novaVerze: verzeDTBZvTomtoBundlu)
-                print("Databaze zkopirovana z bundlu do dokumentů v telefonu.")
-                //zkopiruje tento soubor do slozky dokumentu do founu
+                print("Databaze zkopirovana z bundlu do dokumentů pro.", zarizeni)
             }catch{
-                print("Nepodařilo se zkopírovat databázi z bundlu do hodinek.")
+                print("Nepodařilo se zkopírovat databázi z bundlu pro.", zarizeni)
             }
         }
         
-        //logne se na persistaent store = sql file
+        // Log na persistant store = sql file
         container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: dtbzFileUrlVDokumentech)]
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error {
-                fatalError("Error ve watch databázi: \(error),")
+                fatalError("Error v databázi: \(error), pro \(self.zarizeni)")
             }
         })
         return container
     }()
     
     func saveContext() {
-        //funkce k ulozeni zmen
+        //Uložení změn
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
                 try context.save()
             } catch let error as NSError {
-                fatalError("Error ve funkci saveContext v telefonu: \(error), \(error.userInfo)")
+                fatalError("Error ve funkci saveContext: \(error), \(error.userInfo) pro \(zarizeni)")
             }
         }
     }
     
     func fetchData(station_id: String, service_id: Int, results_count: Int, current_time: Int) -> [[Any]]{
-        //fetchne data z databíze
+        // Fetch dat z databáze
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FullEntity")
-        //vytvoření kominikacniho objectu a zadání názvu entity
-        
         var final_data = [[Any]]()
-        //tohle to nakonec vrátí
-        
         let databaze = Databaze(zarizeni: zarizeni)
-        
         request.returnsObjectsAsFaults = false
-        //pokud je to false, nereturnuju to fetchnuty data jako faults .. faults znamena, ze to napise misto konkretnich dat jen data = faults. Setri to pamet.
+        // Lepsi performance.
         
         let context = databaze.persistentContainer.viewContext
-        
-        
-        //PREDICATES a SORTDESCRIPTORS
         let current_time = current_time
         let station_id = station_id
         let schedule_id = service_id
-        
         var subPredicates = [NSPredicate]()
-        //array s predikátama
-        
         let oneSubpredicate = NSPredicate(format: "stop_id == %@ AND service_id == %i AND arrival_time > %i", station_id, schedule_id, current_time)
-        // pro string pouziju %@, integer %i, key %K
-        subPredicates.append(oneSubpredicate)
+        // Pro string pouziji %@, integer %i, key %K.
         
+        subPredicates.append(oneSubpredicate)
         let myPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: subPredicates)
-        //souhrnný predicate typu OR
+        // Souhrnný predicate typu OR.
         
         let mySortDescriptor = NSSortDescriptor(key: "arrival_time", ascending: true)
-        //seradi fetch data podle casu smerem nahoru
+        // Seradi fetch data podle casu smerem nahoru.
         
         request.predicate = myPredicate
         request.sortDescriptors = [mySortDescriptor]
@@ -175,14 +160,24 @@ public class Databaze{
         return verzeNaWebu
     }
     
-    func zjistiVerziDtbzVTelefonuUserDefaults() -> Int{
-        let verze = UserDefaults.standard.integer(forKey: "verzeDtbz")
+    func zjistiVerziDtbzVDefaults() -> Int{
+        var verze = UserDefaults.standard.integer(forKey: "verzeDtbz")
+        
+        if zarizeni == .HODINKY{
+            verze = UserDefaults.standard.integer(forKey: "verzeDtbzWatch")
+        }
+        
         return verze
     }
     
     func zapisVerziDtbzDoUserDefaults(novaVerze: Int){
         UserDefaults.standard.set(novaVerze, forKey: "verzeDtbz")
-        print("Zapisuji novou verzi: ", novaVerze)
+        
+        if zarizeni == .HODINKY{
+            UserDefaults.standard.set(novaVerze, forKey: "verzeDtbzWatch")
+        }
+        
+        print("Zapisuji novou verzi: ", novaVerze, "pro", zarizeni)
     }
     
     

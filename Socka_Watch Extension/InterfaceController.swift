@@ -178,7 +178,7 @@ class InterfaceController:  SockaWatchBaseVC{
     }
     
     func zjistiDostupnostNoveDatabaze() -> Bool{
-        let verzeVHodinakch = databaze.zjistiVerziDtbzVHodinkachUserDefaults()
+        let verzeVHodinakch = databaze.zjistiVerziDtbzVDefaults()
         let verzeNaNetu = databaze.zjistiVerziDtbzNaWebu()
         
         print("Verze na netu: \(verzeNaNetu)")
@@ -307,7 +307,7 @@ class InterfaceController:  SockaWatchBaseVC{
             {response in
                 if let verze = Int(response.value ?? "0"){
                     
-                    if verze > self.databaze.zjistiVerziDtbzVHodinkachUserDefaults(){
+                    if verze > self.databaze.zjistiVerziDtbzVDefaults(){
                         let stahniClosure = {
                             self.dismiss()
                             self.pushController(withName: "downloadVC", context: nil)

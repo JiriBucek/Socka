@@ -45,8 +45,8 @@ class downloadVC_W: WKInterfaceController {
                     let action1 = WKAlertAction(title: "Ok", style: .default, handler: presentMainVC)
                     self.presentAlert(withTitle: "Jízdní řády jsou aktuální.", message: nil, preferredStyle: .alert, actions: [action1])
                     
-                    let databaze = Databaze(zarizeni: .MOBIL)
-                    databaze.zapisVerziDtbzDoUserDefaultsHodinek(novaVerze: databaze.zjistiVerziDtbzNaWebu())
+                    let databaze = Databaze(zarizeni: .HODINKY)
+                    databaze.zapisVerziDtbzDoUserDefaults(novaVerze: databaze.zjistiVerziDtbzNaWebu())
                     
                 }else{
                     print(response.error as Any)

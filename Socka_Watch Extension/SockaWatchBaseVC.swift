@@ -22,7 +22,7 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
     var triNejblizsiZastavkyPrepinaciArray = [String]()
     //objekt, který obsahuje veškeré informace pro zobrazení na displeji
     
-    let databaze = Databaze(zarizeni: .MOBIL)
+    let databaze = Databaze(zarizeni: .HODINKY)
     var lokace = Lokace()
     
     override func awake(withContext context: Any?) {

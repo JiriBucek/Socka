@@ -12,7 +12,7 @@
         <!--mainVC-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="mainVC" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Socka__Watch_Extension">
+                <controller identifier="mainVC" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Socka_Watch_Extension">
                     <items>
                         <group width="1" height="1" alignment="center" verticalAlignment="center" contentMode="top" layout="vertical" id="10M-NY-Ck9">
                             <items>
@@ -91,7 +91,7 @@
         <!--downloadVC-->
         <scene sceneID="4JU-AQ-IEa">
             <objects>
-                <controller identifier="downloadVC" id="kdW-KV-k5v" customClass="downloadVC_W" customModule="Socka__Watch_Extension">
+                <controller identifier="downloadVC" id="kdW-KV-k5v" customClass="downloadVC_W" customModule="Socka_Watch_Extension">
                     <items>
                         <group width="1" height="1" alignment="center" verticalAlignment="center" layout="vertical" spacing="11" id="Bsi-6p-fru">
                             <items>
