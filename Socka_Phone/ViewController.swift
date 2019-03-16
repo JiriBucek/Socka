@@ -141,24 +141,24 @@ class ViewController: SockaBaseVC{
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
-    //vybarví status bar nahoře
+    // Status bar barva.
         return .default
     }
     
     
     @objc func displayAllValues(){
-    //přiřadí hodnoty jednotlivým labelum
+    // Hodnoty pro všechny labely.
         
         triNejblizsiZastavkyPrepinaciArray = lokace.triNejblizsiZastavkyArray
         
         if triNejblizsiZastavkyPrepinaciArray != triNejblizsiZastavky{
-        //prepinac pro pripad, ze se zmeni poloha
+        // Prepinac pro pripad, ze se zmeni poloha.
             triNejblizsiZastavky = triNejblizsiZastavkyPrepinaciArray
             prepinaciPomocnaZastavka = triNejblizsiZastavky[0]
         }
         
         if prepinaciPomocnaZastavka != aktualneZobrazovanaZastavka{
-        //prepinac pro pripad zmeny polohy nebo prepnuti zastacky uzivatelem
+        // Prepinac pro pripad prepnuti zastavky uzivatelem.
             aktualneZobrazovanaZastavka = prepinaciPomocnaZastavka
             fillMetroDataObject()
         }
@@ -205,7 +205,7 @@ class ViewController: SockaBaseVC{
         }
     
     func formatTime(time: Int) -> String{
-    //vezme cas v INT a preklopi ho do stringu s dvojteckama
+    //v ezme cas v INT a preklopi ho do stringu s dvojteckama
         var time = String(describing: time)
         
         while time.count < 5{
