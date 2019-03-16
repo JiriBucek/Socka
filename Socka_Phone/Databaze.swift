@@ -13,6 +13,17 @@ public class Databaze{
     //propojeni na Core Data datamodel
     //fetch dat z sqlite souboru
     
+    var zarizeni: typZarizeni
+    
+    enum typZarizeni
+        {
+            case MOBIL
+            case HODINKY
+        }
+    
+    init(zarizeni: typZarizeni) {
+        self.zarizeni = zarizeni
+    }
     
     let verzeDTBZvTomtoBundlu = 4
     
@@ -85,7 +96,7 @@ public class Databaze{
         var final_data = [[Any]]()
         //tohle to nakonec vrátí
         
-        let databaze = Databaze()
+        let databaze = Databaze(zarizeni: zarizeni)
         
         request.returnsObjectsAsFaults = false
         //pokud je to false, nereturnuju to fetchnuty data jako faults .. faults znamena, ze to napise misto konkretnich dat jen data = faults. Setri to pamet.

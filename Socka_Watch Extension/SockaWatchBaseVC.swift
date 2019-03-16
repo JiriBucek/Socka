@@ -23,10 +23,10 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
     //objekt, který obsahuje veškeré informace pro zobrazení na displeji
     
     let databaze = Databaze_W()
-    var lokace = Lokace_W()
+    var lokace = Lokace()
     
     override func awake(withContext context: Any?) {
-        lokace = Lokace_W.shared
+        lokace = Lokace.shared
         //shared je singleton lokace
         lokace.start()
         //zacne updatovat polohu

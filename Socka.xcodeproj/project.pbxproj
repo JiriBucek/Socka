@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		891DC14A1EB358980098A983 /* DataBaze.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 891DC1481EB358980098A983 /* DataBaze.xcdatamodeld */; };
+		0ABEDDD52FC7A326DAE46456 /* Pods_Socka_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3F8925E211FA8CC3310143 /* Pods_Socka_Watch_Extension.framework */; };
 		892E47ED223C193C00E64350 /* Data_pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */; };
+		892E47F0223D4F9000E64350 /* DataBaze.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 899CE12C21E1054E00F51F6D /* DataBaze.sqlite */; };
+		892E47FB223D50F200E64350 /* DataBaze.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 892E47F9223D50F100E64350 /* DataBaze.xcdatamodeld */; };
+		892E47FC223D50F200E64350 /* DataBaze.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 892E47F9223D50F100E64350 /* DataBaze.xcdatamodeld */; };
 		892F530421A0DF070058CDFC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 892F530221A0DF070058CDFC /* Interface.storyboard */; };
 		892F530621A0DF0B0058CDFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 892F530521A0DF0B0058CDFC /* Assets.xcassets */; };
-		892F530D21A0DF0B0058CDFC /* Socka_ Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 892F530C21A0DF0B0058CDFC /* Socka_ Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		892F530D21A0DF0B0058CDFC /* Socka_Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 892F530C21A0DF0B0058CDFC /* Socka_Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		892F531221A0DF0B0058CDFC /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F531121A0DF0B0058CDFC /* InterfaceController.swift */; };
 		892F531421A0DF0C0058CDFC /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F531321A0DF0C0058CDFC /* ExtensionDelegate.swift */; };
 		892F531621A0DF0C0058CDFC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F531521A0DF0C0058CDFC /* NotificationController.swift */; };
@@ -27,20 +30,19 @@
 		8941677C21D255C50048047E /* Databaze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941677B21D255C50048047E /* Databaze.swift */; };
 		8941677E21D256F60048047E /* Lokace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941677D21D256F60048047E /* Lokace.swift */; };
 		8941678021D2E0270048047E /* downloadVC_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941677F21D2E0270048047E /* downloadVC_W.swift */; };
+		89613A83223D52120015EF28 /* Lokace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941677D21D256F60048047E /* Lokace.swift */; };
+		89613A84223D53740015EF28 /* Databaze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941677B21D255C50048047E /* Databaze.swift */; };
 		896E89FC1F85A73A007F029E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E89FB1F85A73A007F029E /* InfoViewController.swift */; };
 		897BFE4E1EBA0D9C009C59F0 /* Data_pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */; };
 		8980EF5D1FA561A2003CE9E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */; };
 		899CA19621CFBA35009F9DF0 /* MetroDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838921C366DB0070E276 /* MetroDataClass.swift */; };
 		899CA19B21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA19A21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift */; };
 		899CE12D21E1054E00F51F6D /* DataBaze.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 899CE12C21E1054E00F51F6D /* DataBaze.sqlite */; };
-		89AFC21E223BDF8E00D7E207 /* DataBaze.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 899CE12F21E1057C00F51F6D /* DataBaze.sqlite */; };
 		89AFC21F223BDF9200D7E207 /* Databaze_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA1A021CFC71A009F9DF0 /* Databaze_W.swift */; };
 		89AFC220223BDF9500D7E207 /* Lokace_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA19C21CFC671009F9DF0 /* Lokace_W.swift */; };
-		89AFC226223BE05200D7E207 /* DataBaze.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 89AFC225223BE05200D7E207 /* DataBaze.xcdatamodel */; };
 		89C3838A21C366DB0070E276 /* MetroDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838921C366DB0070E276 /* MetroDataClass.swift */; };
 		89C3838C21C36A9E0070E276 /* SockaBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */; };
 		9C1D9CEAEFB4AC3228B85CEE /* libPods-Socka Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF70C0D0D660B48A602B755 /* libPods-Socka Extension.a */; };
-		AEAAEA8FB67DEBD825929E15 /* libPods-MHD APP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F02EAD2B0B42CE59A876949 /* libPods-MHD APP.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +83,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				892F530D21A0DF0B0058CDFC /* Socka_ Watch Extension.appex in Embed App Extensions */,
+				892F530D21A0DF0B0058CDFC /* Socka_Watch Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,13 +122,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3C99B36C6C7295AB0C7E5C10 /* Pods-Socka_Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka_Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Socka_Watch Extension/Pods-Socka_Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		481793089E17EDB58FA103C2 /* Pods-Socka Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Socka Extension/Pods-Socka Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		891DC1491EB358980098A983 /* DataFinal280417.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataFinal280417.xcdatamodel; sourceTree = "<group>"; };
+		80205256E9D98E46D8905018 /* Pods_Socka_Phone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Socka_Phone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8586880F4FFBC4E22F169976 /* Pods-Socka_Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka_Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Socka_Watch Extension/Pods-Socka_Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		892E47FA223D50F100E64350 /* DataFinal280417.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataFinal280417.xcdatamodel; sourceTree = "<group>"; };
 		892F530021A0DF070058CDFC /* Socka_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Socka_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		892F530321A0DF070058CDFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		892F530521A0DF0B0058CDFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		892F530721A0DF0B0058CDFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		892F530C21A0DF0B0058CDFC /* Socka_ Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Socka_ Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		892F530C21A0DF0B0058CDFC /* Socka_Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Socka_Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		892F531121A0DF0B0058CDFC /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		892F531321A0DF0C0058CDFC /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		892F531521A0DF0C0058CDFC /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
@@ -148,15 +153,12 @@
 		8941677D21D256F60048047E /* Lokace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lokace.swift; sourceTree = "<group>"; };
 		8941677F21D2E0270048047E /* downloadVC_W.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = downloadVC_W.swift; sourceTree = "<group>"; };
 		896E89FB1F85A73A007F029E /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data_pool.swift; path = ../Data_pool.swift; sourceTree = "<group>"; };
+		897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data_pool.swift; sourceTree = "<group>"; };
 		8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		899CA19A21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SockaWatchBaseVC.swift; sourceTree = "<group>"; };
 		899CA19C21CFC671009F9DF0 /* Lokace_W.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lokace_W.swift; path = "Socka_Watch Extension/Lokace_W.swift"; sourceTree = SOURCE_ROOT; };
-		899CA19E21CFC6F3009F9DF0 /* Data_pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data_pool.swift; sourceTree = SOURCE_ROOT; };
 		899CA1A021CFC71A009F9DF0 /* Databaze_W.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Databaze_W.swift; path = "Socka_Watch Extension/Databaze_W.swift"; sourceTree = SOURCE_ROOT; };
 		899CE12C21E1054E00F51F6D /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataBaze.sqlite; sourceTree = "<group>"; };
-		899CE12F21E1057C00F51F6D /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = DataBaze.sqlite; path = "Socka_Watch Extension/DataBaze.sqlite"; sourceTree = SOURCE_ROOT; };
-		89AFC225223BE05200D7E207 /* DataBaze.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = DataBaze.xcdatamodel; path = Socka_Phone/DataBaze.xcdatamodeld/DataBaze.xcdatamodel; sourceTree = SOURCE_ROOT; };
 		89C3838921C366DB0070E276 /* MetroDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroDataClass.swift; sourceTree = "<group>"; };
 		89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SockaBaseVC.swift; sourceTree = "<group>"; };
 		9F02EAD2B0B42CE59A876949 /* libPods-MHD APP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MHD APP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,7 @@
 		C30AA060E76DF00B527714D4 /* Pods-MHD APP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHD APP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHD APP/Pods-MHD APP.debug.xcconfig"; sourceTree = "<group>"; };
 		D552D31CDC65E80080E0D6C7 /* Pods-Socka Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Socka Extension/Pods-Socka Extension.release.xcconfig"; sourceTree = "<group>"; };
 		EDF70C0D0D660B48A602B755 /* libPods-Socka Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Socka Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD3F8925E211FA8CC3310143 /* Pods_Socka_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Socka_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C1D9CEAEFB4AC3228B85CEE /* libPods-Socka Extension.a in Frameworks */,
+				0ABEDDD52FC7A326DAE46456 /* Pods_Socka_Watch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +184,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				893B149F1EA12658002E8F72 /* CoreLocation.framework in Frameworks */,
-				AEAAEA8FB67DEBD825929E15 /* libPods-MHD APP.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,8 +218,22 @@
 				D552D31CDC65E80080E0D6C7 /* Pods-Socka Extension.release.xcconfig */,
 				C30AA060E76DF00B527714D4 /* Pods-MHD APP.debug.xcconfig */,
 				AC8DA6115DCA3D0E396ABD8E /* Pods-MHD APP.release.xcconfig */,
+				3C99B36C6C7295AB0C7E5C10 /* Pods-Socka_Watch Extension.debug.xcconfig */,
+				8586880F4FFBC4E22F169976 /* Pods-Socka_Watch Extension.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		892E47EE223D4F3600E64350 /* Socka_common */ = {
+			isa = PBXGroup;
+			children = (
+				897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */,
+				89C3838921C366DB0070E276 /* MetroDataClass.swift */,
+				892E47F9223D50F100E64350 /* DataBaze.xcdatamodeld */,
+				899CE12C21E1054E00F51F6D /* DataBaze.sqlite */,
+				8941677D21D256F60048047E /* Lokace.swift */,
+			);
+			path = Socka_common;
 			sourceTree = "<group>";
 		};
 		892F530121A0DF070058CDFC /* Socka_Watch */ = {
@@ -236,11 +253,8 @@
 				8941677F21D2E0270048047E /* downloadVC_W.swift */,
 				899CA19C21CFC671009F9DF0 /* Lokace_W.swift */,
 				899CA1A021CFC71A009F9DF0 /* Databaze_W.swift */,
-				899CE12F21E1057C00F51F6D /* DataBaze.sqlite */,
-				899CA19E21CFC6F3009F9DF0 /* Data_pool.swift */,
 				899CA19A21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift */,
 				892F531321A0DF0C0058CDFC /* ExtensionDelegate.swift */,
-				89AFC225223BE05200D7E207 /* DataBaze.xcdatamodel */,
 				892F531521A0DF0C0058CDFC /* NotificationController.swift */,
 				892F531721A0DF0C0058CDFC /* ComplicationController.swift */,
 				892F531921A0DF0C0058CDFC /* Assets.xcassets */,
@@ -253,6 +267,7 @@
 		893B14631EA125FA002E8F72 = {
 			isa = PBXGroup;
 			children = (
+				892E47EE223D4F3600E64350 /* Socka_common */,
 				893B146E1EA125FA002E8F72 /* Socka_Phone */,
 				892F530121A0DF070058CDFC /* Socka_Watch */,
 				892F531021A0DF0B0058CDFC /* Socka_Watch Extension */,
@@ -269,7 +284,7 @@
 				893B14801EA125FA002E8F72 /* MHD APPTests.xctest */,
 				893B148B1EA125FA002E8F72 /* MHD APPUITests.xctest */,
 				892F530021A0DF070058CDFC /* Socka_Watch.app */,
-				892F530C21A0DF0B0058CDFC /* Socka_ Watch Extension.appex */,
+				892F530C21A0DF0B0058CDFC /* Socka_Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -277,18 +292,13 @@
 		893B146E1EA125FA002E8F72 /* Socka_Phone */ = {
 			isa = PBXGroup;
 			children = (
-				897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */,
-				89C3838921C366DB0070E276 /* MetroDataClass.swift */,
-				8941677D21D256F60048047E /* Lokace.swift */,
 				89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */,
 				8941677B21D255C50048047E /* Databaze.swift */,
 				893B146F1EA125FA002E8F72 /* AppDelegate.swift */,
 				8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */,
 				893B14711EA125FA002E8F72 /* ViewController.swift */,
 				893BA9EC1EDF6CF6002B9932 /* UpgradeViewController.swift */,
-				891DC1481EB358980098A983 /* DataBaze.xcdatamodeld */,
 				893B14731EA125FA002E8F72 /* Main.storyboard */,
-				899CE12C21E1054E00F51F6D /* DataBaze.sqlite */,
 				896E89FB1F85A73A007F029E /* InfoViewController.swift */,
 				893B14781EA125FA002E8F72 /* LaunchScreen.storyboard */,
 				893B147B1EA125FA002E8F72 /* Info.plist */,
@@ -302,6 +312,8 @@
 				893B149E1EA12658002E8F72 /* CoreLocation.framework */,
 				EDF70C0D0D660B48A602B755 /* libPods-Socka Extension.a */,
 				9F02EAD2B0B42CE59A876949 /* libPods-MHD APP.a */,
+				80205256E9D98E46D8905018 /* Pods_Socka_Phone.framework */,
+				FD3F8925E211FA8CC3310143 /* Pods_Socka_Watch_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -327,29 +339,29 @@
 			productReference = 892F530021A0DF070058CDFC /* Socka_Watch.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		892F530B21A0DF0B0058CDFC /* Socka_ Watch Extension */ = {
+		892F530B21A0DF0B0058CDFC /* Socka_Watch Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 892F532421A0DF0C0058CDFC /* Build configuration list for PBXNativeTarget "Socka_ Watch Extension" */;
+			buildConfigurationList = 892F532421A0DF0C0058CDFC /* Build configuration list for PBXNativeTarget "Socka_Watch Extension" */;
 			buildPhases = (
 				9336DE962D3C149354046AEE /* [CP] Check Pods Manifest.lock */,
 				892F530821A0DF0B0058CDFC /* Sources */,
 				892F530921A0DF0B0058CDFC /* Frameworks */,
 				892F530A21A0DF0B0058CDFC /* Resources */,
+				F0043681BAD5F06866C92659 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Socka_ Watch Extension";
+			name = "Socka_Watch Extension";
 			productName = "Socka Extension";
-			productReference = 892F530C21A0DF0B0058CDFC /* Socka_ Watch Extension.appex */;
+			productReference = 892F530C21A0DF0B0058CDFC /* Socka_Watch Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		893B146B1EA125FA002E8F72 /* Socka_Phone */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 893B14941EA125FA002E8F72 /* Build configuration list for PBXNativeTarget "Socka_Phone" */;
 			buildPhases = (
-				4A856E8FB94F18F5871AF3D0 /* [CP] Check Pods Manifest.lock */,
 				893B14681EA125FA002E8F72 /* Sources */,
 				893B14691EA125FA002E8F72 /* Frameworks */,
 				893B146A1EA125FA002E8F72 /* Resources */,
@@ -461,7 +473,7 @@
 				893B147F1EA125FA002E8F72 /* MHD APPTests */,
 				893B148A1EA125FA002E8F72 /* MHD APPUITests */,
 				892F52FF21A0DF070058CDFC /* Socka_Watch */,
-				892F530B21A0DF0B0058CDFC /* Socka_ Watch Extension */,
+				892F530B21A0DF0B0058CDFC /* Socka_Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -480,8 +492,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				892E47F0223D4F9000E64350 /* DataBaze.sqlite in Resources */,
 				892F531A21A0DF0C0058CDFC /* Assets.xcassets in Resources */,
-				89AFC21E223BDF8E00D7E207 /* DataBaze.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,24 +525,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4A856E8FB94F18F5871AF3D0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MHD APP-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		89F298C31EA27F3200AC1968 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -555,11 +549,29 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Socka Extension-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Socka_Watch Extension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0043681BAD5F06866C92659 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Socka_Watch Extension/Pods-Socka_Watch Extension-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Socka_Watch Extension/Pods-Socka_Watch Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -570,11 +582,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				89AFC21F223BDF9200D7E207 /* Databaze_W.swift in Sources */,
+				892E47FC223D50F200E64350 /* DataBaze.xcdatamodeld in Sources */,
+				89613A83223D52120015EF28 /* Lokace.swift in Sources */,
 				89AFC220223BDF9500D7E207 /* Lokace_W.swift in Sources */,
 				892F531621A0DF0C0058CDFC /* NotificationController.swift in Sources */,
+				89613A84223D53740015EF28 /* Databaze.swift in Sources */,
 				8941678021D2E0270048047E /* downloadVC_W.swift in Sources */,
 				892E47ED223C193C00E64350 /* Data_pool.swift in Sources */,
-				89AFC226223BE05200D7E207 /* DataBaze.xcdatamodel in Sources */,
 				892F531821A0DF0C0058CDFC /* ComplicationController.swift in Sources */,
 				899CA19B21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift in Sources */,
 				892F531421A0DF0C0058CDFC /* ExtensionDelegate.swift in Sources */,
@@ -589,12 +603,12 @@
 			files = (
 				893B14721EA125FA002E8F72 /* ViewController.swift in Sources */,
 				893BA9ED1EDF6CF6002B9932 /* UpgradeViewController.swift in Sources */,
+				892E47FB223D50F200E64350 /* DataBaze.xcdatamodeld in Sources */,
 				893B14701EA125FA002E8F72 /* AppDelegate.swift in Sources */,
 				8941677E21D256F60048047E /* Lokace.swift in Sources */,
 				896E89FC1F85A73A007F029E /* InfoViewController.swift in Sources */,
 				89C3838A21C366DB0070E276 /* MetroDataClass.swift in Sources */,
 				8941677C21D255C50048047E /* Databaze.swift in Sources */,
-				891DC14A1EB358980098A983 /* DataBaze.xcdatamodeld in Sources */,
 				89C3838C21C36A9E0070E276 /* SockaBaseVC.swift in Sources */,
 				897BFE4E1EBA0D9C009C59F0 /* Data_pool.swift in Sources */,
 			);
@@ -619,7 +633,7 @@
 /* Begin PBXTargetDependency section */
 		892F530F21A0DF0B0058CDFC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 892F530B21A0DF0B0058CDFC /* Socka_ Watch Extension */;
+			target = 892F530B21A0DF0B0058CDFC /* Socka_Watch Extension */;
 			targetProxy = 892F530E21A0DF0B0058CDFC /* PBXContainerItemProxy */;
 		};
 		892F531E21A0DF0C0058CDFC /* PBXTargetDependency */ = {
@@ -719,7 +733,7 @@
 		};
 		892F532221A0DF0C0058CDFC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 481793089E17EDB58FA103C2 /* Pods-Socka Extension.debug.xcconfig */;
+			baseConfigurationReference = 3C99B36C6C7295AB0C7E5C10 /* Pods-Socka_Watch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -744,7 +758,7 @@
 		};
 		892F532321A0DF0C0058CDFC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D552D31CDC65E80080E0D6C7 /* Pods-Socka Extension.release.xcconfig */;
+			baseConfigurationReference = 8586880F4FFBC4E22F169976 /* Pods-Socka_Watch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -876,7 +890,6 @@
 		};
 		893B14951EA125FA002E8F72 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C30AA060E76DF00B527714D4 /* Pods-MHD APP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F9SQL5NE4J;
@@ -897,7 +910,6 @@
 		};
 		893B14961EA125FA002E8F72 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC8DA6115DCA3D0E396ABD8E /* Pods-MHD APP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F9SQL5NE4J;
@@ -977,7 +989,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		892F532421A0DF0C0058CDFC /* Build configuration list for PBXNativeTarget "Socka_ Watch Extension" */ = {
+		892F532421A0DF0C0058CDFC /* Build configuration list for PBXNativeTarget "Socka_Watch Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				892F532221A0DF0C0058CDFC /* Debug */,
@@ -1034,12 +1046,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		891DC1481EB358980098A983 /* DataBaze.xcdatamodeld */ = {
+		892E47F9223D50F100E64350 /* DataBaze.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				891DC1491EB358980098A983 /* DataFinal280417.xcdatamodel */,
+				892E47FA223D50F100E64350 /* DataFinal280417.xcdatamodel */,
 			);
-			currentVersion = 891DC1491EB358980098A983 /* DataFinal280417.xcdatamodel */;
+			currentVersion = 892E47FA223D50F100E64350 /* DataFinal280417.xcdatamodel */;
 			path = DataBaze.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

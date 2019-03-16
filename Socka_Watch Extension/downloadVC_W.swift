@@ -10,7 +10,6 @@ import UIKit
 import Foundation
 import Alamofire
 
-
 class downloadVC_W: WKInterfaceController {
     
     @IBOutlet var percentOutlet: WKInterfaceLabel!

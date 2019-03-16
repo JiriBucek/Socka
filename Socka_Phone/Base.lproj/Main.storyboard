@@ -12,7 +12,7 @@
         <!--Info View Controller-->
         <scene sceneID="fcs-CD-dVu">
             <objects>
-                <viewController id="Ayq-MO-Ecb" customClass="InfoViewController" customModule="myLocation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ayq-MO-Ecb" customClass="InfoViewController" customModule="Socka" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jCK-Rr-oue"/>
                         <viewControllerLayoutGuide type="bottom" id="tE4-7j-Etm"/>
@@ -124,7 +124,7 @@ Socku si můžete nainstalovat i na Vaše Apple Watch.
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="myLocation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Socka" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -378,7 +378,7 @@ Socku si můžete nainstalovat i na Vaše Apple Watch.
                                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
                                                 <state key="normal" title=" Můstek - A">
-                                                    <color key="titleColor" red="0.093096765659999997" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" red="0.094117647058823528" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="mustekABtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p9g-xj-GMX"/>
@@ -584,7 +584,7 @@ Socku si můžete nainstalovat i na Vaše Apple Watch.
         <!--Upgrade View Controller-->
         <scene sceneID="D0k-XG-fHf">
             <objects>
-                <viewController storyboardIdentifier="1" id="hWL-Ng-vjH" customClass="UpgradeViewController" customModule="myLocation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="1" id="hWL-Ng-vjH" customClass="UpgradeViewController" customModule="Socka" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dvo-PJ-5VB"/>
                         <viewControllerLayoutGuide type="bottom" id="EnA-1N-aaJ"/>
