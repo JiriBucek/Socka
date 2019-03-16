@@ -109,10 +109,9 @@ public class Databaze{
         
         request.predicate = myPredicate
         request.sortDescriptors = [mySortDescriptor]
-        //přiřadí predicate a sortdescriptor do requestu, descriptoru muze byt vice, proto je to array
         
         do{
-            //fetchne si data podle predicatu a sortdescriptoru a přiřadí je do arraye, který obsahuje jen tolik záznamů, kolik jsem zadal v parametru results_count
+            // Fetch.
             let results = try context.fetch(request)
             
             if results.count > 0{
@@ -125,26 +124,25 @@ public class Databaze{
                         single_array.append(stop_id)
                         single_array.append(arrival_time)
                         single_array.append(trip_headsign)
-                        //přiřadí values do array
                     }
+                    
                     final_data.append(single_array)
-                    //přiřadí single array do konečného arraye
                     
                     if final_data.count > results_count - 1{
                         break
-                        //díky tomuto to vrátí jen požadovaný počet výsledků
+                        // Break na požadovaný počet výsledků.
                     }
                 }
             }
             
         }catch{
-            print("Nepodařil se fetch v telefonu.")
+            print("Nepodařil se fetch pro.", zarizeni)
         }
         return final_data
     }
     
     func zjistiVerziDtbzNaWebu() -> Int{
-        //logne se na muj web a zjistí aktuální verzi dtbz na webu
+        // Zjistí verzi databaze na webu.
         var verzeNaWebu = 0
         
         if let url = URL(string: "http://socka.funsite.cz/verze.htm") {
@@ -155,7 +153,6 @@ public class Databaze{
             }
         } else {
             print("Nedokážu se lognout na web a zjistit verzi")
-            // the URL was bad!
         }
         return verzeNaWebu
     }

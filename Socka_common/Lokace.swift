@@ -11,11 +11,10 @@ import CoreLocation
 
 
 class Lokace: NSObject, CLLocationManagerDelegate{
-    //vrací polohu uživatele
+    // Vrací polohu uživatele.
     
     static let shared = Lokace()
     var currentLocation = CLLocation()
-    
     let locationManager : CLLocationManager
     var triNejblizsiZastavkyArray = [String]()
     
@@ -34,7 +33,6 @@ class Lokace: NSObject, CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations.last!
-        print(currentLocation)
         triNejblizsiZastavkyArray = getTriNejblizsiZastavky()
     }
     
@@ -44,7 +42,7 @@ class Lokace: NSObject, CLLocationManagerDelegate{
  
     
     func getTriNejblizsiZastavky() -> [String]{
-        //vrátí název tří nejbližších zastávek metra a vzdálenosti od usera
+        // Vrátí název tří nejbližších zastávek metra.
         var zastavkyArray = [String:Double]()
         
         for (jmeno_zastavky, lokace_zastavky) in zastavkyGPS{
@@ -59,7 +57,6 @@ class Lokace: NSObject, CLLocationManagerDelegate{
         var triNejblizsiZastavky = [String]()
         
         for i in 0...2{
-            //první tři pozice jsou jména zastávek
             triNejblizsiZastavky.append(zastavkyTuple[i].key)
         }
         
@@ -67,31 +64,29 @@ class Lokace: NSObject, CLLocationManagerDelegate{
     }
     
     func getDalsiTriZastavkyKeKonecne(jmenoZastavky: String, jmenoKonecneZastavky: String) -> [String]{
-        //dostanu array s dalsima trema zastavkama ve smeru ke konecne
+        // Vrátí array s dalšími třemi zastavkami ve směru ke konečné.
         let linkaMetra = getLinkaMetraZastavky(jmenoZastavky: jmenoZastavky)
         var arrayVsechZastavekLinky = [String]()
         var arrayTriZastavek = [String]()
         
-        
         switch linkaMetra{
-        case "A":
-            arrayVsechZastavekLinky = linka_A
+            case "A":
+                arrayVsechZastavekLinky = linka_A
             
-        case "B":
-            arrayVsechZastavekLinky = linka_B
+            case "B":
+                arrayVsechZastavekLinky = linka_B
             
-        case "C":
-            arrayVsechZastavekLinky = linka_C
+            case "C":
+                arrayVsechZastavekLinky = linka_C
             
-        default:
-            print("Nepodařilo se načíst array stanic metra")
+            default:
+                print("Nepodařilo se načíst array stanic metra")
         }
         
         let indexZastavky = Int(arrayVsechZastavekLinky.index(of: jmenoZastavky)!)
         let indexKonecne = Int(arrayVsechZastavekLinky.index(of: jmenoKonecneZastavky)!)
         
         var i: Int
-        
         
         if indexZastavky > indexKonecne{
             i = -1
@@ -117,10 +112,16 @@ class Lokace: NSObject, CLLocationManagerDelegate{
         return arrayTriZastavek
     }
     
-    func getLinkaMetraZastavky(jmenoZastavky: String) -> String{
-        //returne linku metra
-        let linkaMetra = zastavkyIDs[jmenoZastavky]?[2]
-        return linkaMetra!
+    func getLinkaMetraZastavky(jmenoZastavky: String) -> String?{
+        // Vrací linku metra pro danou zastávku.
+        
+        if let linka = zastavkyIDs[jmenoZastavky]?[2]{
+            return linka
+        }else{
+            print("Nepodařilo se zjistit linku metra pro zastávku:", jmenoZastavky)
+            return nil
+        }
+        
     }
     
 }
