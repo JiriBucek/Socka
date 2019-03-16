@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>MHD APPTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>Socka (Complication).xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -27,33 +32,33 @@
 		<key>Socka_Phone.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>3</integer>
 		</dict>
 		<key>Socka_Watch (Complication).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>2</integer>
 		</dict>
 		<key>Socka_Watch (Notification).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>1</integer>
 		</dict>
 		<key>Socka_Watch.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>4</integer>
 		</dict>
 		<key>Socka_Watch_.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -64,16 +69,6 @@
 			<true/>
 		</dict>
 		<key>893B146B1EA125FA002E8F72</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>893B147F1EA125FA002E8F72</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>893B148A1EA125FA002E8F72</key>
 		<dict>
 			<key>primary</key>
 			<true/>

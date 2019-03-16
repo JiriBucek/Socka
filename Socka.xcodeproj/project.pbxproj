@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0ABEDDD52FC7A326DAE46456 /* Pods_Socka_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3F8925E211FA8CC3310143 /* Pods_Socka_Watch_Extension.framework */; };
+		890F167C223D85170025FA61 /* downloadVC_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941677F21D2E0270048047E /* downloadVC_W.swift */; };
 		892E47ED223C193C00E64350 /* Data_pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */; };
 		892E47F0223D4F9000E64350 /* DataBaze.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 899CE12C21E1054E00F51F6D /* DataBaze.sqlite */; };
 		892E47FB223D50F200E64350 /* DataBaze.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 892E47F9223D50F100E64350 /* DataBaze.xcdatamodeld */; };
@@ -29,7 +29,6 @@
 		893BA9ED1EDF6CF6002B9932 /* UpgradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893BA9EC1EDF6CF6002B9932 /* UpgradeViewController.swift */; };
 		8941677C21D255C50048047E /* Databaze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941677B21D255C50048047E /* Databaze.swift */; };
 		8941677E21D256F60048047E /* Lokace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941677D21D256F60048047E /* Lokace.swift */; };
-		8941678021D2E0270048047E /* downloadVC_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941677F21D2E0270048047E /* downloadVC_W.swift */; };
 		89613A83223D52120015EF28 /* Lokace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941677D21D256F60048047E /* Lokace.swift */; };
 		89613A84223D53740015EF28 /* Databaze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8941677B21D255C50048047E /* Databaze.swift */; };
 		896E89FC1F85A73A007F029E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896E89FB1F85A73A007F029E /* InfoViewController.swift */; };
@@ -42,7 +41,8 @@
 		89AFC220223BDF9500D7E207 /* Lokace_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA19C21CFC671009F9DF0 /* Lokace_W.swift */; };
 		89C3838A21C366DB0070E276 /* MetroDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838921C366DB0070E276 /* MetroDataClass.swift */; };
 		89C3838C21C36A9E0070E276 /* SockaBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */; };
-		9C1D9CEAEFB4AC3228B85CEE /* libPods-Socka Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF70C0D0D660B48A602B755 /* libPods-Socka Extension.a */; };
+		B6AAA1A504E08EC0D8D1F11F /* Pods_Socka_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696039B3668E8B772F5AB815 /* Pods_Socka_Watch_Extension.framework */; };
+		BEE0B3EF8FCB887E70AF19BF /* Pods_Socka_Phone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF5C932F5FE6D3ABFEFA7B7 /* Pods_Socka_Phone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,10 +122,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3C99B36C6C7295AB0C7E5C10 /* Pods-Socka_Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka_Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Socka_Watch Extension/Pods-Socka_Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		481793089E17EDB58FA103C2 /* Pods-Socka Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Socka Extension/Pods-Socka Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		80205256E9D98E46D8905018 /* Pods_Socka_Phone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Socka_Phone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8586880F4FFBC4E22F169976 /* Pods-Socka_Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka_Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Socka_Watch Extension/Pods-Socka_Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		01B9AD45DE679D007E976C7B /* Pods-Socka_Phone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka_Phone.release.xcconfig"; path = "Pods/Target Support Files/Pods-Socka_Phone/Pods-Socka_Phone.release.xcconfig"; sourceTree = "<group>"; };
+		696039B3668E8B772F5AB815 /* Pods_Socka_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Socka_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EF5C932F5FE6D3ABFEFA7B7 /* Pods_Socka_Phone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Socka_Phone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		892E47FA223D50F100E64350 /* DataFinal280417.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataFinal280417.xcdatamodel; sourceTree = "<group>"; };
 		892F530021A0DF070058CDFC /* Socka_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Socka_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		892F530321A0DF070058CDFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -161,12 +160,9 @@
 		899CE12C21E1054E00F51F6D /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataBaze.sqlite; sourceTree = "<group>"; };
 		89C3838921C366DB0070E276 /* MetroDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroDataClass.swift; sourceTree = "<group>"; };
 		89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SockaBaseVC.swift; sourceTree = "<group>"; };
-		9F02EAD2B0B42CE59A876949 /* libPods-MHD APP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MHD APP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC8DA6115DCA3D0E396ABD8E /* Pods-MHD APP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHD APP.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHD APP/Pods-MHD APP.release.xcconfig"; sourceTree = "<group>"; };
-		C30AA060E76DF00B527714D4 /* Pods-MHD APP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHD APP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHD APP/Pods-MHD APP.debug.xcconfig"; sourceTree = "<group>"; };
-		D552D31CDC65E80080E0D6C7 /* Pods-Socka Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Socka Extension/Pods-Socka Extension.release.xcconfig"; sourceTree = "<group>"; };
-		EDF70C0D0D660B48A602B755 /* libPods-Socka Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Socka Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD3F8925E211FA8CC3310143 /* Pods_Socka_Watch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Socka_Watch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DB6B70EB7B2AAD276780CCE /* Pods-Socka_Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka_Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Socka_Watch Extension/Pods-Socka_Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		AB6675FDCE21217CADDCDE72 /* Pods-Socka_Phone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka_Phone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Socka_Phone/Pods-Socka_Phone.debug.xcconfig"; sourceTree = "<group>"; };
+		BE5E5763F259D0AE06033D37 /* Pods-Socka_Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka_Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Socka_Watch Extension/Pods-Socka_Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C1D9CEAEFB4AC3228B85CEE /* libPods-Socka Extension.a in Frameworks */,
-				0ABEDDD52FC7A326DAE46456 /* Pods_Socka_Watch_Extension.framework in Frameworks */,
+				B6AAA1A504E08EC0D8D1F11F /* Pods_Socka_Watch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				893B149F1EA12658002E8F72 /* CoreLocation.framework in Frameworks */,
+				BEE0B3EF8FCB887E70AF19BF /* Pods_Socka_Phone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,15 +207,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		738F30CEC1529587162C000C /* Pods */ = {
+		2442CFB073E043DA15444648 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				481793089E17EDB58FA103C2 /* Pods-Socka Extension.debug.xcconfig */,
-				D552D31CDC65E80080E0D6C7 /* Pods-Socka Extension.release.xcconfig */,
-				C30AA060E76DF00B527714D4 /* Pods-MHD APP.debug.xcconfig */,
-				AC8DA6115DCA3D0E396ABD8E /* Pods-MHD APP.release.xcconfig */,
-				3C99B36C6C7295AB0C7E5C10 /* Pods-Socka_Watch Extension.debug.xcconfig */,
-				8586880F4FFBC4E22F169976 /* Pods-Socka_Watch Extension.release.xcconfig */,
+				AB6675FDCE21217CADDCDE72 /* Pods-Socka_Phone.debug.xcconfig */,
+				01B9AD45DE679D007E976C7B /* Pods-Socka_Phone.release.xcconfig */,
+				BE5E5763F259D0AE06033D37 /* Pods-Socka_Watch Extension.debug.xcconfig */,
+				9DB6B70EB7B2AAD276780CCE /* Pods-Socka_Watch Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -273,7 +267,7 @@
 				892F531021A0DF0B0058CDFC /* Socka_Watch Extension */,
 				893B146D1EA125FA002E8F72 /* Products */,
 				893B149D1EA12658002E8F72 /* Frameworks */,
-				738F30CEC1529587162C000C /* Pods */,
+				2442CFB073E043DA15444648 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -310,10 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				893B149E1EA12658002E8F72 /* CoreLocation.framework */,
-				EDF70C0D0D660B48A602B755 /* libPods-Socka Extension.a */,
-				9F02EAD2B0B42CE59A876949 /* libPods-MHD APP.a */,
-				80205256E9D98E46D8905018 /* Pods_Socka_Phone.framework */,
-				FD3F8925E211FA8CC3310143 /* Pods_Socka_Watch_Extension.framework */,
+				7EF5C932F5FE6D3ABFEFA7B7 /* Pods_Socka_Phone.framework */,
+				696039B3668E8B772F5AB815 /* Pods_Socka_Watch_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -347,7 +339,7 @@
 				892F530821A0DF0B0058CDFC /* Sources */,
 				892F530921A0DF0B0058CDFC /* Frameworks */,
 				892F530A21A0DF0B0058CDFC /* Resources */,
-				F0043681BAD5F06866C92659 /* [CP] Embed Pods Frameworks */,
+				A5975A07038F7D855C4D53B7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -362,6 +354,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 893B14941EA125FA002E8F72 /* Build configuration list for PBXNativeTarget "Socka_Phone" */;
 			buildPhases = (
+				F8AD24F91949EA418270AF6C /* [CP] Check Pods Manifest.lock */,
 				893B14681EA125FA002E8F72 /* Sources */,
 				893B14691EA125FA002E8F72 /* Frameworks */,
 				893B146A1EA125FA002E8F72 /* Resources */,
@@ -369,6 +362,7 @@
 				89F298BD1EA27E8A00AC1968 /* Copy Files */,
 				89F298C31EA27F3200AC1968 /* ShellScript */,
 				892F532721A0DF0C0058CDFC /* Embed Watch Content */,
+				8F18D3CEE871791E625C2194 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -538,6 +532,24 @@
 			shellPath = /bin/sh;
 			shellScript = "";
 		};
+		8F18D3CEE871791E625C2194 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Socka_Phone/Pods-Socka_Phone-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Socka_Phone/Pods-Socka_Phone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9336DE962D3C149354046AEE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -556,14 +568,14 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F0043681BAD5F06866C92659 /* [CP] Embed Pods Frameworks */ = {
+		A5975A07038F7D855C4D53B7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Socka_Watch Extension/Pods-Socka_Watch Extension-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-watchOS/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -572,6 +584,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Socka_Watch Extension/Pods-Socka_Watch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8AD24F91949EA418270AF6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Socka_Phone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -587,7 +617,7 @@
 				89AFC220223BDF9500D7E207 /* Lokace_W.swift in Sources */,
 				892F531621A0DF0C0058CDFC /* NotificationController.swift in Sources */,
 				89613A84223D53740015EF28 /* Databaze.swift in Sources */,
-				8941678021D2E0270048047E /* downloadVC_W.swift in Sources */,
+				890F167C223D85170025FA61 /* downloadVC_W.swift in Sources */,
 				892E47ED223C193C00E64350 /* Data_pool.swift in Sources */,
 				892F531821A0DF0C0058CDFC /* ComplicationController.swift in Sources */,
 				899CA19B21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift in Sources */,
@@ -733,7 +763,7 @@
 		};
 		892F532221A0DF0C0058CDFC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C99B36C6C7295AB0C7E5C10 /* Pods-Socka_Watch Extension.debug.xcconfig */;
+			baseConfigurationReference = BE5E5763F259D0AE06033D37 /* Pods-Socka_Watch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -758,7 +788,7 @@
 		};
 		892F532321A0DF0C0058CDFC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8586880F4FFBC4E22F169976 /* Pods-Socka_Watch Extension.release.xcconfig */;
+			baseConfigurationReference = 9DB6B70EB7B2AAD276780CCE /* Pods-Socka_Watch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -890,6 +920,7 @@
 		};
 		893B14951EA125FA002E8F72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB6675FDCE21217CADDCDE72 /* Pods-Socka_Phone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F9SQL5NE4J;
@@ -910,6 +941,7 @@
 		};
 		893B14961EA125FA002E8F72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01B9AD45DE679D007E976C7B /* Pods-Socka_Phone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = F9SQL5NE4J;
