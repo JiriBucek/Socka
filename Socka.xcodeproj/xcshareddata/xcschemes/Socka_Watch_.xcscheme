@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "892F52FF21A0DF070058CDFC"
-               BuildableName = "Socka_Watch.app"
-               BlueprintName = "Socka_Watch"
-               ReferencedContainer = "container:Socka.xcodeproj">
+               BuildableName = "Socka_Phone.app"
+               BlueprintName = "Socka_Phone"
+               ReferencedContainer = "container:Socka_Phone.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -30,8 +30,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "893B146B1EA125FA002E8F72"
                BuildableName = "Socka.app"
-               BlueprintName = "Socka_Phone"
-               ReferencedContainer = "container:Socka.xcodeproj">
+               BlueprintName = "MHD APP"
+               ReferencedContainer = "container:Socka_Phone.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "892F52FF21A0DF070058CDFC"
-            BuildableName = "Socka_Watch.app"
-            BlueprintName = "Socka_Watch"
-            ReferencedContainer = "container:Socka.xcodeproj">
+            BuildableName = "Socka_Phone.app"
+            BlueprintName = "Socka_Phone"
+            ReferencedContainer = "container:Socka_Phone.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -73,18 +73,18 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "892F52FF21A0DF070058CDFC"
-            BuildableName = "Socka_Watch.app"
-            BlueprintName = "Socka_Watch"
-            ReferencedContainer = "container:Socka.xcodeproj">
+            BuildableName = "Socka_Phone.app"
+            BlueprintName = "Socka_Phone"
+            ReferencedContainer = "container:Socka_Phone.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "892F52FF21A0DF070058CDFC"
-            BuildableName = "Socka_Watch.app"
-            BlueprintName = "Socka_Watch"
-            ReferencedContainer = "container:Socka.xcodeproj">
+            BuildableName = "Socka_Phone.app"
+            BlueprintName = "Socka_Phone"
+            ReferencedContainer = "container:Socka_Phone.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -103,18 +103,18 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "892F52FF21A0DF070058CDFC"
-            BuildableName = "Socka_Watch.app"
-            BlueprintName = "Socka_Watch"
-            ReferencedContainer = "container:Socka.xcodeproj">
+            BuildableName = "Socka_Phone.app"
+            BlueprintName = "Socka_Phone"
+            ReferencedContainer = "container:Socka_Phone.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "892F52FF21A0DF070058CDFC"
-            BuildableName = "Socka_Watch.app"
-            BlueprintName = "Socka_Watch"
-            ReferencedContainer = "container:Socka.xcodeproj">
+            BuildableName = "Socka_Phone.app"
+            BlueprintName = "Socka_Phone"
+            ReferencedContainer = "container:Socka_Phone.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
