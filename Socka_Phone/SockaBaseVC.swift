@@ -11,6 +11,7 @@ import UIKit
 import CoreLocation
 
 class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
+    //Superclass pro hlavní VC
     
     public var aktualneZobrazovanaZastavka: String = ""
     var prepinaciPomocnaZastavka = ""
@@ -22,27 +23,23 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
     let databaze = Databaze(zarizeni: .MOBIL)
     var lokace = Lokace()
     
-    
     override func viewDidLoad() {
         lokace = Lokace.shared
-        //shared je singleton lokace
+        // Singleton lokace
         lokace.start()
-        //zacne updatovat polohu
-        
         triNejblizsiZastavky = lokace.triNejblizsiZastavkyArray
         
         if triNejblizsiZastavky.count == 3{
-        //pro pripad, ze by se lokace jeste nechytila
+        // Pro pripad, ze by se lokace jeste nechytila
             aktualneZobrazovanaZastavka = triNejblizsiZastavky[0]
         }
         
         prepinaciPomocnaZastavka = aktualneZobrazovanaZastavka
         fillMetroDataObject()
-        
     }
     
     func fillMetroDataObject(){
-        //vytvoří objekt se všemi informacemi pro screen
+        // Vytvoří objekt MetroDataClass se všemi informacemi pro screen.
         
         var metro_times = [[Any]]()
         var konecna1 = String()
@@ -53,7 +50,7 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
         metro_times = get_metro_times(jmenoZastavky: aktualneZobrazovanaZastavka)
         
         if metro_times.indices.contains(2){
-            //sezene konecne a nasledne zastavky ke konecnym
+            //  Konecne a nasledne zastavky ke konecnym.
             
             konecna2 = String(describing: metro_times[0][2])
             arrayPristichZastavek2 = (lokace.getDalsiTriZastavkyKeKonecne(jmenoZastavky: aktualneZobrazovanaZastavka, jmenoKonecneZastavky: konecna2))
@@ -82,22 +79,20 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
     
     
     func get_metro_times(jmenoZastavky: String) -> [[Any]]!{
-        //vrátí array s dvěma konecnyma a ctyrma casama
+        // Vrátí array s dvěmi konečnými zastávkami a jejich čtyřmi časy příjezdů.
         
         if let station_ids = zastavkyIDs[jmenoZastavky]{
-        //dva ID kody pro danou zastavku a dvě konecne
+        // Dva ID kody pro danou zastavku a dvě konecne
         
         let time = current_time()
-        //soucasny cas jako INT
+        // Soucasny cas jako INT.
         
         let today = getDayOfWeek()
-        
         var service_id = getServiceId(day: today)
-        
         var times1 = databaze.fetchData(station_id: station_ids[0], service_id: service_id, results_count: 2, current_time: time)
         var times2 = databaze.fetchData(station_id: station_ids[1], service_id: service_id, results_count: 2, current_time: time)
         
-        //přiřazení časů po půlnoci
+        // Přiřazení časů po půlnoci.
         if times1.count < 2{
             let resultCount = times1.count
             
@@ -127,18 +122,15 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
         
         
         let times = times1 + times2
-        
-        //print(times)
         return times
             
         }else{
             return []
         }
-        
     }
     
     func getServiceId(day: Int) -> Int{
-        //vrátí service ID pro daný den
+        // Vrátí service ID pro daný den.
         var service_id = Int()
         
         switch day {
@@ -163,7 +155,7 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
     }
     
     func current_time() -> Int{
-        //vrátísoučasný čas jako Int
+        // Vrátí přítomný čas jako Int.
         let date = NSDate()
         let calendar = NSCalendar.current
         let hour = calendar.component(.hour, from: date as Date)
@@ -180,7 +172,7 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
     }
     
     func getDayOfWeek() -> Int{
-        //vrátí den v týdnu jako Int od 1 do 7. Musím od toho odečíst jedničku, protože začínají nedělí jako jedna
+        // Vrátí den v týdnu jako Int od 1 do 7. 1 pondělí.
         let date = Date()
         let calendar = Calendar.current
         var day = calendar.component(.weekday, from: date) - 1
@@ -191,6 +183,7 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
     }
     
     func isAppAlreadyLaunchedOnce()->Bool{
+        // Detektor prvního spuštění aplikace. 
         let defaults = UserDefaults.standard
         if let _ = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
             print("Aplikace již byla v minulosti spuštěna.")

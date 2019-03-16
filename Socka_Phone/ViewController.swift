@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  myLocation
+//
 //
 //  Created by Boocha on 14.04.17.
 //  Copyright © 2017 Boocha. All rights reserved.
@@ -12,43 +12,15 @@ import CoreData
 import SystemConfiguration
 import Alamofire
 
-extension UIColor{
-// rozšíření klasické UIColot, abych mohl zadávat rovnou HEX kod barvy
-    func HexToColor(hexString: String, alpha:CGFloat? = 1.0) -> UIColor {
-        // Convert hex string to an integer
-        let hexint = Int(self.intFromHexString(hexStr: hexString))
-        let red = CGFloat((hexint & 0xff0000) >> 16) / 255.0
-        let green = CGFloat((hexint & 0xff00) >> 8) / 255.0
-        let blue = CGFloat((hexint & 0xff) >> 0) / 255.0
-        let alpha = alpha!
-        // Create color object, specifying alpha as well
-        let color = UIColor(red: red, green: green, blue: blue, alpha: alpha)
-        return color
-    }
-    
-    func intFromHexString(hexStr: String) -> UInt32 {
-        var hexInt: UInt32 = 0
-        // Create scanner
-        let scanner: Scanner = Scanner(string: hexStr)
-        // Tell scanner to skip the # character
-        scanner.charactersToBeSkipped = NSCharacterSet(charactersIn: "#") as CharacterSet
-        // Scan hex value
-        scanner.scanHexInt32(&hexInt)
-        return hexInt
-    }
-}
-
-//MARK - global vars
 
 var zastavkySwitch: Int = 0
-// globalni var pro prehazovani zastavky, pro kterou maji byt zobrazeny casove udaje
+// Globalni var pro prehazovani zastavky, pro kterou maji byt zobrazeny casove udaje.
 var existujeNovaVerzeDTBZ = false
 var prepinaciPomocnaZastavka = ""
 
 
-//MARK - VC
-
 class ViewController: SockaBaseVC{
+    // Hlavní VC.
     
     let cervena = UIColor().HexToColor(hexString: "F30503", alpha: 1.0)
     let zluta = UIColor().HexToColor(hexString: "FFA100", alpha: 1.0)
@@ -58,11 +30,11 @@ class ViewController: SockaBaseVC{
     lazy var barva2 = zelena
     lazy var barva3 = cervena
     
-    //MARK - Outlets
+    // Outlety.
     @IBOutlet weak var nearestZastavkaButton: UIButton!
     
     @IBAction func nearestZastavkaButtonPressed(_ sender: Any) {
-        //prepinani trech nejblizsich stanic
+        // Prepinani trech nejblizsich stanic.
         zastavkySwitch += 1
         if zastavkySwitch == 3{
             zastavkySwitch = 0
@@ -70,9 +42,6 @@ class ViewController: SockaBaseVC{
         if triNejblizsiZastavky.count > 0{
             prepinaciPomocnaZastavka = triNejblizsiZastavky[zastavkySwitch]
         }
-        
-        
-        //po kliknutí na ručně vybranou přestupní stanici se zobrazí zase první dle GPS
     }
     
     @IBOutlet weak var schovavaciSideView: UIView!
@@ -120,7 +89,6 @@ class ViewController: SockaBaseVC{
         schovavaciSideViewTrailingConstraint.constant = 0
     }
     
-
     @IBOutlet weak var schovavaciSideViewTrailingConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var sideMenuMensiView: UIView!
@@ -141,30 +109,23 @@ class ViewController: SockaBaseVC{
     @IBOutlet weak var dalsiZastavkaLabel22: UILabel!
     @IBOutlet weak var dalsiZastavkaLabel23: UILabel!
     
-//MARK - functions
     
     override func viewDidLoad() {
-    //co se stane po loadnutí
-        
-        //pro testovani stazeni databaze
-        //let dl = Downloader()
-        //dl.zapisVerziDtbzDoUserDefaults(novaVerze: 0)
-        /////////////////////////////////////////////
-        
         super.viewDidLoad()
         
+        // Side menu.
         let sirkaObrazovky = schovavaciSideView.frame.size.width
         schovavaciSideViewTrailingConstraint.constant = -sirkaObrazovky - 100
         sideMenuMensiView.layer.shadowOpacity = 1
         sideMenuMensiView.layer.shadowRadius = 6
         
-        //Nastaví font na buttonu hlavní zastávky 
+        // Nastaví font na buttonu hlavní zastávky
         nearestZastavkaButton.titleLabel?.minimumScaleFactor = 0.2
         nearestZastavkaButton.titleLabel?.numberOfLines = 1
         nearestZastavkaButton.titleLabel?.adjustsFontSizeToFitWidth = true
         
+        // Každou sekundu volá funkci displayAllValue
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
-        //každou sekundu updatuje funkci displayAllValue
         
         print(getDocumentsDirectory())
     }

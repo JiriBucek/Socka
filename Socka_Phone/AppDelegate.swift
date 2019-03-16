@@ -43,11 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let lokace = Lokace.shared
         lokace.locationManager.startUpdatingLocation()
         
+        // Přehodí zobrazovanou zastávku zpět na tu nejbližší.
         let myVC = self.window?.rootViewController as? ViewController
         myVC?.zastavkySwitch = 0
         
-    
-        //přehodí zobrazovanou zastávku zpět na tu nejbližší
         if (myVC?.triNejblizsiZastavky.count)! > 0{
             myVC?.prepinaciPomocnaZastavka = (myVC?.triNejblizsiZastavky[(myVC?.zastavkySwitch)!])!
         }
