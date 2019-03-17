@@ -37,8 +37,6 @@
 		899CA19621CFBA35009F9DF0 /* MetroDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838921C366DB0070E276 /* MetroDataClass.swift */; };
 		899CA19B21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA19A21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift */; };
 		899CE12D21E1054E00F51F6D /* DataBaze.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 899CE12C21E1054E00F51F6D /* DataBaze.sqlite */; };
-		89AFC21F223BDF9200D7E207 /* Databaze_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA1A021CFC71A009F9DF0 /* Databaze_W.swift */; };
-		89AFC220223BDF9500D7E207 /* Lokace_W.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899CA19C21CFC671009F9DF0 /* Lokace_W.swift */; };
 		89C3838A21C366DB0070E276 /* MetroDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838921C366DB0070E276 /* MetroDataClass.swift */; };
 		89C3838C21C36A9E0070E276 /* SockaBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */; };
 		89DA7DB4223DA4330089F6B5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DA7DB3223DA4330089F6B5 /* Extensions.swift */; };
@@ -157,8 +155,6 @@
 		897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data_pool.swift; sourceTree = "<group>"; };
 		8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		899CA19A21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SockaWatchBaseVC.swift; sourceTree = "<group>"; };
-		899CA19C21CFC671009F9DF0 /* Lokace_W.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Lokace_W.swift; path = "Socka_Watch Extension/Lokace_W.swift"; sourceTree = SOURCE_ROOT; };
-		899CA1A021CFC71A009F9DF0 /* Databaze_W.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Databaze_W.swift; path = "Socka_Watch Extension/Databaze_W.swift"; sourceTree = SOURCE_ROOT; };
 		899CE12C21E1054E00F51F6D /* DataBaze.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DataBaze.sqlite; sourceTree = "<group>"; };
 		89C3838921C366DB0070E276 /* MetroDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroDataClass.swift; sourceTree = "<group>"; };
 		89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SockaBaseVC.swift; sourceTree = "<group>"; };
@@ -221,26 +217,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		892E47EE223D4F3600E64350 /* Socka_common */ = {
+		892E47EE223D4F3600E64350 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */,
 				89C3838921C366DB0070E276 /* MetroDataClass.swift */,
 				892E47F9223D50F100E64350 /* DataBaze.xcdatamodeld */,
 				899CE12C21E1054E00F51F6D /* DataBaze.sqlite */,
 				8941677B21D255C50048047E /* Databaze.swift */,
-				89DA7DB3223DA4330089F6B5 /* Extensions.swift */,
 				8941677D21D256F60048047E /* Lokace.swift */,
+				897BFE4D1EBA0D9C009C59F0 /* Data_pool.swift */,
+				89DA7DB3223DA4330089F6B5 /* Extensions.swift */,
 			);
-			path = Socka_common;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		892F530121A0DF070058CDFC /* Socka_Watch */ = {
 			isa = PBXGroup;
 			children = (
-				892F530221A0DF070058CDFC /* Interface.storyboard */,
-				892F530521A0DF0B0058CDFC /* Assets.xcassets */,
-				892F530721A0DF0B0058CDFC /* Info.plist */,
+				89DA7DBC223DB5510089F6B5 /* View */,
+				89DA7DBE223DB5630089F6B5 /* Support_files */,
 			);
 			path = Socka_Watch;
 			sourceTree = "<group>";
@@ -248,17 +243,8 @@
 		892F531021A0DF0B0058CDFC /* Socka_Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				892F531121A0DF0B0058CDFC /* InterfaceController.swift */,
-				8941677F21D2E0270048047E /* downloadVC_W.swift */,
-				899CA19C21CFC671009F9DF0 /* Lokace_W.swift */,
-				899CA1A021CFC71A009F9DF0 /* Databaze_W.swift */,
-				899CA19A21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift */,
-				892F531321A0DF0C0058CDFC /* ExtensionDelegate.swift */,
-				892F531521A0DF0C0058CDFC /* NotificationController.swift */,
-				892F531721A0DF0C0058CDFC /* ComplicationController.swift */,
-				892F531921A0DF0C0058CDFC /* Assets.xcassets */,
-				892F531B21A0DF0C0058CDFC /* Info.plist */,
-				892F531C21A0DF0C0058CDFC /* PushNotificationPayload.apns */,
+				89DA7DBA223DB3FD0089F6B5 /* Controller */,
+				89DA7DBB223DB5130089F6B5 /* Support_files */,
 			);
 			path = "Socka_Watch Extension";
 			sourceTree = "<group>";
@@ -266,7 +252,7 @@
 		893B14631EA125FA002E8F72 = {
 			isa = PBXGroup;
 			children = (
-				892E47EE223D4F3600E64350 /* Socka_common */,
+				892E47EE223D4F3600E64350 /* Model */,
 				893B146E1EA125FA002E8F72 /* Socka_Phone */,
 				892F530121A0DF070058CDFC /* Socka_Watch */,
 				892F531021A0DF0B0058CDFC /* Socka_Watch Extension */,
@@ -291,15 +277,9 @@
 		893B146E1EA125FA002E8F72 /* Socka_Phone */ = {
 			isa = PBXGroup;
 			children = (
-				89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */,
-				893B146F1EA125FA002E8F72 /* AppDelegate.swift */,
-				8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */,
-				893B14711EA125FA002E8F72 /* ViewController.swift */,
-				893BA9EC1EDF6CF6002B9932 /* UpgradeViewController.swift */,
-				893B14731EA125FA002E8F72 /* Main.storyboard */,
-				896E89FB1F85A73A007F029E /* InfoViewController.swift */,
-				893B14781EA125FA002E8F72 /* LaunchScreen.storyboard */,
-				893B147B1EA125FA002E8F72 /* Info.plist */,
+				89DA7DB7223DB10B0089F6B5 /* Controller */,
+				89DA7DB8223DB16E0089F6B5 /* View */,
+				89DA7DB9223DB1A60089F6B5 /* Support_files */,
 			);
 			path = Socka_Phone;
 			sourceTree = "<group>";
@@ -312,6 +292,76 @@
 				696039B3668E8B772F5AB815 /* Pods_Socka_Watch_Extension.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		89DA7DB7223DB10B0089F6B5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				896E89FB1F85A73A007F029E /* InfoViewController.swift */,
+				893BA9EC1EDF6CF6002B9932 /* UpgradeViewController.swift */,
+				893B14711EA125FA002E8F72 /* ViewController.swift */,
+				89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		89DA7DB8223DB16E0089F6B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				893B14731EA125FA002E8F72 /* Main.storyboard */,
+				893B14781EA125FA002E8F72 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		89DA7DB9223DB1A60089F6B5 /* Support_files */ = {
+			isa = PBXGroup;
+			children = (
+				893B147B1EA125FA002E8F72 /* Info.plist */,
+				893B146F1EA125FA002E8F72 /* AppDelegate.swift */,
+				8980EF5C1FA561A1003CE9E5 /* Assets.xcassets */,
+			);
+			path = Support_files;
+			sourceTree = "<group>";
+		};
+		89DA7DBA223DB3FD0089F6B5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				892F531121A0DF0B0058CDFC /* InterfaceController.swift */,
+				8941677F21D2E0270048047E /* downloadVC_W.swift */,
+				899CA19A21CFBAF9009F9DF0 /* SockaWatchBaseVC.swift */,
+				892F531721A0DF0C0058CDFC /* ComplicationController.swift */,
+				892F531521A0DF0C0058CDFC /* NotificationController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		89DA7DBB223DB5130089F6B5 /* Support_files */ = {
+			isa = PBXGroup;
+			children = (
+				892F531321A0DF0C0058CDFC /* ExtensionDelegate.swift */,
+				892F531921A0DF0C0058CDFC /* Assets.xcassets */,
+				892F531B21A0DF0C0058CDFC /* Info.plist */,
+				892F531C21A0DF0C0058CDFC /* PushNotificationPayload.apns */,
+			);
+			path = Support_files;
+			sourceTree = "<group>";
+		};
+		89DA7DBC223DB5510089F6B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				892F530221A0DF070058CDFC /* Interface.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		89DA7DBE223DB5630089F6B5 /* Support_files */ = {
+			isa = PBXGroup;
+			children = (
+				892F530521A0DF0B0058CDFC /* Assets.xcassets */,
+				892F530721A0DF0B0058CDFC /* Info.plist */,
+			);
+			path = Support_files;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -615,10 +665,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89AFC21F223BDF9200D7E207 /* Databaze_W.swift in Sources */,
 				892E47FC223D50F200E64350 /* DataBaze.xcdatamodeld in Sources */,
 				89613A83223D52120015EF28 /* Lokace.swift in Sources */,
-				89AFC220223BDF9500D7E207 /* Lokace_W.swift in Sources */,
 				892F531621A0DF0C0058CDFC /* NotificationController.swift in Sources */,
 				89613A84223D53740015EF28 /* Databaze.swift in Sources */,
 				890F167C223D85170025FA61 /* downloadVC_W.swift in Sources */,
@@ -731,7 +779,7 @@
 				DEVELOPMENT_TEAM = F9SQL5NE4J;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				IBSC_MODULE = Socka_Extension;
-				INFOPLIST_FILE = "$(SRCROOT)/Socka_Watch/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Socka_Watch/Support_files/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.Socka.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -756,7 +804,7 @@
 				DEVELOPMENT_TEAM = F9SQL5NE4J;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				IBSC_MODULE = Socka_Extension;
-				INFOPLIST_FILE = "$(SRCROOT)/Socka_Watch/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Socka_Watch/Support_files/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.Socka.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -780,7 +828,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F9SQL5NE4J;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "$(SRCROOT)/Socka_Watch Extension/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Socka_Watch Extension/Support_files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.Socka.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -805,7 +853,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F9SQL5NE4J;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "$(SRCROOT)/Socka_Watch Extension/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Socka_Watch Extension/Support_files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.Socka.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
@@ -935,7 +983,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Socka_Phone/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Socka_Phone/Support_files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.Socka";
 				PRODUCT_NAME = Socka;
@@ -956,7 +1004,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Socka_Phone/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Socka_Phone/Support_files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dont-have.Socka";
 				PRODUCT_NAME = Socka;

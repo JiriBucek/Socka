@@ -11,6 +11,7 @@ import Foundation
 import Alamofire
 
 class downloadVC_W: WKInterfaceController {
+    // VC pro aktualizaci databaze.
     
     @IBOutlet var percentOutlet: WKInterfaceLabel!
     
@@ -19,7 +20,7 @@ class downloadVC_W: WKInterfaceController {
     }
     
     func stahniNovouDtbz(){
-    //Stáhne přes Alamofire soubor databáze z webu a zkopíruje jej do služky dokumentů. Pokud už tam něco je, tak ten soubor přemaže.
+    // Stáhne přes Alamofire soubor databáze z webu a zkopíruje jej do služky dokumentů. Pokud už tam něco je, tak ten soubor přemaže.
     
         let destination: DownloadRequest.DownloadFileDestination = { _, _ in
             let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -37,7 +38,7 @@ class downloadVC_W: WKInterfaceController {
             .response{response in
                 
                 if response.error == nil{
-                    
+                    // Uspech.
                     let presentMainVC = {
                         self.popToRootController()
                     }
@@ -49,6 +50,7 @@ class downloadVC_W: WKInterfaceController {
                     databaze.zapisVerziDtbzDoUserDefaults(novaVerze: databaze.zjistiVerziDtbzNaWebu())
                     
                 }else{
+                    // Neuspech.
                     print(response.error as Any)
                 }
             }

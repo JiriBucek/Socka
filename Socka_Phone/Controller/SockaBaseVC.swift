@@ -339,7 +339,9 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
         // Velke hacka znamenaji, ze misto 4pm budu mit 16:00.
         
         let time = formatTime(time: arrivalTime)
+        
         var stopTime = timeFormatter.date(from: time)
+        print("StopTime: ", stopTime)
         
         let date = Date()
         let calendar = Calendar.current

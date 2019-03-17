@@ -12,24 +12,26 @@ import CoreLocation
 import WatchKit
 
 class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
+    //  SuperClass s vypocetnimi metodami pro hlavni interface controller.
     
     public var aktualneZobrazovanaZastavka: String = ""
-    var prepinaciPomocnaZastavka = ""
     var device: String = "hodinky"
     var triNejblizsiZastavky = [String]()
     var zastavkySwitch: Int = 0
-    var metroData = MetroDataClass()
     var triNejblizsiZastavkyPrepinaciArray = [String]()
-    //objekt, který obsahuje veškeré informace pro zobrazení na displeji
+        // Pomocny array pro změnu polohy uživatele a nejbližších stanic metra.
+    var prepinaciPomocnaZastavka = ""
+    //  Pomocna promenna pro pripad zmeny zobrazovane stanice.
     
     let databaze = Databaze(zarizeni: .HODINKY)
     var lokace = Lokace()
+    var metroData = MetroDataClass()
+
     
     override func awake(withContext context: Any?) {
         lokace = Lokace.shared
-        //shared je singleton lokace
+        // Singleton lokace
         lokace.start()
-        //zacne updatovat polohu
         
         triNejblizsiZastavky = lokace.triNejblizsiZastavkyArray
         
@@ -40,11 +42,10 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
         
         prepinaciPomocnaZastavka = aktualneZobrazovanaZastavka
         fillMetroDataObject()
-        
     }
     
     func fillMetroDataObject(){
-        //vytvoří objekt se všemi informacemi pro screen
+        // Vytvoří objekt se všemi informacemi pro screen
         
         var metro_times = [[Any]]()
         var konecna1 = String()
@@ -52,11 +53,11 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
         var arrayPristichZastavek2 = [String]()
         var arrayPristichZastavek1 = [String]()
         
-        
         metro_times = get_metro_times(jmenoZastavky: aktualneZobrazovanaZastavka)
+        //  Fetch do databaze.
         
         if metro_times.indices.contains(2){
-            //sezene konecne a nasledne zastavky ke konecnym
+            //  sezene konecne a nasledne zastavky ke konecnym
             
             konecna2 = String(describing: metro_times[0][2])
             arrayPristichZastavek2 = (lokace.getDalsiTriZastavkyKeKonecne(jmenoZastavky: aktualneZobrazovanaZastavka, jmenoKonecneZastavky: konecna2))
@@ -78,19 +79,18 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
             metroData.cas21 = metro_times[2][1] as? Int
             metroData.cas22 = metro_times[3][1] as? Int
             
-            
         }else{
             print("Nemám žádná data z databáze, nevytvořil jsem objekt metroDataClass v hodinkách.")
         }
     }
     
     func get_metro_times(jmenoZastavky: String) -> [[Any]]!{
-        //vrátí array s dvěma konecnyma a ctyrma casama
+        //  Vrátí array s dvěmi konečnými stanicemi a čtyřmi časy.
         
         if let station_ids = zastavkyIDs[jmenoZastavky]{
-            //dva ID kody pro danou zastavku a dvě konecne
+            //  Dva ID kody pro danou zastavku a dvě konecne
             let time = current_time()
-            //soucasny cas jako INT
+            // Aktuální čas jako INT
             
             let today = getDayOfWeek()
             
@@ -99,7 +99,7 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
             var times1 = databaze.fetchData(station_id: station_ids[0], service_id: service_id, results_count: 2, current_time: time)
             var times2 = databaze.fetchData(station_id: station_ids[1], service_id: service_id, results_count: 2, current_time: time)
             
-            //přiřazení časů po půlnoci
+            //  Přiřazení časů při přechodu přes půlnoc
             if times1.count < 2{
                 let resultCount = times1.count
                 
@@ -138,7 +138,7 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
     }
     
     func getServiceId(day: Int) -> Int{
-        //vrátí service ID pro daný den
+        //  Vrátí service ID pro daný den.
         var service_id = Int()
         
         switch day {
@@ -163,7 +163,7 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
     }
     
     func current_time() -> Int{
-        //vrátísoučasný čas jako Int
+        //  Vrátí současný čas jako Int.
         let date = NSDate()
         let calendar = NSCalendar.current
         let hour = calendar.component(.hour, from: date as Date)
@@ -180,7 +180,7 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
     }
     
     func getDayOfWeek() -> Int{
-        //vrátí den v týdnu jako Int od 1 do 7. Musím od toho odečíst jedničku, protože začínají nedělí jako jedna
+        //  Vrátí den v týdnu jako Int od 1 do 7.
         let date = Date()
         let calendar = Calendar.current
         var day = calendar.component(.weekday, from: date) - 1
@@ -202,5 +202,138 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
         }
     }
     
+    func printDocumentsDirectory() {
+        //  Vypíše cestu do dokumentu
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        print("Dokument folder na hodinkach:  \(documentsDirectory)")
+    }
     
+    func zjistiDostupnostNoveDatabaze() -> Bool{
+        let verzeVHodinakch = databaze.zjistiVerziDtbzVDefaults()
+        let verzeNaNetu = databaze.zjistiVerziDtbzNaWebu()
+        
+        print("Verze na netu: \(verzeNaNetu)")
+        print("Verze v hodinkách \(verzeVHodinakch)")
+        
+        if verzeVHodinakch < verzeNaNetu{
+            print("Je dostupná nová verze!!")
+            return true
+        }else{
+            return false
+        }
+        
+    }
+    
+    func myTimeDifference(to targetTime: Int) -> Int{
+        //  Spočitá rozdíl mezi časem metra a současným časem
+        let time = targetTime - current_time()
+        return time
+    }
+    
+    func rozdilCasuTypuDate(datum1: Date, datum2: Date) -> Int{
+        //  Vrati rozdil dvou objektu typu Date v sekundach
+        
+        let datum1prevedeno = datum1.timeIntervalSince1970
+        let datum2prevedeno = datum2.timeIntervalSince1970
+        
+        return Int(datum1prevedeno - datum2prevedeno)
+    }
+    
+    func timeDifference(arrivalTime: Int) -> String {
+        //  Odpočítávadlo času ... vezme si Int ve formátu 153421 a dopočítává, kolik zbývá minut a sekund do toho času.
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm:ss"
+        //  Velke hacka znamenaji, ze misto 4pm budu mit 16:00.
+        
+        let time = formatTime(time: arrivalTime)
+        var stopTime = timeFormatter.date(from: time)
+        
+        let date = Date()
+        let calendar = Calendar.current
+        
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        let hour = calendar.component(.hour, from: stopTime!)
+        let minute = calendar.component(.minute, from: stopTime!)
+        let second = calendar.component(.second, from: stopTime!)
+        
+        stopTime = calendar.date(bySetting: .year, value: year, of: stopTime!)
+        stopTime = calendar.date(bySetting: .month, value: month, of: stopTime!)
+        stopTime = calendar.date(bySetting: .day, value: day, of: stopTime!)
+        stopTime = calendar.date(bySetting: .hour, value: hour, of: stopTime!)
+        stopTime = calendar.date(bySetting: .minute, value: minute, of: stopTime!)
+        stopTime = calendar.date(bySetting: .second, value: second, of: stopTime!)
+        
+        let timeDifference = calendar.dateComponents([.minute, .second], from: date, to: stopTime!)
+        //  Spočítá časový rozdíl mezi from a to.
+        var minuty = String(describing: timeDifference.minute!)
+        var sekundy = String(describing: timeDifference.second!)
+        
+        
+        if let minutyWrap = Int(minuty){
+            if minutyWrap < -1000{
+                //  Úprava kvůli přepočtu přes půlnoc, aby to neukazovalo minusove casy.
+                minuty = String(Int(minuty)! + 1439)
+                sekundy = String(59 + Int(sekundy)!)
+            }else if minutyWrap < 0 && minutyWrap > -1000{
+                //  Kvůli nezobrazování minusovych hodnot pri chybnem nacteni casu.
+                minuty = "0"
+                sekundy = "0"
+            }
+        }
+        
+        if sekundy.count == 1{
+            // Přihodí nulu, pokud sekundy mají jen jeden znak.
+            let index = sekundy.startIndex
+            sekundy.insert("0", at: index)
+        }
+        
+        return "\(minuty):\(sekundy)"
+    }
+    
+    func formatTime(time: Int) -> String{
+        //  Vezme cas v INT a preklopi ho do stringu s dvojteckama.
+        var time = String(describing: time)
+        
+        while time.count < 5{
+            let index = time.startIndex
+            time.insert("0", at: index)
+        }
+        
+        let index = time.index(time.endIndex, offsetBy: -2)
+        time.insert(":", at: index)
+        let index2 = time.index(time.endIndex, offsetBy: -5)
+        time.insert(":", at: index2)
+        
+        return time
+    }
+
+    func lokaceDostupnaPopUp(){
+        
+        if CLLocationManager.locationServicesEnabled() {
+            
+            switch CLLocationManager.authorizationStatus() {
+                
+            case .notDetermined, .restricted, .denied:
+                print("Lokalizace vypnuta!")
+                
+                let action1 = WKAlertAction(title: "Zrušit", style: .cancel){}
+                
+                presentAlert(withTitle: "GPS vypnuta.", message: "Zapni polohové služby pro Socku na svém iPhonu v Nastavení/Socka/Poloha/Vždy. Jinak nelze určit nejbližší zastávku metra.", preferredStyle: .actionSheet, actions: [action1])
+                
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("Lokalizační služby povoleny.")
+                return
+            }
+            
+        }else{
+            let action1 = WKAlertAction(title: "Zrušit", style: .cancel){}
+            
+            presentAlert(withTitle: "GPS vypnuta.", message: "Zapni polohové služby na svém iPhonu v Nastavení/Soukromí/Polohové služby. Jinak nelze určit nejbližší zastávku metra.", preferredStyle: .actionSheet, actions: [action1])
+            
+        }
+        
+    }
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 class MetroDataClass: NSObject{
-    //třída s údaji zobrazujícími se na displeji
+    // Třída se všemi údaji na hlavní VC.
     
     var jmenoZastavky: String?
     var zastavkaID1: String?

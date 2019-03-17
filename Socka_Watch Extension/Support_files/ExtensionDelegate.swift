@@ -18,6 +18,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
         if let root = WKExtension.shared().rootInterfaceController as? InterfaceController {
+            // Check na update databaze a nastaveni nejblizsi zastavky. 
             root.ukazUpgradePopUp()
             root.zastavkySwitch = 0
         }
