@@ -341,7 +341,6 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
         let time = formatTime(time: arrivalTime)
         
         var stopTime = timeFormatter.date(from: time)
-        print("StopTime: ", stopTime)
         
         let date = Date()
         let calendar = Calendar.current

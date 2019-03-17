@@ -24,6 +24,7 @@ public class Databaze{
     
     init(zarizeni: typZarizeni) {
         self.zarizeni = zarizeni
+        self.zapisVerziDtbzDoUserDefaults(novaVerze: 3)
     }
     
     let verzeDTBZvTomtoBundlu = 4
