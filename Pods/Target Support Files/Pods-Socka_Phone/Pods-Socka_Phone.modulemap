@@ -1,0 +1,6 @@
+framework module Pods_Socka_Phone {
+  umbrella header "Pods-Socka_Phone-umbrella.h"
+
+  export *
+  module * { export * }
+}
