@@ -79,7 +79,7 @@ public class Databaze{
             do {
                 try context.save()
             } catch let error as NSError {
-                fatalError("Error ve funkci saveContext: \(error), \(error.userInfo) pro \(zarizeni)")
+                fatalError("Error ve funkci save Context: \(error), \(error.userInfo) pro \(zarizeni)")
             }
         }
     }
