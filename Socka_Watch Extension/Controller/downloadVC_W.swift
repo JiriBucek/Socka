@@ -29,6 +29,7 @@ class downloadVC_W: WKInterfaceController {
             return (fileURL, [.removePreviousFile])
         }
         
+        
         Alamofire.download("http://socka.funsite.cz/databaze", to: destination)
             .downloadProgress { progress in
                 print("Download Progress: \(progress.fractionCompleted)")
@@ -46,7 +47,7 @@ class downloadVC_W: WKInterfaceController {
                     let action1 = WKAlertAction(title: "Ok", style: .default, handler: presentMainVC)
                     self.presentAlert(withTitle: "Jízdní řády jsou aktuální.", message: nil, preferredStyle: .alert, actions: [action1])
                     
-                    let databaze = Databaze(zarizeni: .HODINKY)
+                    let databaze = Databaze.sharedWatch
                     databaze.zapisVerziDtbzDoUserDefaults(novaVerze: databaze.zjistiVerziDtbzNaWebu())
                     
                 }else{

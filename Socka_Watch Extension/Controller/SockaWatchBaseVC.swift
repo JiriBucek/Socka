@@ -23,7 +23,7 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
     var prepinaciPomocnaZastavka = ""
     //  Pomocna promenna pro pripad zmeny zobrazovane stanice.
     
-    let databaze = Databaze(zarizeni: .HODINKY)
+    let databaze = Databaze.sharedWatch
     var lokace = Lokace()
     var metroData = MetroDataClass()
 
@@ -32,7 +32,7 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
         lokace = Lokace.shared
         // Singleton lokace
         lokace.start()
-        
+        databaze.zapisVerziDtbzDoUserDefaults(novaVerze: 3)
         triNejblizsiZastavky = lokace.triNejblizsiZastavkyArray
         
         if triNejblizsiZastavky.count == 3{

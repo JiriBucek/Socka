@@ -35,7 +35,7 @@ class InfoViewController: UIViewController {
         hlavniLabel.allowsDefaultTighteningForTruncation = true
         hlavniLabel.minimumScaleFactor = 0.1
         
-        let databaze = Databaze(zarizeni: .MOBIL)
+        let databaze = Databaze.sharedPhone
         verzeDtbzLabel.text = "Verze databáze: \(databaze.zjistiVerziDtbzVDefaults())"
         verzeAplikaceLabel.text = "Verze aplikace: \(String(describing: Bundle.main.infoDictionary!["CFBundleShortVersionString"]!))"
         

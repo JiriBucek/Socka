@@ -15,6 +15,9 @@ public class Databaze{
     //  Fetch dat z sqlite souboru.
     //  Ukládání verze uložené databáze.
     
+    static let sharedWatch = Databaze(zarizeni: .HODINKY)
+    static let sharedPhone = Databaze(zarizeni: .MOBIL)
+    
     var zarizeni: typZarizeni
     enum typZarizeni
         {
@@ -24,7 +27,6 @@ public class Databaze{
     
     init(zarizeni: typZarizeni) {
         self.zarizeni = zarizeni
-        self.zapisVerziDtbzDoUserDefaults(novaVerze: 3)
     }
     
     let verzeDTBZvTomtoBundlu = 4

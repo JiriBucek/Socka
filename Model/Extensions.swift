@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 extension UIColor{
-    // Vytvoření barvy dle HEX kodu. 
+    // Vytvoření barvy dle HEX kodu.
+    
     func HexToColor(hexString: String, alpha:CGFloat? = 1.0) -> UIColor {
         let hexint = Int(self.intFromHexString(hexStr: hexString))
         let red = CGFloat((hexint & 0xff0000) >> 16) / 255.0
