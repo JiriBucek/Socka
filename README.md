@@ -1,3 +1,5 @@
+![Screenshot](watch_logo_new.png)
+
 # Socka - CZE
 
 Socka zobrazuje příjezdy soupravy metra v nejbližší stanici pražského metra dle aktuální GPS polohy uživatele. K tomuto využívá vlastní offline aktualizovatelnou databázi. Obsahuje také aplikaci pro Apple Watch.
