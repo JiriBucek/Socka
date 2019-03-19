@@ -1,4 +1,4 @@
-![Screenshot](watch_logo_new.png)
+![Screenshot](logo.png)
 
 # Socka - CZE
 
