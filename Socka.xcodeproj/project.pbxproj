@@ -159,7 +159,6 @@
 		89C3838921C366DB0070E276 /* MetroDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroDataClass.swift; sourceTree = "<group>"; };
 		89C3838B21C36A9E0070E276 /* SockaBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SockaBaseVC.swift; sourceTree = "<group>"; };
 		89DA7DB3223DA4330089F6B5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		89EB81302240CB9100A6429E /* myPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = myPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9DB6B70EB7B2AAD276780CCE /* Pods-Socka_Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka_Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Socka_Watch Extension/Pods-Socka_Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		AB6675FDCE21217CADDCDE72 /* Pods-Socka_Phone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka_Phone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Socka_Phone/Pods-Socka_Phone.debug.xcconfig"; sourceTree = "<group>"; };
 		BE5E5763F259D0AE06033D37 /* Pods-Socka_Watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socka_Watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Socka_Watch Extension/Pods-Socka_Watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -253,7 +252,6 @@
 		893B14631EA125FA002E8F72 = {
 			isa = PBXGroup;
 			children = (
-				89EB81302240CB9100A6429E /* myPlayground.playground */,
 				892E47EE223D4F3600E64350 /* Model */,
 				893B146E1EA125FA002E8F72 /* Socka_Phone */,
 				892F530121A0DF070058CDFC /* Socka_Watch */,
