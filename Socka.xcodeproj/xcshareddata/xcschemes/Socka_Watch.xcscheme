@@ -65,7 +65,7 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
-      notificationPayloadFile = "Socka_Watch Extension/PushNotificationPayload.apns">
+      notificationPayloadFile = "Socka_Watch Extension/Support_files/PushNotificationPayload.apns">
       <RemoteRunnable
          runnableDebuggingMode = "2"
          BundleIdentifier = "com.apple.Carousel"
@@ -96,7 +96,7 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES"
-      notificationPayloadFile = "Socka_Watch Extension/PushNotificationPayload.apns">
+      notificationPayloadFile = "Socka_Watch Extension/Support_files/PushNotificationPayload.apns">
       <RemoteRunnable
          runnableDebuggingMode = "2"
          BundleIdentifier = "com.apple.Carousel"

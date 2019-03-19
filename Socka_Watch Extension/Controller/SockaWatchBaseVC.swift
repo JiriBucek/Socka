@@ -32,7 +32,6 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
         lokace = Lokace.shared
         // Singleton lokace
         lokace.start()
-        databaze.zapisVerziDtbzDoUserDefaults(novaVerze: 3)
         triNejblizsiZastavky = lokace.triNejblizsiZastavkyArray
         
         if triNejblizsiZastavky.count == 3{
