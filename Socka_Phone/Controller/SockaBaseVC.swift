@@ -319,6 +319,12 @@ class SockaBaseVC: UIViewController, CLLocationManagerDelegate{
         // Cas v INT formatu preklopi do Stringu 00:00.
         var time = String(describing: time)
         
+        if time.prefix(2) == "24"{
+            // Přechod přes půlnoc.
+            time = String(time.dropFirst(2))
+            time = "00" + time
+        }
+        
         while time.count < 5{
             let index = time.startIndex
             time.insert("0", at: index)

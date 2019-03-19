@@ -308,9 +308,9 @@ class SockaWatchBaseVC: WKInterfaceController, CLLocationManagerDelegate{
         
         return time
     }
-
+    
     func lokaceDostupnaPopUp(){
-        
+        // Check povoleni lokacnich sluzeb.
         if CLLocationManager.locationServicesEnabled() {
             
             switch CLLocationManager.authorizationStatus() {

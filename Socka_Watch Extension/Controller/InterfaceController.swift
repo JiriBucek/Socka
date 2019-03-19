@@ -62,30 +62,34 @@ class InterfaceController:  SockaWatchBaseVC{
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        dtbzPopUpAlreadyShowed = false
-        
-        printDocumentsDirectory()
-        
         var _ = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(displayAllValues), userInfo: nil, repeats: true)
         // Každou sekundu updatuje funkci displayAllValue
+        
+        dtbzPopUpAlreadyShowed = false
+        printDocumentsDirectory()
     }
     
     override func willActivate() {
         super.willActivate()
-        // Ukončí všechna probíhající stahování. Pouze pojistka.
         Alamofire.SessionManager.default.session.getTasksWithCompletionHandler { (sessionDataTask, uploadData, downloadData) in
+            // Ukonci vsechny pripadna stahovani.
             sessionDataTask.forEach { $0.cancel() }
             uploadData.forEach { $0.cancel() }
             downloadData.forEach { $0.cancel() }
         }
         
         if triNejblizsiZastavky.count > 0{
+            // Prepina zastavky na screenu.
             prepinaciPomocnaZastavka = triNejblizsiZastavky[zastavkySwitch]
         }
     }
     
     override func didAppear(){
+        lokaceDostupnaPopUp()
+            // Polohove sluzby povoleny?
+        
         if !dtbzPopUpAlreadyShowed{
+            // Existuje upgrade databaze?
             ukazUpgradePopUp()
         }
     }
@@ -184,5 +188,5 @@ class InterfaceController:  SockaWatchBaseVC{
                     dtbzPopUpAlreadyShowed = true
                 }
             }
-    }
+    }    
 }
