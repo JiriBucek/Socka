@@ -13,5 +13,5 @@ Socka display the metro arrivals for the nearest Prague metro station according 
 
 ## Installation
 
-Run Socka.workspace. Workspace contains everything necessary for immediate compile.
+Run Socka.workspace. Workspace contains everything necessary for an immediate compile.
 Make sure you have your GPS location turned on in the simulator (Simulator / Debug / Location / ... )
